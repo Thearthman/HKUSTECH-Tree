@@ -368,7 +368,7 @@ test("an AND requirement only prunes once every member is finished", () => {
   );
 });
 
-test("a dropped OR branch keeps any finished course it contains", () => {
+test("a dropped OR branch keeps only the finished courses it contains", () => {
   const support = loadUstree();
   // COMP 2211 requires 1023 OR (1028 AND 1208); 1023 and 1028 are finished.
   const mixed = graph(
@@ -389,15 +389,60 @@ test("a dropped OR branch keeps any finished course it contains", () => {
       edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
     ]
   );
-  // The dropped AND branch still holds the finished COMP 1028, so it stays.
+  // The dropped AND branch still holds the finished COMP 1028, so that course
+  // and the junction above it stay -- but the unfinished COMP 1208 that was
+  // only introduced by the redundant branch is dropped.
   assert.deepEqual(
     hidden(support, mixed, new Set(["COMP 1023", "COMP 1028"])),
-    []
+    ["course:COMP 1208"]
   );
   // With only COMP 1023 finished the whole unused branch is redundant.
   assert.deepEqual(
     hidden(support, mixed, new Set(["COMP 1023"])),
     ["bool:COMP 2211:prerequisite:0.1", "course:COMP 1028", "course:COMP 1208"]
+  );
+});
+
+test("a redundant branch kept for a finished course does not revive its other alternatives", () => {
+  const support = loadUstree();
+  // COMP 4211 needs COMP 9000 OR COMP 9001, and COMP 9000 is finished. COMP
+  // 9001's prerequisite is "(Grade A or above in COMP 1010) OR COMP 1011 OR
+  // COMP 1012", with COMP 1010 finished and COMP 1012 requiring COMP 1013.
+  // Keeping COMP 9001's branch only for the finished COMP 1010 must not drag
+  // the unused COMP 1011/COMP 1012/COMP 1013 back into the tree (the real
+  // MATH 2431 leak, where the finished MATH 1014 kept MATH 1020/MATH 1024).
+  const leaked = graph(
+    ["COMP 4211"],
+    [
+      courseNodeById("COMP 4211"),
+      { id: "bool:COMP 4211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 9000"),
+      courseNodeById("COMP 9001"),
+      { id: "bool:COMP 9001:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1010"),
+      courseNodeById("COMP 1011"),
+      courseNodeById("COMP 1012"),
+      courseNodeById("COMP 1013")
+    ],
+    [
+      edge("course:COMP 9000", "bool:COMP 4211:prerequisite:0"),
+      edge("course:COMP 9001", "bool:COMP 4211:prerequisite:0"),
+      edge("bool:COMP 4211:prerequisite:0", "course:COMP 4211"),
+      qualifiedEdge("course:COMP 1010", "bool:COMP 9001:prerequisite:0", "Grade A or above"),
+      edge("course:COMP 1011", "bool:COMP 9001:prerequisite:0"),
+      edge("course:COMP 1012", "bool:COMP 9001:prerequisite:0"),
+      edge("bool:COMP 9001:prerequisite:0", "course:COMP 9001"),
+      edge("course:COMP 1013", "course:COMP 1012")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, leaked, new Set(["COMP 9000", "COMP 1010"])),
+    [
+      "course:COMP 1011",
+      "course:COMP 1012",
+      "course:COMP 1013",
+      "course:COMP 9001"
+    ]
   );
 });
 

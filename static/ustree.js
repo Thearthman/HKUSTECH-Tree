@@ -230,8 +230,9 @@
       return result;
     }
 
-    // A dropped branch that still contains a finished course is kept whole so
-    // the finished course (and the structure around it) never disappears.
+    // Does this branch still hold a finished course beneath its boolean
+    // junctions? Course nodes are leaves here, so a finished course sitting
+    // behind an unfinished course never rescues that unfinished course.
     function hasCompletedInSubtree(nodeId, trail) {
       var seen = trail || new Set();
       if (seen.has(nodeId)) return false;
@@ -276,12 +277,39 @@
       childEdges(nodeId).forEach(function (edge) { needSubtree(edge.source); });
     }
 
-    // Drop a redundant alternative: mark its whole subtree hideable. Nodes kept
-    // elsewhere (or finished) are filtered out again before returning.
+    // A redundant branch may still hold a finished course. Keep just the
+    // minimum structure needed to show it -- the boolean junctions on the
+    // paths down to finished courses and the finished courses themselves --
+    // and drop every unused alternative. This is what stops one finished
+    // course buried in a redundant branch from dragging that branch's whole
+    // sibling subtree (e.g. MATH 1020/MATH 1024) back into the tree.
+    function keepCompletedPaths(nodeId) {
+      if (keep.has(nodeId) || needed.has(nodeId)) return;
+      if (isCompletedCourse(nodeId)) {
+        keep.add(nodeId);
+        considerCourse(nodeId);
+        return;
+      }
+      var node = nodesById.get(nodeId);
+      if (!node || node.type === "course") {
+        redundant.add(nodeId);
+        return;
+      }
+      keep.add(nodeId);
+      childEdges(nodeId).forEach(function (edge) {
+        if (hasCompletedInSubtree(edge.source)) keepCompletedPaths(edge.source);
+        else dropBranch(edge.source);
+      });
+    }
+
+    // Drop a redundant alternative: mark its whole subtree hideable, except
+    // for the finished courses it contains and the junctions that connect
+    // them. Nodes kept elsewhere (or finished) are filtered out before
+    // returning.
     function dropBranch(nodeId) {
       if (redundant.has(nodeId)) return;
       if (hasCompletedInSubtree(nodeId)) {
-        needSubtree(nodeId);
+        keepCompletedPaths(nodeId);
         return;
       }
       redundant.add(nodeId);
