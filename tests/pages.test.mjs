@@ -131,6 +131,26 @@ test("every shell loads the theme controller and a toggle", () => {
   }
 });
 
+test("every shell loads the zen controller with a toggle and a way out", () => {
+  for (const name of ["index.html", "ustree.html", "major-requirement.html"]) {
+    const html = read(name);
+    assert.ok(html.includes('src="/zen.js"'), `${name} should load the shared zen controller`);
+    assert.ok(html.includes('id="zenToggle"'), `${name} should expose a zen toggle`);
+    assert.ok(html.includes('id="zenExit"'), `${name} should expose a floating zen exit`);
+  }
+  const css = read("styles.css");
+  assert.ok(
+    css.includes("body.is-zen") && css.includes(".zen-exit"),
+    "zen mode should hide the chrome and style the floating exit control"
+  );
+  for (const name of ["app.js", "major-requirements.js"]) {
+    assert.ok(
+      read(name).includes('window.addEventListener("hkust-zen-change"'),
+      `${name} should grow and re-fit its canvas when zen mode toggles`
+    );
+  }
+});
+
 test("theme.js follows the OS by default and persists an override", () => {
   const js = read("theme.js");
   assert.ok(js.includes("prefers-color-scheme: dark"), "the OS preference is the default theme");

@@ -99,6 +99,17 @@ double affirmation: the first click only arms the button (**Confirm reset**,
 with a **Cancel** escape hatch and an automatic timeout) and the second click
 actually wipes the browser.
 
+## Zen mode
+
+The **Zen** button (the ⛶ glyph beside the theme toggle) hides all of the page
+chrome — the top bar, the graph/relationship controls, the legend, and notices —
+so the graph or outline fills the whole viewport on either the shared or the
+Major requirement shell. The graph pages re-fit their canvas as it grows.
+
+While zen mode is on, a floating **Exit zen** button stays in the top-right
+corner and `Esc` also leaves the mode. It is a transient view toggle: it is not
+stored, so a reload returns to the normal layout.
+
 ## Refreshing the data (autonomous)
 
 `tools/update-data.mjs` is the single entry point that keeps both databases in

@@ -1926,6 +1926,18 @@
         });
       }
     });
+    // Zen mode hides the chrome, so the canvas must grow to the new viewport
+    // and re-fit (toggling the body class never fires a window resize).
+    window.addEventListener("hkust-zen-change", function () {
+      if (!state.cy) return;
+      state.cy.resize();
+      window.requestAnimationFrame(function () {
+        if (!state.cy) return;
+        state.cy.resize();
+        updateGraphFitMinimum();
+        fitGraph();
+      });
+    });
   }
 
   async function init() {

@@ -720,6 +720,18 @@
         });
       }
     });
+    // Zen mode hides the chrome, so the map must grow to the new viewport and
+    // re-fit (toggling the body class never fires a window resize).
+    window.addEventListener("hkust-zen-change", function () {
+      if (!state.cy) return;
+      state.cy.resize();
+      window.requestAnimationFrame(function () {
+        if (!state.cy) return;
+        state.cy.resize();
+        updateMajorFitMinimum();
+        fitMajorGraph(180);
+      });
+    });
   }
 
   function updateHeader() {

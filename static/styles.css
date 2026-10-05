@@ -1959,6 +1959,50 @@ body[data-page="course"] .ustree-legend-only { display: none; }
   cursor: grabbing;
 }
 
+/* Zen mode -----------------------------------------------------------------
+ * Strip every piece of chrome and let the workspace (graph or outline) fill the
+ * viewport. The class lives on <body> so both static shells share it; the
+ * floating exit button is the only control left on screen.
+ */
+body.is-zen .topbar,
+body.is-zen .controlbar,
+body.is-zen .graph-legend,
+body.is-zen .notice {
+  display: none;
+}
+
+body.is-zen .app-shell {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+body.is-zen .workspace {
+  grid-row: 1;
+}
+
+.zen-exit {
+  position: fixed;
+  z-index: 90;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  box-shadow: var(--shadow, 0 12px 30px rgba(0, 0, 0, 0.22));
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.zen-exit:hover {
+  background: var(--control-hover);
+}
+
 .group-key {
   display: inline-block;
   width: 16px;

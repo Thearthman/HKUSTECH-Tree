@@ -49,6 +49,9 @@
           </button>
           <input id="importDataInput" class="sr-only" type="file" accept="application/json,.json" tabindex="-1" aria-hidden="true">
         </div>
+        <button id="zenToggle" class="button button-secondary data-transfer-button" type="button" aria-pressed="false" aria-label="Enter zen mode" title="Enter zen mode">
+          <span aria-hidden="true">&#9974;</span><span class="data-transfer-label">Zen</span>
+        </button>
         <button id="themeToggle" class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
           <span class="theme-icon theme-icon-light" aria-hidden="true">&#9789;</span>
           <span class="theme-icon theme-icon-dark" aria-hidden="true">&#9728;</span>
@@ -122,10 +125,15 @@
     </main>
   </div>
 
+  <button id="zenExit" class="zen-exit" type="button" aria-label="Exit zen mode" title="Exit zen mode (Esc)" hidden>
+    <span aria-hidden="true">&#9974;</span><span>Exit zen</span>
+  </button>
+
   <script src="/vendor/cytoscape.min.js" defer></script>
   <script src="/graph-interactions.js" defer></script>
   <script src="/catalog-client.js" defer></script>
   <script src="/data-transfer.js" defer></script>
+  <script src="/zen.js" defer></script>
   <script src="/major-requirements.js" defer></script>
 </body>
 </html>
