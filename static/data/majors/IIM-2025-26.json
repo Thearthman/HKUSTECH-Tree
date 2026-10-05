@@ -8,7 +8,7 @@
   "totalCredits": "12-13",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26iim.pdf",
   "sourceHash": "bfdc1215eb5cdfbc98abffacd15c8c8757846655ae2a17028e72eaef57f122e8",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Individualized Interdisciplinary Major",
@@ -67,8 +67,8 @@
       "credits": "",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        300
+        660,
+        0
       ],
       "major": true,
       "graph": true,
@@ -110,7 +110,7 @@
       "parent": "group:fundamental-courses",
       "position": [
         0,
-        400
+        100
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        500
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        220,
-        0
+        440,
+        100
       ],
       "major": true,
       "graph": true,
@@ -151,7 +151,7 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        220,
+        660,
         100
       ],
       "major": true,
@@ -165,7 +165,7 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        220,
+        0,
         200
       ],
       "major": true,
@@ -180,7 +180,7 @@
       "parent": "group:fundamental-courses",
       "position": [
         220,
-        300
+        200
       ],
       "major": true,
       "graph": true,
@@ -194,7 +194,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        820
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        0,
-        920
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -222,7 +222,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        1020
+        620
       ],
       "major": true,
       "graph": true,
@@ -240,7 +240,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         0
       ]
     },
@@ -252,7 +252,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         100
       ]
     },
@@ -264,7 +264,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         200
       ]
     },
@@ -276,7 +276,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         300
       ]
     },
@@ -288,7 +288,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         400
       ]
     },
@@ -300,7 +300,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         500
       ]
     },
@@ -312,7 +312,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         600
       ]
     },
@@ -324,7 +324,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        1140,
         700
       ]
     },
@@ -336,8 +336,8 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
-        800
+        1360,
+        0
       ]
     },
     {
@@ -348,8 +348,8 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
-        900
+        1360,
+        100
       ]
     },
     {
@@ -360,8 +360,8 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
-        1000
+        1360,
+        200
       ]
     }
   ],
@@ -732,5 +732,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

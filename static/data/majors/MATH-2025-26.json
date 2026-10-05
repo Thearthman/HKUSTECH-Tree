@@ -8,7 +8,7 @@
   "totalCredits": "20-22",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26math.pdf",
   "sourceHash": "6199801dbf09a9311ed0caebb775bb6d3675bd6e48a8bc393906c4c70867639c",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Mathematics",
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -96,7 +96,7 @@
       "parent": "group:major-pre-requisite-courses",
       "position": [
         0,
-        300
+        100
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "4",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        400
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -124,7 +124,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        720
+        420
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        820
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        920
+        440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -166,7 +166,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        1020
+        520
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1120
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1220
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        220,
-        720
+        0,
+        620
       ],
       "major": true,
       "graph": true,
@@ -222,7 +222,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -1164,7 +1164,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         0
       ]
     },
@@ -1176,7 +1176,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         100
       ]
     },
@@ -1188,7 +1188,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         200
       ]
     },
@@ -1200,7 +1200,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         300
       ]
     },
@@ -1212,7 +1212,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         400
       ]
     }
@@ -1633,5 +1633,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

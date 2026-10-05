@@ -8,7 +8,7 @@
   "totalCredits": "18-21",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gcs.pdf",
   "sourceHash": "03186f955eb307e423975c932c7c9918e43b0f3f1a2779453232903b363e8254",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Global China Studies",
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -82,7 +82,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        300
+        100
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        400
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "6",
       "parent": "group:required-courses",
       "position": [
-        0,
-        500
+        440,
+        100
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        0
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -138,7 +138,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        100
+        200
       ],
       "major": true,
       "graph": true,
@@ -891,7 +891,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         0
       ]
     },
@@ -903,7 +903,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         100
       ]
     },
@@ -915,7 +915,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         200
       ]
     },
@@ -927,7 +927,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         300
       ]
     }
@@ -998,5 +998,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

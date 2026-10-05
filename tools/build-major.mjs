@@ -689,27 +689,41 @@ function autoPosition(section, placedCourses) {
 // ---------------------------------------------------------------------------
 
 /** Bump when {@link layoutMajorProgram} changes so documents are re-flowed. */
-export const LAYOUT_VERSION = 2;
+export const LAYOUT_VERSION = 3;
 
 /**
  * Layout standard for generated programs, learned from the hand-curated CPEG
  * seed. Each requirement section becomes its own horizontal band stacked top
  * to bottom -- major fundamentals first, then program-specific requirements --
  * so the compound panels can never overlap no matter how many sections or
- * courses a program has. Inside a band, courses flow left to right in short
- * columns, nested option groups are placed to the right of the courses they
- * belong to, and shared context courses are parked in tidy columns off to the
+ * courses a program has. Inside a band, courses flow left to right and wrap
+ * into a handful of columns chosen so the panel reads as a long, wide
+ * rectangle instead of a tall single file (which crowds the requirement
+ * arrows). Nested option groups are placed to the right of the courses they
+ * belong to, and shared context courses are parked in short columns off to the
  * right of the whole map.
  */
 const LAYOUT = {
   columnPitch: 220,
   rowPitch: 100,
-  rowsPerColumn: 6,
+  // Aim for panels about this many times wider than they are tall. For n
+  // courses wrapped into c columns, aspect ~= c^2 * columnPitch / (n * rowPitch),
+  // so c ~= sqrt(n * targetAspect * rowPitch / columnPitch). Cap the width so a
+  // big program cannot sprawl off the page.
+  targetAspect: 2.2,
+  maxColumns: 7,
   siblingGap: 60,
   sectionGap: 220,
   contextGap: 260,
-  contextRows: 13,
+  contextRows: 8,
 };
+
+/** Number of columns that keeps a group's panel a long, wide rectangle. */
+function panelColumns(count) {
+  if (count <= 1) return count;
+  const ideal = Math.sqrt((count * LAYOUT.targetAspect * LAYOUT.rowPitch) / LAYOUT.columnPitch);
+  return Math.max(1, Math.min(LAYOUT.maxColumns, Math.ceil(ideal)));
+}
 
 export function layoutMajorProgram(data) {
   const groups = data.groups || [];
@@ -732,17 +746,17 @@ export function layoutMajorProgram(data) {
     if (visiting.has(groupId)) return { right: x, height: 0 };
     visiting.add(groupId);
     const members = coursesOf.get(groupId) || [];
-    const columns = [];
-    for (let index = 0; index < members.length; index += LAYOUT.rowsPerColumn) {
-      columns.push(members.slice(index, index + LAYOUT.rowsPerColumn));
-    }
-    columns.forEach((column, columnIndex) => {
-      column.forEach((course, rowIndex) => {
-        course.position = [x + columnIndex * LAYOUT.columnPitch, yTop + rowIndex * LAYOUT.rowPitch];
-      });
+    // Fill the panel row by row (left to right, then wrap) so it grows wide.
+    const columns = panelColumns(members.length);
+    const rows = columns ? Math.ceil(members.length / columns) : 0;
+    members.forEach((course, index) => {
+      course.position = [
+        x + (index % columns) * LAYOUT.columnPitch,
+        yTop + Math.floor(index / columns) * LAYOUT.rowPitch,
+      ];
     });
-    let cursor = x + columns.length * LAYOUT.columnPitch;
-    let height = columns.reduce((max, column) => Math.max(max, column.length * LAYOUT.rowPitch), 0);
+    let cursor = x + columns * LAYOUT.columnPitch;
+    let height = rows * LAYOUT.rowPitch;
     for (const childId of childrenOf.get(groupId) || []) {
       if (cursor > x) cursor += LAYOUT.siblingGap;
       const child = place(childId, cursor, yTop, visiting);
@@ -764,12 +778,14 @@ export function layoutMajorProgram(data) {
   // a deterministic slot instead of inheriting a stale coordinate.
   const placedCodes = new Set(courses.filter((course) => course.position).map((course) => course.code));
   const orphans = courses.filter((course) => !placedCodes.has(course.code));
+  const orphanColumns = panelColumns(orphans.length) || 1;
   orphans.forEach((course, index) => {
     course.position = [
-      (index % LAYOUT.rowsPerColumn) * LAYOUT.columnPitch,
-      y + Math.floor(index / LAYOUT.rowsPerColumn) * LAYOUT.rowPitch,
+      (index % orphanColumns) * LAYOUT.columnPitch,
+      y + Math.floor(index / orphanColumns) * LAYOUT.rowPitch,
     ];
   });
+  if (orphans.length) furthestRight = Math.max(furthestRight, orphanColumns * LAYOUT.columnPitch);
 
   const contextX = Math.max(furthestRight, 0) + LAYOUT.contextGap;
   (data.contextCourses || []).forEach((course, index) => {

@@ -8,7 +8,7 @@
   "totalCredits": "63-64",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26evmt.pdf",
   "sourceHash": "842fecc28b76aa85a23997d077b056ebc8608135374ce12a93f29cd28fcdfde2",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Environmental Management and Technology",
@@ -67,8 +67,8 @@
       "credits": "",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -96,7 +96,7 @@
       "parent": "group:fundamental-courses",
       "position": [
         0,
-        300
+        100
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        400
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        0,
-        500
+        440,
+        100
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        220,
-        0
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -152,7 +152,7 @@
       "parent": "group:fundamental-courses",
       "position": [
         220,
-        100
+        200
       ],
       "major": true,
       "graph": true,
@@ -165,7 +165,7 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        220,
+        440,
         200
       ],
       "major": true,
@@ -180,7 +180,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        820
+        520
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        0,
-        920
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1020
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -221,8 +221,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1120
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -235,8 +235,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1220
+        880,
+        520
       ],
       "major": true,
       "graph": true,
@@ -250,7 +250,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        1320
+        620
       ],
       "major": true,
       "graph": true,
@@ -264,7 +264,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -277,8 +277,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        920
+        440,
+        620
       ],
       "major": true,
       "graph": true,
@@ -291,8 +291,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        1020
+        660,
+        620
       ],
       "major": true,
       "graph": true,
@@ -305,8 +305,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        1120
+        880,
+        620
       ],
       "major": true,
       "graph": true,
@@ -319,8 +319,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        1220
+        0,
+        720
       ],
       "major": true,
       "graph": true,
@@ -334,7 +334,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        1320
+        720
       ],
       "major": true,
       "graph": true,
@@ -348,7 +348,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -361,8 +361,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        920
+        660,
+        720
       ],
       "major": true,
       "graph": true,
@@ -375,8 +375,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        1020
+        880,
+        720
       ],
       "major": true,
       "graph": true,
@@ -389,8 +389,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        1120
+        0,
+        820
       ],
       "major": true,
       "graph": true,
@@ -403,8 +403,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        1220
+        220,
+        820
       ],
       "major": true,
       "graph": true,
@@ -418,7 +418,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        1320
+        820
       ],
       "major": true,
       "graph": true,
@@ -445,8 +445,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        920
+        880,
+        820
       ],
       "major": true,
       "graph": true,
@@ -459,8 +459,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        1020
+        0,
+        920
       ],
       "major": true,
       "graph": true,
@@ -473,8 +473,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        1120
+        220,
+        920
       ],
       "major": true,
       "graph": true,
@@ -672,7 +672,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         0
       ]
     },
@@ -684,7 +684,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         100
       ]
     },
@@ -696,7 +696,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         200
       ]
     },
@@ -708,7 +708,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         300
       ]
     },
@@ -720,7 +720,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         400
       ]
     },
@@ -732,7 +732,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         500
       ]
     },
@@ -744,7 +744,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         600
       ]
     },
@@ -756,7 +756,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1360,
         700
       ]
     },
@@ -768,8 +768,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        800
+        1580,
+        0
       ]
     },
     {
@@ -780,8 +780,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        900
+        1580,
+        100
       ]
     },
     {
@@ -792,8 +792,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1000
+        1580,
+        200
       ]
     },
     {
@@ -804,8 +804,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1100
+        1580,
+        300
       ]
     },
     {
@@ -816,8 +816,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1200
+        1580,
+        400
       ]
     },
     {
@@ -828,8 +828,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        0
+        1580,
+        500
       ]
     },
     {
@@ -840,8 +840,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        100
+        1580,
+        600
       ]
     },
     {
@@ -852,8 +852,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        200
+        1580,
+        700
       ]
     },
     {
@@ -864,8 +864,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        300
+        1800,
+        0
       ]
     },
     {
@@ -876,8 +876,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        400
+        1800,
+        100
       ]
     },
     {
@@ -888,8 +888,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        500
+        1800,
+        200
       ]
     },
     {
@@ -900,8 +900,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        600
+        1800,
+        300
       ]
     },
     {
@@ -912,8 +912,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        700
+        1800,
+        400
       ]
     },
     {
@@ -924,8 +924,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        800
+        1800,
+        500
       ]
     },
     {
@@ -936,8 +936,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        900
+        1800,
+        600
       ]
     },
     {
@@ -948,8 +948,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        1000
+        1800,
+        700
       ]
     },
     {
@@ -960,8 +960,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        1100
+        2020,
+        0
       ]
     },
     {
@@ -972,8 +972,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
-        1200
+        2020,
+        100
       ]
     }
   ],
@@ -1498,5 +1498,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

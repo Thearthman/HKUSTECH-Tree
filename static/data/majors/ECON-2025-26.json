@@ -8,7 +8,7 @@
   "totalCredits": "12",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26econ.pdf",
   "sourceHash": "dfb3c14574bf6030d023f57a113aec4946803a317d12a69aeae2436839ec6edd",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Economics",
@@ -53,8 +53,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -68,7 +68,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        200
+        100
       ],
       "major": true,
       "graph": true,
@@ -86,7 +86,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         0
       ]
     },
@@ -98,7 +98,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         100
       ]
     },
@@ -110,7 +110,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         200
       ]
     },
@@ -122,7 +122,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         300
       ]
     },
@@ -134,7 +134,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         400
       ]
     },
@@ -146,7 +146,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         500
       ]
     },
@@ -158,7 +158,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         600
       ]
     },
@@ -170,7 +170,7 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
+        700,
         700
       ]
     },
@@ -182,8 +182,8 @@
       "major": false,
       "graph": true,
       "position": [
-        480,
-        800
+        920,
+        0
       ]
     }
   ],
@@ -260,5 +260,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

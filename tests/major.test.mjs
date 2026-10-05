@@ -106,7 +106,7 @@ test("every program's requirement panels are stacked without overlapping", () =>
 
   for (const program of manifest.programs) {
     const data = readProgram(program.file);
-    assert.equal(data.layoutVersion, 2, `${program.id} should carry the current layout version`);
+    assert.equal(data.layoutVersion, 3, `${program.id} should carry the current layout version`);
     assert.ok(
       data.layout === "auto" || data.layout === "preset",
       `${program.id} should declare its layout mode`
@@ -125,6 +125,16 @@ test("every program's requirement panels are stacked without overlapping", () =>
       .map((section) => (data.courses || []).filter((course) => course.section === section.id))
       .filter((courses) => courses.length)
       .map(bounds);
+    // Generated programs should read as long, wide bands rather than tall
+    // single files that crowd the requirement arrows.
+    if (data.layout === "auto") {
+      panels.forEach((panel, index) => {
+        assert.ok(
+          panel.x2 - panel.x1 > panel.y2 - panel.y1,
+          `${program.id} requirement panel ${index} should be a long rectangle, not a tall one`
+        );
+      });
+    }
     for (let i = 0; i < panels.length; i += 1) {
       for (let j = i + 1; j < panels.length; j += 1) {
         const a = panels[i];

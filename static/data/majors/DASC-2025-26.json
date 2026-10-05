@@ -8,7 +8,7 @@
   "totalCredits": "38-40",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26dasc.pdf",
   "sourceHash": "8fb099848021d7d9071129c6c141dad014cf37223408d4c1daea6a41e57e2ef9",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Data Analytics and Artificial Intelligence in Science",
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -96,7 +96,7 @@
       "parent": "group:major-pre-requisite-courses",
       "position": [
         0,
-        300
+        100
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "4",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        0,
-        400
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -124,7 +124,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        720
+        420
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        820
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        920
+        440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1020
+        660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -180,7 +180,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        1120
+        520
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        1220
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        720
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -221,8 +221,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        820
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -235,8 +235,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        920
+        0,
+        620
       ],
       "major": true,
       "graph": true,
@@ -250,7 +250,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        1020
+        620
       ],
       "major": true,
       "graph": true,
@@ -263,8 +263,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        1120
+        440,
+        620
       ],
       "major": true,
       "graph": true,
@@ -277,8 +277,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        1220
+        660,
+        620
       ],
       "major": true,
       "graph": true,
@@ -291,7 +291,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        0,
         720
       ],
       "major": true,
@@ -495,7 +495,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         0
       ]
     },
@@ -507,7 +507,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         100
       ]
     },
@@ -519,7 +519,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         200
       ]
     },
@@ -531,7 +531,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         300
       ]
     },
@@ -543,7 +543,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         400
       ]
     },
@@ -555,7 +555,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         500
       ]
     },
@@ -567,7 +567,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         600
       ]
     },
@@ -579,7 +579,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1140,
         700
       ]
     },
@@ -591,8 +591,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        800
+        1360,
+        0
       ]
     },
     {
@@ -603,8 +603,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        900
+        1360,
+        100
       ]
     },
     {
@@ -615,8 +615,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        1000
+        1360,
+        200
       ]
     },
     {
@@ -627,8 +627,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        1100
+        1360,
+        300
       ]
     },
     {
@@ -639,8 +639,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        1200
+        1360,
+        400
       ]
     },
     {
@@ -651,8 +651,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        0
+        1360,
+        500
       ]
     },
     {
@@ -663,8 +663,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        100
+        1360,
+        600
       ]
     },
     {
@@ -675,8 +675,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        200
+        1360,
+        700
       ]
     },
     {
@@ -687,8 +687,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        300
+        1580,
+        0
       ]
     },
     {
@@ -699,8 +699,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        400
+        1580,
+        100
       ]
     },
     {
@@ -711,8 +711,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        500
+        1580,
+        200
       ]
     },
     {
@@ -723,8 +723,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        600
+        1580,
+        300
       ]
     },
     {
@@ -735,8 +735,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        700
+        1580,
+        400
       ]
     },
     {
@@ -747,8 +747,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        800
+        1580,
+        500
       ]
     },
     {
@@ -759,8 +759,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        900
+        1580,
+        600
       ]
     },
     {
@@ -771,8 +771,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1000
+        1580,
+        700
       ]
     },
     {
@@ -783,8 +783,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1100
+        1800,
+        0
       ]
     },
     {
@@ -795,8 +795,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
-        1200
+        1800,
+        100
       ]
     }
   ],
@@ -1363,5 +1363,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }

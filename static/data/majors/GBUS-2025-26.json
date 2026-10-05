@@ -8,7 +8,7 @@
   "totalCredits": "11-15",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbus.pdf",
   "sourceHash": "936b5914a6960a626d9e2153d668da9a8d332ea6b5f39a34f5d45ef1979619db",
-  "generatedAt": "2026-10-05T09:41:02Z",
+  "generatedAt": "2026-10-05T09:51:52Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Global Business",
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        0,
-        200
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -82,7 +82,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        300
+        100
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        0,
-        400
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        500
+        440,
+        100
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        220,
-        0
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -142,7 +142,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         0
       ]
     },
@@ -154,7 +154,7 @@
       "major": false,
       "graph": true,
       "position": [
-        700,
+        920,
         100
       ]
     }
@@ -176,5 +176,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 2
+  "layoutVersion": 3
 }
