@@ -186,6 +186,33 @@ test("the graph shows the normal cursor over nodes and a pointer over checkboxes
   }
 });
 
+test("the target checkbox keeps its tick inside the box and its star on the box row", () => {
+  const app = read("app.js");
+  // The star/target image paints a node-sized SVG whose checkbox sits at
+  // CHECKBOX_INSET, while the tick path is authored for a box at (1,1). The
+  // tick must be shared and translated, or it renders up and left of the box.
+  assert.ok(
+    app.includes("function checkboxCheckMark(palette)"),
+    "app.js should own a single tick path so every checkbox reuses it"
+  );
+  assert.ok(
+    app.includes("completed ? checkboxCheckMark(palette) : \"\""),
+    "the small checkbox should draw the shared tick"
+  );
+  assert.ok(
+    app.includes(
+      "'<g transform=\"translate(' + (CHECKBOX_INSET - 1) + ' ' + (CHECKBOX_INSET - 1) + ')\">' + checkboxCheckMark(palette) + \"</g>\""
+    ),
+    "targetImage should translate the shared tick onto its CHECKBOX_INSET box"
+  );
+  // The star polygon is authored near the top edge; nudge it down so it lines
+  // up with the checkbox instead of floating above it.
+  assert.ok(
+    app.includes('transform="translate(0 4.5)"'),
+    "the target star should be lowered onto the checkbox row"
+  );
+});
+
 test("client code has no server API calls", () => {
   for (const name of ["app.js", "catalog-client.js", "major-requirements.js", "ustree.js"]) {
     assert.ok(!read(name).includes('"/api/'), `${name} still calls /api/`);
