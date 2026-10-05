@@ -294,3 +294,30 @@ test("completions are shared with the major-requirement page under the catalog y
     );
   }
 });
+
+test("a toggle hides prerequisites already fulfilled by the finished courses", () => {
+  const html = read("index.html");
+  assert.ok(
+    html.includes('id="hideFulfilledToggle"') && html.includes("Hide fulfilled prereqs"),
+    "the shell should expose a labelled hide-fulfilled-prereqs toggle"
+  );
+  const app = read("app.js");
+  assert.ok(
+    app.includes('getElementById("hideFulfilledToggle")'),
+    "app.js should bind the hide-fulfilled toggle"
+  );
+  assert.ok(
+    app.includes("function activeGraph") &&
+      app.includes("hiddenFulfilledPrereqNodes(state.graph, state.completions)"),
+    "app.js should render the graph pruned against the finished courses"
+  );
+  const ustree = read("ustree.js");
+  assert.ok(
+    ustree.includes("function hiddenFulfilledPrereqNodes"),
+    "ustree.js should own the fulfilled-prerequisite pruning"
+  );
+  assert.ok(
+    ustree.includes("hiddenFulfilledPrereqNodes: hiddenFulfilledPrereqNodes"),
+    "the pruning helper should be exported on USTreeSupport"
+  );
+});

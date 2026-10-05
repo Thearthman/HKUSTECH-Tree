@@ -118,6 +118,239 @@
     return "?";
   }
 
+  // -------------------------------------------------------------------------
+  // Hide fulfilled prereqs
+  // -------------------------------------------------------------------------
+  // When a course's prerequisite requirement is already satisfied by the
+  // finished courses, the branches that did not contribute to that
+  // satisfaction are redundant. With "COMP 1023 OR COMP 1028" and COMP 1023
+  // done, COMP 1028 (and anything shown only because of it) can be hidden.
+  // Returns the node ids to hide. Roots/targets, the courses shown as
+  // dependents, and finished courses are never hidden, and a course that some
+  // remaining course still needs survives -- so the answer is conservative:
+  // grade-qualified branches are left alone because a completion alone does
+  // not prove the grade was met.
+  function hiddenFulfilledPrereqNodes(graph, completed) {
+    var nodes = (graph && graph.nodes) || [];
+    var edges = (graph && graph.edges) || [];
+    var nodesById = new Map();
+    nodes.forEach(function (node) {
+      if (node && node.id) nodesById.set(String(node.id), node);
+    });
+
+    // Prerequisite edges point from a prerequisite to the course that needs
+    // it. Keep each edge's qualifier ("Grade A or above", ...) because it
+    // decides whether a finished course really satisfies that branch.
+    var incoming = new Map();
+    var outgoing = new Map();
+    edges.forEach(function (edge) {
+      if (!edge || (edge.relation || edge.kind) !== "prerequisite") return;
+      var source = String(edge.source);
+      var target = String(edge.target);
+      if (!incoming.has(target)) incoming.set(target, []);
+      incoming.get(target).push({ source: source, qualifier: edge.qualifier || "" });
+      if (!outgoing.has(source)) outgoing.set(source, []);
+      outgoing.get(source).push(target);
+    });
+
+    var finished = toCompletionSet(completed);
+
+    function childEdges(nodeId) {
+      return incoming.get(nodeId) || [];
+    }
+
+    function isCompletedCourse(nodeId) {
+      var node = nodesById.get(nodeId);
+      return Boolean(node) && node.type === "course" && finished.has(normalizeCode(node.code));
+    }
+
+    // Verdict for one branch, given the qualifier on the edge that links it to
+    // the requirement it belongs to. This mirrors requirementStatus, but a
+    // course only counts as met when it is not grade-qualified: finishing a
+    // course does not tell us whether the required grade was earned.
+    var statusCache = new Map();
+    var evaluating = new Set();
+    function evalBranch(nodeId, qualifier) {
+      var cacheKey = nodeId + "\u0000" + (qualifier || "");
+      if (statusCache.has(cacheKey)) return statusCache.get(cacheKey);
+      // A prerequisite cycle would otherwise recurse forever; treat the
+      // in-progress branch as unknown.
+      if (evaluating.has(cacheKey)) return REQUIREMENT_UNKNOWN;
+      evaluating.add(cacheKey);
+      var node = nodesById.get(nodeId);
+      var result;
+      if (!node) {
+        result = REQUIREMENT_UNKNOWN;
+      } else if (node.type === "course") {
+        var met = finished.has(normalizeCode(node.code));
+        result = met ? (qualifier ? REQUIREMENT_UNKNOWN : REQUIREMENT_MET) : REQUIREMENT_UNMET;
+      } else if (node.type === "coursePattern") {
+        var pattern = patternStatus(node, finished);
+        result = pattern === REQUIREMENT_MET && qualifier ? REQUIREMENT_UNKNOWN : pattern;
+      } else if (node.type === "all" || node.type === "any") {
+        var children = childEdges(nodeId);
+        if (!children.length) {
+          result = REQUIREMENT_UNKNOWN;
+        } else {
+          var results = children.map(function (child) {
+            return evalBranch(child.source, child.qualifier);
+          });
+          if (node.type === "any") {
+            if (results.indexOf(REQUIREMENT_MET) !== -1) result = REQUIREMENT_MET;
+            else if (results.every(function (state) { return state === REQUIREMENT_UNMET; })) result = REQUIREMENT_UNMET;
+            else result = REQUIREMENT_UNKNOWN;
+          } else if (results.indexOf(REQUIREMENT_UNMET) !== -1) {
+            result = REQUIREMENT_UNMET;
+          } else if (results.every(function (state) { return state === REQUIREMENT_MET; })) {
+            result = REQUIREMENT_MET;
+          } else {
+            result = REQUIREMENT_UNKNOWN;
+          }
+        }
+      } else {
+        result = REQUIREMENT_UNKNOWN;
+      }
+      evaluating.delete(cacheKey);
+      statusCache.set(cacheKey, result);
+      return result;
+    }
+
+    // A dropped branch that still contains a finished course is kept whole so
+    // the finished course (and the structure around it) never disappears.
+    function hasCompletedInSubtree(nodeId, trail) {
+      var seen = trail || new Set();
+      if (seen.has(nodeId)) return false;
+      seen.add(nodeId);
+      if (isCompletedCourse(nodeId)) return true;
+      var node = nodesById.get(nodeId);
+      if (!node || node.type === "course") return false;
+      return childEdges(nodeId).some(function (edge) {
+        return hasCompletedInSubtree(edge.source, seen);
+      });
+    }
+
+    var keep = new Set();
+    var redundant = new Set();
+    var considered = new Set();
+    var needed = new Set();
+    var satisfied = new Set();
+
+    // Keep an entire branch: used for unmet/unknown requirements and for any
+    // subtree that still contains a finished course.
+    function needSubtree(nodeId) {
+      if (needed.has(nodeId)) return;
+      needed.add(nodeId);
+      keep.add(nodeId);
+      var node = nodesById.get(nodeId);
+      if (!node) return;
+      if (node.type === "course") {
+        considerCourse(nodeId);
+        return;
+      }
+      childEdges(nodeId).forEach(function (edge) { needSubtree(edge.source); });
+    }
+
+    // Drop a redundant alternative: mark its whole subtree hideable. Nodes kept
+    // elsewhere (or finished) are filtered out again before returning.
+    function dropBranch(nodeId) {
+      if (redundant.has(nodeId)) return;
+      if (hasCompletedInSubtree(nodeId)) {
+        needSubtree(nodeId);
+        return;
+      }
+      redundant.add(nodeId);
+      childEdges(nodeId).forEach(function (edge) { dropBranch(edge.source); });
+    }
+
+    // Keep only the parts of a satisfied requirement that actually satisfy it.
+    function keepSatisfied(nodeId) {
+      if (satisfied.has(nodeId)) return;
+      satisfied.add(nodeId);
+      keep.add(nodeId);
+      var node = nodesById.get(nodeId);
+      if (!node) return;
+      if (node.type === "course") {
+        considerCourse(nodeId);
+        return;
+      }
+      if (node.type !== "all" && node.type !== "any") return;
+      var children = childEdges(nodeId);
+      if (node.type === "all") {
+        children.forEach(function (edge) {
+          if (evalBranch(edge.source, edge.qualifier) === REQUIREMENT_MET) keepSatisfied(edge.source);
+          else needSubtree(edge.source);
+        });
+        return;
+      }
+      children.forEach(function (edge) {
+        if (evalBranch(edge.source, edge.qualifier) === REQUIREMENT_MET) keepSatisfied(edge.source);
+        else dropBranch(edge.source);
+      });
+    }
+
+    function considerCourse(courseId) {
+      if (considered.has(courseId)) return;
+      considered.add(courseId);
+      keep.add(courseId);
+      var tops = childEdges(courseId);
+      if (!tops.length) return;
+      if (tops.length > 1) {
+        var anyMet = tops.some(function (edge) {
+          return evalBranch(edge.source, edge.qualifier) === REQUIREMENT_MET;
+        });
+        tops.forEach(function (edge) {
+          var state = evalBranch(edge.source, edge.qualifier);
+          if (state === REQUIREMENT_MET) keepSatisfied(edge.source);
+          else if (anyMet) dropBranch(edge.source);
+          else needSubtree(edge.source);
+        });
+        return;
+      }
+      if (evalBranch(tops[0].source, tops[0].qualifier) === REQUIREMENT_MET) keepSatisfied(tops[0].source);
+      else needSubtree(tops[0].source);
+    }
+
+    // Seeds: the roots/targets plus every course that depends on one of them
+    // (the forward direction). Dependents sit behind boolean junctions, so the
+    // walk follows prerequisite edges across junctions rather than stopping at
+    // them. Every other course is kept only if some processed requirement
+    // still needs it, which is what lets a redundant prerequisite disappear.
+    var seeds = [];
+    var seenSeed = new Set();
+    normalizeTargets(graph && (graph.roots || graph.targets || [graph && graph.root])).forEach(function (code) {
+      var id = "course:" + code;
+      if (nodesById.has(id) && !seenSeed.has(id)) {
+        seenSeed.add(id);
+        seeds.push(id);
+      }
+    });
+    var queue = seeds.slice();
+    var visited = new Set();
+    while (queue.length) {
+      var current = queue.shift();
+      if (visited.has(current)) continue;
+      visited.add(current);
+      (outgoing.get(current) || []).forEach(function (next) {
+        if (visited.has(next)) return;
+        var node = nodesById.get(next);
+        if (node && node.type === "course" && !seenSeed.has(next)) {
+          seenSeed.add(next);
+          seeds.push(next);
+        }
+        // Keep walking even through boolean junctions and detail nodes.
+        queue.push(next);
+      });
+    }
+    seeds.forEach(considerCourse);
+
+    var hidden = [];
+    redundant.forEach(function (nodeId) {
+      if (keep.has(nodeId) || isCompletedCourse(nodeId)) return;
+      hidden.push(nodeId);
+    });
+    return hidden.sort();
+  }
+
   function storageKey(year) {
     return STORAGE_PREFIX + ":ustree:" + year;
   }
@@ -245,6 +478,7 @@
     requirementStatus: requirementStatus,
     requirementStatusLabel: requirementStatusLabel,
     requirementStatusMarker: requirementStatusMarker,
+    hiddenFulfilledPrereqNodes: hiddenFulfilledPrereqNodes,
     REQUIREMENT_STATES: {
       COMPLETED: REQUIREMENT_COMPLETED,
       MET: REQUIREMENT_MET,

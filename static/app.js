@@ -4,6 +4,7 @@
   var DEFAULT_YEAR = "2026-27";
   var DEFAULT_RELATIONS = ["prerequisite", "corequisite", "exclusion"];
   var STORAGE_PREFIX = "hkust-course-tree";
+  var HIDE_FULFILLED_KEY = STORAGE_PREFIX + ":hide-fulfilled-prereq";
   var SEARCH_DELAY = 180;
   var HOVER_GROUP_COUNT = 5;
   // Completion-checkbox geometry is shared with the hit test so the clickable
@@ -82,6 +83,7 @@
     relationInputs: Array.prototype.slice.call(document.querySelectorAll(".relations input")),
     depthSelect: document.getElementById("depthSelect"),
     highlightDepthSelect: document.getElementById("highlightDepthSelect"),
+    hideFulfilledToggle: document.getElementById("hideFulfilledToggle"),
     graphTab: document.getElementById("graphTab"),
     outlineTab: document.getElementById("outlineTab"),
     graphPanel: document.getElementById("graphPanel"),
@@ -144,6 +146,7 @@
     graphErrors: [],
     hoveredNodeId: null,
     requirementStatus: new Map(),
+    hideFulfilledPrereq: true,
     mobileLayout: window.matchMedia("(max-width: 620px)").matches
   };
 
@@ -404,6 +407,43 @@
     }
   }
 
+  // Hiding fulfilled prerequisites is on by default; the control-bar toggle
+  // remembers an explicit opt-out across sessions.
+  function loadHideFulfilled() {
+    try {
+      var stored = localStorage.getItem(HIDE_FULFILLED_KEY);
+      return stored === null ? true : stored === "1";
+    } catch (_error) {
+      return true;
+    }
+  }
+
+  function saveHideFulfilled(value) {
+    try {
+      localStorage.setItem(HIDE_FULFILLED_KEY, value ? "1" : "0");
+    } catch (_error) {
+      // The preference simply does not persist when storage is unavailable.
+    }
+  }
+
+  // The graph with redundant prerequisite branches removed, or the raw graph
+  // when the toggle is off. Computed on demand so ticking a completion or
+  // flipping the toggle is reflected immediately.
+  function activeGraph() {
+    if (!state.hideFulfilledPrereq || !state.graph) return state.graph;
+    var support = window.USTreeSupport;
+    if (!support || typeof support.hiddenFulfilledPrereqNodes !== "function") return state.graph;
+    var hidden = support.hiddenFulfilledPrereqNodes(state.graph, state.completions);
+    if (!hidden || !hidden.length) return state.graph;
+    var hiddenIds = new Set(hidden);
+    return {
+      nodes: state.graph.nodes.filter(function (node) { return !hiddenIds.has(node.id); }),
+      edges: state.graph.edges.filter(function (edge) {
+        return !hiddenIds.has(edge.source) && !hiddenIds.has(edge.target);
+      })
+    };
+  }
+
   // -------------------------------------------------------------------------
   // USTree prerequisite check
   // -------------------------------------------------------------------------
@@ -488,6 +528,7 @@
     elements.courseSearch.placeholder = IS_USTREE_PAGE
       ? "Find a course to add to USTree"
       : "View a course by code or title";
+    if (elements.hideFulfilledToggle) elements.hideFulfilledToggle.checked = state.hideFulfilledPrereq;
   }
 
   async function loadCatalogs(options) {
@@ -921,7 +962,11 @@
     else state.completions.delete(normalized);
     saveCompletions();
 
-    if (state.cy) {
+    if (state.hideFulfilledPrereq) {
+      // The set of hidden prerequisite branches depends on the finished
+      // courses, so a tick can add or remove nodes: rebuild the view.
+      renderGraph();
+    } else if (state.cy) {
       state.cy.nodes().filter(function (node) {
         return node.data("type") === "course" && normalizeCode(node.data("code")) === normalized;
       }).toggleClass("is-completed", completed);
@@ -940,12 +985,13 @@
   }
 
   function projectGraphData() {
-    var nodes = state.graph.nodes.filter(function (node) {
+    var graph = activeGraph() || state.graph;
+    var nodes = graph.nodes.filter(function (node) {
       return node.type !== "all" && node.type !== "any";
     });
     var nodeIds = new Set(nodes.map(function (node) { return node.id; }));
     var outgoing = new Map();
-    state.graph.edges.forEach(function (edge) {
+    graph.edges.forEach(function (edge) {
       if (!outgoing.has(edge.source)) outgoing.set(edge.source, []);
       outgoing.get(edge.source).push(edge);
     });
@@ -1754,6 +1800,14 @@
     elements.syncButton.addEventListener("click", checkCatalog);
     elements.relationInputs.forEach(function (input) { input.addEventListener("change", loadGraph); });
     elements.depthSelect.addEventListener("change", loadGraph);
+    if (elements.hideFulfilledToggle) {
+      elements.hideFulfilledToggle.addEventListener("change", function () {
+        state.hideFulfilledPrereq = elements.hideFulfilledToggle.checked;
+        saveHideFulfilled(state.hideFulfilledPrereq);
+        if (state.graph) renderGraph();
+        renderOutline();
+      });
+    }
     elements.highlightDepthSelect.addEventListener("change", function () {
       if (!state.cy || !state.hoveredNodeId) return;
       var hoveredNode = state.cy.getElementById(state.hoveredNodeId);
@@ -1836,6 +1890,7 @@
   }
 
   async function init() {
+    state.hideFulfilledPrereq = loadHideFulfilled();
     configurePage();
     bindEvents();
     loadCompletions();

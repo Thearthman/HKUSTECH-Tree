@@ -670,6 +670,10 @@ html[data-theme="dark"] .theme-icon-dark {
   font-weight: 600;
 }
 
+.prereq-hide-control {
+  margin-left: 22px;
+}
+
 .depth-control select {
   min-height: 28px;
   padding-left: 7px;
@@ -1629,7 +1633,8 @@ body[data-page="course"] .ustree-legend-only { display: none; }
     flex: 1 1 auto;
   }
 
-  .depth-control {
+  .depth-control,
+  .prereq-hide-control {
     margin-left: 0;
   }
 

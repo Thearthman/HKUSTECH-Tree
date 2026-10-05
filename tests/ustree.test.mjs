@@ -46,6 +46,30 @@ function any(...items) {
   return { type: "any", items };
 }
 
+// Minimal graph shaped like the catalog client emits it: course/detail nodes
+// joined by boolean junctions, with prerequisite edges pointing child -> parent.
+function courseNodeById(code) {
+  return { id: `course:${code}`, type: "course", code };
+}
+
+function edge(source, target) {
+  return { source, target, relation: "prerequisite" };
+}
+
+function qualifiedEdge(source, target, qualifier) {
+  return { source, target, relation: "prerequisite", qualifier };
+}
+
+function graph(roots, nodes, edges) {
+  return { roots, nodes, edges };
+}
+
+// The vm sandbox has its own Array realm, so copy results into this realm
+// before strict deep-equality comparisons.
+function hidden(support, g, completed) {
+  return Array.from(support.hiddenFulfilledPrereqNodes(g, completed));
+}
+
 test("a target without prerequisites is always satisfied", () => {
   const support = loadUstree();
   const target = course("COMP 1991", null);
@@ -105,4 +129,228 @@ test("a finished target reports completed and carries a human label", () => {
   assert.equal(support.requirementStatusLabel("unmet"), "Prereqs not met");
   assert.equal(support.requirementStatusMarker("met"), "\u2713");
   assert.equal(support.requirementStatusMarker("unmet"), "\u2717");
+});
+
+test("hiding fulfilled prereqs drops an OR alternative covered by a finished course", () => {
+  const support = loadUstree();
+  // COMP 2211 requires COMP 1023 OR COMP 1028.
+  const orGraph = graph(
+    ["COMP 2211"],
+    [
+      courseNodeById("COMP 2211"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
+    ]
+  );
+  assert.deepEqual(hidden(support, orGraph, new Set()), []);
+  assert.deepEqual(
+    hidden(support, orGraph, new Set(["COMP 1023"])),
+    ["course:COMP 1028"]
+  );
+  assert.deepEqual(
+    hidden(support, orGraph, new Set(["COMP 1028"])),
+    ["course:COMP 1023"]
+  );
+  // Both alternatives finished: nothing is redundant.
+  assert.deepEqual(
+    hidden(support, orGraph, new Set(["COMP 1023", "COMP 1028"])),
+    []
+  );
+});
+
+test("hiding a fulfilled branch also drops prerequisites shown only because of it", () => {
+  const support = loadUstree();
+  // COMP 2211 requires 1023 OR 1028, and 1028 requires 1021.
+  const nested = graph(
+    ["COMP 2211"],
+    [
+      courseNodeById("COMP 2211"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028"),
+      courseNodeById("COMP 1021")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1021", "course:COMP 1028"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, nested, new Set(["COMP 1023"])),
+    ["course:COMP 1021", "course:COMP 1028"]
+  );
+});
+
+test("a course another visible target still needs is never hidden", () => {
+  const support = loadUstree();
+  // COMP 2211 requires 1023 OR 1028, and COMP 3031 requires 1028 (unmet).
+  const shared = graph(
+    ["COMP 2211", "COMP 3031"],
+    [
+      courseNodeById("COMP 2211"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028"),
+      courseNodeById("COMP 3031")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211"),
+      edge("course:COMP 1028", "course:COMP 3031")
+    ]
+  );
+  assert.deepEqual(hidden(support, shared, new Set(["COMP 1023"])), []);
+});
+
+test("an AND requirement only prunes once every member is finished", () => {
+  const support = loadUstree();
+  const andGraph = graph(
+    ["COMP 3111"],
+    [
+      courseNodeById("COMP 3111"),
+      { id: "bool:COMP 3111:prerequisite:0", type: "all" },
+      courseNodeById("COMP 2011"),
+      courseNodeById("COMP 2711")
+    ],
+    [
+      edge("course:COMP 2011", "bool:COMP 3111:prerequisite:0"),
+      edge("course:COMP 2711", "bool:COMP 3111:prerequisite:0"),
+      edge("bool:COMP 3111:prerequisite:0", "course:COMP 3111")
+    ]
+  );
+  assert.deepEqual(hidden(support, andGraph, new Set(["COMP 2011"])), []);
+  assert.deepEqual(
+    hidden(support, andGraph, new Set(["COMP 2011", "COMP 2711"])),
+    []
+  );
+});
+
+test("a dropped OR branch keeps any finished course it contains", () => {
+  const support = loadUstree();
+  // COMP 2211 requires 1023 OR (1028 AND 1208); 1023 and 1028 are finished.
+  const mixed = graph(
+    ["COMP 2211"],
+    [
+      courseNodeById("COMP 2211"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      { id: "bool:COMP 2211:prerequisite:0.1", type: "all" },
+      courseNodeById("COMP 1028"),
+      courseNodeById("COMP 1208")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("bool:COMP 2211:prerequisite:0.1", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0.1"),
+      edge("course:COMP 1208", "bool:COMP 2211:prerequisite:0.1"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
+    ]
+  );
+  // The dropped AND branch still holds the finished COMP 1028, so it stays.
+  assert.deepEqual(
+    hidden(support, mixed, new Set(["COMP 1023", "COMP 1028"])),
+    []
+  );
+  // With only COMP 1023 finished the whole unused branch is redundant.
+  assert.deepEqual(
+    hidden(support, mixed, new Set(["COMP 1023"])),
+    ["bool:COMP 2211:prerequisite:0.1", "course:COMP 1028", "course:COMP 1208"]
+  );
+});
+
+test("a target that is a redundant alternative is still never hidden", () => {
+  const support = loadUstree();
+  // Target COMP 4211 requires COMP 4212 OR COMP 4911; COMP 4911 is finished.
+  const targets = graph(
+    ["COMP 4211", "COMP 4212"],
+    [
+      courseNodeById("COMP 4211"),
+      { id: "bool:COMP 4211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 4212"),
+      courseNodeById("COMP 4911")
+    ],
+    [
+      edge("course:COMP 4212", "bool:COMP 4211:prerequisite:0"),
+      edge("course:COMP 4911", "bool:COMP 4211:prerequisite:0"),
+      edge("bool:COMP 4211:prerequisite:0", "course:COMP 4211")
+    ]
+  );
+  assert.deepEqual(hidden(support, targets, new Set(["COMP 4911"])), []);
+});
+
+test("a dependent reached through a boolean junction still drives pruning", () => {
+  const support = loadUstree();
+  // Root COMP 1023 has no prerequisite of its own. COMP 2211 is a dependent:
+  // it needs COMP 1023 OR COMP 1028. Finishing COMP 1023 should hide COMP 1028
+  // even though the dependency sits behind an OR junction.
+  const dependent = graph(
+    ["COMP 1023"],
+    [
+      courseNodeById("COMP 1023"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 2211"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, dependent, new Set(["COMP 1023"])),
+    ["course:COMP 1028"]
+  );
+  // Without the finishing course nothing is redundant.
+  assert.deepEqual(hidden(support, dependent, new Set()), []);
+});
+
+test("a grade-qualified branch survives a bare completion", () => {
+  const support = loadUstree();
+  // COMP 2012H can be met by "Grade A or above in COMP 1023" OR COMP 1028.
+  // A finished COMP 1023 does not prove the grade, so the alternative stays.
+  const qualified = graph(
+    ["COMP 2012H"],
+    [
+      courseNodeById("COMP 2012H"),
+      { id: "bool:COMP 2012H:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      qualifiedEdge("course:COMP 1023", "bool:COMP 2012H:prerequisite:0", "Grade A or above"),
+      edge("course:COMP 1028", "bool:COMP 2012H:prerequisite:0"),
+      edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
+    ]
+  );
+  assert.deepEqual(hidden(support, qualified, new Set(["COMP 1023"])), []);
+
+  // The same shape without the qualifier prunes the alternative.
+  const unqualified = graph(
+    ["COMP 2012H"],
+    [
+      courseNodeById("COMP 2012H"),
+      { id: "bool:COMP 2012H:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2012H:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2012H:prerequisite:0"),
+      edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, unqualified, new Set(["COMP 1023"])),
+    ["course:COMP 1028"]
+  );
 });

@@ -92,6 +92,13 @@
         </select>
       </div>
 
+      <div class="control-group prereq-hide-control">
+        <label class="toggle" title="Hide prerequisite courses already covered by a finished alternative, e.g. COMP 1028 when COMP 1023 satisfies COMP 2211">
+          <input id="hideFulfilledToggle" type="checkbox" checked>
+          <span>Hide fulfilled prereqs</span>
+        </label>
+      </div>
+
       <div class="view-tabs" role="tablist" aria-label="Course view">
         <button id="graphTab" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="graphPanel">Graph</button>
         <button id="outlineTab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="outlinePanel">Outline</button>
