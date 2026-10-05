@@ -5,9 +5,6 @@
   "outputDirectory": "static",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/ustree", "destination": "/index.html" }
-  ],
   "headers": [
     {
       "source": "/data/catalog.json",

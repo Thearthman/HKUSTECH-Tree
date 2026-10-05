@@ -38,7 +38,10 @@ Everything is served from `static/`:
 
 - `/` — the default **Course** page focuses on one selected course, showing its
   prerequisite pathway and the courses that directly use it as a prerequisite.
-- `/ustree` — the dedicated multi-target **USTree** workspace.
+- `/ustree` — the dedicated multi-target **USTree** workspace. It is a real
+  `static/ustree.html` asset generated from `index.html` by
+  `tools/build-pages.mjs` (`npm run build:pages`); `app.js` switches into USTree
+  mode from the `/ustree` URL, so no host-specific rewrite is required.
 - `/major-requirement` — the **Major requirement** map for the 2025-26 CPEG
   intake, including its nested `AND`/`OR` choice rules and catalog relationship
   context.
@@ -46,6 +49,19 @@ Everything is served from `static/`:
 The page reads the committed `static/data/catalog.json`; its **Check for
 updates** button re-fetches that file from the host and falls back to the
 browser's IndexedDB copy when offline.
+
+## Data and privacy
+
+There is no backend, so nothing is sent anywhere and every piece of user state
+lives in the browser:
+
+- USTree targets — `localStorage["hkust-course-tree:ustree:<year>"]`
+- Completed courses — `localStorage["hkust-course-tree:completed:<year>"]`
+- Last focused course — `localStorage["hkust-course-tree:focus:<year>"]`
+- Catalog cache — IndexedDB database `hkust-course-tree` (store `catalogs`)
+
+Clearing site data resets the USTree and completion checkboxes; the catalog is
+re-downloaded from the host on the next visit.
 
 ## Test
 

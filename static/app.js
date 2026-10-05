@@ -7,7 +7,10 @@
   var SEARCH_DELAY = 180;
   var HOVER_GROUP_COUNT = 5;
   var COMPLETION_HIT_SIZE = 25;
-  var IS_USTREE_PAGE = window.location.pathname.replace(/\/+$/, "") === "/ustree";
+  // Accept "/ustree", "/ustree/", and "/ustree.html" so the page keeps working
+  // whether the host uses clean URLs or serves the .html asset directly.
+  var PAGE_PATH = window.location.pathname.replace(/\/+$/, "").replace(/\.html$/i, "");
+  var IS_USTREE_PAGE = PAGE_PATH === "/ustree";
 
   function checkboxImage(completed) {
     var fill = completed ? "#176b4b" : "rgba(255,255,255,0.9)";

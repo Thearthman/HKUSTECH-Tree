@@ -5,8 +5,9 @@
   "type": "module",
   "description": "Browser-only HKUST course prerequisite tree",
   "scripts": {
-    "build": "node tools/build-catalog.mjs --if-missing",
+    "build": "node tools/build-catalog.mjs --if-missing && node tools/build-pages.mjs",
     "build:catalog": "node tools/build-catalog.mjs",
+    "build:pages": "node tools/build-pages.mjs",
     "serve": "node tools/serve.mjs",
     "test": "node --test tests/*.test.mjs"
   },
