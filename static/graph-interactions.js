@@ -68,8 +68,32 @@
     global.addEventListener("blur", finishDrag);
   }
 
+  // Cytoscape paints nodes onto the stage canvas, which inherits the stage's
+  // grab cursor, so without this the pan cursor covers interactive node content.
+  // Track the hovered node and swap the cursor: the plain arrow over a node and
+  // a pointer over its clickable control (e.g. the completion checkbox).
+  function bindNodeCursor(stage, cy, isControlHit) {
+    if (!stage || !cy) return;
+    var applied = "";
+
+    function setCursor(value) {
+      if (applied === value) return;
+      applied = value;
+      stage.style.cursor = value;
+    }
+
+    cy.on("mousemove", "node", function (event) {
+      var overControl = isControlHit && isControlHit(event.target, event.renderedPosition);
+      setCursor(overControl ? "pointer" : "default");
+    });
+    cy.on("mouseout", "node", function () {
+      setCursor("");
+    });
+  }
+
   global.GraphInteractionSupport = {
     bindRightDragPan: bindRightDragPan,
+    bindNodeCursor: bindNodeCursor,
     fitToMinimum: fitToMinimum,
     updateFitMinimum: updateFitMinimum
   };

@@ -77,6 +77,28 @@ test("the major-requirement map defines its completion controls", () => {
   }
 });
 
+test("the graph shows the normal cursor over nodes and a pointer over checkboxes", () => {
+  const support = read("graph-interactions.js");
+  assert.ok(
+    support.includes("function bindNodeCursor"),
+    "graph-interactions.js should define a node cursor binder"
+  );
+  assert.ok(
+    support.includes("bindNodeCursor: bindNodeCursor"),
+    "the node cursor binder should be exported on GraphInteractionSupport"
+  );
+  // Both graph pages inherit the stage's grab cursor onto the Cytoscape canvas,
+  // so each must wire the binder to override it over node content.
+  for (const name of ["app.js", "major-requirements.js"]) {
+    assert.ok(
+      read(name).includes(
+        "GraphInteractionSupport.bindNodeCursor(elements.graphStage, state.cy, completionHit)"
+      ),
+      `${name} should bind the node cursor for its course graph`
+    );
+  }
+});
+
 test("client code has no server API calls", () => {
   for (const name of ["app.js", "catalog-client.js", "major-requirements.js", "ustree.js"]) {
     assert.ok(!read(name).includes('"/api/'), `${name} still calls /api/`);

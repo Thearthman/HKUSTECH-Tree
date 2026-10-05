@@ -1244,6 +1244,9 @@
     }
     setReadableInitialViewport();
     state.cy.nodes().ungrabify();
+    if (window.GraphInteractionSupport) {
+      window.GraphInteractionSupport.bindNodeCursor(elements.graphStage, state.cy, completionHit);
+    }
 
     state.cy.on("tap", "node", function (event) {
       var node = event.target;

@@ -90,6 +90,7 @@
     outlineTab: document.getElementById("majorOutlineTab"),
     graphPanel: document.getElementById("majorGraphPanel"),
     outlinePanel: document.getElementById("majorOutlinePanel"),
+    graphStage: document.getElementById("majorGraphStage"),
     graphCanvas: document.getElementById("majorGraphCanvas"),
     graphEmpty: document.getElementById("majorGraphEmpty"),
     outlineContent: document.getElementById("majorOutlineContent"),
@@ -402,6 +403,9 @@
       boxSelectionEnabled: false,
       autoungrabify: true
     });
+    if (window.GraphInteractionSupport) {
+      window.GraphInteractionSupport.bindNodeCursor(elements.graphStage, state.cy, completionHit);
+    }
     applyRelationFilters();
     fitMajorGraph(0);
     var readableZoom = state.mobile ? 0.58 : 0.5;
