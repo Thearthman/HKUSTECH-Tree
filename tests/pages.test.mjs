@@ -70,6 +70,37 @@ test("the shared shell loads the browser-only client", () => {
   assert.ok(!html.includes("/api/"), "the static shell must not call the Flask API");
 });
 
+test("every shell exposes export/import/reset controls and loads the transfer module", () => {
+  for (const name of ["index.html", "ustree.html", "major-requirement.html"]) {
+    const html = read(name);
+    assert.ok(html.includes('src="/data-transfer.js"'), `${name} should load the data-transfer module`);
+    for (const id of ["exportData", "importData", "importDataInput", "resetData", "resetDataCancel"]) {
+      assert.ok(html.includes(`id="${id}"`), `${name} should include the #${id} control`);
+    }
+  }
+  const app = read("app.js");
+  assert.ok(
+    app.includes("HKUSTDataTransfer.bind") && app.includes("onApplied: applyImportedData"),
+    "app.js should wire the transfer module and re-render after an import"
+  );
+  const major = read("major-requirements.js");
+  assert.ok(
+    major.includes("HKUSTDataTransfer.saveSelectedMajor") &&
+      major.includes("HKUSTDataTransfer.loadSelectedMajor") &&
+      major.includes("HKUSTDataTransfer.bind"),
+    "the major page should persist, restore and import its selected program"
+  );
+  const transfer = read("data-transfer.js");
+  assert.ok(
+    transfer.includes("function clearAll") && transfer.includes('getElementById("resetData")'),
+    "the transfer module should own the reset control and the clearing logic"
+  );
+  assert.ok(
+    transfer.includes("function clearCache") || read("catalog-client.js").includes("function clearCache"),
+    "the catalog cache should be droppable for a reset"
+  );
+});
+
 test("major-requirement.html loads the browser-only client", () => {
   const html = read("major-requirement.html");
   assert.ok(html.includes("/catalog-client.js"));
@@ -122,11 +153,12 @@ test("the segmented page nav matches the Major requirement bar on every page", (
     "the page-nav links must not wrap their labels"
   );
   // The shared topbar carries a search field on top of the catalog controls, so
-  // it needs more room than the Major topbar before the nav fits on one line.
-  // Collapse it into the Major page's two-row layout earlier, scoped to the
-  // shared shell so the dedicated Major header keeps its own grid.
+  // (and export/import buttons) it needs more room than the Major topbar before
+  // the nav fits on one line. Collapse it into the Major page's two-row layout
+  // earlier, scoped to the shared shell so the dedicated Major header keeps its
+  // own grid.
   assert.ok(
-    css.includes("@media (max-width: 1120px)") && css.includes("body:not(.major-page) .page-nav"),
+    css.includes("@media (max-width: 1300px)") && css.includes("body:not(.major-page) .page-nav"),
     "the shared topbar must collapse into the two-row layout before the nav is squeezed"
   );
   // Narrow screens stretch the bar edge to edge with evenly sized links, the

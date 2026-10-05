@@ -560,6 +560,70 @@ select {
   min-height: 34px;
 }
 
+.data-transfer {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.data-transfer-button {
+  gap: 5px;
+  font-size: 12px;
+}
+
+.data-transfer-button > span[aria-hidden="true"] {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Destructive reset: quiet by default, loud while armed for the second click. */
+.data-transfer-danger {
+  color: var(--danger-ink);
+}
+
+.data-transfer-danger.is-armed {
+  color: var(--on-accent);
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.data-transfer-cancel {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Transient export/import feedback, shared by every page. */
+.data-toast {
+  position: fixed;
+  z-index: 90;
+  left: 50%;
+  bottom: 22px;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 9px 14px;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.22));
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 140ms ease, transform 140ms ease;
+  pointer-events: none;
+}
+
+.data-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.data-toast.is-error {
+  color: var(--danger-ink);
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+}
+
 .icon-button {
   width: 30px;
   min-width: 30px;
@@ -1596,11 +1660,12 @@ body[data-page="course"] .ustree-legend-only { display: none; }
 /*
  * The shared Course/USTree topbar carries a search field as well as the
  * catalog controls, so it needs more room than the Major requirement topbar
- * before the page nav fits on one line. Collapse it into the same two-row
- * layout the Major page uses once it can no longer fit, so the
- * "Course / USTree / Major req." segmented bar never wraps or shrinks.
+ * (plus the export/import buttons) before the page nav fits on one line.
+ * Collapse it into the same two-row layout the Major page uses once it can no
+ * longer fit, so the "Course / USTree / Major req." segmented bar never wraps
+ * or shrinks.
  */
-@media (max-width: 1120px) {
+@media (max-width: 1300px) {
   body:not(.major-page) .app-shell {
     grid-template-rows: auto auto auto minmax(0, 1fr);
   }
@@ -1694,11 +1759,19 @@ body[data-page="course"] .ustree-legend-only { display: none; }
   .brand-block p,
   .field-label,
   .sync-icon + span,
+  .data-transfer-label,
   .search-key,
   .relation-sample,
   .graph-legend .legend-separator,
   .graph-legend .legend-separator ~ span {
     display: none;
+  }
+
+  /* Keep the destructive flow legible once the icon-only buttons kick in:
+   * Cancel must stay readable, and the armed Reset must show "Confirm reset". */
+  .data-transfer-cancel .data-transfer-label,
+  .data-transfer-danger.is-armed .data-transfer-label {
+    display: inline;
   }
 
   .catalog-controls {
@@ -2145,6 +2218,7 @@ body[data-page="course"] .ustree-legend-only { display: none; }
   .major-selector {
     grid-column: 1;
     grid-row: 2;
+    flex-wrap: wrap;
     justify-content: stretch;
   }
 

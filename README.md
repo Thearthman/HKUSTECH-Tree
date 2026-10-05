@@ -75,6 +75,30 @@ The page reads the committed `static/data/catalog.json`; its **Check for
 updates** button re-fetches that file from the host and falls back to the
 browser's IndexedDB copy when offline.
 
+## Export and import
+
+Every page's top bar carries **Export** and **Import** buttons (the download /
+upload arrows beside the theme toggle). **Export** downloads a single JSON file
+named `hkust-course-tree-YYYYMMDD.json` that snapshots everything the site keeps
+locally: the **USTree** targets, the **finished courses**, each page's **last
+focused course**, the **selected major requirement**, and the small display
+preferences (`hideFulfilledPrereq`, theme). Data is grouped by catalog year, so
+an export taken across several years restores them all.
+
+**Import** reads one of those files back. It validates the file first (rejecting
+non-JSON, exports from other apps, and empty snapshots) and then **merges** the
+contents into the current browser rather than replacing it: USTree targets and
+finished courses are unioned per year, and the selected major and preferences
+are applied. The page then re-reads its state and re-renders, and a short toast
+reports how many targets and courses were added.
+
+**Reset** (the ✕ button) erases everything the site stored in this browser —
+every `hkust-course-tree` value in `localStorage` plus the cached catalog in
+IndexedDB — and then reloads the page. Because it is destructive it uses a
+double affirmation: the first click only arms the button (**Confirm reset**,
+with a **Cancel** escape hatch and an automatic timeout) and the second click
+actually wipes the browser.
+
 ## Refreshing the data (autonomous)
 
 `tools/update-data.mjs` is the single entry point that keeps both databases in
@@ -120,10 +144,17 @@ shells if you do not want it.
 - USTree targets — `localStorage["hkust-course-tree:ustree:<year>"]`
 - Completed courses — `localStorage["hkust-course-tree:completed:<year>"]`
 - Last focused course — `localStorage["hkust-course-tree:focus:<year>"]`
+- Selected major requirement — `localStorage["hkust-course-tree:major"]`
+- Preferences (hide fulfilled prereqs, theme) —
+  `localStorage["hkust-course-tree:hide-fulfilled-prereq"]`,
+  `localStorage["hkust-course-tree:theme"]`
 - Catalog cache — IndexedDB database `hkust-course-tree` (store `catalogs`)
 
-Clearing site data resets the USTree and completion checkboxes; the catalog is
-re-downloaded from the host on the next visit.
+The **Export**/**Import** buttons in the top bar move all of this between
+browsers as a JSON file, and the **Reset** button erases it all from this
+browser (see [Export and import](#export-and-import)). Clearing site data resets
+the USTree and completion checkboxes; the catalog is re-downloaded from the host
+on the next visit.
 
 ## Test
 

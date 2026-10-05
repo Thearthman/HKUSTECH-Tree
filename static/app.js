@@ -433,6 +433,34 @@
     }
   }
 
+  // Re-read every imported value from localStorage so the visible page reflects
+  // the file immediately (the transfer module merges into storage first).
+  function applyImportedData(summary) {
+    state.hideFulfilledPrereq = loadHideFulfilled();
+    if (elements.hideFulfilledToggle) elements.hideFulfilledToggle.checked = state.hideFulfilledPrereq;
+    loadCompletions();
+    loadTargets();
+    refreshRequirementStatuses();
+    renderUstreeMenu();
+    if (summary && summary.preferences && summary.preferences.indexOf("theme") !== -1 &&
+        window.HKUSTTheme && window.HKUSTDataTransfer && window.HKUSTDataTransfer.loadTheme) {
+      var theme = window.HKUSTDataTransfer.loadTheme(localStorage);
+      if (theme) window.HKUSTTheme.set(theme);
+    }
+    if (IS_USTREE_PAGE || state.target) loadGraph();
+    else renderOutline();
+  }
+
+  function bindDataTransfer() {
+    if (!window.HKUSTDataTransfer || typeof window.HKUSTDataTransfer.bind !== "function") return;
+    window.HKUSTDataTransfer.bind({
+      // Read the year lazily so an import after a catalog-year switch still
+      // lands a year-less (legacy) file on the right catalog.
+      year: function () { return state.year; },
+      onApplied: applyImportedData
+    });
+  }
+
   // The graph with redundant prerequisite/corequisite branches removed, or the
   // raw graph when the toggle is off. Computed on demand so ticking a
   // completion or flipping the toggle is reflected immediately.
@@ -1904,6 +1932,7 @@
     state.hideFulfilledPrereq = loadHideFulfilled();
     configurePage();
     bindEvents();
+    bindDataTransfer();
     loadCompletions();
     loadTargets();
     renderUstreeMenu();

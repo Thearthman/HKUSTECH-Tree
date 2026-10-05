@@ -38,6 +38,21 @@
           <span class="sync-icon" aria-hidden="true">&#8635;</span>
           <span>Check for updates</span>
         </button>
+        <div class="data-transfer" role="group" aria-label="Export, import or reset your saved data">
+          <button id="exportData" class="button button-secondary data-transfer-button" type="button" title="Download your USTree, finished courses and selected major as a JSON file">
+            <span aria-hidden="true">&#8681;</span><span class="data-transfer-label">Export</span>
+          </button>
+          <button id="importData" class="button button-secondary data-transfer-button" type="button" title="Load a previously exported HKUST Course Tree JSON file">
+            <span aria-hidden="true">&#8679;</span><span class="data-transfer-label">Import</span>
+          </button>
+          <button id="resetData" class="button button-secondary data-transfer-button data-transfer-danger" type="button" title="Erase all saved data from this browser">
+            <span aria-hidden="true">&#10005;</span><span class="data-transfer-label">Reset</span>
+          </button>
+          <button id="resetDataCancel" class="button button-secondary data-transfer-button data-transfer-cancel" type="button" hidden>
+            <span class="data-transfer-label">Cancel</span>
+          </button>
+          <input id="importDataInput" class="sr-only" type="file" accept="application/json,.json" tabindex="-1" aria-hidden="true">
+        </div>
         <button id="themeToggle" class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
           <span class="theme-icon theme-icon-light" aria-hidden="true">&#9789;</span>
           <span class="theme-icon theme-icon-dark" aria-hidden="true">&#9728;</span>
@@ -193,6 +208,7 @@
   <script src="/vendor/cytoscape-dagre.js" defer></script>
   <script src="/graph-interactions.js" defer></script>
   <script src="/ustree.js" defer></script>
+  <script src="/data-transfer.js" defer></script>
   <script src="/catalog-client.js" defer></script>
   <script src="/app.js" defer></script>
 </body>

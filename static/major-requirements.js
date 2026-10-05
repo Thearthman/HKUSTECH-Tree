@@ -102,6 +102,16 @@
       if (target) target.requirements.push({ relation: relation.relation, raw: relation.raw });
     });
     window.MajorRequirementsData = DATA;
+    // Remember the active program so the selection survives a reload and rides
+    // along in an exported data snapshot.
+    if (window.HKUSTDataTransfer && typeof window.HKUSTDataTransfer.saveSelectedMajor === "function" && DATA.id) {
+      window.HKUSTDataTransfer.saveSelectedMajor(localStorage, {
+        id: DATA.id,
+        programCode: DATA.programCode || "",
+        intake: DATA.intake || "",
+        catalogYear: DATA.catalogYear || ""
+      });
+    }
   }
 
   var elements = {
@@ -777,6 +787,38 @@
     }
   }
 
+  // Re-read an imported snapshot after the transfer module merged it into
+  // localStorage. With a program in the file, (re)load it so the selector, the
+  // outline, the map, and the completion checkboxes all follow; otherwise just
+  // refresh the checkbox state for the current program.
+  function applyImportedData(summary) {
+    if (summary && summary.preferences && summary.preferences.indexOf("theme") !== -1 &&
+        window.HKUSTTheme && window.HKUSTDataTransfer && window.HKUSTDataTransfer.loadTheme) {
+      var theme = window.HKUSTDataTransfer.loadTheme(localStorage);
+      if (theme) window.HKUSTTheme.set(theme);
+    }
+    var importedId = summary && summary.major && summary.major.id;
+    var known = importedId && (MANIFEST && MANIFEST.programs || []).some(function (entry) {
+      return entry.id === importedId;
+    });
+    if (known) {
+      loadProgram(importedId);
+      return;
+    }
+    loadCompletions();
+    if (state.cy) renderGraph();
+    renderOutline();
+  }
+
+  function bindDataTransfer() {
+    if (!window.HKUSTDataTransfer || typeof window.HKUSTDataTransfer.bind !== "function") return;
+    window.HKUSTDataTransfer.bind({
+      // A legacy year-less file lands on the catalog year of the loaded program.
+      year: function () { return CATALOG_YEAR; },
+      onApplied: applyImportedData
+    });
+  }
+
   function bootstrap() {
     if (typeof window.fetch !== "function") {
       showLoadError(new Error("This browser cannot load " + MANIFEST_URL));
@@ -791,8 +833,14 @@
         MANIFEST = manifest;
         populateSelector(manifest);
         bindEvents();
+        bindDataTransfer();
         var programs = manifest.programs || [];
-        var preferred = programs.filter(function (entry) { return entry.programCode === "CPEG"; })[0] ||
+        var stored = window.HKUSTDataTransfer && typeof window.HKUSTDataTransfer.loadSelectedMajor === "function"
+          ? window.HKUSTDataTransfer.loadSelectedMajor(localStorage)
+          : null;
+        var storedProgram = stored && programs.filter(function (entry) { return entry.id === stored.id; })[0];
+        var preferred = storedProgram ||
+          programs.filter(function (entry) { return entry.programCode === "CPEG"; })[0] ||
           programs[0];
         if (!preferred) throw new Error("The major-requirement manifest lists no programs");
         loadProgram(preferred.id);

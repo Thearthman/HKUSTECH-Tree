@@ -32,6 +32,10 @@
     pending: null,
     levels: {}
   };
+  // IndexedDB connections opened for reads/writes are kept so a "reset" can
+  // close them before deleting the database (an open connection blocks the
+  // delete).
+  var connections = [];
 
   function cleanText(value) {
     return String(value == null ? "" : value)
@@ -514,8 +518,44 @@
         var db = request.result;
         if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
       };
-      request.onsuccess = function () { resolve(request.result); };
+      request.onsuccess = function () {
+        var db = request.result;
+        connections.push(db);
+        db.onclose = function () {
+          var index = connections.indexOf(db);
+          if (index !== -1) connections.splice(index, 1);
+        };
+        resolve(db);
+      };
       request.onerror = function () { reject(request.error); };
+    });
+  }
+
+  function closeConnections() {
+    var open = connections.splice(0);
+    open.forEach(function (db) {
+      try {
+        db.close();
+      } catch (_error) {
+        // A connection we cannot close is not worth failing the reset over.
+      }
+    });
+  }
+
+  // Drop the cached catalog and the whole IndexedDB database. Used by the
+  // destructive "Reset" control so the browser is left with no trace of the
+  // site's stored data; the catalog is re-downloaded on the next visit.
+  function clearCache() {
+    closeConnections();
+    return new Promise(function (resolve) {
+      if (!global.indexedDB || typeof global.indexedDB.deleteDatabase !== "function") {
+        resolve(false);
+        return;
+      }
+      var request = global.indexedDB.deleteDatabase(IDB_NAME);
+      request.onsuccess = function () { resolve(true); };
+      request.onerror = function () { resolve(false); };
+      request.onblocked = function () { resolve(false); };
     });
   }
 
@@ -739,6 +779,7 @@
     course: course,
     record: record,
     graph: graph,
+    clearCache: clearCache,
     normalizeCourseCode: normalizeCourseCode
   };
 }(typeof window !== "undefined" ? window : this));
