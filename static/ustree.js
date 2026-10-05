@@ -129,9 +129,10 @@
   // this purpose too, so a planned course can fulfil a requirement and hide
   // its alternatives. Returns the node ids to hide. Roots/targets, the courses
   // shown as dependents, and finished/planned courses are never hidden, and a
-  // course that some remaining course still needs survives -- so the answer is
-  // conservative: grade-qualified branches are left alone because a
-  // completion alone does not prove the grade was met.
+  // course that some remaining course still needs survives. The verdict for
+  // each branch mirrors requirementStatus, so a credited course settles its
+  // branch even when the catalog adds a grade note; prose conditions still
+  // keep a branch open.
   function hiddenFulfilledPrereqNodes(graph, completed, planned) {
     var nodes = (graph && graph.nodes) || [];
     var edges = (graph && graph.edges) || [];
@@ -143,8 +144,8 @@
     // Prerequisite and corequisite edges point from a requirement course to
     // the course that needs it. Keep each edge's relation so a prerequisite
     // branch and a corequisite branch are never mistaken for alternatives, and
-    // its qualifier ("Grade A or above", ...) because that decides whether a
-    // finished course really satisfies the branch.
+    // its qualifier ("Grade A or above", ...) so a branch reached through
+    // different notes is evaluated separately.
     var requirementRelations = { prerequisite: true, corequisite: true };
     var incoming = new Map();
     var outgoing = new Map();
@@ -180,9 +181,12 @@
     }
 
     // Verdict for one branch, given the qualifier on the edge that links it to
-    // the requirement it belongs to. This mirrors requirementStatus, but a
-    // course only counts as met when it is not grade-qualified: finishing a
-    // course does not tell us whether the required grade was earned.
+    // the requirement it belongs to. This stays deliberately consistent with
+    // requirementStatus: a finished or starred course settles its branch even
+    // when the catalog adds a grade note such as "Grade A or above" (the view
+    // cannot read transcripts, and the target verdict already ignores the
+    // qualifier). Prose conditions remain unknown, because no completion can
+    // settle them.
     var statusCache = new Map();
     var evaluating = new Set();
     function evalBranch(nodeId, qualifier) {
@@ -198,10 +202,9 @@
         result = REQUIREMENT_UNKNOWN;
       } else if (node.type === "course") {
         var met = credited.has(normalizeCode(node.code));
-        result = met ? (qualifier ? REQUIREMENT_UNKNOWN : REQUIREMENT_MET) : REQUIREMENT_UNMET;
+        result = met ? REQUIREMENT_MET : REQUIREMENT_UNMET;
       } else if (node.type === "coursePattern") {
-        var pattern = patternStatus(node, credited);
-        result = pattern === REQUIREMENT_MET && qualifier ? REQUIREMENT_UNKNOWN : pattern;
+        result = patternStatus(node, credited);
       } else if (node.type === "all" || node.type === "any") {
         var children = childEdges(nodeId);
         if (!children.length) {

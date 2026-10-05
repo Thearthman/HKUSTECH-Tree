@@ -196,7 +196,9 @@ test("a starred/in-plan course counts as complete when hiding prereqs", () => {
     hidden(support, orGraph, new Set(["COMP 1023"]), ["COMP 1023"]),
     ["course:COMP 1028"]
   );
-  // A grade-qualified alternative is not proven by a mere star.
+  // A grade-qualified branch is credited too: hiding follows the same verdict
+  // as the target status, which ignores the "Grade A or above" note (the view
+  // cannot read transcripts).
   const qualified = graph(
     ["COMP 2012H", "COMP 1023"],
     [
@@ -211,7 +213,10 @@ test("a starred/in-plan course counts as complete when hiding prereqs", () => {
       edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
     ]
   );
-  assert.deepEqual(hidden(support, qualified, new Set(), ["COMP 1023"]), []);
+  assert.deepEqual(
+    hidden(support, qualified, new Set(), ["COMP 1023"]),
+    ["course:COMP 1028"]
+  );
 });
 
 test("hiding fulfilled corequisites drops an OR alternative", () => {
@@ -562,10 +567,11 @@ test("an unmet requirement still prunes a satisfied alternative nested inside it
   assert.deepEqual(hidden(support, shared, new Set(["COMP 1021"])), []);
 });
 
-test("a grade-qualified branch survives a bare completion", () => {
+test("a grade-qualified branch collapses once its course is credited", () => {
   const support = loadUstree();
   // COMP 2012H can be met by "Grade A or above in COMP 1023" OR COMP 1028.
-  // A finished COMP 1023 does not prove the grade, so the alternative stays.
+  // Hiding follows the target verdict, which treats the finished COMP 1023 as
+  // settling the branch (grades cannot be read from completions).
   const qualified = graph(
     ["COMP 2012H"],
     [
@@ -580,7 +586,10 @@ test("a grade-qualified branch survives a bare completion", () => {
       edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
     ]
   );
-  assert.deepEqual(hidden(support, qualified, new Set(["COMP 1023"])), []);
+  assert.deepEqual(
+    hidden(support, qualified, new Set(["COMP 1023"])),
+    ["course:COMP 1028"]
+  );
 
   // The same shape without the qualifier prunes the alternative.
   const unqualified = graph(
@@ -599,6 +608,36 @@ test("a grade-qualified branch survives a bare completion", () => {
   );
   assert.deepEqual(
     hidden(support, unqualified, new Set(["COMP 1023"])),
+    ["course:COMP 1028"]
+  );
+});
+
+test("the real COMP 2012H shape drops its grade-qualified second route", () => {
+  const support = loadUstree();
+  // COMP 2012H: "(Grade A or above in COMP 1023) OR (Grade A or above in
+  // COMP 1021 AND Pass grade in COMP 1028)". With COMP 1023 and COMP 1021
+  // credited, the first route settles the requirement, so the whole second
+  // route -- the AND junction and COMP 1028 -- is hidden.
+  const comp2012h = graph(
+    ["COMP 2012H"],
+    [
+      courseNodeById("COMP 2012H"),
+      { id: "bool:COMP 2012H:prerequisite:0", type: "any" },
+      { id: "bool:COMP 2012H:prerequisite:0.1", type: "all" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1021"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      qualifiedEdge("course:COMP 1023", "bool:COMP 2012H:prerequisite:0", "Grade A or above"),
+      edge("bool:COMP 2012H:prerequisite:0.1", "bool:COMP 2012H:prerequisite:0"),
+      qualifiedEdge("course:COMP 1021", "bool:COMP 2012H:prerequisite:0.1", "Grade A or above"),
+      qualifiedEdge("course:COMP 1028", "bool:COMP 2012H:prerequisite:0.1", "Pass grade"),
+      edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, comp2012h, new Set(["COMP 1023", "COMP 1021"])),
     ["course:COMP 1028"]
   );
 });

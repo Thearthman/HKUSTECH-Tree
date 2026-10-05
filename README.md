@@ -177,9 +177,11 @@ against the linked HKUST catalog entry.
   COMP 1028 from `COMP 2211: COMP 1023 OR COMP 1028`, along with courses shown
   only because of COMP 1028, unless another visible course still needs them.
   The same applies to corequisites: finishing CHEM 2110 hides CHEM 2111 from
-  `CHEM 2155: CHEM 2110 OR CHEM 2111`. A course is only treated as satisfied
-  when the branch is unqualified, so grade-qualified alternatives (such as
-  "Grade A or above") stay visible. The toggle in the control bar is on by
+  `CHEM 2155: CHEM 2110 OR CHEM 2111`. Hiding follows the same verdict the
+  target status shows, so a finished or starred course settles its branch even
+  when the catalog adds a grade note such as "Grade A or above" (transcripts
+  are not available); prose conditions stay visible because no completion can
+  settle them. The toggle in the control bar is on by
   default and remembers an opt-out.
 - A fixed checkbox in the top-left of every course node records completion
   without changing node dimensions or opening the details drawer.
