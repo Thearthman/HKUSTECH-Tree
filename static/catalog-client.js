@@ -1,10 +1,11 @@
 /**
  * Browser-only HKUST catalog client.
  *
- * This is the JavaScript port of `hkust_tree/catalog.py`'s query layer. It
- * loads the prebuilt `static/data/catalog.json` once, mirrors it into IndexedDB
- * for offline reuse, and answers the same course/search/graph queries the old
- * Flask `/api/*` endpoints used to serve. No server-side state is involved.
+ * This is the JavaScript port of the original Python query layer (preserved on
+ * the `local` branch). It loads the prebuilt `static/data/catalog.json` once,
+ * mirrors it into IndexedDB for offline reuse, and answers the same
+ * course/search/graph queries the old Flask `/api/*` endpoints used to serve.
+ * No server-side state is involved.
  */
 (function (global) {
   "use strict";

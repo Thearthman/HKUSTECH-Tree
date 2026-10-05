@@ -2,7 +2,8 @@
 /**
  * Build the static HKUST course catalog consumed by the browser-only app.
  *
- * This is a JavaScript port of `hkust_tree/catalog.py`. It fetches the public
+ * This is a JavaScript port of the original Python catalog builder (preserved
+ * on the `local` branch). It fetches the public
  * HKUST undergraduate catalog, parses each subject page with the same lossless
  * Boolean-requirement rules, and writes a single JSON document that the frontend
  * downloads and caches. No server-side storage is involved at runtime.
@@ -29,7 +30,7 @@ const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..
 const DEFAULT_OUT = path.join(REPO_ROOT, "static", "data", "catalog.json");
 
 // ---------------------------------------------------------------------------
-// Text and requirement parsing (port of hkust_tree/catalog.py)
+// Text and requirement parsing (port of the original Python implementation)
 // ---------------------------------------------------------------------------
 
 const SPACE_RE = /\s+/g;

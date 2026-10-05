@@ -1,6 +1,0 @@
-# Version reference only: the Nix flake (flake.nix) owns the development
-# environment and pins the actual package versions.
-Flask>=3.1,<4
-beautifulsoup4>=4.13,<5
-requests>=2.32,<3
-pytest>=8.4,<9

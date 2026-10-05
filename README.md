@@ -6,8 +6,8 @@ corequisites, exclusions, catalog conditions, and the original HKUST wording.
 
 A prebuilt copy of the catalog ships with the site, so the whole application can
 run as a **browser-only static app**: no server, no database, and no data sent
-anywhere at runtime. The optional Flask server is kept for offline catalog
-crawling during development.
+anywhere at runtime. The original Flask/SQLite implementation is preserved on
+the `local` branch for reference.
 
 ## Static build (browser-only, Vercel)
 
@@ -32,51 +32,25 @@ enables clean URLs, and rewrites `/ustree` to the single-page entry point. The
 only runtime requirement is that `data/catalog.json` is served from the same
 origin as the pages.
 
-## Run (Flask development server)
+## Pages
 
-The development environment is a Nix flake; there is no virtualenv and nothing
-is installed into the working copy.
+Everything is served from `static/`:
 
-```bash
-cd /home/johnmich/Work/Personal/HKUSTECH-Tree
-nix develop
-python -m hkust_tree
-```
+- `/` — the default **Course** page focuses on one selected course, showing its
+  prerequisite pathway and the courses that directly use it as a prerequisite.
+- `/ustree` — the dedicated multi-target **USTree** workspace.
+- `/major-requirement` — the **Major requirement** map for the 2025-26 CPEG
+  intake, including its nested `AND`/`OR` choice rules and catalog relationship
+  context.
 
-`nix develop` supplies Python 3.14 with Flask, BeautifulSoup, requests, and
-pytest, and puts the checkout itself on `PYTHONPATH`, so edits under
-`hkust_tree/` and `static/` take effect on the next request with no rebuild
-step. `flake.lock` pins the exact nixpkgs revision; run `nix flake update` to
-move it. `requirements.txt` remains only as a version reference for non-Nix
-setups.
-
-Without entering the shell, any command can be prefixed with
-`nix develop -c`, for example `nix develop -c python -m hkust_tree`.
-
-Open <http://127.0.0.1:5000>. The server binds only to the local machine by
-default. Set `HKUST_TREE_HOST`, `HKUST_TREE_PORT`, `HKUST_TREE_DB`, or
-`HKUST_TREE_YEAR` to override its defaults.
-
-The default **Course** page focuses on one selected course, showing its
-prerequisite pathway and the courses that directly use it as a prerequisite.
-Open <http://127.0.0.1:5000/ustree> for the dedicated multi-target **USTree**
-workspace.
-
-Open <http://127.0.0.1:5000/major-requirement> for the **Major requirement**
-map. It currently models the 2025-26 CPEG intake from the supplied official
-report, including its nested `AND`/`OR` choice rules and catalog relationship
-context.
-
-The current `2026-27` catalog is already cached in `data/catalog.sqlite3` in the
-working copy; the Flask backend serves its own `/api/*` endpoints and refreshes
-from the live catalog when asked. The static build instead reads the committed
-`static/data/catalog.json`; its **Check for updates** button re-fetches that file
-from the host and falls back to the browser's IndexedDB copy when offline.
+The page reads the committed `static/data/catalog.json`; its **Check for
+updates** button re-fetches that file from the host and falls back to the
+browser's IndexedDB copy when offline.
 
 ## Test
 
 ```bash
-nix develop -c python -m pytest -q
+npm test
 ```
 
 The application is an unofficial planning aid. Always verify enrollment rules
