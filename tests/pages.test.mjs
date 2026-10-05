@@ -100,7 +100,6 @@ test("the major-requirement map defines its completion controls", () => {
   // "Standard sequence" node). Dropping any of them throws on load and the
   // whole map, checkbox included, stops rendering.
   for (const identifier of [
-    "COMPLETION_HIT_SIZE",
     "MOBILE_QUERY",
     "STORAGE_PREFIX"
   ]) {
@@ -114,9 +113,55 @@ test("the major-requirement map defines its completion controls", () => {
     "major-requirements.js should build the completion checkbox image"
   );
   assert.ok(
+    major.includes("GraphInteractionSupport.hitCheckbox"),
+    "the major map should hit-test its checkbox through the shared geometry"
+  );
+  assert.ok(
     major.includes("HKUSTTheme"),
     "the major map should read its graph colors from the shared theme"
   );
+});
+
+test("the clickable checkbox area lines up with the painted checkbox", () => {
+  const support = read("graph-interactions.js");
+  assert.ok(
+    support.includes("var CHECKBOX_SIZE") && support.includes("var CHECKBOX_INSET"),
+    "graph-interactions.js should own the single source of truth for checkbox geometry"
+  );
+  assert.ok(
+    support.includes("function checkboxHitRect") && support.includes("function hitCheckbox"),
+    "the shared geometry should expose a hit rect and a hit test"
+  );
+  assert.ok(
+    support.includes("checkboxHitRect: checkboxHitRect") &&
+      support.includes("hitCheckbox: hitCheckbox") &&
+      support.includes("CHECKBOX_INSET: CHECKBOX_INSET"),
+    "the shared checkbox geometry should be exported on GraphInteractionSupport"
+  );
+  // The painted checkbox hangs off the node's visual corner, not its padded
+  // bounding-box corner, so the hit rect must be derived from rendered size.
+  assert.ok(
+    support.includes("renderedPosition()") && support.includes("renderedWidth()"),
+    "the hit rect should be derived from the node's rendered centre and size"
+  );
+
+  for (const name of ["app.js", "major-requirements.js"]) {
+    const js = read(name);
+    assert.ok(
+      js.includes("window.GraphInteractionSupport.hitCheckbox(node, renderedPosition)"),
+      `${name} should delegate its completion hit test to the shared geometry`
+    );
+    assert.ok(
+      js.includes('"background-offset-x": CHECKBOX_INSET') &&
+        js.includes('"background-offset-y": CHECKBOX_INSET'),
+      `${name} should paint the checkbox at the shared CHECKBOX_INSET`
+    );
+    assert.ok(
+      js.includes('"background-width": CHECKBOX_SIZE') &&
+        js.includes('"background-height": CHECKBOX_SIZE'),
+      `${name} should paint the checkbox at the shared CHECKBOX_SIZE`
+    );
+  }
 });
 
 test("the graph shows the normal cursor over nodes and a pointer over checkboxes", () => {

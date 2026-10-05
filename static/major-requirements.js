@@ -3,7 +3,11 @@
 
   var MOBILE_QUERY = "(max-width: 620px)";
   var STORAGE_PREFIX = "hkust-course-tree";
-  var COMPLETION_HIT_SIZE = 25;
+  // Completion-checkbox geometry is shared with the hit test so the clickable
+  // area can never drift from the painted control (see graph-interactions.js).
+  var SUPPORT = window.GraphInteractionSupport || {};
+  var CHECKBOX_SIZE = SUPPORT.CHECKBOX_SIZE || 16;
+  var CHECKBOX_INSET = SUPPORT.CHECKBOX_INSET || 7;
 
   // Canvas colors come from CSS custom properties so the map follows the theme.
   function graphTheme() {
@@ -25,8 +29,8 @@
     var check = completed
       ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
       : "";
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">' +
-      '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + CHECKBOX_SIZE + '" height="' + CHECKBOX_SIZE + '" viewBox="0 0 ' + CHECKBOX_SIZE + ' ' + CHECKBOX_SIZE + '">' +
+      '<rect x="1" y="1" width="' + (CHECKBOX_SIZE - 2) + '" height="' + (CHECKBOX_SIZE - 2) + '" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
       check + "</svg>";
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
@@ -166,12 +170,9 @@
   }
 
   function completionHit(node, renderedPosition) {
-    if (!renderedPosition || !node.hasClass("course")) return false;
-    var box = node.renderedBoundingBox({ includeLabels: false, includeOverlays: false });
-    return renderedPosition.x >= box.x1 &&
-      renderedPosition.x <= box.x1 + COMPLETION_HIT_SIZE &&
-      renderedPosition.y >= box.y1 &&
-      renderedPosition.y <= box.y1 + COMPLETION_HIT_SIZE;
+    if (!node || !node.hasClass("course")) return false;
+    return !!(window.GraphInteractionSupport &&
+      window.GraphInteractionSupport.hitCheckbox(node, renderedPosition));
   }
 
   function subjectClass(code) {
@@ -239,9 +240,9 @@
         "font-size": 10, "font-weight": 600, "text-max-width": 158,
         "text-valign": "center", "text-halign": "center",
         "background-image": checkboxImage(false), "background-fit": "none",
-        "background-repeat": "no-repeat", "background-width": 16, "background-height": 16,
+        "background-repeat": "no-repeat", "background-width": CHECKBOX_SIZE, "background-height": CHECKBOX_SIZE,
         "background-position-x": "0%", "background-position-y": "0%",
-        "background-offset-x": 7, "background-offset-y": 7, "background-image-opacity": 1
+        "background-offset-x": CHECKBOX_INSET, "background-offset-y": CHECKBOX_INSET, "background-image-opacity": 1
       } },
       { selector: "node.is-completed", style: {
         "background-color": C["completed-bg"] || "#e8f3ed", "background-image": checkboxImage(true)
