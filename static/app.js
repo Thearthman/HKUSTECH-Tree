@@ -353,6 +353,7 @@
     state.targets = normalizeTargets(state.targets.concat([normalized]));
     saveTargets();
     if (IS_USTREE_PAGE) loadGraph();
+    else if (state.hideFulfilledPrereq) renderGraph();
     renderDetailsTargetAction(normalized);
     return true;
   }
@@ -363,6 +364,7 @@
     state.targets = state.targets.filter(function (target) { return target !== normalized; });
     saveTargets();
     if (IS_USTREE_PAGE) loadGraph();
+    else if (state.hideFulfilledPrereq) renderGraph();
     renderDetailsTargetAction(normalized);
     return true;
   }
@@ -433,7 +435,10 @@
     if (!state.hideFulfilledPrereq || !state.graph) return state.graph;
     var support = window.USTreeSupport;
     if (!support || typeof support.hiddenFulfilledPrereqNodes !== "function") return state.graph;
-    var hidden = support.hiddenFulfilledPrereqNodes(state.graph, state.completions);
+    // Starred USTree targets count as complete, so a planned course can fulfil
+    // a prerequisite and hide its redundant alternatives.
+    var planned = normalizeTargets(state.targets);
+    var hidden = support.hiddenFulfilledPrereqNodes(state.graph, state.completions, planned);
     if (!hidden || !hidden.length) return state.graph;
     var hiddenIds = new Set(hidden);
     return {

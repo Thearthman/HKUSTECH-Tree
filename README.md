@@ -171,12 +171,13 @@ against the linked HKUST catalog entry.
   the node, in the target list, in the outline, and in the course details, and
   updates the moment a completion checkbox is toggled.
 - **Hide fulfilled prereqs** removes prerequisite branches already covered by a
-  finished alternative on both the Course and USTree pages. Finishing COMP 1023
-  hides COMP 1028 from `COMP 2211: COMP 1023 OR COMP 1028`, along with courses
-  shown only because of COMP 1028, unless another visible course still needs
-  them. A course is only treated as satisfied when the branch is unqualified,
-  so grade-qualified alternatives (such as "Grade A or above") stay visible. The
-  toggle in the control bar is on by default and remembers an opt-out.
+  finished or starred/in-plan alternative on both the Course and USTree pages.
+  Finishing (or starring) COMP 1023 hides COMP 1028 from
+  `COMP 2211: COMP 1023 OR COMP 1028`, along with courses shown only because of
+  COMP 1028, unless another visible course still needs them. A course is only
+  treated as satisfied when the branch is unqualified, so grade-qualified
+  alternatives (such as "Grade A or above") stay visible. The toggle in the
+  control bar is on by default and remembers an opt-out.
 - A fixed checkbox in the top-left of every course node records completion
   without changing node dimensions or opening the details drawer.
 - Subject color is secondary to labels and edge styles, so the graph remains

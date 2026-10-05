@@ -66,8 +66,8 @@ function graph(roots, nodes, edges) {
 
 // The vm sandbox has its own Array realm, so copy results into this realm
 // before strict deep-equality comparisons.
-function hidden(support, g, completed) {
-  return Array.from(support.hiddenFulfilledPrereqNodes(g, completed));
+function hidden(support, g, completed, planned) {
+  return Array.from(support.hiddenFulfilledPrereqNodes(g, completed, planned));
 }
 
 test("a target without prerequisites is always satisfied", () => {
@@ -162,6 +162,52 @@ test("hiding fulfilled prereqs drops an OR alternative covered by a finished cou
     hidden(support, orGraph, new Set(["COMP 1023", "COMP 1028"])),
     []
   );
+});
+
+test("a starred/in-plan course counts as complete when hiding prereqs", () => {
+  const support = loadUstree();
+  // COMP 2211 requires COMP 1023 OR COMP 1028.
+  const orGraph = graph(
+    ["COMP 2211", "COMP 1023"],
+    [
+      courseNodeById("COMP 2211"),
+      { id: "bool:COMP 2211:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 2211:prerequisite:0"),
+      edge("course:COMP 1028", "bool:COMP 2211:prerequisite:0"),
+      edge("bool:COMP 2211:prerequisite:0", "course:COMP 2211")
+    ]
+  );
+  // Nothing is finished, but COMP 1023 is starred (in-plan), so the unused
+  // COMP 1028 alternative is redundant. The planned course itself stays.
+  assert.deepEqual(
+    hidden(support, orGraph, new Set(), ["COMP 1023"]),
+    ["course:COMP 1028"]
+  );
+  // A planned-and-finished course behaves the same as a finished one.
+  assert.deepEqual(
+    hidden(support, orGraph, new Set(["COMP 1023"]), ["COMP 1023"]),
+    ["course:COMP 1028"]
+  );
+  // A grade-qualified alternative is not proven by a mere star.
+  const qualified = graph(
+    ["COMP 2012H", "COMP 1023"],
+    [
+      courseNodeById("COMP 2012H"),
+      { id: "bool:COMP 2012H:prerequisite:0", type: "any" },
+      courseNodeById("COMP 1023"),
+      courseNodeById("COMP 1028")
+    ],
+    [
+      qualifiedEdge("course:COMP 1023", "bool:COMP 2012H:prerequisite:0", "Grade A or above"),
+      edge("course:COMP 1028", "bool:COMP 2012H:prerequisite:0"),
+      edge("bool:COMP 2012H:prerequisite:0", "course:COMP 2012H")
+    ]
+  );
+  assert.deepEqual(hidden(support, qualified, new Set(), ["COMP 1023"]), []);
 });
 
 test("hiding a fulfilled branch also drops prerequisites shown only because of it", () => {

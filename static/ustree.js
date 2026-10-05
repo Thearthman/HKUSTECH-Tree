@@ -125,12 +125,14 @@
   // finished courses, the branches that did not contribute to that
   // satisfaction are redundant. With "COMP 1023 OR COMP 1028" and COMP 1023
   // done, COMP 1028 (and anything shown only because of it) can be hidden.
-  // Returns the node ids to hide. Roots/targets, the courses shown as
-  // dependents, and finished courses are never hidden, and a course that some
-  // remaining course still needs survives -- so the answer is conservative:
-  // grade-qualified branches are left alone because a completion alone does
-  // not prove the grade was met.
-  function hiddenFulfilledPrereqNodes(graph, completed) {
+  // Starred/in-plan courses (`planned`) are treated as complete for this
+  // purpose too, so a planned course can fulfil a requirement and hide its
+  // alternatives. Returns the node ids to hide. Roots/targets, the courses
+  // shown as dependents, and finished/planned courses are never hidden, and a
+  // course that some remaining course still needs survives -- so the answer is
+  // conservative: grade-qualified branches are left alone because a
+  // completion alone does not prove the grade was met.
+  function hiddenFulfilledPrereqNodes(graph, completed, planned) {
     var nodes = (graph && graph.nodes) || [];
     var edges = (graph && graph.edges) || [];
     var nodesById = new Map();
@@ -154,6 +156,10 @@
     });
 
     var finished = toCompletionSet(completed);
+    // Finished and starred/in-plan courses both count as "done" when deciding
+    // whether a prerequisite branch is already satisfied.
+    var credited = toCompletionSet(planned);
+    finished.forEach(function (code) { credited.add(code); });
 
     function childEdges(nodeId) {
       return incoming.get(nodeId) || [];
@@ -161,7 +167,7 @@
 
     function isCompletedCourse(nodeId) {
       var node = nodesById.get(nodeId);
-      return Boolean(node) && node.type === "course" && finished.has(normalizeCode(node.code));
+      return Boolean(node) && node.type === "course" && credited.has(normalizeCode(node.code));
     }
 
     // Verdict for one branch, given the qualifier on the edge that links it to
@@ -182,10 +188,10 @@
       if (!node) {
         result = REQUIREMENT_UNKNOWN;
       } else if (node.type === "course") {
-        var met = finished.has(normalizeCode(node.code));
+        var met = credited.has(normalizeCode(node.code));
         result = met ? (qualifier ? REQUIREMENT_UNKNOWN : REQUIREMENT_MET) : REQUIREMENT_UNMET;
       } else if (node.type === "coursePattern") {
-        var pattern = patternStatus(node, finished);
+        var pattern = patternStatus(node, credited);
         result = pattern === REQUIREMENT_MET && qualifier ? REQUIREMENT_UNKNOWN : pattern;
       } else if (node.type === "all" || node.type === "any") {
         var children = childEdges(nodeId);

@@ -295,7 +295,7 @@ test("completions are shared with the major-requirement page under the catalog y
   }
 });
 
-test("a toggle hides prerequisites already fulfilled by the finished courses", () => {
+test("a toggle hides prerequisites already fulfilled by finished or starred courses", () => {
   const html = read("index.html");
   assert.ok(
     html.includes('id="hideFulfilledToggle"') && html.includes("Hide fulfilled prereqs"),
@@ -308,8 +308,8 @@ test("a toggle hides prerequisites already fulfilled by the finished courses", (
   );
   assert.ok(
     app.includes("function activeGraph") &&
-      app.includes("hiddenFulfilledPrereqNodes(state.graph, state.completions)"),
-    "app.js should render the graph pruned against the finished courses"
+      app.includes("hiddenFulfilledPrereqNodes(state.graph, state.completions, planned)"),
+    "app.js should render the graph pruned against the finished and starred courses"
   );
   const ustree = read("ustree.js");
   assert.ok(
