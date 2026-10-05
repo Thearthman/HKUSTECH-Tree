@@ -5,20 +5,31 @@
   var STORAGE_PREFIX = "hkust-course-tree";
   var COMPLETION_HIT_SIZE = 25;
 
+  // Canvas colors come from CSS custom properties so the map follows the theme.
+  function graphTheme() {
+    return window.HKUSTTheme ? window.HKUSTTheme.colors() : {};
+  }
+
+  function themeVar(name, fallback) {
+    if (window.HKUSTTheme) {
+      var value = window.HKUSTTheme.cssVar(name);
+      if (value) return value;
+    }
+    return fallback;
+  }
+
   function checkboxImage(completed) {
-    var fill = completed ? "#176b4b" : "rgba(255,255,255,0.9)";
-    var stroke = completed ? "#176b4b" : "#59665e";
+    var palette = graphTheme();
+    var fill = completed ? (palette.accent || "#176b4b") : (palette["checkbox-bg"] || "rgba(255,255,255,0.9)");
+    var stroke = completed ? (palette.accent || "#176b4b") : (palette["checkbox-border"] || "#59665e");
     var check = completed
-      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
       : "";
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">' +
       '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
       check + "</svg>";
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
-
-  var CHECKBOX_EMPTY_IMAGE = checkboxImage(false);
-  var CHECKBOX_COMPLETE_IMAGE = checkboxImage(true);
 
   // The manifest lists every program and points at one document per program.
   var MANIFEST_URL = "/data/major-requirements.json";
@@ -216,72 +227,81 @@
   }
 
   function graphStyles() {
+    var C = graphTheme();
     return [
       { selector: "node", style: {
         "font-family": "Inter, system-ui, sans-serif", "overlay-opacity": 0,
-        "text-wrap": "wrap", "line-height": 1.3, "color": "#1d2420"
+        "text-wrap": "wrap", "line-height": 1.3, "color": C["node-text"] || "#1d2420"
       } },
       { selector: "node.course", style: {
-        "width": 184, "height": 66, "shape": "round-rectangle", "background-color": "#fff",
-        "border-color": "#b9c2bc", "border-width": 1.5, "label": "data(label)",
+        "width": 184, "height": 66, "shape": "round-rectangle", "background-color": C["node-bg"] || "#fff",
+        "border-color": C["node-border"] || "#b9c2bc", "border-width": 1.5, "label": "data(label)",
         "font-size": 10, "font-weight": 600, "text-max-width": 158,
         "text-valign": "center", "text-halign": "center",
-        "background-image": CHECKBOX_EMPTY_IMAGE, "background-fit": "none",
+        "background-image": checkboxImage(false), "background-fit": "none",
         "background-repeat": "no-repeat", "background-width": 16, "background-height": 16,
         "background-position-x": "0%", "background-position-y": "0%",
         "background-offset-x": 7, "background-offset-y": 7, "background-image-opacity": 1
       } },
       { selector: "node.is-completed", style: {
-        "background-color": "#e8f3ed", "background-image": CHECKBOX_COMPLETE_IMAGE
+        "background-color": C["completed-bg"] || "#e8f3ed", "background-image": checkboxImage(true)
       } },
-      { selector: "node.major-course", style: { "border-width": 3.5, "background-color": "#fff", "opacity": 1 } },
+      { selector: "node.major-course", style: { "border-width": 3.5, "background-color": C["node-bg"] || "#fff", "opacity": 1 } },
       { selector: "node.context-course", style: {
-        "background-color": "#f0f2ef", "border-color": "#9da6a0", "border-width": 1,
-        "color": "#667069", "opacity": 0.42
+        "background-color": C["context-bg"] || "#f0f2ef", "border-color": C["context-border"] || "#9da6a0", "border-width": 1,
+        "color": C["context-text"] || "#667069", "opacity": 0.42
       } },
-      { selector: "node.subject-comp.major-course", style: { "border-color": "#147b58" } },
-      { selector: "node.subject-math.major-course", style: { "border-color": "#2667a8" } },
-      { selector: "node.subject-elec.major-course", style: { "border-color": "#b36a16" } },
-      { selector: "node.subject-other.major-course", style: { "border-color": "#69736d" } },
+      { selector: "node.subject-comp.major-course", style: { "border-color": themeVar("--comp", "#147b58") } },
+      { selector: "node.subject-math.major-course", style: { "border-color": themeVar("--math", "#2667a8") } },
+      { selector: "node.subject-elec.major-course", style: { "border-color": themeVar("--elec", "#b36a16") } },
+      { selector: "node.subject-other.major-course", style: { "border-color": themeVar("--other", "#69736d") } },
       { selector: "node.requirement-group", style: {
-        "shape": "round-rectangle", "background-color": "#ffffff", "background-opacity": 0.22,
-        "border-color": "#8f9a93", "border-width": 2, "padding": 26,
+        "shape": "round-rectangle", "background-color": C["group-bg"] || "#ffffff", "background-opacity": 0.22,
+        "border-color": C["group-border"] || "#8f9a93", "border-width": 2, "padding": 26,
         "label": "data(label)", "font-size": 11, "font-weight": 700,
         "text-valign": "top", "text-halign": "center", "text-margin-y": -9,
         "compound-sizing-wrt-labels": "include", "min-width": 80, "min-height": 74
       } },
-      { selector: "node.logic-and", style: { "border-style": "solid", "background-color": "#f7faf7" } },
-      { selector: "node.logic-or", style: { "border-style": "dotted", "border-width": 3, "background-color": "#f4f8fb" } },
+      { selector: "node.logic-and", style: { "border-style": "solid", "background-color": C["logic-and-bg"] || "#f7faf7" } },
+      { selector: "node.logic-or", style: { "border-style": "dotted", "border-width": 3, "background-color": C["logic-or-bg"] || "#f4f8fb" } },
       { selector: "node.requirement-summary", style: {
-        "width": 250, "height": 72, "shape": "round-rectangle", "background-color": "#fffaf0",
-        "border-color": "#bda36e", "border-width": 2, "label": "data(label)",
+        "width": 250, "height": 72, "shape": "round-rectangle", "background-color": C["summary-bg"] || "#fffaf0",
+        "border-color": C["summary-border"] || "#bda36e", "border-width": 2, "label": "data(label)",
         "font-size": 10, "font-weight": 600, "text-valign": "center", "text-halign": "center"
       } },
       { selector: "edge", style: {
         "width": 2, "curve-style": "unbundled-bezier", "control-point-distances": 28,
-        "line-color": "#3d4b43", "target-arrow-color": "#3d4b43", "target-arrow-shape": "triangle",
+        "line-color": C["edge"] || "#3d4b43", "target-arrow-color": C["edge"] || "#3d4b43", "target-arrow-shape": "triangle",
         "opacity": 0.24, "overlay-opacity": 0
       } },
       { selector: "edge.context-relationship", style: { "opacity": 0.1 } },
       { selector: "edge.corequisite", style: {
-        "line-color": "#2673a8", "target-arrow-color": "#2673a8", "target-arrow-shape": "none", "line-style": "dashed"
+        "line-color": C["coreq"] || "#2673a8", "target-arrow-color": C["coreq"] || "#2673a8", "target-arrow-shape": "none", "line-style": "dashed"
       } },
       { selector: "edge.exclusion", style: {
-        "line-color": "#b14c45", "target-arrow-color": "#b14c45", "target-arrow-shape": "none", "line-style": "dotted"
+        "line-color": C["exclusion"] || "#b14c45", "target-arrow-color": C["exclusion"] || "#b14c45", "target-arrow-shape": "none", "line-style": "dotted"
       } },
-      { selector: "node:selected", style: { "border-color": "#17281f", "border-width": 5, "opacity": 1 } },
+      { selector: "node:selected", style: { "border-color": C["selected"] || "#17281f", "border-width": 5, "opacity": 1 } },
       { selector: ".filtered", style: { "display": "none" } },
       { selector: ".hover-faded", style: { "opacity": 0.09 } },
       { selector: "node.hover-related", style: { "opacity": 1 } },
       { selector: "edge.hover-related", style: { "opacity": 1, "width": 3.5 } },
-      { selector: "node.hover-group-1", style: { "background-color": "#c6def2" } },
-      { selector: "edge.hover-group-1", style: { "line-color": "#3e718f", "target-arrow-color": "#3e718f", "width": 4 } },
-      { selector: "node.hover-group-2", style: { "background-color": "#fff1c9" } },
-      { selector: "edge.hover-group-2", style: { "line-color": "#8a6918", "target-arrow-color": "#8a6918", "width": 4 } },
-      { selector: "node.hover-group-3", style: { "background-color": "#c5e4cf" } },
-      { selector: "edge.hover-group-3", style: { "line-color": "#387354", "target-arrow-color": "#387354", "width": 4 } }
+      { selector: "node.hover-group-1", style: { "background-color": C["hover1-bg"] || "#c6def2" } },
+      { selector: "edge.hover-group-1", style: { "line-color": C["hover1-line"] || "#3e718f", "target-arrow-color": C["hover1-line"] || "#3e718f", "width": 4 } },
+      { selector: "node.hover-group-2", style: { "background-color": C["hover2-bg"] || "#fff1c9" } },
+      { selector: "edge.hover-group-2", style: { "line-color": C["hover2-line"] || "#8a6918", "target-arrow-color": C["hover2-line"] || "#8a6918", "width": 4 } },
+      { selector: "node.hover-group-3", style: { "background-color": C["hover3-bg"] || "#c5e4cf" } },
+      { selector: "edge.hover-group-3", style: { "line-color": C["hover3-line"] || "#387354", "target-arrow-color": C["hover3-line"] || "#387354", "width": 4 } }
     ];
   }
+
+  // Repaint the map when the theme flips, rebuilding the checkbox images.
+  function refreshGraphTheme() {
+    if (!state.cy) return;
+    state.cy.style().fromJson(graphStyles()).update();
+  }
+
+  window.addEventListener("hkust-theme-change", refreshGraphTheme);
 
   function applyRelationFilters() {
     if (!state.cy) return;

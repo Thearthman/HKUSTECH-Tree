@@ -12,37 +12,48 @@
   var PAGE_PATH = window.location.pathname.replace(/\/+$/, "").replace(/\.html$/i, "");
   var IS_USTREE_PAGE = PAGE_PATH === "/ustree";
 
-  function checkboxImage(completed) {
-    var fill = completed ? "#176b4b" : "rgba(255,255,255,0.9)";
-    var stroke = completed ? "#176b4b" : "#59665e";
+  // Graph colors are read from CSS custom properties so the canvas follows the
+  // active light/dark theme. geometry()/graphStyles() are rebuilt on theme
+  // changes, which also regenerates the embedded checkbox/star data URIs.
+  function graphTheme() {
+    return window.HKUSTTheme ? window.HKUSTTheme.colors() : {};
+  }
+
+  function themeVar(name, fallback) {
+    if (window.HKUSTTheme) {
+      var value = window.HKUSTTheme.cssVar(name);
+      if (value) return value;
+    }
+    return fallback;
+  }
+
+  function checkboxSvg(completed) {
+    var palette = graphTheme();
+    var fill = completed ? (palette.accent || "#176b4b") : (palette["checkbox-bg"] || "rgba(255,255,255,0.9)");
+    var stroke = completed ? (palette.accent || "#176b4b") : (palette["checkbox-border"] || "#59665e");
     var check = completed
-      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
       : "";
+    return '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' + check;
+  }
+
+  function checkboxImage(completed) {
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">' +
-      '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
-      check + "</svg>";
+      checkboxSvg(completed) + "</svg>";
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
 
-  var CHECKBOX_EMPTY_IMAGE = checkboxImage(false);
-  var CHECKBOX_COMPLETE_IMAGE = checkboxImage(true);
-
   function targetImage(completed) {
-    var checkboxFill = completed ? "#176b4b" : "rgba(255,255,255,0.9)";
-    var checkboxStroke = completed ? "#176b4b" : "#59665e";
-    var check = completed
-      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-      : "";
+    var palette = graphTheme();
+    var starFill = palette["star-fill"] || "#c18720";
+    var starStroke = palette["star-stroke"] || "#805a12";
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="184" height="66" viewBox="0 0 184 66">' +
-      '<rect x="7" y="7" width="14" height="14" rx="2" fill="' + checkboxFill + '" stroke="' + checkboxStroke + '" stroke-width="1.5"/>' +
-      check +
-      '<polygon points="161,2.5 163.6,6.8 168.6,7.7 164.8,11.1 165.8,16.1 161,13.8 156.2,16.1 157.2,11.1 153.4,7.7 158.4,6.8" fill="#c18720" stroke="#805a12" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<rect x="7" y="7" width="14" height="14" rx="2" fill="' + (completed ? (palette.accent || "#176b4b") : (palette["checkbox-bg"] || "rgba(255,255,255,0.9)")) + '" stroke="' + (completed ? (palette.accent || "#176b4b") : (palette["checkbox-border"] || "#59665e")) + '" stroke-width="1.5"/>' +
+      (completed ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' : "") +
+      '<polygon points="161,2.5 163.6,6.8 168.6,7.7 164.8,11.1 165.8,16.1 161,13.8 156.2,16.1 157.2,11.1 153.4,7.7 158.4,6.8" fill="' + starFill + '" stroke="' + starStroke + '" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
       '</svg>';
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
-
-  var TARGET_EMPTY_IMAGE = targetImage(false);
-  var TARGET_COMPLETE_IMAGE = targetImage(true);
 
   var elements = {
     catalogMeta: document.getElementById("catalogMeta"),
@@ -981,6 +992,7 @@
   }
 
   function graphStyles() {
+    var C = graphTheme();
     return [
       {
         selector: "node",
@@ -988,14 +1000,14 @@
           "width": 184,
           "height": 66,
           "shape": "round-rectangle",
-          "background-color": "#ffffff",
-          "border-color": "#b9c2bc",
+          "background-color": C["node-bg"] || "#ffffff",
+          "border-color": C["node-border"] || "#b9c2bc",
           "border-width": 1.5,
           "label": "data(displayLabel)",
           "font-family": "Inter, system-ui, sans-serif",
           "font-size": 10,
           "font-weight": 600,
-          "color": "#1d2420",
+          "color": C["node-text"] || "#1d2420",
           "text-wrap": "wrap",
           "text-max-width": 160,
           "text-valign": "center",
@@ -1007,7 +1019,7 @@
       {
         selector: "node.course",
         style: {
-          "background-image": CHECKBOX_EMPTY_IMAGE,
+          "background-image": checkboxImage(false),
           "background-fit": "none",
           "background-repeat": "no-repeat",
           "background-width": 16,
@@ -1019,17 +1031,17 @@
           "background-image-opacity": 1
         }
       },
-      { selector: "node.subject-comp", style: { "border-color": "#147b58", "border-width": 3, "border-style": "solid" } },
-      { selector: "node.subject-math", style: { "border-color": "#2667a8", "border-width": 3 } },
-      { selector: "node.subject-elec", style: { "border-color": "#b36a16", "border-width": 3 } },
-      { selector: "node.is-focus", style: { "border-width": 5, "background-color": "#f5faf7" } },
-      { selector: "node.is-dependent", style: { "background-color": "#fff6df" } },
-      { selector: "node.is-target", style: { "border-width": 5, "background-color": "#f5faf7" } },
-      { selector: "node.is-completed", style: { "background-color": "#e8f3ed", "background-image": CHECKBOX_COMPLETE_IMAGE } },
+      { selector: "node.subject-comp", style: { "border-color": themeVar("--comp", "#147b58"), "border-width": 3, "border-style": "solid" } },
+      { selector: "node.subject-math", style: { "border-color": themeVar("--math", "#2667a8"), "border-width": 3 } },
+      { selector: "node.subject-elec", style: { "border-color": themeVar("--elec", "#b36a16"), "border-width": 3 } },
+      { selector: "node.is-focus", style: { "border-width": 5, "background-color": C["focus-bg"] || "#f5faf7" } },
+      { selector: "node.is-dependent", style: { "background-color": themeVar("--warning-soft", "#fff6df") } },
+      { selector: "node.is-target", style: { "border-width": 5, "background-color": C["focus-bg"] || "#f5faf7" } },
+      { selector: "node.is-completed", style: { "background-color": C["completed-bg"] || "#e8f3ed", "background-image": checkboxImage(true) } },
       {
         selector: "node.is-target",
         style: {
-          "background-image": TARGET_EMPTY_IMAGE,
+          "background-image": targetImage(false),
           "background-fit": "none",
           "background-width": 184,
           "background-height": 66,
@@ -1038,8 +1050,8 @@
           "background-image-opacity": 1
         }
       },
-      { selector: "node.is-target.is-completed", style: { "background-image": TARGET_COMPLETE_IMAGE } },
-      { selector: "node.is-unresolved", style: { "border-style": "dashed", "background-color": "#f2f3f1", "color": "#657069" } },
+      { selector: "node.is-target.is-completed", style: { "background-image": targetImage(true) } },
+      { selector: "node.is-unresolved", style: { "border-style": "dashed", "background-color": C["unresolved-bg"] || "#f2f3f1", "color": C["unresolved-text"] || "#657069" } },
       {
         selector: "node.all, node.any",
         style: {
@@ -1048,37 +1060,37 @@
           "shape": "diamond",
           "font-size": 9,
           "text-max-width": 58,
-          "background-color": "#f2f4f2",
-          "border-color": "#87938b"
+          "background-color": C["logic-bg"] || "#f2f4f2",
+          "border-color": C["logic-stroke"] || "#87938b"
         }
       },
-      { selector: "node.any", style: { "background-color": "#edf3f8", "border-color": "#6686a0" } },
-      { selector: "node.is-satisfied", style: { "background-color": "#e8f3ed", "border-color": "#176b4b", "border-width": 2.5 } },
+      { selector: "node.any", style: { "background-color": C["any-bg"] || "#edf3f8", "border-color": C["any-stroke"] || "#6686a0" } },
+      { selector: "node.is-satisfied", style: { "background-color": C["completed-bg"] || "#e8f3ed", "border-color": themeVar("--accent", "#176b4b"), "border-width": 2.5 } },
       {
         selector: "node.condition, node.coursePattern",
         style: {
           "width": 168,
           "height": 54,
-          "background-color": "#fffaf0",
-          "border-color": "#bda36e",
+          "background-color": C["condition-bg"] || "#fffaf0",
+          "border-color": C["condition-border"] || "#bda36e",
           "border-style": "dashed",
           "font-size": 9,
-          "color": "#655839"
+          "color": C["condition-text"] || "#655839"
         }
       },
-      { selector: "node:selected", style: { "border-color": "#17281f", "border-width": 4 } },
+      { selector: "node:selected", style: { "border-color": C["selected"] || "#17281f", "border-width": 4 } },
       {
         selector: "edge",
         style: {
           "width": 2,
-          "line-color": "#3d4b43",
-          "target-arrow-color": "#3d4b43",
+          "line-color": C["edge"] || "#3d4b43",
+          "target-arrow-color": C["edge"] || "#3d4b43",
           "target-arrow-shape": "triangle",
           "curve-style": "bezier",
           "label": "data(displayLabel)",
           "font-size": 8,
-          "color": "#657069",
-          "text-background-color": "#f5f7f4",
+          "color": C["node-muted"] || "#657069",
+          "text-background-color": C["edge-label-bg"] || "#f5f7f4",
           "text-background-opacity": 0.92,
           "text-background-padding": 2,
           "overlay-opacity": 0
@@ -1087,7 +1099,7 @@
       {
         selector: "edge.corequisite",
         style: {
-          "line-color": "#2673a8",
+          "line-color": C["coreq"] || "#2673a8",
           "target-arrow-shape": "none",
           "line-style": "dashed"
         }
@@ -1095,25 +1107,34 @@
       {
         selector: "edge.exclusion",
         style: {
-          "line-color": "#b14c45",
+          "line-color": C["exclusion"] || "#b14c45",
           "target-arrow-shape": "none",
           "line-style": "dotted",
           "width": 2.5
         }
       },
-      { selector: "node.hover-group-1", style: { "background-color": "#c6def2" } },
-      { selector: "edge.hover-group-1", style: { "line-color": "#3e718f", "target-arrow-color": "#3e718f", "width": 4, "opacity": 1 } },
-      { selector: "node.hover-group-2", style: { "background-color": "#fff1c9" } },
-      { selector: "edge.hover-group-2", style: { "line-color": "#8a6918", "target-arrow-color": "#8a6918", "width": 4, "opacity": 1 } },
-      { selector: "node.hover-group-3", style: { "background-color": "#c5e4cf" } },
-      { selector: "edge.hover-group-3", style: { "line-color": "#387354", "target-arrow-color": "#387354", "width": 4, "opacity": 1 } },
-      { selector: "node.hover-group-4", style: { "background-color": "#f6e6eb" } },
-      { selector: "edge.hover-group-4", style: { "line-color": "#945469", "target-arrow-color": "#945469", "width": 4, "opacity": 1 } },
-      { selector: "node.hover-group-5", style: { "background-color": "#eee9f6" } },
-      { selector: "edge.hover-group-5", style: { "line-color": "#705b91", "target-arrow-color": "#705b91", "width": 4, "opacity": 1 } },
+      { selector: "node.hover-group-1", style: { "background-color": C["hover1-bg"] || "#c6def2" } },
+      { selector: "edge.hover-group-1", style: { "line-color": C["hover1-line"] || "#3e718f", "target-arrow-color": C["hover1-line"] || "#3e718f", "width": 4, "opacity": 1 } },
+      { selector: "node.hover-group-2", style: { "background-color": C["hover2-bg"] || "#fff1c9" } },
+      { selector: "edge.hover-group-2", style: { "line-color": C["hover2-line"] || "#8a6918", "target-arrow-color": C["hover2-line"] || "#8a6918", "width": 4, "opacity": 1 } },
+      { selector: "node.hover-group-3", style: { "background-color": C["hover3-bg"] || "#c5e4cf" } },
+      { selector: "edge.hover-group-3", style: { "line-color": C["hover3-line"] || "#387354", "target-arrow-color": C["hover3-line"] || "#387354", "width": 4, "opacity": 1 } },
+      { selector: "node.hover-group-4", style: { "background-color": C["hover4-bg"] || "#f6e6eb" } },
+      { selector: "edge.hover-group-4", style: { "line-color": C["hover4-line"] || "#945469", "target-arrow-color": C["hover4-line"] || "#945469", "width": 4, "opacity": 1 } },
+      { selector: "node.hover-group-5", style: { "background-color": C["hover5-bg"] || "#eee9f6" } },
+      { selector: "edge.hover-group-5", style: { "line-color": C["hover5-line"] || "#705b91", "target-arrow-color": C["hover5-line"] || "#705b91", "width": 4, "opacity": 1 } },
       { selector: ".faded", style: { "opacity": 0.16 } }
     ];
   }
+
+  // Re-skin the canvas in place when the theme changes; rebuilding the style
+  // list also refreshes the palette-dependent checkbox/target images.
+  function refreshGraphTheme() {
+    if (!state.cy) return;
+    state.cy.style().fromJson(graphStyles()).update();
+  }
+
+  window.addEventListener("hkust-theme-change", refreshGraphTheme);
 
   function positionGraphByLevel(cy) {
     var courseLevels = cy.nodes().filter(function (node) {

@@ -58,6 +58,42 @@ test("major-requirement.html loads the browser-only client", () => {
   assert.ok(!html.includes("/api/"));
 });
 
+test("every shell loads Vercel Web Analytics", () => {
+  // Static hosts get the framework-agnostic snippet instead of the React
+  // <Analytics/> component; Vercel serves the script from /_vercel/insights/.
+  for (const name of ["index.html", "ustree.html", "major-requirement.html"]) {
+    const html = read(name);
+    assert.ok(
+      html.includes("window.va = window.va || function"),
+      `${name} should queue Vercel Analytics with the window.va stub`
+    );
+    assert.ok(
+      html.includes('defer src="/_vercel/insights/script.js"'),
+      `${name} should load the Vercel Analytics script`
+    );
+  }
+});
+
+test("every shell loads the theme controller and a toggle", () => {
+  for (const name of ["index.html", "ustree.html", "major-requirement.html"]) {
+    const html = read(name);
+    assert.ok(html.includes('src="/theme.js"'), `${name} should load the shared theme controller`);
+    assert.ok(html.includes("data-theme-toggle"), `${name} should expose a theme toggle`);
+  }
+});
+
+test("theme.js follows the OS by default and persists an override", () => {
+  const js = read("theme.js");
+  assert.ok(js.includes("prefers-color-scheme: dark"), "the OS preference is the default theme");
+  assert.ok(js.includes("hkust-course-tree:theme"), "the explicit choice is stored locally");
+  assert.ok(js.includes("hkust-theme-change"), "theme changes are broadcast for the graphs");
+});
+
+test("styles.css defines a dark theme", () => {
+  const css = read("styles.css");
+  assert.ok(css.includes('html[data-theme="dark"]'), "the dark theme overrides the light tokens");
+});
+
 test("the major-requirement map defines its completion controls", () => {
   const major = read("major-requirements.js");
   // These back the clickable checkbox on every course node (including the
@@ -65,8 +101,6 @@ test("the major-requirement map defines its completion controls", () => {
   // whole map, checkbox included, stops rendering.
   for (const identifier of [
     "COMPLETION_HIT_SIZE",
-    "CHECKBOX_EMPTY_IMAGE",
-    "CHECKBOX_COMPLETE_IMAGE",
     "MOBILE_QUERY",
     "STORAGE_PREFIX"
   ]) {
@@ -75,6 +109,14 @@ test("the major-requirement map defines its completion controls", () => {
       `major-requirements.js should declare ${identifier} for its completion checkbox`
     );
   }
+  assert.ok(
+    major.includes("function checkboxImage"),
+    "major-requirements.js should build the completion checkbox image"
+  );
+  assert.ok(
+    major.includes("HKUSTTheme"),
+    "the major map should read its graph colors from the shared theme"
+  );
 });
 
 test("the graph shows the normal cursor over nodes and a pointer over checkboxes", () => {

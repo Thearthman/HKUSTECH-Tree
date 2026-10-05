@@ -6,6 +6,11 @@
   <meta name="theme-color" content="#f7f8f6">
   <title>Major Requirements | HKUST Course Tree</title>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/theme.js"></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="major-page">
   <div class="app-shell major-app-shell">
@@ -29,6 +34,10 @@
         <select id="majorSelect" aria-label="Major and intake year">
           <option value="">Loading programs&hellip;</option>
         </select>
+        <button id="themeToggle" class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="theme-icon theme-icon-light" aria-hidden="true">&#9789;</span>
+          <span class="theme-icon theme-icon-dark" aria-hidden="true">&#9728;</span>
+        </button>
       </div>
     </header>
 

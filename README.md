@@ -5,9 +5,10 @@ an explorable prerequisite tech tree. It preserves nested `AND`/`OR` rules,
 corequisites, exclusions, catalog conditions, and the original HKUST wording.
 
 A prebuilt copy of the catalog ships with the site, so the whole application can
-run as a **browser-only static app**: no server, no database, and no data sent
-anywhere at runtime. The original Flask/SQLite implementation is preserved on
-the `local` branch for reference.
+run as a **browser-only static app**: no server, no database, and no
+user data stored off-device (the only outbound request is Vercel Web Analytics,
+see [Data and privacy](#data-and-privacy)). The original Flask/SQLite
+implementation is preserved on the `local` branch for reference.
 
 ## Static build (browser-only, Vercel)
 
@@ -99,8 +100,11 @@ triggers a redeploy.
 
 ## Data and privacy
 
-There is no backend, so nothing is sent anywhere and every piece of user state
-lives in the browser:
+There is no backend: every piece of user state lives in the browser, and the
+course/major data is fetched only from this site's own origin. The one outbound
+request is Vercel Web Analytics (cookieless, anonymized page-view collection) —
+disable it by removing the `/_vercel/insights/script.js` snippet from the HTML
+shells if you do not want it.
 
 - USTree targets — `localStorage["hkust-course-tree:ustree:<year>"]`
 - Completed courses — `localStorage["hkust-course-tree:completed:<year>"]`
