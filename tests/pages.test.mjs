@@ -58,6 +58,25 @@ test("major-requirement.html loads the browser-only client", () => {
   assert.ok(!html.includes("/api/"));
 });
 
+test("the major-requirement map defines its completion controls", () => {
+  const major = read("major-requirements.js");
+  // These back the clickable checkbox on every course node (including the
+  // "Standard sequence" node). Dropping any of them throws on load and the
+  // whole map, checkbox included, stops rendering.
+  for (const identifier of [
+    "COMPLETION_HIT_SIZE",
+    "CHECKBOX_EMPTY_IMAGE",
+    "CHECKBOX_COMPLETE_IMAGE",
+    "MOBILE_QUERY",
+    "STORAGE_PREFIX"
+  ]) {
+    assert.ok(
+      major.includes(`var ${identifier}`),
+      `major-requirements.js should declare ${identifier} for its completion checkbox`
+    );
+  }
+});
+
 test("client code has no server API calls", () => {
   for (const name of ["app.js", "catalog-client.js", "major-requirements.js", "ustree.js"]) {
     assert.ok(!read(name).includes('"/api/'), `${name} still calls /api/`);
