@@ -8,7 +8,7 @@
   "totalCredits": "16-19",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26fina.pdf",
   "sourceHash": "559c186f2719aa4687bf1875e5e69fb961086d05e0322ce905d793f73aae9984",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Finance",
@@ -39,8 +39,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        474
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        582
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        690
+        0,
+        500
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        798
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        906
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        150
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        258
+        220,
+        300
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        366
+        220,
+        400
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        474
+        220,
+        500
       ],
       "major": true,
       "graph": true,
@@ -212,8 +212,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        700,
+        0
       ]
     },
     {
@@ -224,8 +224,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        700,
+        100
       ]
     },
     {
@@ -236,8 +236,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        700,
+        200
       ]
     },
     {
@@ -248,8 +248,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        700,
+        300
       ]
     },
     {
@@ -260,8 +260,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        700,
+        400
       ]
     },
     {
@@ -272,8 +272,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        700,
+        500
       ]
     },
     {
@@ -284,8 +284,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        700,
+        600
       ]
     },
     {
@@ -296,8 +296,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        700,
+        700
       ]
     },
     {
@@ -308,8 +308,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        700,
+        800
       ]
     },
     {
@@ -320,8 +320,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        542
+        700,
+        900
       ]
     },
     {
@@ -332,8 +332,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        650
+        700,
+        1000
       ]
     },
     {
@@ -344,8 +344,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        650
+        700,
+        1100
       ]
     },
     {
@@ -356,8 +356,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        758
+        700,
+        1200
       ]
     },
     {
@@ -368,8 +368,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        758
+        920,
+        0
       ]
     },
     {
@@ -380,8 +380,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        866
+        920,
+        100
       ]
     }
   ],
@@ -617,5 +617,7 @@
       "group": 1,
       "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

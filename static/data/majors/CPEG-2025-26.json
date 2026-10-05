@@ -5,6 +5,8 @@
   "program": "BEng in Computer Engineering",
   "intake": "2025-26",
   "catalogYear": "2026-27",
+  "layout": "preset",
+  "layoutVersion": 2,
   "totalCredits": "61-66",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26cpeg.pdf",
   "sourceHash": "7a414621dfcf960f569739ca60801b76eec1309e2dbef6e54e827403389d7614",

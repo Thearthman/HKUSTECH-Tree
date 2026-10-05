@@ -8,7 +8,7 @@
   "totalCredits": "60-64",
   "sourceUrl": "http://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26meic.pdf",
   "sourceHash": "c3289ff557f73f988de6ca7469e7f42abb17372d3443815806d54a2db52eed6b",
-  "generatedAt": "2026-10-05T08:50:49Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BEng in Microelectronics and Integrated Circuits",
@@ -53,8 +53,8 @@
       "credits": "4",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        474
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "4",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        582
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "5",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        690
+        0,
+        500
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        798
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        130,
-        906
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        150
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        258
+        220,
+        300
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "4",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        366
+        220,
+        400
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        474
+        220,
+        500
       ],
       "major": true,
       "graph": true,
@@ -221,8 +221,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        582
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -235,8 +235,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        690
+        440,
+        100
       ],
       "major": true,
       "graph": true,
@@ -249,8 +249,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        350,
-        798
+        440,
+        200
       ],
       "major": true,
       "graph": true,
@@ -263,8 +263,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        820
       ],
       "major": true,
       "graph": true,
@@ -277,8 +277,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        920
       ],
       "major": true,
       "graph": true,
@@ -291,8 +291,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        1020
       ],
       "major": true,
       "graph": true,
@@ -305,8 +305,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        474
+        0,
+        1120
       ],
       "major": true,
       "graph": true,
@@ -319,8 +319,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        582
+        0,
+        1220
       ],
       "major": true,
       "graph": true,
@@ -333,8 +333,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        690
+        0,
+        1320
       ],
       "major": true,
       "graph": true,
@@ -347,8 +347,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        798
+        220,
+        820
       ],
       "major": true,
       "graph": true,
@@ -361,8 +361,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        906
+        220,
+        920
       ],
       "major": true,
       "graph": true,
@@ -375,8 +375,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        350,
-        150
+        220,
+        1020
       ],
       "major": true,
       "graph": true,
@@ -389,8 +389,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        350,
-        258
+        220,
+        1120
       ],
       "major": true,
       "graph": true,
@@ -403,8 +403,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        350,
-        366
+        220,
+        1220
       ],
       "major": true,
       "graph": true,
@@ -417,8 +417,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        474
+        220,
+        1320
       ],
       "major": true,
       "graph": true,
@@ -431,8 +431,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        582
+        440,
+        820
       ],
       "major": true,
       "graph": true,
@@ -445,8 +445,8 @@
       "credits": "6",
       "parent": "group:required-courses",
       "position": [
-        350,
-        690
+        440,
+        920
       ],
       "major": true,
       "graph": true,
@@ -459,8 +459,8 @@
       "credits": "6",
       "parent": "group:required-courses",
       "position": [
-        350,
-        798
+        440,
+        1020
       ],
       "major": true,
       "graph": true,
@@ -473,8 +473,8 @@
       "credits": "6",
       "parent": "group:required-courses",
       "position": [
-        350,
-        906
+        440,
+        1120
       ],
       "major": true,
       "graph": true,
@@ -487,8 +487,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        570,
-        150
+        440,
+        1220
       ],
       "major": true,
       "graph": true,
@@ -501,8 +501,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        570,
-        258
+        440,
+        1320
       ],
       "major": true,
       "graph": true,
@@ -562,8 +562,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        920,
+        0
       ]
     },
     {
@@ -574,8 +574,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        920,
+        100
       ]
     },
     {
@@ -586,8 +586,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        920,
+        200
       ]
     },
     {
@@ -598,8 +598,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        920,
+        300
       ]
     },
     {
@@ -610,8 +610,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        920,
+        400
       ]
     },
     {
@@ -622,8 +622,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        920,
+        500
       ]
     },
     {
@@ -634,8 +634,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        920,
+        600
       ]
     },
     {
@@ -646,8 +646,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        920,
+        700
       ]
     },
     {
@@ -658,8 +658,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        920,
+        800
       ]
     },
     {
@@ -670,8 +670,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        542
+        920,
+        900
       ]
     },
     {
@@ -682,8 +682,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        650
+        920,
+        1000
       ]
     },
     {
@@ -694,8 +694,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        650
+        920,
+        1100
       ]
     },
     {
@@ -706,8 +706,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        758
+        920,
+        1200
       ]
     },
     {
@@ -718,8 +718,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        758
+        1140,
+        0
       ]
     },
     {
@@ -730,8 +730,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        866
+        1140,
+        100
       ]
     },
     {
@@ -742,8 +742,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        866
+        1140,
+        200
       ]
     },
     {
@@ -754,8 +754,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        974
+        1140,
+        300
       ]
     },
     {
@@ -766,8 +766,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        974
+        1140,
+        400
       ]
     },
     {
@@ -778,8 +778,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        1082
+        1140,
+        500
       ]
     },
     {
@@ -790,8 +790,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        1082
+        1140,
+        600
       ]
     },
     {
@@ -802,8 +802,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        1190
+        1140,
+        700
       ]
     },
     {
@@ -814,8 +814,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        1190
+        1140,
+        800
       ]
     },
     {
@@ -826,8 +826,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        1298
+        1140,
+        900
       ]
     },
     {
@@ -838,8 +838,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        1298
+        1140,
+        1000
       ]
     },
     {
@@ -850,8 +850,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        1406
+        1140,
+        1100
       ]
     },
     {
@@ -862,8 +862,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        1406
+        1140,
+        1200
       ]
     }
   ],
@@ -1631,5 +1631,7 @@
       "group": 1,
       "raw": "ELEC 4931"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

@@ -8,7 +8,7 @@
   "totalCredits": "38-42",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26chem.pdf",
   "sourceHash": "313fbafa4fd04941c0db5fd23abf97212f4b5083b08be1b6d7612086c65b15de",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Chemistry",
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        620
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        474
+        0,
+        720
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        582
+        0,
+        820
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        130,
-        690
+        0,
+        920
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        130,
-        798
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        906
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        150
+        220,
+        620
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        258
+        220,
+        720
       ],
       "major": true,
       "graph": true,
@@ -221,8 +221,8 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        350,
-        366
+        220,
+        820
       ],
       "major": true,
       "graph": true,
@@ -235,8 +235,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        474
+        220,
+        920
       ],
       "major": true,
       "graph": true,
@@ -249,8 +249,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        582
+        440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -263,8 +263,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        690
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -277,8 +277,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        798
+        440,
+        620
       ],
       "major": true,
       "graph": true,
@@ -291,8 +291,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        350,
-        906
+        440,
+        720
       ],
       "major": true,
       "graph": true,
@@ -305,8 +305,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        570,
-        150
+        440,
+        820
       ],
       "major": true,
       "graph": true,
@@ -319,8 +319,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        570,
-        258
+        440,
+        920
       ],
       "major": true,
       "graph": true,
@@ -333,8 +333,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        570,
-        366
+        660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -347,8 +347,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        570,
-        474
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -939,8 +939,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        1140,
+        0
       ]
     },
     {
@@ -951,8 +951,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        1140,
+        100
       ]
     },
     {
@@ -963,8 +963,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        1140,
+        200
       ]
     },
     {
@@ -975,8 +975,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        1140,
+        300
       ]
     },
     {
@@ -987,8 +987,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        1140,
+        400
       ]
     },
     {
@@ -999,8 +999,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        1140,
+        500
       ]
     },
     {
@@ -1011,8 +1011,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        1140,
+        600
       ]
     },
     {
@@ -1023,8 +1023,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        1140,
+        700
       ]
     },
     {
@@ -1035,8 +1035,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        1140,
+        800
       ]
     },
     {
@@ -1047,8 +1047,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        542
+        1140,
+        900
       ]
     },
     {
@@ -1059,8 +1059,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        650
+        1140,
+        1000
       ]
     },
     {
@@ -1071,8 +1071,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        650
+        1140,
+        1100
       ]
     },
     {
@@ -1083,8 +1083,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        758
+        1140,
+        1200
       ]
     },
     {
@@ -1095,8 +1095,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        758
+        1360,
+        0
       ]
     },
     {
@@ -1107,8 +1107,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        866
+        1360,
+        100
       ]
     },
     {
@@ -1119,8 +1119,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        866
+        1360,
+        200
       ]
     },
     {
@@ -1131,8 +1131,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        974
+        1360,
+        300
       ]
     },
     {
@@ -1143,8 +1143,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        974
+        1360,
+        400
       ]
     },
     {
@@ -1155,8 +1155,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        1082
+        1360,
+        500
       ]
     }
   ],
@@ -1651,5 +1651,7 @@
       "group": 1,
       "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

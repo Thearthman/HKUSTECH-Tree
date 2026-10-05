@@ -8,7 +8,7 @@
   "totalCredits": "12-13",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26iim.pdf",
   "sourceHash": "bfdc1215eb5cdfbc98abffacd15c8c8757846655ae2a17028e72eaef57f122e8",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Individualized Interdisciplinary Major",
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        474
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        582
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        690
+        0,
+        500
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        798
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        130,
-        906
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "4",
       "parent": "group:fundamental-courses",
       "position": [
-        350,
-        150
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "3",
       "parent": "group:fundamental-courses",
       "position": [
-        350,
-        258
+        220,
+        300
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        820
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        920
       ],
       "major": true,
       "graph": true,
@@ -221,8 +221,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        1020
       ],
       "major": true,
       "graph": true,
@@ -240,8 +240,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        700,
+        0
       ]
     },
     {
@@ -252,8 +252,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        700,
+        100
       ]
     },
     {
@@ -264,8 +264,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        700,
+        200
       ]
     },
     {
@@ -276,8 +276,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        700,
+        300
       ]
     },
     {
@@ -288,8 +288,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        700,
+        400
       ]
     },
     {
@@ -300,8 +300,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        700,
+        500
       ]
     },
     {
@@ -312,8 +312,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        700,
+        600
       ]
     },
     {
@@ -324,8 +324,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        700,
+        700
       ]
     },
     {
@@ -336,8 +336,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        700,
+        800
       ]
     },
     {
@@ -348,8 +348,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        542
+        700,
+        900
       ]
     },
     {
@@ -360,8 +360,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        650
+        700,
+        1000
       ]
     }
   ],
@@ -730,5 +730,7 @@
       "group": 1,
       "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

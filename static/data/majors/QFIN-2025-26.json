@@ -8,7 +8,7 @@
   "totalCredits": "23-27",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26qfin.pdf",
   "sourceHash": "29ea33fd2fb48a5f39bf547d3bec863aa1e76d821f627fc1b429ecf0c8ed9c7c",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Quantitative Finance",
@@ -39,8 +39,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -53,8 +53,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        474
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        582
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        690
+        0,
+        500
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        798
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -137,8 +137,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        906
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -151,8 +151,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        150
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -165,8 +165,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        258
+        220,
+        300
       ],
       "major": true,
       "graph": true,
@@ -179,8 +179,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        350,
-        366
+        220,
+        400
       ],
       "major": true,
       "graph": true,
@@ -193,8 +193,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        350,
-        474
+        220,
+        500
       ],
       "major": true,
       "graph": true,
@@ -207,8 +207,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        350,
-        582
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -226,8 +226,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        920,
+        0
       ]
     },
     {
@@ -238,8 +238,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        920,
+        100
       ]
     },
     {
@@ -250,8 +250,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        920,
+        200
       ]
     },
     {
@@ -262,8 +262,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        920,
+        300
       ]
     },
     {
@@ -274,8 +274,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        920,
+        400
       ]
     },
     {
@@ -286,8 +286,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        920,
+        500
       ]
     },
     {
@@ -298,8 +298,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        920,
+        600
       ]
     },
     {
@@ -310,8 +310,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        920,
+        700
       ]
     },
     {
@@ -322,8 +322,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        920,
+        800
       ]
     },
     {
@@ -334,8 +334,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        542
+        920,
+        900
       ]
     },
     {
@@ -346,8 +346,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        650
+        920,
+        1000
       ]
     },
     {
@@ -358,8 +358,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        650
+        920,
+        1100
       ]
     },
     {
@@ -370,8 +370,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        758
+        920,
+        1200
       ]
     },
     {
@@ -382,8 +382,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        758
+        1140,
+        0
       ]
     }
   ],
@@ -647,5 +647,7 @@
       "group": 1,
       "raw": "MATH 2011, MATH 2024"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

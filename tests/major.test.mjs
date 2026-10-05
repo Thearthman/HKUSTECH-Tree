@@ -93,6 +93,53 @@ test("branch and area tables are captured for option programs", () => {
   assert.ok(comp.branches.some((branch) => branch.courses.length > 0));
 });
 
+test("every program's requirement panels are stacked without overlapping", () => {
+  // Mirrors the graph's course node size (see tools/build-major.mjs LAYOUT).
+  const NODE_WIDTH = 184;
+  const NODE_HEIGHT = 66;
+  const bounds = (items) => ({
+    x1: Math.min(...items.map((item) => item.position[0])),
+    y1: Math.min(...items.map((item) => item.position[1])),
+    x2: Math.max(...items.map((item) => item.position[0])) + NODE_WIDTH,
+    y2: Math.max(...items.map((item) => item.position[1])) + NODE_HEIGHT,
+  });
+
+  for (const program of manifest.programs) {
+    const data = readProgram(program.file);
+    assert.equal(data.layoutVersion, 2, `${program.id} should carry the current layout version`);
+    assert.ok(
+      data.layout === "auto" || data.layout === "preset",
+      `${program.id} should declare its layout mode`
+    );
+
+    for (const course of [...(data.courses || []), ...(data.contextCourses || [])]) {
+      assert.ok(
+        Array.isArray(course.position) && course.position.length === 2,
+        `${program.id} course ${course.code} needs a coordinate`
+      );
+    }
+
+    // Each requirement section is rendered as one compound panel, so two
+    // sections whose course bounding boxes intersect would visibly overlap.
+    const panels = (data.sections || [])
+      .map((section) => (data.courses || []).filter((course) => course.section === section.id))
+      .filter((courses) => courses.length)
+      .map(bounds);
+    for (let i = 0; i < panels.length; i += 1) {
+      for (let j = i + 1; j < panels.length; j += 1) {
+        const a = panels[i];
+        const b = panels[j];
+        const overlapX = Math.min(a.x2, b.x2) - Math.max(a.x1, b.x1);
+        const overlapY = Math.min(a.y2, b.y2) - Math.max(a.y1, b.y1);
+        assert.ok(
+          overlapX <= 0 || overlapY <= 0,
+          `${program.id} requirement panels ${i} and ${j} overlap`
+        );
+      }
+    }
+  }
+});
+
 test("every major course and relation endpoint resolves", () => {
   const groupIds = new Set(db.groups.map((group) => group.id));
   const sectionIds = new Set(db.sections.map((section) => section.id));

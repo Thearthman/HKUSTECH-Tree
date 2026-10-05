@@ -8,7 +8,7 @@
   "totalCredits": "11-15",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbus.pdf",
   "sourceHash": "936b5914a6960a626d9e2153d668da9a8d332ea6b5f39a34f5d45ef1979619db",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Global Business",
@@ -39,8 +39,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -53,8 +53,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -81,8 +81,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        130,
-        474
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -95,8 +95,8 @@
       "credits": "",
       "parent": "group:required-courses",
       "position": [
-        130,
-        582
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -109,8 +109,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        130,
-        690
+        0,
+        500
       ],
       "major": true,
       "graph": true,
@@ -123,8 +123,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        798
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -142,8 +142,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        700,
+        0
       ]
     },
     {
@@ -154,8 +154,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        700,
+        100
       ]
     }
   ],
@@ -174,5 +174,7 @@
       "group": 1,
       "raw": "ISOM 2040 (prior to 2023-24)"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }

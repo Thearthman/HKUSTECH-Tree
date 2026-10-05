@@ -36,6 +36,16 @@ and checked in so deploys are deterministic and hermetic:
   robotics and VLSI areas), and every prerequisite/corequisite/exclusion edge
   re-derived from `catalog.json`.
 
+Generated program documents carry `layout: "auto"` and are re-flowed by
+`layoutMajorProgram` whenever the database is refreshed. It follows the standard
+set by the hand-curated CPEG seed: each requirement section becomes its own
+horizontal band, stacked top to bottom (major fundamentals first, then
+program-specific requirements) so the compound panels never overlap, courses
+flow left to right in short columns, and shared context courses are parked in
+columns off to the right. The CPEG document is marked `layout: "preset"` so its
+hand-placed coordinates are preserved. Bump `LAYOUT_VERSION` to force every
+generated program to be re-flowed.
+
 `npm run build` regenerates `static/data/catalog.json` from the live HKUST
 catalog when it is missing (`npm run build:catalog` always regenerates).
 

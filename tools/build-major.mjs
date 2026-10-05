@@ -684,6 +684,106 @@ function autoPosition(section, placedCourses) {
   return [maxX + 220, minY];
 }
 
+// ---------------------------------------------------------------------------
+// Automatic layout
+// ---------------------------------------------------------------------------
+
+/** Bump when {@link layoutMajorProgram} changes so documents are re-flowed. */
+export const LAYOUT_VERSION = 2;
+
+/**
+ * Layout standard for generated programs, learned from the hand-curated CPEG
+ * seed. Each requirement section becomes its own horizontal band stacked top
+ * to bottom -- major fundamentals first, then program-specific requirements --
+ * so the compound panels can never overlap no matter how many sections or
+ * courses a program has. Inside a band, courses flow left to right in short
+ * columns, nested option groups are placed to the right of the courses they
+ * belong to, and shared context courses are parked in tidy columns off to the
+ * right of the whole map.
+ */
+const LAYOUT = {
+  columnPitch: 220,
+  rowPitch: 100,
+  rowsPerColumn: 6,
+  siblingGap: 60,
+  sectionGap: 220,
+  contextGap: 260,
+  contextRows: 13,
+};
+
+export function layoutMajorProgram(data) {
+  const groups = data.groups || [];
+  const courses = data.courses || [];
+  const childrenOf = new Map();
+  const coursesOf = new Map();
+  const bucket = (map, id) => {
+    if (!map.has(id)) map.set(id, []);
+    return map.get(id);
+  };
+  for (const group of groups) bucket(childrenOf, group.id);
+  for (const group of groups) bucket(childrenOf, group.parent || null).push(group.id);
+  for (const course of courses) bucket(coursesOf, course.parent || null).push(course);
+
+  let furthestRight = 0;
+
+  // Place a group's own courses, then its child panels to the right. Returns
+  // the right edge and the height of the placed block.
+  const place = (groupId, x, yTop, visiting) => {
+    if (visiting.has(groupId)) return { right: x, height: 0 };
+    visiting.add(groupId);
+    const members = coursesOf.get(groupId) || [];
+    const columns = [];
+    for (let index = 0; index < members.length; index += LAYOUT.rowsPerColumn) {
+      columns.push(members.slice(index, index + LAYOUT.rowsPerColumn));
+    }
+    columns.forEach((column, columnIndex) => {
+      column.forEach((course, rowIndex) => {
+        course.position = [x + columnIndex * LAYOUT.columnPitch, yTop + rowIndex * LAYOUT.rowPitch];
+      });
+    });
+    let cursor = x + columns.length * LAYOUT.columnPitch;
+    let height = columns.reduce((max, column) => Math.max(max, column.length * LAYOUT.rowPitch), 0);
+    for (const childId of childrenOf.get(groupId) || []) {
+      if (cursor > x) cursor += LAYOUT.siblingGap;
+      const child = place(childId, cursor, yTop, visiting);
+      height = Math.max(height, child.height);
+      cursor = child.right;
+    }
+    furthestRight = Math.max(furthestRight, cursor);
+    return { right: cursor, height: Math.max(height, LAYOUT.rowPitch) };
+  };
+
+  let y = 0;
+  for (const section of data.sections || []) {
+    if (!section.rootGroup) continue;
+    const block = place(section.rootGroup, 0, y, new Set());
+    y += block.height + LAYOUT.sectionGap;
+  }
+
+  // Defensive: a course that is not reachable from any section root still gets
+  // a deterministic slot instead of inheriting a stale coordinate.
+  const placedCodes = new Set(courses.filter((course) => course.position).map((course) => course.code));
+  const orphans = courses.filter((course) => !placedCodes.has(course.code));
+  orphans.forEach((course, index) => {
+    course.position = [
+      (index % LAYOUT.rowsPerColumn) * LAYOUT.columnPitch,
+      y + Math.floor(index / LAYOUT.rowsPerColumn) * LAYOUT.rowPitch,
+    ];
+  });
+
+  const contextX = Math.max(furthestRight, 0) + LAYOUT.contextGap;
+  (data.contextCourses || []).forEach((course, index) => {
+    course.position = [
+      contextX + Math.floor(index / LAYOUT.contextRows) * LAYOUT.columnPitch,
+      (index % LAYOUT.contextRows) * LAYOUT.rowPitch,
+    ];
+  });
+
+  data.layout = "auto";
+  data.layoutVersion = LAYOUT_VERSION;
+  return data;
+}
+
 /**
  * Merge live program facts into a program document. Curated structure (section
  * labels, groups, coordinates, prose) is preserved; only genuine catalog drift
@@ -693,6 +793,15 @@ export function synchronizeMajor(db, { catalog, parsed, meta = {}, now = new Dat
   if (!catalog) throw new Error("synchronizeMajor requires a catalog");
   const changes = [];
   const previous = db || null;
+  // Curated programs (the CPEG seed) keep their hand-placed coordinates and
+  // are only ever given a slot for a brand-new course. Everything else is
+  // re-flowed by the shared layout below. An explicit `layout` field wins so a
+  // future generated program with nested groups is not mistaken for curated.
+  const presetLayout = previous
+    ? previous.layout
+      ? previous.layout === "preset"
+      : (previous.groups || []).some((group) => group.parent)
+    : false;
   const parsedSections = parsed.sections || [];
   const parsedBranches = parsed.branches != null ? parsed.branches : previous ? previous.branches || [] : [];
 
@@ -794,16 +903,9 @@ export function synchronizeMajor(db, { catalog, parsed, meta = {}, now = new Dat
         });
       }
     }
-    if (!previous) {
-      // Deterministic starting grid for a brand-new program.
-      let position = 0;
-      for (const course of sectionCourses) {
-        if (!course.position) {
-          course.position = [130 + Math.floor(position / 8) * 220, 150 + (position % 8) * 108];
-          position += 1;
-        }
-      }
-    } else {
+    if (presetLayout) {
+      // Curated programs keep their hand-placed coordinates; a brand-new course
+      // just needs a slot beside its own section.
       const pool = courses.concat(sectionCourses);
       for (const course of sectionCourses) {
         if (!course.position) course.position = autoPosition(section, pool);
@@ -903,7 +1005,10 @@ export function synchronizeMajor(db, { catalog, parsed, meta = {}, now = new Dat
     })),
     contextCourses,
     relations,
+    layout: presetLayout ? "preset" : "auto",
+    layoutVersion: LAYOUT_VERSION,
   };
+  if (!presetLayout) layoutMajorProgram(data);
   return { data, changes };
 }
 

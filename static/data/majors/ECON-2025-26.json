@@ -8,7 +8,7 @@
   "totalCredits": "12",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26econ.pdf",
   "sourceHash": "dfb3c14574bf6030d023f57a113aec4946803a317d12a69aeae2436839ec6edd",
-  "generatedAt": "2026-10-05T08:47:15Z",
+  "generatedAt": "2026-10-05T09:41:02Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Economics",
@@ -39,8 +39,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        150
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -53,8 +53,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        258
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -67,8 +67,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        130,
-        366
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -86,8 +86,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        110
+        480,
+        0
       ]
     },
     {
@@ -98,8 +98,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        110
+        480,
+        100
       ]
     },
     {
@@ -110,8 +110,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        218
+        480,
+        200
       ]
     },
     {
@@ -122,8 +122,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        218
+        480,
+        300
       ]
     },
     {
@@ -134,8 +134,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        326
+        480,
+        400
       ]
     },
     {
@@ -146,8 +146,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        326
+        480,
+        500
       ]
     },
     {
@@ -158,8 +158,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        434
+        480,
+        600
       ]
     },
     {
@@ -170,8 +170,8 @@
       "major": false,
       "graph": true,
       "position": [
-        2000,
-        434
+        480,
+        700
       ]
     },
     {
@@ -182,8 +182,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1780,
-        542
+        480,
+        800
       ]
     }
   ],
@@ -258,5 +258,7 @@
       "group": 1,
       "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
     }
-  ]
+  ],
+  "layout": "auto",
+  "layoutVersion": 2
 }
