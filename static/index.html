@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6">
+  <title>HKUST Course Tree</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <span class="brand-mark" aria-hidden="true">HT</span>
+        <div>
+          <h1>HKUST Course Tree</h1>
+          <p id="catalogMeta">Catalog unavailable</p>
+        </div>
+      </div>
+
+      <nav class="page-nav" aria-label="Application pages">
+        <a id="coursePageLink" href="/">Course</a>
+        <a id="ustreePageLink" href="/ustree">USTree</a>
+        <a id="majorPageLink" href="/major-requirement" aria-label="Major requirement">Major req.</a>
+      </nav>
+
+      <div class="catalog-controls">
+        <label class="field-label" for="yearSelect">Year</label>
+        <select id="yearSelect" aria-label="Academic year">
+          <option value="2026-27">2026-27</option>
+        </select>
+        <button id="syncButton" class="button button-secondary" type="button" title="Refresh catalog data">
+          <span class="sync-icon" aria-hidden="true">&#8635;</span>
+          <span>Sync</span>
+        </button>
+      </div>
+
+      <div class="search-wrap">
+        <label class="sr-only" for="courseSearch">Find a course</label>
+        <input
+          id="courseSearch"
+          type="search"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-controls="searchResults"
+          aria-expanded="false"
+          autocomplete="off"
+          placeholder="Find course by code or title"
+        >
+        <span class="search-key" aria-hidden="true">/</span>
+        <div id="searchResults" class="search-results" role="listbox" hidden></div>
+      </div>
+    </header>
+
+    <section class="controlbar" aria-label="Graph controls">
+      <div class="control-group relations" aria-label="Relationships">
+        <label class="toggle"><input type="checkbox" value="prerequisite" checked><span class="relation-sample prerequisite"></span>Prerequisites</label>
+        <label class="toggle"><input type="checkbox" value="corequisite" checked><span class="relation-sample corequisite"></span>Corequisites</label>
+        <label class="toggle"><input type="checkbox" value="exclusion"><span class="relation-sample exclusion"></span>Exclusions</label>
+      </div>
+
+      <div class="control-group depth-control">
+        <label for="depthSelect">Tree depth</label>
+        <select id="depthSelect" title="How many levels of enabled relationships to keep visible">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="control-group depth-control highlight-depth-control">
+        <label for="highlightDepthSelect">Highlight depth</label>
+        <select id="highlightDepthSelect" title="How many backward prerequisite course hops to color on hover">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="view-tabs" role="tablist" aria-label="Course view">
+        <button id="graphTab" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="graphPanel">Graph</button>
+        <button id="outlineTab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="outlinePanel">Outline</button>
+      </div>
+
+      <div class="control-group graph-actions" aria-label="Graph viewport">
+        <a id="ustreeLink" class="button button-quiet ustree-button" href="/ustree" title="Open your USTree">
+          <span aria-hidden="true">&#9733;</span><span>USTree</span><span id="ustreeLinkCount" class="ustree-count">0</span>
+        </a>
+        <div id="ustreeManager" class="ustree-wrap" hidden>
+          <button id="ustreeButton" class="button button-quiet ustree-button" type="button" aria-expanded="false" aria-controls="ustreeMenu" title="Manage your USTree targets">
+            <span aria-hidden="true">&#9733;</span><span>USTree</span><span id="ustreeCount" class="ustree-count">0</span>
+          </button>
+          <div id="ustreeMenu" class="ustree-menu" hidden>
+            <div class="ustree-menu-header"><strong>Your USTree</strong><span id="ustreeMenuSummary">0 targets</span></div>
+            <div id="ustreeTargets" class="ustree-targets"></div>
+            <p id="ustreeEmpty" class="ustree-empty" hidden>Add courses from their details to build a multi-target tree.</p>
+          </div>
+        </div>
+        <button id="zoomOut" class="icon-button" type="button" title="Zoom out" aria-label="Zoom out">-</button>
+        <button id="zoomIn" class="icon-button" type="button" title="Zoom in" aria-label="Zoom in">+</button>
+        <button id="fitGraph" class="button button-quiet" type="button" title="Fit graph in view">Fit</button>
+        <button id="refocusGraph" class="button button-quiet" type="button" title="Center the selected course">Refocus</button>
+      </div>
+    </section>
+
+    <div id="appNotice" class="notice" role="status" aria-live="polite" hidden>
+      <span id="noticeText"></span>
+      <button id="noticeAction" class="notice-action" type="button" hidden>Retry</button>
+      <button id="dismissNotice" class="notice-dismiss" type="button" aria-label="Dismiss notification">&times;</button>
+    </div>
+
+    <main class="workspace">
+      <section id="graphPanel" class="view-panel graph-panel" role="tabpanel" aria-labelledby="graphTab">
+        <div id="graphStage" class="graph-stage" tabindex="0" aria-label="Course relationship graph">
+          <div id="graphCanvas" role="img" aria-label="Courses arranged by prerequisite level. Select a node to inspect the course."></div>
+          <div id="graphLoading" class="state-panel loading-state" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <strong>Building course tree</strong>
+            <span>Loading catalog relationships...</span>
+          </div>
+          <div id="graphEmpty" class="state-panel" hidden>
+            <strong id="emptyTitle">No course selected</strong>
+            <span id="emptyText">Search for a course to build its tree.</span>
+            <button id="emptyAction" class="button button-primary" type="button" hidden>Sync catalog</button>
+          </div>
+        </div>
+        <div class="graph-legend" aria-label="Subject legend">
+          <span><i class="legend-dot comp"></i>COMP</span>
+          <span><i class="legend-dot math"></i>MATH</span>
+          <span><i class="legend-dot elec"></i>ELEC</span>
+          <span><i class="legend-dot other"></i>Other</span>
+          <span class="legend-separator" aria-hidden="true"></span>
+          <span><i class="edge-key solid"></i>Prerequisite</span>
+          <span><i class="edge-key dashed"></i>Corequisite</span>
+          <span><i class="edge-key dotted"></i>Exclusion</span>
+        </div>
+      </section>
+
+      <section id="outlinePanel" class="view-panel outline-panel" role="tabpanel" aria-labelledby="outlineTab" hidden>
+        <header class="outline-header">
+          <div>
+            <p id="outlineEyebrow" class="eyebrow">Course pathway</p>
+            <h2 id="outlineTitle">No course selected</h2>
+          </div>
+          <p id="outlineSummary">0 courses</p>
+        </header>
+        <div id="outlineContent" class="outline-content"></div>
+      </section>
+
+      <div id="drawerScrim" class="drawer-scrim" hidden></div>
+      <aside id="detailsDrawer" class="details-drawer" aria-labelledby="detailsCode" aria-hidden="true">
+        <div class="drawer-handle" aria-hidden="true"></div>
+        <header class="drawer-header">
+          <div>
+            <p id="detailsSubject" class="eyebrow">Course</p>
+            <h2 id="detailsCode">Course details</h2>
+          </div>
+          <button id="closeDrawer" class="icon-button" type="button" aria-label="Close course details">&times;</button>
+        </header>
+        <div id="detailsContent" class="drawer-content"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/vendor/dagre.min.js" defer></script>
+  <script src="/static/vendor/cytoscape.min.js" defer></script>
+  <script src="/static/vendor/cytoscape-dagre.js" defer></script>
+  <script src="/static/graph-interactions.js" defer></script>
+  <script src="/static/ustree.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

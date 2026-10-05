@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6">
+  <title>CPEG Major Requirements | HKUST Course Tree</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="major-page">
+  <div class="app-shell major-app-shell">
+    <header class="topbar major-topbar">
+      <div class="brand-block">
+        <span class="brand-mark" aria-hidden="true">HT</span>
+        <div>
+          <h1>HKUST Course Tree</h1>
+          <p>Major requirements | 61-66 credits</p>
+        </div>
+      </div>
+
+      <nav class="page-nav" aria-label="Application pages">
+        <a href="/">Course</a>
+        <a href="/ustree">USTree</a>
+        <a href="/major-requirement" aria-current="page" aria-label="Major requirement">Major req.</a>
+      </nav>
+
+      <div class="major-selector">
+        <label class="field-label" for="majorSelect">Program</label>
+        <select id="majorSelect" aria-label="Major and intake year">
+          <option value="CPEG-2025-26">CPEG (2025-26)</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="controlbar major-controlbar" aria-label="Major map controls">
+      <div class="control-group relations" aria-label="Relationships">
+        <label class="toggle"><input type="checkbox" value="prerequisite" checked><span class="relation-sample prerequisite"></span>Prerequisites</label>
+        <label class="toggle"><input type="checkbox" value="corequisite" checked><span class="relation-sample corequisite"></span>Corequisites</label>
+        <label class="toggle"><input type="checkbox" value="exclusion"><span class="relation-sample exclusion"></span>Exclusions</label>
+      </div>
+
+      <div class="view-tabs" role="tablist" aria-label="Major requirement view">
+        <button id="majorGraphTab" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="majorGraphPanel">Map</button>
+        <button id="majorOutlineTab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="majorOutlinePanel">Outline</button>
+      </div>
+
+      <div class="control-group graph-actions" aria-label="Graph viewport">
+        <button id="majorZoomOut" class="icon-button" type="button" title="Zoom out" aria-label="Zoom out">-</button>
+        <button id="majorZoomIn" class="icon-button" type="button" title="Zoom in" aria-label="Zoom in">+</button>
+        <button id="majorFit" class="button button-quiet" type="button" title="Fit requirement map in view">Fit</button>
+      </div>
+    </section>
+
+    <main class="workspace">
+      <section id="majorGraphPanel" class="view-panel graph-panel" role="tabpanel" aria-labelledby="majorGraphTab">
+        <div id="majorGraphStage" class="graph-stage" tabindex="0" aria-label="CPEG major requirement map">
+          <div id="majorGraphCanvas" role="img" aria-label="CPEG courses grouped by AND and OR requirements, with course relationship context."></div>
+          <div id="majorGraphEmpty" class="state-panel" hidden>
+            <strong>Map renderer unavailable</strong>
+            <span>The local Cytoscape asset could not be loaded.</span>
+          </div>
+        </div>
+        <div class="graph-legend major-legend" aria-label="Major requirement legend">
+          <span><i class="group-key group-key-and"></i>AND group</span>
+          <span><i class="group-key group-key-or"></i>OR group</span>
+          <span><i class="legend-dot major-dot"></i>Major course</span>
+          <span><i class="legend-dot context-dot"></i>Context</span>
+          <span class="legend-separator" aria-hidden="true"></span>
+          <span><i class="edge-key solid"></i>Prerequisite</span>
+          <span><i class="edge-key dashed"></i>Corequisite</span>
+          <span><i class="edge-key dotted"></i>Exclusion</span>
+        </div>
+      </section>
+
+      <section id="majorOutlinePanel" class="view-panel outline-panel major-outline-panel" role="tabpanel" aria-labelledby="majorOutlineTab" hidden>
+        <header class="outline-header">
+          <div>
+            <p class="eyebrow">2025-26 intake</p>
+            <h2>BEng in Computer Engineering</h2>
+          </div>
+          <p>61-66 credits</p>
+        </header>
+        <div id="majorOutlineContent" class="major-outline-content"></div>
+      </section>
+
+      <div id="majorDrawerScrim" class="drawer-scrim" hidden></div>
+      <aside id="majorDetailsDrawer" class="details-drawer" aria-labelledby="majorDetailsCode" aria-hidden="true">
+        <div class="drawer-handle" aria-hidden="true"></div>
+        <header class="drawer-header">
+          <div>
+            <p id="majorDetailsSubject" class="eyebrow">Course</p>
+            <h2 id="majorDetailsCode">Course details</h2>
+          </div>
+          <button id="majorCloseDrawer" class="icon-button" type="button" aria-label="Close course details">&times;</button>
+        </header>
+        <div id="majorDetailsContent" class="drawer-content"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/vendor/cytoscape.min.js" defer></script>
+  <script src="/static/graph-interactions.js" defer></script>
+  <script src="/static/major-requirements.js" defer></script>
+</body>
+</html>
