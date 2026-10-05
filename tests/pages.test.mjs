@@ -112,6 +112,32 @@ test("styles.css defines a dark theme", () => {
   assert.ok(css.includes('html[data-theme="dark"]'), "the dark theme overrides the light tokens");
 });
 
+test("the segmented page nav matches the Major requirement bar on every page", () => {
+  const css = read("styles.css");
+  // The "Course / USTree / Major req." bar must never wrap its labels: without
+  // nowrap, "Major req." breaks onto a second line and the shared Course/USTree
+  // bar grows taller and narrower than the Major requirement bar.
+  assert.ok(
+    /\.page-nav a\s*\{[^}]*white-space:\s*nowrap/s.test(css),
+    "the page-nav links must not wrap their labels"
+  );
+  // The shared topbar carries a search field on top of the catalog controls, so
+  // it needs more room than the Major topbar before the nav fits on one line.
+  // Collapse it into the Major page's two-row layout earlier, scoped to the
+  // shared shell so the dedicated Major header keeps its own grid.
+  assert.ok(
+    css.includes("@media (max-width: 1120px)") && css.includes("body:not(.major-page) .page-nav"),
+    "the shared topbar must collapse into the two-row layout before the nav is squeezed"
+  );
+  // Narrow screens stretch the bar edge to edge with evenly sized links, the
+  // same treatment the Major requirement page applies to its own nav.
+  assert.ok(
+    /body:not\(\.major-page\)\s*\.page-nav\s*\{[^}]*width:\s*100%/s.test(css) &&
+      /body:not\(\.major-page\)\s*\.page-nav a\s*\{[^}]*flex:\s*1/s.test(css),
+    "the shared page nav must stretch to full width on narrow screens"
+  );
+});
+
 test("the major-requirement map defines its completion controls", () => {
   const major = read("major-requirements.js");
   // These back the clickable checkbox on every course node (including the

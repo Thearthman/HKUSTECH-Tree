@@ -383,6 +383,7 @@ select:focus-visible,
   padding: 6px 9px;
   color: var(--muted);
   text-align: center;
+  white-space: nowrap;
   text-decoration: none;
   border-radius: 3px;
   font-size: 12px;
@@ -1592,6 +1593,44 @@ body[data-page="course"] .ustree-legend-only { display: none; }
   background: var(--scrim);
 }
 
+/*
+ * The shared Course/USTree topbar carries a search field as well as the
+ * catalog controls, so it needs more room than the Major requirement topbar
+ * before the page nav fits on one line. Collapse it into the same two-row
+ * layout the Major page uses once it can no longer fit, so the
+ * "Course / USTree / Major req." segmented bar never wraps or shrinks.
+ */
+@media (max-width: 1120px) {
+  body:not(.major-page) .app-shell {
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+  }
+
+  body:not(.major-page) .topbar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 9px 12px;
+    padding: 8px 12px 10px;
+  }
+
+  body:not(.major-page) .brand-block {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  body:not(.major-page) .catalog-controls {
+    grid-column: 3;
+  }
+
+  body:not(.major-page) .page-nav {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  body:not(.major-page) .search-wrap {
+    grid-column: 2 / -1;
+    grid-row: 2;
+  }
+}
+
 @media (max-width: 900px) {
   .app-shell {
     grid-template-rows: auto auto auto minmax(0, 1fr);
@@ -1671,6 +1710,25 @@ body[data-page="course"] .ustree-legend-only { display: none; }
     padding-right: 7px;
     padding-left: 7px;
     font-size: 11px;
+  }
+
+  /*
+   * On the narrowest screens the Major requirement page stretches the
+   * segmented bar across the full width with evenly sized links. Mirror that
+   * on the shared Course/USTree shell so all three pages match.
+   */
+  body:not(.major-page) .page-nav {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  body:not(.major-page) .page-nav a {
+    flex: 1;
+  }
+
+  body:not(.major-page) .search-wrap {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
 
   .catalog-controls select {
