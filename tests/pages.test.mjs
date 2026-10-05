@@ -229,3 +229,68 @@ test("user data is persisted in the browser", () => {
   assert.ok(read("ustree.js").includes("storageKey"), "USTree targets use localStorage");
   assert.ok(read("catalog-client.js").includes("indexedDB"), "the catalog is cached in IndexedDB");
 });
+
+test("USTree targets are checked against the finished courses", () => {
+  const app = read("app.js");
+  assert.ok(
+    app.includes("function refreshRequirementStatuses"),
+    "app.js should derive a prerequisite verdict for each starred target"
+  );
+  assert.ok(
+    app.includes("support.requirementStatus(course, state.completions)"),
+    "the verdict should compare the target's prerequisites to the completed set"
+  );
+  assert.ok(
+    app.includes("applyRequirementStatuses"),
+    "toggling a completion should update the target verdict in place"
+  );
+  const ustree = read("ustree.js");
+  assert.ok(
+    ustree.includes("function requirementStatus(course, completed)"),
+    "ustree.js should own the prerequisite verdict logic"
+  );
+  assert.ok(
+    ustree.includes("requirementStatus: requirementStatus"),
+    "the verdict helper should be exported on USTreeSupport"
+  );
+  const catalog = read("catalog-client.js");
+  assert.ok(
+    catalog.includes("function record(code)"),
+    "the catalog client should expose a synchronous record lookup for the check"
+  );
+  assert.ok(
+    read("index.html").includes("status-key met"),
+    "the USTree legend should explain the prerequisite verdict colors"
+  );
+});
+
+test("completions are shared with the major-requirement page under the catalog year", () => {
+  const app = read("app.js");
+  const major = read("major-requirements.js");
+
+  // Completions are keyed by catalog year. The major page only learns its year
+  // when the program document resolves, so it must (re)load completions then.
+  // Reading them earlier would use an empty-year key and never share state.
+  const applyDataStart = major.indexOf("function applyData(data) {");
+  assert.ok(applyDataStart !== -1, "major-requirements.js should define applyData");
+  const applyDataBody = major.slice(applyDataStart, major.indexOf("\n  function ", applyDataStart + 1));
+  const yearIndex = applyDataBody.indexOf("CATALOG_YEAR = data.catalogYear;");
+  const loadIndex = applyDataBody.indexOf("loadCompletions();");
+  assert.ok(
+    yearIndex !== -1 && loadIndex > yearIndex,
+    "the major page must load completions after learning its catalog year"
+  );
+  assert.ok(
+    !major.slice(major.indexOf("function bootstrap()"), major.indexOf("bootstrap();")).includes("loadCompletions()"),
+    "the major page must not read completions before its catalog year is known"
+  );
+
+  // Both pages listen for cross-tab storage changes to the completion key so a
+  // checkbox ticked on one page is reflected on the other.
+  for (const [name, js] of [["app.js", app], ["major-requirements.js", major]]) {
+    assert.ok(
+      js.includes('window.addEventListener("storage"') && js.includes("event.key !== completionKey()"),
+      `${name} should resync completions on cross-tab storage events`
+    );
+  }
+});

@@ -71,6 +71,11 @@
     });
     CATALOG_YEAR = data.catalogYear;
     CATALOG_ROOT = "https://prog-crs.hkust.edu.hk/ugcourse/" + CATALOG_YEAR + "/";
+    // Completions are keyed by catalog year, so they can only be read once the
+    // program document has told us which year it belongs to. Loading earlier
+    // (before the fetch resolves) would use an empty-year key and never share
+    // state with the Course/USTree pages.
+    loadCompletions();
     groupNodes = (data.groups || []).map(function (group) {
       return [group.id, group.label, group.kind, group.parent || null];
     });
@@ -138,6 +143,11 @@
     return "course:" + code;
   }
 
+  function normalizeCode(value) {
+    var match = String(value || "").trim().toUpperCase().match(/^([A-Z]{2,5})\s*([0-9]{4}[A-Z]?)$/);
+    return match ? match[1] + " " + match[2] : String(value || "").trim().toUpperCase();
+  }
+
   function completionKey() {
     return STORAGE_PREFIX + ":completed:" + CATALOG_YEAR;
   }
@@ -149,20 +159,21 @@
     } catch (_error) {
       values = [];
     }
-    state.completions = new Set(Array.isArray(values) ? values.map(String) : []);
+    state.completions = new Set(Array.isArray(values) ? values.map(normalizeCode) : []);
   }
 
   function saveCompletions() {
     try {
-      localStorage.setItem(completionKey(), JSON.stringify(Array.from(state.completions).sort()));
+      localStorage.setItem(completionKey(), JSON.stringify(Array.from(state.completions).map(normalizeCode).sort()));
     } catch (_error) {
       // Completion remains available for this session when storage is unavailable.
     }
   }
 
   function setCourseCompletion(code, completed) {
-    if (completed) state.completions.add(code);
-    else state.completions.delete(code);
+    var normalized = normalizeCode(code);
+    if (completed) state.completions.add(normalized);
+    else state.completions.delete(normalized);
     saveCompletions();
     if (state.cy) state.cy.getElementById(nodeId(code)).toggleClass("is-completed", completed);
     var toggle = document.getElementById("majorCompletedToggle");
@@ -667,6 +678,16 @@
       var button = event.target.closest("[data-major-code]");
       if (button) openCourse(button.dataset.majorCode);
     });
+    // Completion checkboxes are shared with the Course/USTree pages through
+    // localStorage; pick up changes made in another open tab.
+    window.addEventListener("storage", function (event) {
+      if (event.key !== completionKey()) return;
+      loadCompletions();
+      if (state.cy) renderGraph();
+      renderOutline();
+      var toggle = document.getElementById("majorCompletedToggle");
+      if (toggle) toggle.checked = state.completions.has(normalizeCode(elements.drawerCode.textContent));
+    });
     document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeDrawer(); });
     var mobileQuery = window.matchMedia(MOBILE_QUERY);
     mobileQuery.addEventListener("change", function (event) {
@@ -757,7 +778,6 @@
   }
 
   function bootstrap() {
-    loadCompletions();
     if (typeof window.fetch !== "function") {
       showLoadError(new Error("This browser cannot load " + MANIFEST_URL));
       return;

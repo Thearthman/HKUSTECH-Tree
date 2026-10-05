@@ -164,6 +164,12 @@ against the linked HKUST catalog entry.
 - The USTree target set lets students build one combined pathway for multiple
   desired courses. Shared prerequisites are merged once, while targets remain
   independently removable and persist by catalog year.
+- Every starred USTree target is checked against the finished courses: a green
+  border means its prerequisites are met, a red border marks a missing
+  prerequisite, and a dashed amber border flags a requirement (such as a prose
+  condition) that completed courses alone cannot settle. The verdict appears on
+  the node, in the target list, in the outline, and in the course details, and
+  updates the moment a completion checkbox is toggled.
 - A fixed checkbox in the top-left of every course node records completion
   without changing node dimensions or opening the details drawer.
 - Subject color is secondary to labels and edge styles, so the graph remains

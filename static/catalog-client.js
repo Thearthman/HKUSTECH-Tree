@@ -700,6 +700,15 @@
     });
   }
 
+  // Synchronous access to a raw catalog record for callers that already know
+  // the catalog is loaded (e.g. evaluating whether USTree prerequisites are
+  // covered by the finished courses). Returns null before the first load.
+  function record(code) {
+    if (!state.data) return null;
+    var normalized = normalizeCourseCode(code);
+    return normalized ? (state.data.courses[normalized] || null) : null;
+  }
+
   function graph(options) {
     var settings = options || {};
     return load().then(function (data) {
@@ -728,6 +737,7 @@
     catalogs: catalogs,
     search: search,
     course: course,
+    record: record,
     graph: graph,
     normalizeCourseCode: normalizeCourseCode
   };

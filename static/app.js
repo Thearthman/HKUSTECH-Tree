@@ -143,6 +143,7 @@
     initializedTarget: false,
     graphErrors: [],
     hoveredNodeId: null,
+    requirementStatus: new Map(),
     mobileLayout: window.matchMedia("(max-width: 620px)").matches
   };
 
@@ -370,7 +371,11 @@
     elements.ustreeMenuSummary.textContent = targets.length + (targets.length === 1 ? " target" : " targets");
     elements.ustreeEmpty.hidden = targets.length !== 0;
     elements.ustreeTargets.innerHTML = targets.map(function (code) {
-      return '<div class="ustree-target"><button class="ustree-target-course" type="button" data-ustree-code="' + escapeHtml(code) + '">' + escapeHtml(code) + '</button><button class="ustree-target-remove" type="button" data-remove-ustree="' + escapeHtml(code) + '" aria-label="Remove ' + escapeHtml(code) + ' from USTree" title="Remove from USTree">&times;</button></div>';
+      var status = requirementStatusFor(code);
+      var badge = status
+        ? '<span class="ustree-target-status is-' + escapeHtml(status) + '" title="' + escapeHtml(requirementStatusLabel(status)) + '">' + escapeHtml(requirementStatusLabel(status)) + '</span>'
+        : '<span class="ustree-target-status is-pending" title="Complete some courses to check this target\'s prerequisites">Checking...</span>';
+      return '<div class="ustree-target"><button class="ustree-target-course" type="button" data-ustree-code="' + escapeHtml(code) + '">' + escapeHtml(code) + '</button>' + badge + '<button class="ustree-target-remove" type="button" data-remove-ustree="' + escapeHtml(code) + '" aria-label="Remove ' + escapeHtml(code) + ' from USTree" title="Remove from USTree">&times;</button></div>';
     }).join("");
   }
 
@@ -397,6 +402,75 @@
     } catch (_error) {
       setNotice("Completed courses could not be saved in this browser.", "error");
     }
+  }
+
+  // -------------------------------------------------------------------------
+  // USTree prerequisite check
+  // -------------------------------------------------------------------------
+  // Each starred target carries a verdict describing whether its finished
+  // courses already cover its prerequisites. The verdicts are derived from the
+  // target's parsed requirement expression (not the depth-limited graph), so a
+  // shallow tree cannot hide a missing prerequisite.
+  function requirementSupport() {
+    return window.USTreeSupport && typeof window.USTreeSupport.requirementStatus === "function"
+      ? window.USTreeSupport
+      : null;
+  }
+
+  function requirementStatusFor(code) {
+    var status = state.requirementStatus.get(normalizeCode(code));
+    return status || null;
+  }
+
+  function requirementStatusLabel(status) {
+    var support = requirementSupport();
+    if (support) return support.requirementStatusLabel(status);
+    return status === "unmet" ? "Prereqs not met" : status === "unknown" ? "Prereqs unclear" : "Prereqs met";
+  }
+
+  function requirementStatusMarker(status) {
+    var support = requirementSupport();
+    if (support) return support.requirementStatusMarker(status);
+    return status === "unmet" ? "\u2717" : "?";
+  }
+
+  function refreshRequirementStatuses() {
+    state.requirementStatus = new Map();
+    if (!IS_USTREE_PAGE) return;
+    var client = window.HKUSTCatalog;
+    var support = requirementSupport();
+    if (!client || typeof client.record !== "function" || !support) return;
+    normalizeTargets(state.targets).forEach(function (code) {
+      var course = client.record(code);
+      if (!course) return;
+      state.requirementStatus.set(code, support.requirementStatus(course, state.completions));
+    });
+  }
+
+  // Re-apply the verdict to already rendered nodes without rebuilding the
+  // graph, so ticking a checkbox updates the starred targets in place.
+  function applyRequirementStatuses() {
+    if (!state.cy) return;
+    state.cy.nodes().filter(function (node) {
+      return node.data("type") === "course" && requirementStatusFor(node.data("code"));
+    }).forEach(function (node) {
+      var status = requirementStatusFor(node.data("code"));
+      node.removeClass("is-prereq-met is-prereq-unmet is-prereq-unknown is-prereq-completed");
+      node.addClass("is-prereq-" + status);
+      node.data("displayLabel", nodeDisplayLabel(node.data()));
+    });
+  }
+
+  function refreshDetailsPrereqStatus() {
+    var chip = document.getElementById("detailsPrereqStatus");
+    if (!chip) return;
+    var status = requirementStatusFor(elements.detailsCode.textContent);
+    if (!status) {
+      chip.remove();
+      return;
+    }
+    chip.className = "meta-chip is-prereq-" + status;
+    chip.textContent = requirementStatusLabel(status);
   }
 
   function storedTarget() {
@@ -626,9 +700,11 @@
       return node.id === "course:" + state.target;
     }) ? state.target : state.graph.roots[0];
     state.selectedId = selectedCode ? "course:" + selectedCode : null;
+    refreshRequirementStatuses();
     setGraphState("ready");
     renderGraph();
     renderOutline();
+    renderUstreeMenu();
 
     var diagnostics = Array.isArray(state.graph.diagnostics) ? state.graph.diagnostics : [];
     if (!IS_USTREE_PAGE) {
@@ -676,8 +752,13 @@
 
   function nodeDisplayLabel(node) {
     if (node.type === "course") {
-      return (node.code || node.label || node.id) + "\n" +
+      var label = (node.code || node.label || node.id) + "\n" +
         trimText(node.title || "Course details unavailable", 28);
+      var status = requirementStatusFor(node.code);
+      if (status) {
+        label += "\n" + requirementStatusMarker(status) + " " + requirementStatusLabel(status);
+      }
+      return label;
     }
     if (node.type === "all") return "ALL\nEvery rule";
     if (node.type === "any") return "ANY\nAny rule";
@@ -849,6 +930,12 @@
     if (detailsToggle && normalizeCode(elements.detailsCode.textContent) === normalized) {
       detailsToggle.checked = completed;
     }
+    if (IS_USTREE_PAGE) {
+      refreshRequirementStatuses();
+      applyRequirementStatuses();
+      renderUstreeMenu();
+      refreshDetailsPrereqStatus();
+    }
     renderOutline();
   }
 
@@ -963,6 +1050,8 @@
       else if (rootIds.has(node.id)) classes.push("is-focus");
       if (isDependent) classes.push("is-dependent");
       if (node.type === "course" && state.completions.has(normalizeCode(node.code))) classes.push("is-completed");
+      var requirementStatus = node.type === "course" ? requirementStatusFor(node.code) : null;
+      if (requirementStatus) classes.push("is-prereq-" + requirementStatus);
       return {
         group: "nodes",
         data: Object.assign({}, node, {
@@ -1068,6 +1157,13 @@
       },
       { selector: "node.any", style: { "background-color": C["any-bg"] || "#edf3f8", "border-color": C["any-stroke"] || "#6686a0" } },
       { selector: "node.is-satisfied", style: { "background-color": C["completed-bg"] || "#e8f3ed", "border-color": themeVar("--accent", "#176b4b"), "border-width": 2.5 } },
+      // USTree targets carry a prerequisite verdict against the finished
+      // courses: green when met, red when a required course is missing, and a
+      // dashed outline when a prose condition keeps the answer open.
+      { selector: "node.is-prereq-met", style: { "border-color": themeVar("--accent", "#176b4b"), "border-width": 5, "background-color": C["completed-bg"] || "#e8f3ed" } },
+      { selector: "node.is-prereq-completed", style: { "border-color": themeVar("--accent", "#176b4b"), "border-width": 5, "background-color": C["completed-bg"] || "#e8f3ed" } },
+      { selector: "node.is-prereq-unmet", style: { "border-color": themeVar("--danger", "#b14c45"), "border-width": 5 } },
+      { selector: "node.is-prereq-unknown", style: { "border-color": themeVar("--warning-strong", "#b8891f"), "border-width": 5, "border-style": "dashed" } },
       {
         selector: "node.condition, node.coursePattern",
         style: {
@@ -1374,9 +1470,13 @@
         var description = node.title || "Course details unavailable";
         var complete = state.completions.has(normalizeCode(node.code));
         var kind = target ? "Target" : dependent ? "Uses course" : focused ? "Selected" : relationLabel(relation);
+        var status = target ? requirementStatusFor(node.code) : null;
+        var statusChip = status
+          ? '<span class="outline-status is-' + escapeHtml(status) + '">' + escapeHtml(requirementStatusLabel(status)) + "</span>"
+          : "";
         return '<li class="outline-item subject-' + escapeHtml(subject) + (target ? " is-target" : "") + (dependent ? " is-dependent" : "") + '"><button type="button" data-node-id="' + escapeHtml(node.id) + '">' +
           '<span class="outline-accent"></span><span class="outline-course"><strong>' + escapeHtml(heading) + (complete ? " (Completed)" : "") + '</strong><span>' + escapeHtml(description) + '</span></span>' +
-          '<span class="outline-kind">' + escapeHtml(kind) + "</span></button></li>";
+          '<span class="outline-tags"><span class="outline-kind">' + escapeHtml(kind) + "</span>" + statusChip + "</span></button></li>";
       }).join("");
       return '<section class="outline-level"><h3>' + (level === "unknown" ? "Level unknown" : "Level " + level) + '</h3><ul class="outline-list">' + items + "</ul></section>";
     }).join("");
@@ -1471,6 +1571,7 @@
     var requirements = course.requirements || {};
     var warnings = detailWarnings(requirements);
     var completed = state.completions.has(code);
+    var status = requirementStatusFor(code);
     var subject = course.subject || fallbackNode.subject || code.split(" ")[0];
     var sourceUrl = course.source_url || course.sourceUrl || fallbackNode.source_url;
     elements.detailsSubject.textContent = subject;
@@ -1480,6 +1581,7 @@
       '<div class="details-meta">' +
         (creditLabel(course.credits) ? '<span class="meta-chip">' + escapeHtml(creditLabel(course.credits)) + "</span>" : "") +
         (fallbackNode.level != null ? '<span class="meta-chip">Level ' + escapeHtml(fallbackNode.level) + "</span>" : "") +
+        (status ? '<span id="detailsPrereqStatus" class="meta-chip is-prereq-' + escapeHtml(status) + '" title="Checked against your completed courses">' + escapeHtml(requirementStatusLabel(status)) + "</span>" : "") +
       "</div>" +
       '<div class="details-actions"><button id="ustreeTargetAction" class="button" type="button" data-code="' + escapeHtml(code) + '" aria-pressed="false"></button></div>' +
       '<label class="complete-control"><span>Completed</span><span class="switch"><input id="completedToggle" type="checkbox" ' + (completed ? "checked" : "") + '><span></span></span></label>' +
@@ -1642,6 +1744,7 @@
       state.initializedTarget = false;
       loadCompletions();
       loadTargets();
+      refreshRequirementStatuses();
       renderUstreeMenu();
       closeDrawer();
       destroyGraph();
@@ -1697,6 +1800,20 @@
       var node = state.graph.nodes.find(function (item) { return item.id === button.dataset.nodeId; });
       if (node) inspectGraphNode(node);
     });
+    // Completion checkboxes are shared with the Major requirement page through
+    // localStorage; pick up changes made in another open tab.
+    window.addEventListener("storage", function (event) {
+      if (event.key !== completionKey()) return;
+      loadCompletions();
+      if (IS_USTREE_PAGE) refreshRequirementStatuses();
+      if (state.graph) renderGraph();
+      renderOutline();
+      renderUstreeMenu();
+      var detailsToggle = document.getElementById("completedToggle");
+      if (detailsToggle) {
+        detailsToggle.checked = state.completions.has(normalizeCode(elements.detailsCode.textContent));
+      }
+    });
 
     var mobileQuery = window.matchMedia("(max-width: 620px)");
     mobileQuery.addEventListener("change", function (event) {
@@ -1726,6 +1843,8 @@
     renderUstreeMenu();
     setGraphState("loading");
     await loadCatalogs();
+    refreshRequirementStatuses();
+    renderUstreeMenu();
     await chooseInitialCourse();
   }
 

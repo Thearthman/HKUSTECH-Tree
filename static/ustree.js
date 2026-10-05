@@ -3,6 +3,13 @@
 
   var STORAGE_PREFIX = "hkust-course-tree";
 
+  // Requirement verdicts shared with the USTree view so a starred target can
+  // show whether its finished courses already cover the prerequisites.
+  var REQUIREMENT_COMPLETED = "completed";
+  var REQUIREMENT_MET = "met";
+  var REQUIREMENT_UNMET = "unmet";
+  var REQUIREMENT_UNKNOWN = "unknown";
+
   function normalizeCode(value) {
     var text = String(value || "").trim().toUpperCase();
     var match = text.match(/^([A-Z]{2,5})\s*([0-9]{4}[A-Z]?)$/);
@@ -16,6 +23,99 @@
       if (/^[A-Z]{2,5} \d{4}[A-Z]?$/.test(code)) seen.add(code);
     });
     return Array.from(seen).sort();
+  }
+
+  function codeLevel(code) {
+    var parts = normalizeCode(code).split(" ");
+    var level = Number((parts[1] || "").charAt(0));
+    return Number.isFinite(level) ? level : null;
+  }
+
+  function patternStatus(pattern, completed) {
+    var subject = String((pattern && pattern.subject) || "").toUpperCase();
+    var minimumLevel = Number(pattern && pattern.minimumLevel);
+    if (!/^[A-Z]{4}$/.test(subject) || !Number.isFinite(minimumLevel)) return REQUIREMENT_UNKNOWN;
+    var met = false;
+    completed.forEach(function (code) {
+      var parts = normalizeCode(code).split(" ");
+      if (parts[0] !== subject) return;
+      var level = codeLevel(code);
+      if (level != null && level >= minimumLevel) met = true;
+    });
+    return met ? REQUIREMENT_MET : REQUIREMENT_UNMET;
+  }
+
+  // Evaluate a parsed requirement expression against a set of finished codes.
+  // Course leaves are settled by completion; Boolean junctions combine their
+  // children; prose conditions (and malformed nodes) stay unknown so the view
+  // never claims a requirement is met when it cannot be sure.
+  function evaluateExpression(expression, completed) {
+    if (!expression) return REQUIREMENT_UNKNOWN;
+    var nodeType = expression.type;
+    if (nodeType === "course") {
+      var code = normalizeCode(expression.code);
+      return /^[A-Z]{2,5} \d{4}[A-Z]?$/.test(code) && completed.has(code)
+        ? REQUIREMENT_MET
+        : REQUIREMENT_UNMET;
+    }
+    if (nodeType === "coursePattern") return patternStatus(expression, completed);
+    if (nodeType === "all" || nodeType === "any") {
+      var items = expression.items || [];
+      if (!items.length) return REQUIREMENT_UNKNOWN;
+      var results = items.map(function (item) { return evaluateExpression(item, completed); });
+      if (nodeType === "any") {
+        if (results.indexOf(REQUIREMENT_MET) !== -1) return REQUIREMENT_MET;
+        return results.every(function (state) { return state === REQUIREMENT_UNMET; })
+          ? REQUIREMENT_UNMET
+          : REQUIREMENT_UNKNOWN;
+      }
+      if (results.indexOf(REQUIREMENT_UNMET) !== -1) return REQUIREMENT_UNMET;
+      return results.every(function (state) { return state === REQUIREMENT_MET; })
+        ? REQUIREMENT_MET
+        : REQUIREMENT_UNKNOWN;
+    }
+    return REQUIREMENT_UNKNOWN;
+  }
+
+  function toCompletionSet(completed) {
+    var set = new Set();
+    if (!completed) return set;
+    // Duck-type rather than `instanceof Set` so a Set created in another realm
+    // (or a plain array of codes) is still understood.
+    if (typeof completed.forEach === "function") {
+      completed.forEach(function (value) {
+        var code = normalizeCode(value);
+        if (/^[A-Z]{2,5} \d{4}[A-Z]?$/.test(code)) set.add(code);
+      });
+      return set;
+    }
+    normalizeTargets(completed).forEach(function (code) { set.add(code); });
+    return set;
+  }
+
+  // The prerequisite verdict for one course record, given the finished courses.
+  function requirementStatus(course, completed) {
+    var finished = toCompletionSet(completed);
+    var code = normalizeCode(course && course.code);
+    if (code && finished.has(code)) return REQUIREMENT_COMPLETED;
+    var requirement = course && course.requirements && course.requirements.prerequisite;
+    if (!requirement || !requirement.expression) return REQUIREMENT_MET;
+    return evaluateExpression(requirement.expression, finished);
+  }
+
+  function requirementStatusLabel(status) {
+    var labels = {};
+    labels[REQUIREMENT_COMPLETED] = "Completed";
+    labels[REQUIREMENT_MET] = "Prereqs met";
+    labels[REQUIREMENT_UNMET] = "Prereqs not met";
+    labels[REQUIREMENT_UNKNOWN] = "Prereqs unclear";
+    return labels[status] || "Prereqs unknown";
+  }
+
+  function requirementStatusMarker(status) {
+    if (status === REQUIREMENT_COMPLETED || status === REQUIREMENT_MET) return "\u2713";
+    if (status === REQUIREMENT_UNMET) return "\u2717";
+    return "?";
   }
 
   function storageKey(year) {
@@ -141,6 +241,15 @@
     storageKey: storageKey,
     loadTargets: loadTargets,
     saveTargets: saveTargets,
-    mergeGraphs: mergeGraphs
+    mergeGraphs: mergeGraphs,
+    requirementStatus: requirementStatus,
+    requirementStatusLabel: requirementStatusLabel,
+    requirementStatusMarker: requirementStatusMarker,
+    REQUIREMENT_STATES: {
+      COMPLETED: REQUIREMENT_COMPLETED,
+      MET: REQUIREMENT_MET,
+      UNMET: REQUIREMENT_UNMET,
+      UNKNOWN: REQUIREMENT_UNKNOWN
+    }
   };
-}(window));
+}(typeof window !== "undefined" ? window : this));
