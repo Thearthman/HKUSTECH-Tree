@@ -181,7 +181,10 @@ against the linked HKUST catalog entry.
   target status shows, so a finished or starred course settles its branch even
   when the catalog adds a grade note such as "Grade A or above" (transcripts
   are not available); prose conditions stay visible because no completion can
-  settle them. The toggle in the control bar is on by
+  settle them. The USTree is evaluated strictly backward, top-down from its
+  targets, so a course is only reconsidered when a target's own requirement
+  still reaches it -- a course that merely happens to *depend* on a target is
+  not dragged into the pathway. The toggle in the control bar is on by
   default and remembers an opt-out.
 - A fixed checkbox in the top-left of every course node records completion
   without changing node dimensions or opening the details drawer.

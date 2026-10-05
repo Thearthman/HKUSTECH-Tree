@@ -567,6 +567,38 @@ test("an unmet requirement still prunes a satisfied alternative nested inside it
   assert.deepEqual(hidden(support, shared, new Set(["COMP 1021"])), []);
 });
 
+test("a backward-only pathway does not revive a branch just because it depends on a target", () => {
+  const support = loadUstree();
+  // Real USTree leak: target MATH 2011 is a corequisite of MATH 2421, and
+  // COMP 4211 (another target) can be met by ELEC 2600 OR MATH 2421. Once
+  // ELEC 2600 is credited, MATH 2421 is a redundant alternative for COMP 4211
+  // and must be hidden. MATH 2421 merely *depending* on the MATH 2011 target
+  // must not drag it back in: a backward-only graph is evaluated top-down from
+  // its targets, so the forward/dependent walk never seeds MATH 2421.
+  const backward = Object.assign(graph(
+    ["COMP 4211", "MATH 2011"],
+    [
+      courseNodeById("COMP 4211"),
+      { id: "bool:COMP 4211:prerequisite:0", type: "any" },
+      courseNodeById("ELEC 2600"),
+      courseNodeById("MATH 2421"),
+      { id: "bool:MATH 2421:corequisite:0", type: "any" },
+      courseNodeById("MATH 2011")
+    ],
+    [
+      edge("course:ELEC 2600", "bool:COMP 4211:prerequisite:0"),
+      edge("course:MATH 2421", "bool:COMP 4211:prerequisite:0"),
+      edge("bool:COMP 4211:prerequisite:0", "course:COMP 4211"),
+      coreqEdge("course:MATH 2011", "bool:MATH 2421:corequisite:0"),
+      coreqEdge("bool:MATH 2421:corequisite:0", "course:MATH 2421")
+    ]
+  ), { direction: "backward" });
+  assert.deepEqual(
+    hidden(support, backward, new Set(), ["ELEC 2600", "MATH 2011"]),
+    ["course:MATH 2421"]
+  );
+});
+
 test("a grade-qualified branch collapses once its course is credited", () => {
   const support = loadUstree();
   // COMP 2012H can be met by "Grade A or above in COMP 1023" OR COMP 1028.

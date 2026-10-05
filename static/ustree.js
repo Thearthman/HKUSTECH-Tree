@@ -383,11 +383,15 @@
       groups.forEach(considerRequirementGroup);
     }
 
-    // Seeds: the roots/targets plus every course that depends on one of them
-    // (the forward direction). Dependents sit behind boolean junctions, so the
-    // walk follows requirement edges across junctions rather than stopping at
-    // them. Every other course is kept only if some processed requirement
-    // still needs it, which is what lets a redundant requirement disappear.
+    // Seeds: the roots/targets. On a bidirectional view (the single-course
+    // page) the graph also carries forward edges, so every course that depends
+    // on a root is seeded too -- its redundant alternatives should collapse as
+    // well. A backward-only view (USTree) is evaluated strictly top-down from
+    // its targets: a course is only reconsidered if a target's own requirement
+    // still reaches it, so an unrelated course that merely happens to depend on
+    // a target is never dragged into the pathway. Dependents sit behind
+    // boolean junctions, so the walk follows requirement edges across
+    // junctions rather than stopping at them.
     var seeds = [];
     var seenSeed = new Set();
     normalizeTargets(graph && (graph.roots || graph.targets || [graph && graph.root])).forEach(function (code) {
@@ -397,22 +401,24 @@
         seeds.push(id);
       }
     });
-    var queue = seeds.slice();
-    var visited = new Set();
-    while (queue.length) {
-      var current = queue.shift();
-      if (visited.has(current)) continue;
-      visited.add(current);
-      (outgoing.get(current) || []).forEach(function (next) {
-        if (visited.has(next)) return;
-        var node = nodesById.get(next);
-        if (node && node.type === "course" && !seenSeed.has(next)) {
-          seenSeed.add(next);
-          seeds.push(next);
-        }
-        // Keep walking even through boolean junctions and detail nodes.
-        queue.push(next);
-      });
+    if ((graph && graph.direction) !== "backward") {
+      var queue = seeds.slice();
+      var visited = new Set();
+      while (queue.length) {
+        var current = queue.shift();
+        if (visited.has(current)) continue;
+        visited.add(current);
+        (outgoing.get(current) || []).forEach(function (next) {
+          if (visited.has(next)) return;
+          var node = nodesById.get(next);
+          if (node && node.type === "course" && !seenSeed.has(next)) {
+            seenSeed.add(next);
+            seeds.push(next);
+          }
+          // Keep walking even through boolean junctions and detail nodes.
+          queue.push(next);
+        });
+      }
     }
     seeds.forEach(considerCourse);
 
@@ -531,6 +537,9 @@
       root: roots[0] || null,
       roots: roots,
       targets: roots,
+      // Merged targets are always loaded backward (USTree): there is no
+      // forward/dependent view to reconcile, so hiding stays top-down.
+      direction: "backward",
       depth: depth,
       relations: Array.from(relations).sort(),
       nodes: nodes,
