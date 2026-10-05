@@ -121,13 +121,13 @@
   // -------------------------------------------------------------------------
   // Hide fulfilled prereqs
   // -------------------------------------------------------------------------
-  // When a course's prerequisite requirement is already satisfied by the
-  // finished courses, the branches that did not contribute to that
-  // satisfaction are redundant. With "COMP 1023 OR COMP 1028" and COMP 1023
-  // done, COMP 1028 (and anything shown only because of it) can be hidden.
-  // Starred/in-plan courses (`planned`) are treated as complete for this
-  // purpose too, so a planned course can fulfil a requirement and hide its
-  // alternatives. Returns the node ids to hide. Roots/targets, the courses
+  // When a course's prerequisite or corequisite requirement is already
+  // satisfied by the finished courses, the branches that did not contribute to
+  // that satisfaction are redundant. With "COMP 1023 OR COMP 1028" and
+  // COMP 1023 done, COMP 1028 (and anything shown only because of it) can be
+  // hidden. Starred/in-plan courses (`planned`) are treated as complete for
+  // this purpose too, so a planned course can fulfil a requirement and hide
+  // its alternatives. Returns the node ids to hide. Roots/targets, the courses
   // shown as dependents, and finished/planned courses are never hidden, and a
   // course that some remaining course still needs survives -- so the answer is
   // conservative: grade-qualified branches are left alone because a
@@ -140,17 +140,26 @@
       if (node && node.id) nodesById.set(String(node.id), node);
     });
 
-    // Prerequisite edges point from a prerequisite to the course that needs
-    // it. Keep each edge's qualifier ("Grade A or above", ...) because it
-    // decides whether a finished course really satisfies that branch.
+    // Prerequisite and corequisite edges point from a requirement course to
+    // the course that needs it. Keep each edge's relation so a prerequisite
+    // branch and a corequisite branch are never mistaken for alternatives, and
+    // its qualifier ("Grade A or above", ...) because that decides whether a
+    // finished course really satisfies the branch.
+    var requirementRelations = { prerequisite: true, corequisite: true };
     var incoming = new Map();
     var outgoing = new Map();
     edges.forEach(function (edge) {
-      if (!edge || (edge.relation || edge.kind) !== "prerequisite") return;
+      if (!edge) return;
+      var relation = edge.relation || edge.kind || "prerequisite";
+      if (!requirementRelations[relation]) return;
       var source = String(edge.source);
       var target = String(edge.target);
       if (!incoming.has(target)) incoming.set(target, []);
-      incoming.get(target).push({ source: source, qualifier: edge.qualifier || "" });
+      incoming.get(target).push({
+        source: source,
+        qualifier: edge.qualifier || "",
+        relation: relation
+      });
       if (!outgoing.has(source)) outgoing.set(source, []);
       outgoing.get(source).push(target);
     });
@@ -179,7 +188,7 @@
     function evalBranch(nodeId, qualifier) {
       var cacheKey = nodeId + "\u0000" + (qualifier || "");
       if (statusCache.has(cacheKey)) return statusCache.get(cacheKey);
-      // A prerequisite cycle would otherwise recurse forever; treat the
+      // A requirement cycle would otherwise recurse forever; treat the
       // in-progress branch as unknown.
       if (evaluating.has(cacheKey)) return REQUIREMENT_UNKNOWN;
       evaluating.add(cacheKey);
@@ -294,12 +303,10 @@
       });
     }
 
-    function considerCourse(courseId) {
-      if (considered.has(courseId)) return;
-      considered.add(courseId);
-      keep.add(courseId);
-      var tops = childEdges(courseId);
-      if (!tops.length) return;
+    // Decide which branches of one requirement group (a single relation) are
+    // redundant. When a course lists several independent top-level branches of
+    // the same relation, a satisfied one makes the others redundant.
+    function considerRequirementGroup(tops) {
       if (tops.length > 1) {
         var anyMet = tops.some(function (edge) {
           return evalBranch(edge.source, edge.qualifier) === REQUIREMENT_MET;
@@ -316,11 +323,29 @@
       else needSubtree(tops[0].source);
     }
 
+    function considerCourse(courseId) {
+      if (considered.has(courseId)) return;
+      considered.add(courseId);
+      keep.add(courseId);
+      var tops = childEdges(courseId);
+      if (!tops.length) return;
+      // Prerequisites and corequisites are independent requirements, so group
+      // them before pruning: a satisfied prerequisite never makes a corequisite
+      // (or vice versa) redundant.
+      var groups = new Map();
+      tops.forEach(function (edge) {
+        var relation = edge.relation || "prerequisite";
+        if (!groups.has(relation)) groups.set(relation, []);
+        groups.get(relation).push(edge);
+      });
+      groups.forEach(considerRequirementGroup);
+    }
+
     // Seeds: the roots/targets plus every course that depends on one of them
     // (the forward direction). Dependents sit behind boolean junctions, so the
-    // walk follows prerequisite edges across junctions rather than stopping at
+    // walk follows requirement edges across junctions rather than stopping at
     // them. Every other course is kept only if some processed requirement
-    // still needs it, which is what lets a redundant prerequisite disappear.
+    // still needs it, which is what lets a redundant requirement disappear.
     var seeds = [];
     var seenSeed = new Set();
     normalizeTargets(graph && (graph.roots || graph.targets || [graph && graph.root])).forEach(function (code) {

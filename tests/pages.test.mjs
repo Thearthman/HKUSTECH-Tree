@@ -295,7 +295,7 @@ test("completions are shared with the major-requirement page under the catalog y
   }
 });
 
-test("a toggle hides prerequisites already fulfilled by finished or starred courses", () => {
+test("a toggle hides prerequisites and corequisites fulfilled by finished or starred courses", () => {
   const html = read("index.html");
   assert.ok(
     html.includes('id="hideFulfilledToggle"') && html.includes("Hide fulfilled prereqs"),
@@ -313,8 +313,9 @@ test("a toggle hides prerequisites already fulfilled by finished or starred cour
   );
   const ustree = read("ustree.js");
   assert.ok(
-    ustree.includes("function hiddenFulfilledPrereqNodes"),
-    "ustree.js should own the fulfilled-prerequisite pruning"
+    ustree.includes("function hiddenFulfilledPrereqNodes") &&
+      ustree.includes("requirementRelations = { prerequisite: true, corequisite: true }"),
+    "ustree.js should own the fulfilled prerequisite/corequisite pruning"
   );
   assert.ok(
     ustree.includes("hiddenFulfilledPrereqNodes: hiddenFulfilledPrereqNodes"),

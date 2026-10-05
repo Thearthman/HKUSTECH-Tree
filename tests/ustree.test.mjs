@@ -60,6 +60,10 @@ function qualifiedEdge(source, target, qualifier) {
   return { source, target, relation: "prerequisite", qualifier };
 }
 
+function coreqEdge(source, target) {
+  return { source, target, relation: "corequisite", symmetric: true };
+}
+
 function graph(roots, nodes, edges) {
   return { roots, nodes, edges };
 }
@@ -208,6 +212,90 @@ test("a starred/in-plan course counts as complete when hiding prereqs", () => {
     ]
   );
   assert.deepEqual(hidden(support, qualified, new Set(), ["COMP 1023"]), []);
+});
+
+test("hiding fulfilled corequisites drops an OR alternative", () => {
+  const support = loadUstree();
+  // CENG 2210 coreq: CHEM 1008 OR CHEM 1012.
+  const coreqGraph = graph(
+    ["CENG 2210"],
+    [
+      courseNodeById("CENG 2210"),
+      { id: "bool:CENG 2210:corequisite:0", type: "any", relation: "corequisite" },
+      courseNodeById("CHEM 1008"),
+      courseNodeById("CHEM 1012")
+    ],
+    [
+      coreqEdge("course:CHEM 1008", "bool:CENG 2210:corequisite:0"),
+      coreqEdge("course:CHEM 1012", "bool:CENG 2210:corequisite:0"),
+      coreqEdge("bool:CENG 2210:corequisite:0", "course:CENG 2210")
+    ]
+  );
+  assert.deepEqual(hidden(support, coreqGraph, new Set()), []);
+  assert.deepEqual(
+    hidden(support, coreqGraph, new Set(["CHEM 1008"])),
+    ["course:CHEM 1012"]
+  );
+  // A starred/in-plan corequisite counts the same as a finished one.
+  assert.deepEqual(
+    hidden(support, coreqGraph, new Set(), ["CHEM 1008"]),
+    ["course:CHEM 1012"]
+  );
+  // Both alternatives finished: nothing is redundant.
+  assert.deepEqual(
+    hidden(support, coreqGraph, new Set(["CHEM 1008", "CHEM 1012"])),
+    []
+  );
+});
+
+test("an AND corequisite only prunes once every member is finished", () => {
+  const support = loadUstree();
+  // CHEM 2550 coreq: CHEM 2110 AND CHEM 2210.
+  const andGraph = graph(
+    ["CHEM 2550"],
+    [
+      courseNodeById("CHEM 2550"),
+      { id: "bool:CHEM 2550:corequisite:0", type: "all", relation: "corequisite" },
+      courseNodeById("CHEM 2110"),
+      courseNodeById("CHEM 2210")
+    ],
+    [
+      coreqEdge("course:CHEM 2110", "bool:CHEM 2550:corequisite:0"),
+      coreqEdge("course:CHEM 2210", "bool:CHEM 2550:corequisite:0"),
+      coreqEdge("bool:CHEM 2550:corequisite:0", "course:CHEM 2550")
+    ]
+  );
+  assert.deepEqual(hidden(support, andGraph, new Set(["CHEM 2110"])), []);
+  assert.deepEqual(
+    hidden(support, andGraph, new Set(["CHEM 2110", "CHEM 2210"])),
+    []
+  );
+});
+
+test("a satisfied prerequisite never hides an unmet corequisite", () => {
+  const support = loadUstree();
+  // COMP 9999 requires COMP 1000, and its corequisite COMP 2000 is unmet.
+  // The two relations are independent: finishing COMP 1000 must not drop the
+  // corequisite branch just because it is a second top-level edge.
+  const mixed = graph(
+    ["COMP 9999"],
+    [
+      courseNodeById("COMP 9999"),
+      courseNodeById("COMP 1000"),
+      courseNodeById("COMP 2000")
+    ],
+    [
+      edge("course:COMP 1000", "course:COMP 9999"),
+      coreqEdge("course:COMP 2000", "course:COMP 9999")
+    ]
+  );
+  assert.deepEqual(hidden(support, mixed, new Set(["COMP 1000"])), []);
+  // The corequisite is only hidden once it is itself fulfilled by an
+  // alternative -- here there is no alternative to drop, so nothing hides.
+  assert.deepEqual(
+    hidden(support, mixed, new Set(["COMP 1000", "COMP 2000"])),
+    []
+  );
 });
 
 test("hiding a fulfilled branch also drops prerequisites shown only because of it", () => {

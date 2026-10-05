@@ -409,8 +409,8 @@
     }
   }
 
-  // Hiding fulfilled prerequisites is on by default; the control-bar toggle
-  // remembers an explicit opt-out across sessions.
+  // Hiding fulfilled prerequisites/corequisites is on by default; the
+  // control-bar toggle remembers an explicit opt-out across sessions.
   function loadHideFulfilled() {
     try {
       var stored = localStorage.getItem(HIDE_FULFILLED_KEY);
@@ -428,15 +428,16 @@
     }
   }
 
-  // The graph with redundant prerequisite branches removed, or the raw graph
-  // when the toggle is off. Computed on demand so ticking a completion or
-  // flipping the toggle is reflected immediately.
+  // The graph with redundant prerequisite/corequisite branches removed, or the
+  // raw graph when the toggle is off. Computed on demand so ticking a
+  // completion or flipping the toggle is reflected immediately.
   function activeGraph() {
     if (!state.hideFulfilledPrereq || !state.graph) return state.graph;
     var support = window.USTreeSupport;
     if (!support || typeof support.hiddenFulfilledPrereqNodes !== "function") return state.graph;
     // Starred USTree targets count as complete, so a planned course can fulfil
-    // a prerequisite and hide its redundant alternatives.
+    // a requirement (prerequisite or corequisite) and hide its redundant
+    // alternatives.
     var planned = normalizeTargets(state.targets);
     var hidden = support.hiddenFulfilledPrereqNodes(state.graph, state.completions, planned);
     if (!hidden || !hidden.length) return state.graph;
