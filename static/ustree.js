@@ -2,7 +2,6 @@
   "use strict";
 
   var STORAGE_PREFIX = "hkust-course-tree";
-  var DEFAULT_TARGET = "COMP 4211";
 
   function normalizeCode(value) {
     var text = String(value || "").trim().toUpperCase();
@@ -33,9 +32,9 @@
       if (stored !== null) return normalizeTargets(JSON.parse(stored));
 
       var legacy = normalizeCode(storage.getItem(legacyTargetKey(year)) || "");
-      return normalizeTargets([legacy || DEFAULT_TARGET]);
+      return normalizeTargets([legacy]);
     } catch (_error) {
-      return [DEFAULT_TARGET];
+      return [];
     }
   }
 

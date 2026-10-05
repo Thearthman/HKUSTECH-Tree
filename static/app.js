@@ -31,13 +31,18 @@
     return fallback;
   }
 
+  // Tick authored for a checkbox rect whose top-left is (1,1). Every checkbox
+  // image reuses it (translating as needed) so the tick can never drift out of
+  // its box -- e.g. the target image paints the box at CHECKBOX_INSET.
+  function checkboxCheckMark(palette) {
+    return '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+  }
+
   function checkboxSvg(completed) {
     var palette = graphTheme();
     var fill = completed ? (palette.accent || "#176b4b") : (palette["checkbox-bg"] || "rgba(255,255,255,0.9)");
     var stroke = completed ? (palette.accent || "#176b4b") : (palette["checkbox-border"] || "#59665e");
-    var check = completed
-      ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-      : "";
+    var check = completed ? checkboxCheckMark(palette) : "";
     return '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' + check;
   }
 
@@ -51,10 +56,17 @@
     var palette = graphTheme();
     var starFill = palette["star-fill"] || "#c18720";
     var starStroke = palette["star-stroke"] || "#805a12";
+    // The box is painted at CHECKBOX_INSET, so shift the shared tick to match
+    // (the small checkbox keeps it at (1,1) instead).
+    var check = completed
+      ? '<g transform="translate(' + (CHECKBOX_INSET - 1) + ' ' + (CHECKBOX_INSET - 1) + ')">' + checkboxCheckMark(palette) + "</g>"
+      : "";
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="184" height="66" viewBox="0 0 184 66">' +
       '<rect x="' + CHECKBOX_INSET + '" y="' + CHECKBOX_INSET + '" width="' + (CHECKBOX_SIZE - 2) + '" height="' + (CHECKBOX_SIZE - 2) + '" rx="2" fill="' + (completed ? (palette.accent || "#176b4b") : (palette["checkbox-bg"] || "rgba(255,255,255,0.9)")) + '" stroke="' + (completed ? (palette.accent || "#176b4b") : (palette["checkbox-border"] || "#59665e")) + '" stroke-width="1.5"/>' +
-      (completed ? '<path d="M4 8.2 6.8 11 12.5 5" fill="none" stroke="' + (palette["checkbox-check"] || "#fff") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' : "") +
-      '<polygon points="161,2.5 163.6,6.8 168.6,7.7 164.8,11.1 165.8,16.1 161,13.8 156.2,16.1 157.2,11.1 153.4,7.7 158.4,6.8" fill="' + starFill + '" stroke="' + starStroke + '" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+      check +
+      // Nudge the star down so it rides the same row as the checkbox instead of
+      // hugging the node's top edge.
+      '<polygon points="161,2.5 163.6,6.8 168.6,7.7 164.8,11.1 165.8,16.1 161,13.8 156.2,16.1 157.2,11.1 153.4,7.7 158.4,6.8" transform="translate(0 4.5)" fill="' + starFill + '" stroke="' + starStroke + '" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
       '</svg>';
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
@@ -304,9 +316,9 @@
     try {
       var stored = localStorage.getItem(STORAGE_PREFIX + ":ustree:" + state.year);
       if (stored !== null) values = JSON.parse(stored);
-      else values = [localStorage.getItem(targetKey()) || "COMP 4211"];
+      else values = [localStorage.getItem(targetKey()) || ""];
     } catch (_error) {
-      values = ["COMP 4211"];
+      values = [];
     }
     state.targets = normalizeTargets(values);
     return state.targets;
@@ -531,26 +543,14 @@
       selectCourse(previous, { loadGraph: true });
       return;
     }
-    if (IS_USTREE_PAGE && state.targets.length === 0) {
+    if (IS_USTREE_PAGE) {
       setGraphState("empty", "Your USTree is empty", "Add a course from its details or search for one to inspect it.");
       renderOutline();
       renderUstreeMenu();
       return;
     }
-    var courses = await queryCourses("COMP 4211", { silent: true });
-    if (!courses.length) courses = await queryCourses("COMP", { silent: true });
-    var preferredCodes = ["COMP 4211", "COMP 2011", "COMP 1021"];
-    var preferred = null;
-    preferredCodes.some(function (code) {
-      preferred = courses.find(function (course) { return normalizeCode(course.code) === code; });
-      return Boolean(preferred);
-    });
-    if (!preferred) preferred = courses[0];
-    if (preferred) {
-      selectCourse(preferred, { loadGraph: true });
-    } else {
-      setGraphState("empty", "No COMP courses found", "Use search or refresh the catalog.", "Retry", checkCatalog);
-    }
+    setGraphState("empty", "No course selected", "Search for a course to build its tree.");
+    renderOutline();
   }
 
   async function loadGraph() {
