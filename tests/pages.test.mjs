@@ -14,6 +14,36 @@ test("ustree.html mirrors index.html", () => {
   );
 });
 
+test("the shell includes the USTree workspace markup", () => {
+  const html = read("index.html");
+  for (const id of ["ustreeManager", "ustreeButton", "ustreeTargets", "ustreeEmpty"]) {
+    assert.ok(
+      html.includes(`id="${id}"`),
+      `the shared shell should include the USTree element #${id}`
+    );
+  }
+  assert.ok(
+    html.includes('href="/ustree"'),
+    "the shared shell should link to the dedicated /ustree page"
+  );
+});
+
+test("app.js switches into USTree mode from the /ustree URL", () => {
+  const app = read("app.js");
+  assert.ok(
+    app.includes('=== "/ustree"'),
+    "app.js should detect the USTree page from the URL path"
+  );
+  assert.ok(
+    app.includes('IS_USTREE_PAGE ? "ustree" : "course"'),
+    "app.js should mark the body as the ustree page"
+  );
+  assert.ok(
+    app.includes("elements.ustreeManager.hidden = !IS_USTREE_PAGE"),
+    "app.js should reveal the USTree manager only on /ustree"
+  );
+});
+
 test("the shared shell loads the browser-only client", () => {
   const html = read("index.html");
   for (const asset of ["/catalog-client.js", "/ustree.js", "/app.js"]) {
@@ -36,7 +66,11 @@ test("client code has no server API calls", () => {
 });
 
 test("user data is persisted in the browser", () => {
-  assert.ok(read("app.js").includes("localStorage"), "completions, targets, and focus use localStorage");
+  const app = read("app.js");
+  assert.ok(app.includes("localStorage"), "completions, targets, and focus use localStorage");
+  for (const key of [":completed:", ":ustree:", ":focus:"]) {
+    assert.ok(app.includes(key), `app.js should persist the ${key} key locally`);
+  }
   assert.ok(read("ustree.js").includes("storageKey"), "USTree targets use localStorage");
   assert.ok(read("catalog-client.js").includes("indexedDB"), "the catalog is cached in IndexedDB");
 });
