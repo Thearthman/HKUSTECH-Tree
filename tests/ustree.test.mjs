@@ -448,6 +448,75 @@ test("a dependent reached through a boolean junction still drives pruning", () =
   assert.deepEqual(hidden(support, dependent, new Set()), []);
 });
 
+test("an unmet requirement still prunes a satisfied alternative nested inside it", () => {
+  const support = loadUstree();
+  // ELEC 2600-style shape: root COMP 1023 is a prerequisite of COMP 9000, but
+  // COMP 9000 also needs COMP 8888, so its top-level AND stays unmet. The
+  // middle OR (COMP 1021 OR COMP 1022 OR COMP 1024) is satisfied by COMP 1021,
+  // so its unused alternatives must still be hidden even though an ancestor is
+  // unmet. This mirrors MATH 4427 keeping MATH 2023/MATH 2024 because it also
+  // needs a missing course.
+  const dependent = graph(
+    ["COMP 1023"],
+    [
+      courseNodeById("COMP 1023"),
+      { id: "bool:COMP 9000:prerequisite:0", type: "all" },
+      { id: "bool:COMP 9000:prerequisite:0.0", type: "any" },
+      courseNodeById("COMP 9999"),
+      { id: "bool:COMP 9000:prerequisite:0.1", type: "any" },
+      courseNodeById("COMP 1021"),
+      courseNodeById("COMP 1022"),
+      courseNodeById("COMP 1024"),
+      courseNodeById("COMP 8888"),
+      courseNodeById("COMP 9000")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 9000:prerequisite:0.0"),
+      edge("course:COMP 9999", "bool:COMP 9000:prerequisite:0.0"),
+      edge("bool:COMP 9000:prerequisite:0.0", "bool:COMP 9000:prerequisite:0"),
+      edge("course:COMP 1021", "bool:COMP 9000:prerequisite:0.1"),
+      edge("course:COMP 1022", "bool:COMP 9000:prerequisite:0.1"),
+      edge("course:COMP 1024", "bool:COMP 9000:prerequisite:0.1"),
+      edge("bool:COMP 9000:prerequisite:0.1", "bool:COMP 9000:prerequisite:0"),
+      edge("course:COMP 8888", "bool:COMP 9000:prerequisite:0"),
+      edge("bool:COMP 9000:prerequisite:0", "course:COMP 9000")
+    ]
+  );
+  assert.deepEqual(
+    hidden(support, dependent, new Set(["COMP 1021"])),
+    ["course:COMP 1022", "course:COMP 1024"]
+  );
+
+  // A redundant alternative another visible target still needs is protected.
+  const shared = graph(
+    ["COMP 1023", "COMP 3031"],
+    [
+      courseNodeById("COMP 1023"),
+      { id: "bool:COMP 9000:prerequisite:0", type: "all" },
+      { id: "bool:COMP 9000:prerequisite:0.0", type: "any" },
+      courseNodeById("COMP 9999"),
+      { id: "bool:COMP 9000:prerequisite:0.1", type: "any" },
+      courseNodeById("COMP 1021"),
+      courseNodeById("COMP 1022"),
+      courseNodeById("COMP 8888"),
+      courseNodeById("COMP 9000"),
+      courseNodeById("COMP 3031")
+    ],
+    [
+      edge("course:COMP 1023", "bool:COMP 9000:prerequisite:0.0"),
+      edge("course:COMP 9999", "bool:COMP 9000:prerequisite:0.0"),
+      edge("bool:COMP 9000:prerequisite:0.0", "bool:COMP 9000:prerequisite:0"),
+      edge("course:COMP 1021", "bool:COMP 9000:prerequisite:0.1"),
+      edge("course:COMP 1022", "bool:COMP 9000:prerequisite:0.1"),
+      edge("bool:COMP 9000:prerequisite:0.1", "bool:COMP 9000:prerequisite:0"),
+      edge("course:COMP 8888", "bool:COMP 9000:prerequisite:0"),
+      edge("bool:COMP 9000:prerequisite:0", "course:COMP 9000"),
+      edge("course:COMP 1022", "course:COMP 3031")
+    ]
+  );
+  assert.deepEqual(hidden(support, shared, new Set(["COMP 1021"])), []);
+});
+
 test("a grade-qualified branch survives a bare completion", () => {
   const support = loadUstree();
   // COMP 2012H can be met by "Grade A or above in COMP 1023" OR COMP 1028.

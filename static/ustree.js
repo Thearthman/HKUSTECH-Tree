@@ -250,13 +250,24 @@
     var needed = new Set();
     var satisfied = new Set();
 
-    // Keep an entire branch: used for unmet/unknown requirements and for any
-    // subtree that still contains a finished course.
+    // Keep a branch. A nested boolean requirement that is already satisfied
+    // does not need every one of its alternatives: keep only the parts that
+    // fulfil it. Without this an unmet ancestor would drag a finished course's
+    // unused alternatives back in (e.g. MATH 4427's unmet AND requirement
+    // re-keeping "MATH 2011 OR MATH 2023 OR MATH 2024" even though MATH 2011
+    // is done). Everything else is kept whole, which is what lets unmet or
+    // unclear requirements -- and any subtree still holding a finished course
+    // -- survive.
     function needSubtree(nodeId) {
       if (needed.has(nodeId)) return;
+      var node = nodesById.get(nodeId);
+      if (node && (node.type === "any" || node.type === "all") &&
+          evalBranch(nodeId, "") === REQUIREMENT_MET) {
+        keepSatisfied(nodeId);
+        return;
+      }
       needed.add(nodeId);
       keep.add(nodeId);
-      var node = nodesById.get(nodeId);
       if (!node) return;
       if (node.type === "course") {
         considerCourse(nodeId);
