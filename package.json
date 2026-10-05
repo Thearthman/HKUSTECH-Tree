@@ -1,0 +1,16 @@
+{
+  "name": "hkustech-tree",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-only HKUST course prerequisite tree",
+  "scripts": {
+    "build": "node tools/build-catalog.mjs --if-missing",
+    "build:catalog": "node tools/build-catalog.mjs",
+    "serve": "node tools/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "node-html-parser": "^6.1.13"
+  }
+}

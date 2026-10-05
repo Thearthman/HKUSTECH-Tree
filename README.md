@@ -4,7 +4,35 @@ A local course-selection helper that turns the HKUST undergraduate catalog into
 an explorable prerequisite tech tree. It preserves nested `AND`/`OR` rules,
 corequisites, exclusions, catalog conditions, and the original HKUST wording.
 
-## Run
+A prebuilt copy of the catalog ships with the site, so the whole application can
+run as a **browser-only static app**: no server, no database, and no data sent
+anywhere at runtime. The optional Flask server is kept for offline catalog
+crawling during development.
+
+## Static build (browser-only, Vercel)
+
+`static/` is the site root. It contains the prebuilt `data/catalog.json` plus all
+HTML, CSS, JS, and vendored libraries. At runtime the browser loads that JSON
+once, mirrors it into IndexedDB as an offline fallback, and answers every search,
+course lookup, and graph query locally.
+
+```bash
+npm install          # only needed to regenerate the catalog or run tests
+npm run serve        # http://localhost:4173
+npm test
+```
+
+`npm run build` regenerates `static/data/catalog.json` from the live HKUST
+catalog when it is missing (`npm run build:catalog` always regenerates). The
+generated file is committed so deploys are deterministic and hermetic.
+
+To deploy on Vercel, create a project from this repository with the repository
+root as the project root. `vercel.json` sets `static/` as the output directory,
+enables clean URLs, and rewrites `/ustree` to the single-page entry point. The
+only runtime requirement is that `data/catalog.json` is served from the same
+origin as the pages.
+
+## Run (Flask development server)
 
 The development environment is a Nix flake; there is no virtualenv and nothing
 is installed into the working copy.
@@ -40,8 +68,10 @@ report, including its nested `AND`/`OR` choice rules and catalog relationship
 context.
 
 The current `2026-27` catalog is already cached in `data/catalog.sqlite3` in the
-working copy. Use **Sync** in the interface to atomically refresh it. A failed or
-suspiciously empty fetch leaves the last successful catalog untouched.
+working copy; the Flask backend serves its own `/api/*` endpoints and refreshes
+from the live catalog when asked. The static build instead reads the committed
+`static/data/catalog.json`; its **Check for updates** button re-fetches that file
+from the host and falls back to the browser's IndexedDB copy when offline.
 
 ## Test
 

@@ -5,7 +5,6 @@
   var DEFAULT_RELATIONS = ["prerequisite", "corequisite", "exclusion"];
   var STORAGE_PREFIX = "hkust-course-tree";
   var SEARCH_DELAY = 180;
-  var SYNC_POLL_DELAY = 800;
   var HOVER_GROUP_COUNT = 5;
   var COMPLETION_HIT_SIZE = 25;
   var IS_USTREE_PAGE = window.location.pathname.replace(/\/+$/, "") === "/ustree";
@@ -109,8 +108,7 @@
     searchController: null,
     graphController: null,
     detailsController: null,
-    syncTimer: null,
-    syncJobId: null,
+    syncing: false,
     noticeAction: null,
     initializedTarget: false,
     graphErrors: [],
@@ -149,40 +147,11 @@
     return /\bcredits?\b/i.test(text) ? text : text + " credits";
   }
 
-  function apiErrorMessage(payload, fallback) {
-    if (payload && payload.error) {
-      return payload.error.message || payload.error.code || fallback;
+  function catalogClient() {
+    if (!window.HKUSTCatalog) {
+      throw new Error("The catalog client failed to load. Reload the page and try again.");
     }
-    return (payload && (payload.message || payload.error)) || fallback;
-  }
-
-  async function fetchJson(url, options, acceptedStatuses) {
-    var response;
-    try {
-      response = await fetch(url, Object.assign({
-        headers: { "Accept": "application/json" }
-      }, options || {}));
-    } catch (error) {
-      var networkError = new Error("The local server could not be reached.");
-      networkError.cause = error;
-      throw networkError;
-    }
-
-    var payload = null;
-    try {
-      payload = await response.json();
-    } catch (_error) {
-      payload = null;
-    }
-
-    var accepted = acceptedStatuses || [];
-    if (!response.ok && accepted.indexOf(response.status) === -1) {
-      var error = new Error(apiErrorMessage(payload, "Request failed with status " + response.status + "."));
-      error.status = response.status;
-      error.payload = payload;
-      throw error;
-    }
-    return { payload: payload || {}, status: response.status };
+    return window.HKUSTCatalog;
   }
 
   function catalogYear(catalog) {
@@ -420,10 +389,10 @@
   async function loadCatalogs(options) {
     var settings = options || {};
     try {
-      var result = await fetchJson("/api/catalogs");
-      var catalogs = result.payload.catalogs || result.payload.items || [];
+      var client = catalogClient();
+      var catalogs = await client.catalogs();
       state.catalogs = Array.isArray(catalogs) ? catalogs : [];
-      var serverDefault = result.payload.defaultYear || result.payload.default_year || DEFAULT_YEAR;
+      var serverDefault = client.DEFAULT_YEAR || DEFAULT_YEAR;
       var availableYears = state.catalogs.map(catalogYear).filter(Boolean);
       var years = Array.from(new Set(availableYears.concat([serverDefault, state.year || DEFAULT_YEAR])));
       years.sort().reverse();
@@ -434,18 +403,7 @@
       elements.yearSelect.value = state.year;
       updateCatalogMeta();
 
-      var catalog = currentCatalog();
-      if (catalog) {
-        var status = catalog.status || catalog.sync_status;
-        var message = catalog.syncMessage || catalog.sync_message;
-        if (status === "failed") {
-          setNotice(message || "The last catalog refresh failed. Cached data is still in use.", "error", "Retry", startSync);
-        } else if (catalog.stale || status === "stale") {
-          setNotice("The cached " + state.year + " catalog may be out of date.", "", "Sync now", startSync);
-        } else if (!settings.preserveNotice) {
-          setNotice(null);
-        }
-      }
+      if (!settings.preserveNotice) setNotice(null);
       return state.catalogs;
     } catch (error) {
       updateCatalogMeta();
@@ -483,9 +441,10 @@
     state.searchController = new AbortController();
     if (!settings.silent) renderSearchResults([], "Searching...");
     try {
-      var url = "/api/courses?year=" + encodeURIComponent(state.year) + "&q=" + encodeURIComponent(query) + "&limit=30";
-      var result = await fetchJson(url, { signal: state.searchController.signal });
-      return result.payload.courses || result.payload.items || [];
+      var courses = await catalogClient().search(state.year, query, 30, {
+        signal: state.searchController.signal
+      });
+      return Array.isArray(courses) ? courses : [];
     } catch (error) {
       if (error.name === "AbortError") return [];
       if (!settings.silent) renderSearchResults([], error.message);
@@ -545,7 +504,7 @@
     state.initializedTarget = true;
     var catalog = currentCatalog();
     if (!catalog || catalogCount(catalog) === 0) {
-      setGraphState("empty", "Catalog not synced", "Refresh " + state.year + " to load available courses.", "Sync catalog", startSync);
+      setGraphState("empty", "Catalog unavailable", "The " + state.year + " catalog could not be loaded from the server or browser cache.", "Retry", checkCatalog);
       renderOutline();
       return;
     }
@@ -572,7 +531,7 @@
     if (preferred) {
       selectCourse(preferred, { loadGraph: true });
     } else {
-      setGraphState("empty", "No COMP courses found", "Use search or refresh the catalog.", "Sync catalog", startSync);
+      setGraphState("empty", "No COMP courses found", "Use search or refresh the catalog.", "Retry", checkCatalog);
     }
   }
 
@@ -603,13 +562,14 @@
     setGraphState("loading");
     var depth = elements.depthSelect.value;
     var requests = targets.map(async function (target) {
-      var url = "/api/graph/" + encodeURIComponent(target) +
-        "?year=" + encodeURIComponent(state.year) +
-        "&depth=" + encodeURIComponent(depth) +
-        "&relations=" + encodeURIComponent(relations.join(",")) +
-        "&direction=" + (IS_USTREE_PAGE ? "backward" : "both");
-      var result = await fetchJson(url, { signal: controller.signal });
-      var graph = result.payload.graph || result.payload;
+      var graph = await catalogClient().graph({
+        year: state.year,
+        code: target,
+        depth: depth,
+        relations: relations,
+        direction: IS_USTREE_PAGE ? "backward" : "both",
+        signal: controller.signal
+      });
       graph.nodes = Array.isArray(graph.nodes) ? graph.nodes : [];
       graph.edges = Array.isArray(graph.edges) ? graph.edges : [];
       graph.root = graph.root || graph.target || target;
@@ -1527,9 +1487,10 @@
     if (state.detailsController) state.detailsController.abort();
     state.detailsController = new AbortController();
     try {
-      var url = "/api/courses/" + encodeURIComponent(code) + "?year=" + encodeURIComponent(state.year);
-      var result = await fetchJson(url, { signal: state.detailsController.signal });
-      var course = result.payload.course || result.payload;
+      var course = await catalogClient().course(state.year, code, {
+        signal: state.detailsController.signal
+      });
+      if (!course) throw new Error(code + " is not in the " + state.year + " catalog.");
       state.detailCache.set(cacheKey, course);
       renderCourseDetails(course, node);
     } catch (error) {
@@ -1538,66 +1499,47 @@
     }
   }
 
-  async function startSync() {
-    if (state.syncJobId) return;
+  async function checkCatalog() {
+    if (state.syncing) return;
+    state.syncing = true;
     elements.syncButton.disabled = true;
     elements.syncButton.classList.add("is-syncing");
-    setNotice("Starting " + state.year + " catalog refresh...", "");
+    setNotice("Checking for an updated " + state.year + " catalog...", "");
     try {
-      var response = await fetchJson("/api/sync", {
-        method: "POST",
-        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ year: state.year })
-      }, [409]);
-      var job = response.payload.job || response.payload;
-      state.syncJobId = job.id || job.jobId || job.job_id;
-      if (!state.syncJobId) throw new Error("The server did not return a sync job identifier.");
-      pollSync();
-    } catch (error) {
-      finishSync();
-      setNotice(error.message, "error", "Retry", startSync);
-    }
-  }
-
-  async function pollSync() {
-    if (!state.syncJobId) return;
-    try {
-      var result = await fetchJson("/api/sync/" + encodeURIComponent(state.syncJobId));
-      var job = result.payload.job || result.payload;
-      var progress = job.progress;
-      if (progress == null && job.total) progress = Number(job.completed || 0) / Number(job.total);
-      var percent = progress == null ? "" : " " + Math.round(Math.max(0, Math.min(1, progress)) * 100) + "%";
-      setNotice((job.message || "Refreshing catalog") + percent, "");
-      if (["completed", "complete", "succeeded", "success"].includes(job.status)) {
-        var warnings = Array.isArray(job.warnings) ? job.warnings : [];
-        finishSync();
-        setNotice("Catalog refresh completed." + (warnings.length ? " " + warnings.join(" ") : ""), warnings.length ? "" : "success");
-        await loadCatalogs({ preserveNotice: true });
-        if (state.target) loadGraph();
-        else {
+      var result = await catalogClient().reload();
+      if (result.year && result.year !== state.year) {
+        state.year = result.year;
+        elements.yearSelect.value = state.year;
+        state.detailCache.clear();
+      }
+      await loadCatalogs({ preserveNotice: true });
+      if (result.changed) {
+        state.detailCache.clear();
+        setNotice(
+          "Catalog updated to the " + result.year + " release (" + Number(result.courseCount || 0).toLocaleString() + " courses).",
+          "success"
+        );
+        if (state.target || (IS_USTREE_PAGE && state.targets.length)) {
+          loadGraph();
+        } else {
           state.initializedTarget = false;
           chooseInitialCourse();
         }
-        return;
+      } else {
+        var generated = formatDate(result.generatedAt);
+        setNotice(
+          "Catalog is up to date (" + Number(result.courseCount || 0).toLocaleString() + " courses" +
+            (generated ? ", generated " + generated : "") + ").",
+          "success"
+        );
       }
-      if (["failed", "error", "cancelled"].includes(job.status)) {
-        finishSync();
-        setNotice(job.error || job.message || "Catalog refresh failed.", "error", "Retry", startSync);
-        return;
-      }
-      state.syncTimer = window.setTimeout(pollSync, SYNC_POLL_DELAY);
     } catch (error) {
-      finishSync();
-      setNotice(error.message, "error", "Retry", startSync);
+      setNotice(error.message, "error", "Retry", checkCatalog);
+    } finally {
+      state.syncing = false;
+      elements.syncButton.disabled = false;
+      elements.syncButton.classList.remove("is-syncing");
     }
-  }
-
-  function finishSync() {
-    window.clearTimeout(state.syncTimer);
-    state.syncTimer = null;
-    state.syncJobId = null;
-    elements.syncButton.disabled = false;
-    elements.syncButton.classList.remove("is-syncing");
   }
 
   function setActiveView(view) {
@@ -1677,7 +1619,7 @@
       updateCatalogMeta();
       await chooseInitialCourse();
     });
-    elements.syncButton.addEventListener("click", startSync);
+    elements.syncButton.addEventListener("click", checkCatalog);
     elements.relationInputs.forEach(function (input) { input.addEventListener("change", loadGraph); });
     elements.depthSelect.addEventListener("change", loadGraph);
     elements.highlightDepthSelect.addEventListener("change", function () {

@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var PROGRAM_SOURCE = "/static/data/cpeg-2025-26.pdf";
+  var PROGRAM_SOURCE = "/data/cpeg-2025-26.pdf";
   var CATALOG_YEAR = "2026-27";
   var CATALOG_ROOT = "https://prog-crs.hkust.edu.hk/ugcourse/" + CATALOG_YEAR + "/";
   var MOBILE_QUERY = "(max-width: 620px)";
@@ -588,17 +588,16 @@
     if (state.detailCache.has(code)) return;
     var requestId = ++state.detailRequest;
     try {
-      var response = await fetch("/api/courses/" + encodeURIComponent(code) + "?year=" + encodeURIComponent(CATALOG_YEAR), {
-        headers: { "Accept": "application/json" }
-      });
-      if (!response.ok) return;
-      var detail = await response.json();
+      var detail = window.HKUSTCatalog
+        ? await window.HKUSTCatalog.course(CATALOG_YEAR, code)
+        : null;
+      if (!detail) return;
       state.detailCache.set(code, detail);
       if (requestId === state.detailRequest && elements.drawerCode.textContent === code) {
         renderCourseDrawer(item, detail);
       }
     } catch (_error) {
-      // Static PDF/catalog text remains available when the local API is unavailable.
+      // Static PDF/catalog text remains available when the catalog is unavailable.
     }
   }
 

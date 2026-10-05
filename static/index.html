@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f8f6">
   <title>HKUST Course Tree</title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <div class="app-shell">
@@ -29,9 +29,9 @@
         <select id="yearSelect" aria-label="Academic year">
           <option value="2026-27">2026-27</option>
         </select>
-        <button id="syncButton" class="button button-secondary" type="button" title="Refresh catalog data">
+        <button id="syncButton" class="button button-secondary" type="button" title="Check for updated catalog data">
           <span class="sync-icon" aria-hidden="true">&#8635;</span>
-          <span>Sync</span>
+          <span>Check for updates</span>
         </button>
       </div>
 
@@ -127,7 +127,7 @@
           <div id="graphEmpty" class="state-panel" hidden>
             <strong id="emptyTitle">No course selected</strong>
             <span id="emptyText">Search for a course to build its tree.</span>
-            <button id="emptyAction" class="button button-primary" type="button" hidden>Sync catalog</button>
+            <button id="emptyAction" class="button button-primary" type="button" hidden>Retry</button>
           </div>
         </div>
         <div class="graph-legend" aria-label="Subject legend">
@@ -168,11 +168,12 @@
     </main>
   </div>
 
-  <script src="/static/vendor/dagre.min.js" defer></script>
-  <script src="/static/vendor/cytoscape.min.js" defer></script>
-  <script src="/static/vendor/cytoscape-dagre.js" defer></script>
-  <script src="/static/graph-interactions.js" defer></script>
-  <script src="/static/ustree.js" defer></script>
-  <script src="/static/app.js" defer></script>
+  <script src="/vendor/dagre.min.js" defer></script>
+  <script src="/vendor/cytoscape.min.js" defer></script>
+  <script src="/vendor/cytoscape-dagre.js" defer></script>
+  <script src="/graph-interactions.js" defer></script>
+  <script src="/ustree.js" defer></script>
+  <script src="/catalog-client.js" defer></script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
