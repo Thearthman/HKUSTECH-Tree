@@ -1,0 +1,992 @@
+{
+  "schemaVersion": 2,
+  "id": "BMH-2025-26",
+  "programCode": "BMH",
+  "program": "BSc in Biomedical and Health Sciences",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "54-63",
+  "sourceUrl": "http://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26bmh.pdf",
+  "sourceHash": "e390478f6d777f4747748ae4695833d6f4101bff4ba69d2cc9e2c8d3dee48eef",
+  "generatedAt": "2026-10-05T08:50:49Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Biomedical and Health Sciences",
+    "credits": "54-63 credits"
+  },
+  "sections": [
+    {
+      "id": "major-pre-requisite-courses",
+      "pdfSection": "Major Pre-requisite course(s)",
+      "eyebrow": "Major Pre-requisite courses",
+      "title": "Major Pre-requisite courses",
+      "rootGroup": "group:major-pre-requisite-courses",
+      "credits": "3-6 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "51-57 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:major-pre-requisite-courses",
+      "label": "Major Pre-requisite courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "LIFS 1901",
+      "title": "General Biology I",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1902",
+      "title": "General Biology II",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1903",
+      "title": "Laboratory for General Biology I",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1904",
+      "title": "Laboratory for General Biology II",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1980",
+      "title": "Guided Study on Biomedical and Health Sciences",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2010",
+      "title": "Modern Approaches to Biochemical and Cell Biological Research",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2040",
+      "title": "Cell Biology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2210",
+      "title": "Biochemistry I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2220",
+      "title": "Biochemistry II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2901",
+      "title": "Case Study on Biomedical and Health Sciences I: From Proposal to Practice",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3040",
+      "title": "Animal Physiology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3901",
+      "title": "Case Study on Biomedical and Health Sciences IIA - Generation of Disease Models by Genome Editing",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3902",
+      "title": "Case Study on Biomedical and Health Sciences IIB - Phenotypic Analysis of Mutant Animal Models",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3903",
+      "title": "Case Study on Biomedical and Health Sciences IIC - Genome-wide Association Studies in Practice",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3904",
+      "title": "Case Study on Biomedical and Health Sciences IID - Analysis of Next-generation Sequencing Data",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4370",
+      "title": "Human Genetics and Personalized Medicine",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4380",
+      "title": "Pharmacology and Toxicology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4966",
+      "title": "Biomedical and Health Sciences Capstone Project",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4976",
+      "title": "Biomedical and Health Sciences Project Research I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4986",
+      "title": "Biomedical and Health Sciences Project Research II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1011",
+      "title": "General Chemistry A: Reactions, Thermodynamics, and Reaction Kinetics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1012",
+      "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1051",
+      "title": "Laboratory for General Chemistry A",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1052",
+      "title": "Laboratory for General Chemistry B",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1005",
+      "title": "Calculus and Statistics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1006",
+      "title": "Calculus, Vectors, and Matrices",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "CHEM 1004",
+      "title": "Chemistry in Everyday Life",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1008",
+      "title": "Introductory Chemistry",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1010",
+      "title": "CHEM 1010",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "LIFS 3140",
+      "title": "General Genetics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1902",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR level 3 or above in HKDSE 1x Biology OR a passing grade in AL/AS Biology"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1903",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1904",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 1904",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1902"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1902"
+    },
+    {
+      "source": "LIFS 1980",
+      "target": "LIFS 2901",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1980"
+    },
+    {
+      "source": "LIFS 2040",
+      "target": "LIFS 3040",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2040"
+    },
+    {
+      "source": "LIFS 2901",
+      "target": "LIFS 3901",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2901"
+    },
+    {
+      "source": "LIFS 3901",
+      "target": "LIFS 3902",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 3901"
+    },
+    {
+      "source": "LIFS 2901",
+      "target": "LIFS 3903",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2901"
+    },
+    {
+      "source": "LIFS 4370",
+      "target": "LIFS 3903",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 4370"
+    },
+    {
+      "source": "LIFS 2901",
+      "target": "LIFS 3904",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2901"
+    },
+    {
+      "source": "LIFS 2210",
+      "target": "LIFS 4370",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2210 OR LIFS 3140"
+    },
+    {
+      "source": "LIFS 3140",
+      "target": "LIFS 4370",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2210 OR LIFS 3140"
+    },
+    {
+      "source": "LIFS 2040",
+      "target": "LIFS 4380",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2040"
+    },
+    {
+      "source": "LIFS 4976",
+      "target": "LIFS 4986",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 4976"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 1012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23)"
+    },
+    {
+      "source": "CHEM 1011",
+      "target": "CHEM 1051",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1011"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CHEM 1052",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1012"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1006",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    }
+  ]
+}

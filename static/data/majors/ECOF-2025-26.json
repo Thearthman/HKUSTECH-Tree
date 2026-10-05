@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 2,
+  "id": "ECOF-2025-26",
+  "programCode": "ECOF",
+  "program": "BSc in Economics and Finance",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "23",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26ecof.pdf",
+  "sourceHash": "1be8a08cf6654fa6fd52a5e0e385f0c70aa7836721ed06d858b927d92db339c7",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Economics and Finance",
+    "credits": "23 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "23 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ECON 2174",
+      "title": "Mathematics for Economists",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2023",
+      "title": "Multivariable Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3113",
+      "title": "Microeconomic Theory I",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3133",
+      "title": "Microeconomic Theory II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3143",
+      "title": "Macroeconomic Theory II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3334",
+      "title": "Introduction to Econometrics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3103",
+      "title": "Intermediate Investments",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "ECON 2103",
+      "title": "Principles of Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "ECON 2113",
+      "title": "Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "ECON 2123",
+      "title": "Macroeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "ECON 3014",
+      "title": "Managerial Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "ECON 3024",
+      "title": "Managerial Macroeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "ECON 3123",
+      "title": "Macroeconomic Theory I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "FINA 2203",
+      "title": "Fundamentals of Business Finance",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "FINA 2303",
+      "title": "Financial Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2024",
+      "title": "Honors Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 3423",
+      "title": "Statistical Inference",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "SOSC 1440",
+      "title": "Introduction to Economics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "MATH 1003",
+      "target": "ECON 2174",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "ECON 2174",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "ECON 2174",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "ECON 2174",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "ECON 2174",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "ECON 2174",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "ECON 2174",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    },
+    {
+      "source": "ECON 2103",
+      "target": "ECON 3113",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ECON 3113",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 3014",
+      "target": "ECON 3113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 3133",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 3113"
+    },
+    {
+      "source": "ECON 3014",
+      "target": "ECON 3133",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3133",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 3143",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 3113 AND ECON 3123"
+    },
+    {
+      "source": "ECON 3123",
+      "target": "ECON 3143",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ECON 3113 AND ECON 3123"
+    },
+    {
+      "source": "ECON 2123",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ECON 3024",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 3423",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    }
+  ]
+}

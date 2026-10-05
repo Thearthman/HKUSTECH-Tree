@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "id": "MARK-2025-26",
+  "programCode": "MARK",
+  "program": "BBA in Marketing",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "12",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26mark.pdf",
+  "sourceHash": "ab650beaa8e62c0e0a5874bea013bf07006af7964960c8574f55d667dde37edf",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Marketing",
+    "credits": "12 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "12 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "MARK 3220",
+      "title": "Marketing Research",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MARK 3420",
+      "title": "Consumer Behavior",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MARK 4210",
+      "title": "Strategic Marketing",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [],
+  "relations": []
+}

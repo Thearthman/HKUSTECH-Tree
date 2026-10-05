@@ -1,9 +1,6 @@
 (function () {
   "use strict";
 
-  var PROGRAM_SOURCE = "/data/cpeg-2025-26.pdf";
-  var CATALOG_YEAR = "2026-27";
-  var CATALOG_ROOT = "https://prog-crs.hkust.edu.hk/ugcourse/" + CATALOG_YEAR + "/";
   var MOBILE_QUERY = "(max-width: 620px)";
   var STORAGE_PREFIX = "hkust-course-tree";
   var COMPLETION_HIT_SIZE = 25;
@@ -23,174 +20,70 @@
   var CHECKBOX_EMPTY_IMAGE = checkboxImage(false);
   var CHECKBOX_COMPLETE_IMAGE = checkboxImage(true);
 
-  function course(code, title, credits, parent, position) {
-    return {
-      code: code,
-      title: title,
-      credits: String(credits),
-      parent: parent || null,
-      position: position || null,
-      major: true,
-      graph: Boolean(position),
-      source: CATALOG_ROOT + code.split(" ")[0],
-      requirements: []
-    };
-  }
-
-  var courses = [
-    course("COMP 1023", "Introduction to Python Programming", 3, "group:fundamentals", [130, 150]),
-    course("MATH 1013", "Calculus I", 3, "group:calculus-one", [365, 105]),
-    course("MATH 1023", "Honors Calculus I", 3, "group:calculus-one", [365, 205]),
-    course("MATH 1014", "Calculus II", 3, "group:calculus-two", [585, 105]),
-    course("MATH 1024", "Honors Calculus II", 3, "group:calculus-two", [585, 205]),
-    course("MATH 1020", "Accelerated Calculus", 4, "group:calculus", [805, 150]),
-    course("MATH 2011", "Introduction to Multivariable Calculus", 3, "group:fundamentals", [1025, 105]),
-    course("MATH 2111", "Matrix Algebra and Applications", 3, "group:fundamentals", [1025, 205]),
-    course("PHYS 1112", "General Physics I with Calculus", 3, "group:physics-one", [1250, 105]),
-    course("PHYS 1312", "Honors General Physics I", 3, "group:physics-one", [1250, 205]),
-    course("PHYS 1114", "General Physics II", 3, "group:physics-two", [1470, 105]),
-    course("PHYS 1314", "Honors General Physics II", 3, "group:physics-two", [1470, 205]),
-
-    course("CPEG 1930", "Academic and Professional Development I", 0, "group:required", [130, 590]),
-    course("CPEG 2930", "Academic and Professional Development II", 0, "group:required", [130, 690]),
-    course("CPEG 3930", "Academic and Professional Development III", 0, "group:required", [130, 790]),
-    course("COMP 2011", "Programming with C++", 4, "group:programming-sequence", [365, 625]),
-    course("COMP 2012", "Object-Oriented Programming and Data Structures", 4, "group:programming-sequence", [585, 625]),
-    course("COMP 2012H", "Honors Object-Oriented Programming and Data Structures", 5, "group:programming", [805, 675]),
-    course("COMP 2611", "Computer Organization", 4, "group:organization", [1025, 625]),
-    course("ELEC 2350", "Introduction to Computer Organization and Design", 4, "group:organization", [1025, 725]),
-    course("COMP 2711", "Discrete Mathematical Tools for Computer Science", 4, "group:discrete", [1250, 625]),
-    course("COMP 2711H", "Honors Discrete Mathematical Tools for Computer Science", 4, "group:discrete", [1250, 725]),
-    course("COMP 3511", "Operating Systems", 3, "group:required", [1470, 675]),
-    course("ELEC 1100", "Introduction to Electro-Robot Design", 4, "group:required", [240, 945]),
-    course("ELEC 2100", "Signals and Systems", 4, "group:required", [460, 945]),
-    course("ELEC 2400", "Electronic Circuits", 4, "group:required", [680, 945]),
-    course("ELEC 2600", "Probability and Random Processes in Engineering", 4, "group:required", [900, 945]),
-    course("ELEC 3300", "Introduction to Embedded Systems", 4, "group:required", [1120, 945]),
-    course("CPEG 1971", "Industrial Experience", 0, "group:project-standard", [365, 1210]),
-    course("CPEG 4901", "Computer Engineering Final Year Project in COMP", 6, "group:project-choice", [585, 1160]),
-    course("CPEG 4902", "Computer Engineering Final Year Thesis in COMP", 6, "group:project-choice", [585, 1260]),
-    course("CPEG 4911", "Computer Engineering Final Year Project in ELEC", 6, "group:project-choice", [805, 1160]),
-    course("CPEG 4912", "Computer Engineering Final Year Thesis in ELEC", 6, "group:project-choice", [805, 1260]),
-    course("CPEG 4910", "Co-op Program", 6, "group:project", [1060, 1210])
-  ];
-  var majorCourses = courses.slice();
-
-  var groupNodes = [
-    ["group:fundamentals", "Engineering fundamentals | AND", "and", null],
-    ["group:calculus", "Calculus | OR", "or", "group:fundamentals"],
-    ["group:calculus-sequence", "Two-course sequence | AND", "and", "group:calculus"],
-    ["group:calculus-one", "Calculus I | OR", "or", "group:calculus-sequence"],
-    ["group:calculus-two", "Calculus II | OR", "or", "group:calculus-sequence"],
-    ["group:physics-one", "Physics I | OR", "or", "group:fundamentals"],
-    ["group:physics-two", "Physics II | OR", "or", "group:fundamentals"],
-    ["group:required", "Required courses | AND", "and", null],
-    ["group:programming", "Programming | OR", "or", "group:required"],
-    ["group:programming-sequence", "Standard sequence | AND", "and", "group:programming"],
-    ["group:organization", "Computer organization | OR", "or", "group:required"],
-    ["group:discrete", "Discrete mathematics | OR", "or", "group:required"],
-    ["group:project", "Capstone route | OR", "or", "group:required"],
-    ["group:project-standard", "Project route | AND", "and", "group:project"],
-    ["group:project-choice", "Project or thesis | OR", "or", "group:project-standard"]
-  ];
-
-  var contextRows = [
-    ["COMP 1021", "Introduction to Computer Science"], ["COMP 1022P", "Introduction to Computing with Java"],
-    ["COMP 1028", "Extended Python Programming Bridging Course"], ["COMP 1029P", "Python Programming Bridging Course"],
-    ["COMP 2211", "Introduction to Artificial Intelligence"], ["CIVL 1121", "Introduction to Computation for Civil Engineers"],
-    ["IEDA 1180", "Python for Analytics"], ["ISOM 3400", "Business Applications Development in Python"],
-    ["MATH 1003", "Calculus and Linear Algebra"], ["MATH 1012", "Calculus IA"],
-    ["MATH 2023", "Multivariable Calculus"], ["MATH 2024", "Honors Multivariable Calculus"],
-    ["MATH 2121", "Linear Algebra"], ["MATH 2131", "Honors in Linear and Abstract Algebra I"],
-    ["MATH 2343", "Discrete Structures"], ["MATH 2350", "Applied Linear Algebra and Differential Equations"],
-    ["MATH 2351", "Introduction to Differential Equations"],
-    ["MATH 2352", "Differential Equations"], ["MATH 2421", "Probability"],
-    ["MATH 2431", "Honors Probability"], ["PHYS 1111", "General Physics I"],
-    ["ISDN 4000F", "Special Topics"], ["ELEC 2600H", "Honors Probability and Random Processes"]
-  ];
-
-  contextRows.forEach(function (row, index) {
-    courses.push({
-      code: row[0], title: row[1], credits: "", major: false, graph: true,
-      parent: null, position: [1780 + (index % 2) * 220, 110 + Math.floor(index / 2) * 108],
-      source: CATALOG_ROOT + row[0].split(" ")[0], requirements: []
-    });
-  });
-
+  // The manifest lists every program and points at one document per program.
+  var MANIFEST_URL = "/data/major-requirements.json";
+  var MAJOR_DIR_URL = "/data/majors/";
+  var MANIFEST = null;
+  var DATA = null;
+  var PROGRAM_SOURCE = "";
+  var BRANCHES = [];
+  var CATALOG_YEAR = "";
+  var CATALOG_ROOT = "";
+  var courses = [];
+  var majorCourses = [];
+  var groupNodes = [];
   var relations = [];
+  var courseByCode = new Map();
 
-  function addRelation(target, relation, groups, raw) {
-    (groups || []).forEach(function (refs, groupIndex) {
-      refs.forEach(function (source) {
-        relations.push({
-          source: source,
-          target: target,
-          relation: relation,
-          group: groupIndex + 1,
-          raw: raw
-        });
-      });
+  // The major-requirement database is generated by tools/build-major.mjs. The
+  // manifest at /data/major-requirements.json lists every program; each entry's
+  // `file` points at the program document. Everything below reads only from
+  // those files so a refreshed database never needs a code change.
+  function applyData(data) {
+    DATA = data;
+    PROGRAM_SOURCE = data.sourceUrl || "";
+    BRANCHES = (data.branches || []).map(function (branch) {
+      return {
+        id: branch.id,
+        title: branch.title,
+        kind: branch.kind,
+        parent: branch.parent || null,
+        group: branch.group || null,
+        rule: branch.rule || "",
+        credits: branch.credits || "",
+        courses: (branch.courses || []).slice()
+      };
     });
-    var targetCourse = courses.find(function (item) { return item.code === target; });
-    if (targetCourse) targetCourse.requirements.push({ relation: relation, raw: raw });
+    CATALOG_YEAR = data.catalogYear;
+    CATALOG_ROOT = "https://prog-crs.hkust.edu.hk/ugcourse/" + CATALOG_YEAR + "/";
+    groupNodes = (data.groups || []).map(function (group) {
+      return [group.id, group.label, group.kind, group.parent || null];
+    });
+    function hydrate(item) {
+      return {
+        code: item.code,
+        title: item.title,
+        credits: item.credits,
+        parent: item.parent || null,
+        position: item.position,
+        major: Boolean(item.major),
+        graph: item.graph !== false,
+        section: item.section || null,
+        source: CATALOG_ROOT + item.code.split(" ")[0],
+        requirements: []
+      };
+    }
+    majorCourses = (data.courses || []).map(hydrate);
+    courses = majorCourses.concat((data.contextCourses || []).map(hydrate));
+    relations = (data.relations || []).slice();
+    courseByCode = new Map(courses.map(function (item) { return [item.code, item]; }));
+    relations.forEach(function (relation) {
+      var target = courseByCode.get(relation.target);
+      if (target) target.requirements.push({ relation: relation.relation, raw: relation.raw });
+    });
+    window.MajorRequirementsData = DATA;
   }
 
-  addRelation("COMP 1023", "exclusion", [["COMP 1021", "COMP 1022P", "COMP 1029P", "COMP 2011", "COMP 2012H", "COMP 2211", "CIVL 1121", "IEDA 1180", "ISOM 3400"]], "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400");
-  addRelation("COMP 2011", "prerequisite", [["COMP 1023", "COMP 1028"]], "COMP 1023 OR COMP 1028");
-  addRelation("COMP 2011", "exclusion", [["COMP 2012H"]], "COMP 2012H");
-  addRelation("COMP 2012", "prerequisite", [["COMP 2011"]], "COMP 2011");
-  addRelation("COMP 2012", "exclusion", [["COMP 2012H"]], "COMP 2012H");
-  addRelation("COMP 2012H", "prerequisite", [["COMP 1023", "COMP 1021", "COMP 1028"]], "Grade A or above in COMP 1023 OR (grade A or above in COMP 1021 AND pass grade in COMP 1028)");
-  addRelation("COMP 2012H", "exclusion", [["COMP 2011", "COMP 2012"]], "COMP 2011, COMP 2012");
-  addRelation("COMP 2611", "prerequisite", [["COMP 2011", "COMP 2012H"]], "COMP 2011 OR COMP 2012H");
-  addRelation("COMP 2611", "exclusion", [["ELEC 2350"]], "ELEC 2350");
-  addRelation("COMP 2711", "corequisite", [["MATH 1012", "MATH 1013", "MATH 1014", "MATH 1020", "MATH 1023", "MATH 1024"]], "For students without prerequisites: MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024");
-  addRelation("COMP 2711", "exclusion", [["COMP 2711H", "MATH 2343"]], "COMP 2711H, MATH 2343");
-  addRelation("COMP 2711H", "prerequisite", [["MATH 1014", "MATH 1020", "MATH 1024"]], "Level 5* or above in HKDSE Mathematics Extended Module M1/M2; OR grade A- or above in MATH 1014; OR grade B+ or above in MATH 1020 / MATH 1024");
-  addRelation("COMP 2711H", "exclusion", [["COMP 2711", "MATH 2343"]], "COMP 2711, MATH 2343");
-  addRelation("COMP 3511", "prerequisite", [["COMP 2611", "ELEC 2350", "COMP 2011", "COMP 2012H"]], "COMP 2611 OR [ELEC 2350 AND (COMP 2011 OR COMP 2012H)]");
-  addRelation("MATH 1013", "exclusion", [["MATH 1012", "MATH 1014", "MATH 1020", "MATH 1023", "MATH 1024"]], "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024");
-  addRelation("MATH 1014", "prerequisite", [["MATH 1012", "MATH 1013", "MATH 1023", "MATH 1003"]], "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR grade A- or above in MATH 1003");
-  addRelation("MATH 1014", "exclusion", [["MATH 1020", "MATH 1024"]], "MATH 1020, MATH 1024");
-  addRelation("MATH 1020", "exclusion", [["MATH 1013", "MATH 1014", "MATH 1023", "MATH 1024"]], "MATH 1013, MATH 1014, MATH 1023, MATH 1024");
-  addRelation("MATH 1023", "exclusion", [["MATH 1012", "MATH 1013", "MATH 1014", "MATH 1024"]], "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024");
-  addRelation("MATH 1024", "prerequisite", [["MATH 1023"]], "MATH 1023");
-  addRelation("MATH 1024", "exclusion", [["MATH 1014"]], "MATH 1014");
-  addRelation("MATH 2011", "prerequisite", [["MATH 1014", "MATH 1020", "MATH 1024"]], "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024");
-  addRelation("MATH 2011", "exclusion", [["MATH 2023", "MATH 2024"]], "MATH 2023, MATH 2024");
-  addRelation("MATH 2111", "prerequisite", [["MATH 1014", "MATH 1020", "MATH 1024"]], "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024");
-  addRelation("MATH 2111", "exclusion", [["MATH 2121", "MATH 2131", "MATH 2350"]], "MATH 2121, MATH 2131, MATH 2350");
-  addRelation("PHYS 1112", "exclusion", [["PHYS 1111", "PHYS 1312"]], "PHYS 1111, PHYS 1312");
-  addRelation("PHYS 1114", "prerequisite", [["PHYS 1111", "PHYS 1112", "PHYS 1312"], ["MATH 1013", "MATH 1020", "MATH 1023"]], "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)");
-  addRelation("PHYS 1114", "exclusion", [["PHYS 1314"]], "PHYS 1314");
-  addRelation("PHYS 1312", "exclusion", [["PHYS 1111", "PHYS 1112"]], "PHYS 1111, PHYS 1112");
-  addRelation("PHYS 1314", "prerequisite", [["PHYS 1111", "PHYS 1112", "PHYS 1312"], ["MATH 1013", "MATH 1020", "MATH 1023"]], "(grade A- or above in PHYS 1111 OR PHYS 1112 OR grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)");
-  addRelation("PHYS 1314", "exclusion", [["PHYS 1114"]], "PHYS 1114");
-  addRelation("ELEC 2100", "prerequisite", [["MATH 2011", "MATH 2023", "MATH 2111", "MATH 2350", "MATH 2351", "MATH 2352"]], "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352");
-  addRelation("ELEC 2350", "prerequisite", [["ELEC 1100"]], "ELEC 1100");
-  addRelation("ELEC 2350", "exclusion", [["COMP 2611", "ISDN 4000F"]], "COMP 2611, ISDN 4000F");
-  addRelation("ELEC 2400", "prerequisite", [["ELEC 1100"], ["MATH 1003", "MATH 1014", "MATH 1020", "MATH 1024"]], "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)");
-  addRelation("ELEC 2400", "corequisite", [["PHYS 1114", "PHYS 1314"]], "PHYS 1114 OR PHYS 1314");
-  addRelation("ELEC 2600", "prerequisite", [["MATH 1003", "MATH 1014", "MATH 1020", "MATH 1024"]], "MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024");
-  addRelation("ELEC 2600", "corequisite", [["MATH 2011", "MATH 2023"]], "MATH 2011 OR MATH 2023");
-  addRelation("ELEC 2600", "exclusion", [["ELEC 2600H", "MATH 2421", "MATH 2431"]], "ELEC 2600H (prior to 2022-23), MATH 2421, MATH 2431");
-  addRelation("ELEC 3300", "prerequisite", [["COMP 2611", "ELEC 2350", "ISDN 4000F"]], "COMP 2611 OR ELEC 2350 OR ISDN 4000F");
-  addRelation("CPEG 4910", "exclusion", [["CPEG 4901", "CPEG 4902", "CPEG 4911", "CPEG 4912"]], "CPEG 4901, CPEG 4902, CPEG 4911, CPEG 4912");
-
-  var DATA = {
-    id: "CPEG-2025-26",
-    program: "BEng in Computer Engineering",
-    intake: "2025-26",
-    totalCredits: "61-66",
-    source: PROGRAM_SOURCE,
-    courses: majorCourses,
-    contextCourses: courses.filter(function (item) { return !item.major; }),
-    groups: groupNodes,
-    relations: relations
-  };
-  window.MajorRequirementsData = DATA;
-
-  var courseByCode = new Map(courses.map(function (item) { return [item.code, item]; }));
   var elements = {
     relationInputs: Array.prototype.slice.call(document.querySelectorAll(".relations input")),
     graphTab: document.getElementById("majorGraphTab"),
@@ -208,7 +101,8 @@
     drawerCode: document.getElementById("majorDetailsCode"),
     drawerContent: document.getElementById("majorDetailsContent"),
     closeDrawer: document.getElementById("majorCloseDrawer"),
-    drawerScrim: document.getElementById("majorDrawerScrim")
+    drawerScrim: document.getElementById("majorDrawerScrim"),
+    majorSelect: document.getElementById("majorSelect")
   };
   var state = {
     cy: null,
@@ -581,7 +475,9 @@
   async function openCourse(code) {
     var item = courseByCode.get(code);
     if (!item) return;
-    elements.drawerSubject.textContent = item.major ? "CPEG major course" : "Relationship context";
+    elements.drawerSubject.textContent = item.major
+      ? (DATA.programCode || "Major") + " major course"
+      : "Relationship context";
     elements.drawerCode.textContent = item.code;
     renderCourseDrawer(item, state.detailCache.get(code));
     openDrawer();
@@ -620,23 +516,87 @@
       '</span><span class="major-outline-credit">' + escapeHtml(credits) + " cr</span></button>";
   }
 
-  function renderOutline() {
-    var fundamentalCodes = ["COMP 1023", "MATH 1013", "MATH 1023", "MATH 1014", "MATH 1024", "MATH 1020", "MATH 2011", "MATH 2111", "PHYS 1112", "PHYS 1312", "PHYS 1114", "PHYS 1314"];
-    var requiredCodes = ["CPEG 1930", "CPEG 2930", "CPEG 3930", "COMP 2011", "COMP 2012", "COMP 2012H", "COMP 2611", "ELEC 2350", "COMP 2711", "COMP 2711H", "COMP 3511", "ELEC 1100", "ELEC 2100", "ELEC 2400", "ELEC 2600", "ELEC 3300", "CPEG 1971", "CPEG 4901", "CPEG 4902", "CPEG 4910", "CPEG 4911", "CPEG 4912"];
+  function outlineCourses(section) {
+    return majorCourses.filter(function (item) { return item.section === section.id; });
+  }
 
-    function listFor(codes) {
-      return '<div class="major-outline-list">' + codes.map(function (code) {
-        var item = courseByCode.get(code);
-        return courseButton(item.code, item.title, item.credits);
-      }).join("") + "</div>";
+  function branchKindLabel(kind) {
+    var labels = {
+      option: "Option",
+      track: "Track",
+      stream: "Stream",
+      specialization: "Specialization",
+      concentration: "Concentration",
+      area: "Area",
+      courses: "Course list",
+      group: "Requirement group",
+      other: "Branch"
+    };
+    return labels[kind] || "Branch";
+  }
+
+  function branchDepth(branch, byId) {
+    var depth = 0;
+    var cursor = branch;
+    while (cursor && cursor.parent && byId.has(cursor.parent) && depth < 12) {
+      depth += 1;
+      cursor = byId.get(cursor.parent);
     }
+    return depth;
+  }
 
-    elements.outlineContent.innerHTML =
-      '<section class="major-outline-section"><header><div><p class="eyebrow">Engineering fundamentals</p><h3>Foundational courses</h3></div><strong>19-21 credits</strong></header>' +
-      '<p class="major-rule-copy">Calculus: [(MATH 1013 or MATH 1023) and (MATH 1014 or MATH 1024)] or MATH 1020. Choose one Physics I and one Physics II course.</p>' + listFor(fundamentalCodes) + "</section>" +
-      '<section class="major-outline-section"><header><div><p class="eyebrow">Required courses</p><h3>CPEG core</h3></div><strong>42-45 credits</strong></header>' +
-      '<p class="major-rule-copy">Complete the standard C++ sequence or COMP 2012H; choose one organization course and one discrete mathematics course. Complete CPEG 1971 with a project/thesis, or CPEG 4910. Students taking the Research Option must take CPEG 4902 or CPEG 4912.</p>' + listFor(requiredCodes) +
-      '<a class="source-link" href="' + PROGRAM_SOURCE + '" target="_blank" rel="noreferrer">Open official program catalog</a></section>';
+  function branchCourseButton(course) {
+    var credit = course.credits ? escapeHtml(course.credits) + " cr" : "";
+    return '<button type="button" data-major-code="' + escapeHtml(course.code) + '"><span class="major-outline-code">' +
+      escapeHtml(course.code) + '</span><span class="major-outline-title">' + escapeHtml(course.title) +
+      '</span><span class="major-outline-credit">' + credit + "</span></button>";
+  }
+
+  // Branches are the option/track/area tables that follow the core requirement
+  // sections (e.g. CPEG's AI, robotics and VLSI areas). They are captured
+  // verbatim so the outline can show the available areas and their courses.
+  function renderBranches() {
+    if (!BRANCHES.length) return "";
+    var byId = new Map(BRANCHES.map(function (branch) { return [branch.id, branch]; }));
+    var items = BRANCHES.map(function (branch) {
+      var depth = branchDepth(branch, byId);
+      var courses = branch.courses.map(branchCourseButton).join("");
+      var header = '<header><div><p class="eyebrow">' + escapeHtml(branchKindLabel(branch.kind)) +
+        (branch.group ? " &middot; " + escapeHtml(branch.group) : "") + '</p><h4>' +
+        escapeHtml(branch.title) + "</h4></div>" +
+        (branch.credits ? "<strong>" + escapeHtml(branch.credits) + " cr</strong>" : "") + "</header>";
+      var rule = branch.rule ? '<p class="major-rule-copy">' + escapeHtml(branch.rule) + "</p>" : "";
+      var list = courses ? '<div class="major-outline-list">' + courses + "</div>" : "";
+      return '<section class="major-branch" data-depth="' + depth + '">' + header + rule + list + "</section>";
+    }).join("");
+    return '<section class="major-outline-section major-branches-section">' +
+      '<header><div><p class="eyebrow">Areas &amp; options</p><h3>Branches</h3></div></header>' +
+      '<p class="major-rule-copy">Tracks, streams, options and specialization areas listed for this program.</p>' +
+      '<div class="major-branch-list">' + items + "</div></section>";
+  }
+
+  function renderOutline() {
+    var sections = DATA.sections || [];
+    var core = sections.map(function (section) {
+      var list = outlineCourses(section).map(function (item) {
+        return courseButton(item.code, item.title, item.credits);
+      }).join("");
+      var header = '<header><div><p class="eyebrow">' + escapeHtml(section.eyebrow) +
+        '</p><h3>' + escapeHtml(section.title) + '</h3></div><strong>' +
+        escapeHtml(section.credits) + '</strong></header>';
+      var link = section.sourceLink
+        ? '<a class="source-link" href="' + escapeHtml(PROGRAM_SOURCE) +
+          '" target="_blank" rel="noreferrer">' + escapeHtml(section.sourceLink) + "</a>"
+        : "";
+      var copy = section.copy ? '<p class="major-rule-copy">' + escapeHtml(section.copy) + "</p>" : "";
+      return '<section class="major-outline-section">' + header +
+        copy +
+        '<div class="major-outline-list">' + list + "</div>" + link + "</section>";
+    }).join("");
+    var empty = !sections.length
+      ? '<p class="major-outline-empty">This program publishes only elective requirements, so no mandatory core courses are listed.</p>'
+      : "";
+    elements.outlineContent.innerHTML = empty + core + renderBranches();
   }
 
   function setView(view) {
@@ -673,6 +633,11 @@
     });
     elements.closeDrawer.addEventListener("click", closeDrawer);
     elements.drawerScrim.addEventListener("click", closeDrawer);
+    if (elements.majorSelect) {
+      elements.majorSelect.addEventListener("change", function (event) {
+        loadProgram(event.target.value);
+      });
+    }
     elements.outlineContent.addEventListener("click", function (event) {
       var button = event.target.closest("[data-major-code]");
       if (button) openCourse(button.dataset.majorCode);
@@ -701,12 +666,94 @@
     });
   }
 
-  function init() {
-    loadCompletions();
-    renderOutline();
-    bindEvents();
-    renderGraph();
+  function updateHeader() {
+    var outline = DATA.outline || {};
+    var eyebrow = document.querySelector("#majorOutlinePanel .outline-header .eyebrow");
+    var title = document.querySelector("#majorOutlinePanel .outline-header h2");
+    var credits = document.querySelector("#majorOutlinePanel .outline-header > p");
+    if (eyebrow && outline.eyebrow) eyebrow.textContent = outline.eyebrow;
+    if (title && outline.title) title.textContent = outline.title;
+    if (credits && outline.credits) credits.textContent = outline.credits;
+    var tagline = document.querySelector(".major-topbar .brand-block p");
+    if (tagline) tagline.textContent = "Major requirements | " + (DATA.totalCredits || "");
+    if (elements.majorSelect && DATA.id) elements.majorSelect.value = DATA.id;
+    document.title = (DATA.programCode || "Major") + " Major Requirements | HKUST Course Tree";
   }
 
-  init();
+  function populateSelector(manifest) {
+    if (!elements.majorSelect) return;
+    var programs = (manifest.programs || []).slice().sort(function (a, b) {
+      return (a.programCode || "").localeCompare(b.programCode || "");
+    });
+    elements.majorSelect.innerHTML = programs.map(function (program) {
+      return '<option value="' + escapeHtml(program.id) + '">' +
+        escapeHtml(program.programCode + " (" + program.intake + ")") + "</option>";
+    }).join("");
+  }
+
+  function programFile(program) {
+    if (program && program.file) return program.file;
+    return MAJOR_DIR_URL + program.id + ".json";
+  }
+
+  function loadProgram(id) {
+    if (!MANIFEST) return;
+    var program = (MANIFEST.programs || []).filter(function (entry) {
+      return entry.id === id;
+    })[0];
+    if (!program) return;
+    if (state.cy) {
+      state.cy.destroy();
+      state.cy = null;
+    }
+    if (elements.graphCanvas) elements.graphCanvas.hidden = false;
+    if (elements.graphEmpty) elements.graphEmpty.hidden = true;
+    window.fetch(programFile(program), { cache: "no-store" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status + " loading " + programFile(program));
+        return response.json();
+      })
+      .then(function (data) {
+        applyData(data);
+        updateHeader();
+        renderOutline();
+        renderGraph();
+      })
+      .catch(showLoadError);
+  }
+
+  function showLoadError(error) {
+    if (elements.graphCanvas) elements.graphCanvas.hidden = true;
+    if (elements.graphEmpty) {
+      elements.graphEmpty.hidden = false;
+      elements.graphEmpty.innerHTML = "<strong>Major requirement data unavailable</strong>" +
+        "<span>" + escapeHtml(error && error.message ? error.message : String(error)) + "</span>";
+    }
+  }
+
+  function bootstrap() {
+    loadCompletions();
+    if (typeof window.fetch !== "function") {
+      showLoadError(new Error("This browser cannot load " + MANIFEST_URL));
+      return;
+    }
+    window.fetch(MANIFEST_URL, { cache: "no-store" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status + " loading " + MANIFEST_URL);
+        return response.json();
+      })
+      .then(function (manifest) {
+        MANIFEST = manifest;
+        populateSelector(manifest);
+        bindEvents();
+        var programs = manifest.programs || [];
+        var preferred = programs.filter(function (entry) { return entry.programCode === "CPEG"; })[0] ||
+          programs[0];
+        if (!preferred) throw new Error("The major-requirement manifest lists no programs");
+        loadProgram(preferred.id);
+      })
+      .catch(showLoadError);
+  }
+
+  bootstrap();
 }());

@@ -1,0 +1,1521 @@
+{
+  "schemaVersion": 2,
+  "id": "MAEC-2025-26",
+  "programCode": "MAEC",
+  "program": "BSc in Mathematics and Economics",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "55-60",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26maec.pdf",
+  "sourceHash": "e26118ae2aec2018a5eb0dfa9d0952762ea6f691c842cfbd39c7e62207d86c9d",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Mathematics and Economics",
+    "credits": "55-60 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "55-60 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2023",
+      "title": "Multivariable Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2024",
+      "title": "Honors Multivariable Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2033",
+      "title": "Mathematical Analysis",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2043",
+      "title": "Honors Mathematical Analysis",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2121",
+      "title": "Linear Algebra",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2131",
+      "title": "Honors in Linear and Abstract Algebra I",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 3033",
+      "title": "Real Analysis",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 3043",
+      "title": "Honors Real Analysis",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 4994",
+      "title": "Capstone Project in Mathematics and Economics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 4999",
+      "title": "Independent Capstone Project",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 4670",
+      "title": "Economics Research and Communication",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 2103",
+      "title": "Principles of Microeconomics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 2113",
+      "title": "Microeconomics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3113",
+      "title": "Microeconomic Theory I",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3123",
+      "title": "Macroeconomic Theory I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3133",
+      "title": "Microeconomic Theory II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3143",
+      "title": "Macroeconomic Theory II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3334",
+      "title": "Introduction to Econometrics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 2010",
+      "title": "Principles of Accounting I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 2203",
+      "title": "Fundamentals of Business Finance",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ECON 1220",
+      "title": "Thinking like an Economist I: Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "ECON 2123",
+      "title": "Macroeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "ECON 3014",
+      "title": "Managerial Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "ECON 3024",
+      "title": "Managerial Macroeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "FINA 2303",
+      "title": "Financial Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "IEDA 2540",
+      "title": "Statistics for Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "LIFS 3150",
+      "title": "Biostatistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 2111",
+      "title": "Matrix Algebra and Applications",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 2350",
+      "title": "Applied Linear Algebra and Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 3423",
+      "title": "Statistical Inference",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    },
+    {
+      "code": "MATH 4991",
+      "title": "Capstone Project in Pure Mathematics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1298
+      ]
+    },
+    {
+      "code": "MATH 4992",
+      "title": "Capstone Project in Applied Mathematics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1406
+      ]
+    },
+    {
+      "code": "MATH 4993",
+      "title": "Capstone Project in Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1406
+      ]
+    },
+    {
+      "code": "SOSC 1440",
+      "title": "Introduction to Economics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1514
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "MATH 2024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "MATH 2024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2043",
+      "target": "MATH 2033",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2043"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2043",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Grade A- or above in MATH 1024"
+    },
+    {
+      "source": "MATH 2033",
+      "target": "MATH 2043",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2033"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2121",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2121",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2121",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2111",
+      "target": "MATH 2121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "MATH 2131",
+      "target": "MATH 2121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "MATH 2121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2131",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Grade A in AL Pure Mathematics; or grade A- or above in MATH 1014/MATH 1020/MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2131",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Grade A in AL Pure Mathematics; or grade A- or above in MATH 1014/MATH 1020/MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2131",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Grade A in AL Pure Mathematics; or grade A- or above in MATH 1014/MATH 1020/MATH 1024"
+    },
+    {
+      "source": "MATH 2111",
+      "target": "MATH 2131",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2121, MATH 2350"
+    },
+    {
+      "source": "MATH 2121",
+      "target": "MATH 2131",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2121, MATH 2350"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "MATH 2131",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2111, MATH 2121, MATH 2350"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2411",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2411",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2411",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "IEDA 2540",
+      "target": "MATH 2411",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "MATH 2411",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "LIFS 3150",
+      "target": "MATH 2411",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2033",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2043",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2111",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2121",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2131",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "MATH 3033",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(MATH 2011 OR MATH 2023 OR MATH 2024) AND (MATH 2033 OR MATH 2043) AND (MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 3043",
+      "target": "MATH 3033",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 3043"
+    },
+    {
+      "source": "MATH 2043",
+      "target": "MATH 3043",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Grade A- or above in MATH 2043"
+    },
+    {
+      "source": "MATH 3033",
+      "target": "MATH 3043",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 3033"
+    },
+    {
+      "source": "MATH 4991",
+      "target": "MATH 4994",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4999"
+    },
+    {
+      "source": "MATH 4992",
+      "target": "MATH 4994",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4999"
+    },
+    {
+      "source": "MATH 4993",
+      "target": "MATH 4994",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4999"
+    },
+    {
+      "source": "MATH 4999",
+      "target": "MATH 4994",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4999"
+    },
+    {
+      "source": "MATH 4991",
+      "target": "MATH 4999",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4994"
+    },
+    {
+      "source": "MATH 4992",
+      "target": "MATH 4999",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4994"
+    },
+    {
+      "source": "MATH 4993",
+      "target": "MATH 4999",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4994"
+    },
+    {
+      "source": "MATH 4994",
+      "target": "MATH 4999",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 4991, MATH 4992, MATH 4993, MATH 4994"
+    },
+    {
+      "source": "ECON 1220",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 3133",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 1220",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 2103",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 3133",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 2103",
+      "target": "ECON 3113",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ECON 3113",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 3014",
+      "target": "ECON 3113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "ECON 2123",
+      "target": "ECON 3123",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ECON 3024",
+      "target": "ECON 3123",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3123",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 3133",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 3113"
+    },
+    {
+      "source": "ECON 3014",
+      "target": "ECON 3133",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3133",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3014, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 3143",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 3113 AND ECON 3123"
+    },
+    {
+      "source": "ECON 3123",
+      "target": "ECON 3143",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ECON 3113 AND ECON 3123"
+    },
+    {
+      "source": "ECON 2123",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ECON 3024",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 3143",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 2123, ECON 3024, SOSC 102I, SOSC 1440"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 3423",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 2203",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "FINA 2303"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    }
+  ]
+}

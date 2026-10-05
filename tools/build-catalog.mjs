@@ -458,14 +458,12 @@ async function buildCatalog({ year, maxSubjects, log = () => {}, fetchImpl = fet
   const queued = new Set(queue);
   const fetched = new Set();
   const courses = new Map();
-  const pageHashes = [sha256(indexHtml)];
 
   while (queue.length && (maxSubjects == null || fetched.size < maxSubjects)) {
     const subject = queue.shift();
     const url = subjectMap.get(subject).source_url;
     log(`[${fetched.size + 1}] Fetching ${subject} (${queue.length} queued)`);
     const html = await fetchImpl(url);
-    pageHashes.push(sha256(html));
     const parsed = parseCoursePage(html, year, subject, url, parse);
     for (const course of parsed) {
       for (const requirement of Object.values(course.requirements)) {
@@ -501,12 +499,17 @@ async function buildCatalog({ year, maxSubjects, log = () => {}, fetchImpl = fet
     };
   }
 
+  const subjectRecords = subjects.map((item) => ({ ...item, fetched: fetched.has(item.code) }));
+  // Hash the parsed content, not the raw HTML: HKUST stamps a per-request
+  // cache-buster (`?t=...`) into every page, which would otherwise change the
+  // hash on every crawl and make an autonomous refresh churn forever.
+  const sourceHash = sha256(JSON.stringify({ year, subjects: subjectRecords, courses: sortedCourses }));
   return {
     year,
     generatedAt: new Date().toISOString().replace(/\.\d{3}Z$/, "Z"),
     source: indexUrl,
-    sourceHash: sha256([...pageHashes].sort().join("")),
-    subjects: subjects.map((item) => ({ ...item, fetched: fetched.has(item.code) })),
+    sourceHash,
+    subjects: subjectRecords,
     courses: sortedCourses,
   };
 }

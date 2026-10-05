@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 2,
+  "id": "QFIN-2025-26",
+  "programCode": "QFIN",
+  "program": "BSc in Quantitative Finance",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "23-27",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26qfin.pdf",
+  "sourceHash": "29ea33fd2fb48a5f39bf547d3bec863aa1e76d821f627fc1b429ecf0c8ed9c7c",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Quantitative Finance",
+    "credits": "23-27 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "23-27 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "FINA 3103",
+      "title": "Intermediate Investments",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3111",
+      "title": "Finance Professional Development",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3203",
+      "title": "Derivative Securities",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3303",
+      "title": "Intermediate Corporate Finance",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3810",
+      "title": "Bloomberg Market Concepts Certification",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 4803",
+      "title": "Quantitative Trading",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3334",
+      "title": "Introduction to Econometrics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3230",
+      "title": "Business Programming in VBA",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 2023",
+      "title": "Multivariable Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "COMP 1022Q",
+      "title": "COMP 1022Q",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "FINA 2203",
+      "title": "Fundamentals of Business Finance",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "FINA 2303",
+      "title": "Financial Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "FINA 4810",
+      "title": "FINA 4810",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "FINA 4814",
+      "title": "FINA 4814",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "MATH 2024",
+      "title": "Honors Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "MATH 3423",
+      "title": "Statistical Inference",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3203",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3203",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3303",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3303",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3810",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3810",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 4810",
+      "target": "FINA 4803",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "FINA 4810, FINA 4814"
+    },
+    {
+      "source": "FINA 4814",
+      "target": "FINA 4803",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "FINA 4810, FINA 4814"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 3423",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "ISOM 2010",
+      "target": "ISOM 3230",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(For non-BSc in Quantitative Finance students) ISOM 2010"
+    },
+    {
+      "source": "COMP 1022Q",
+      "target": "ISOM 3230",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022Q"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "MATH 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2023, MATH 2024"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2023, MATH 2024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2023",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 2023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2024"
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 2,
+  "id": "IS-2025-26",
+  "programCode": "IS",
+  "program": "BBA in Information Systems",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "10",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26is.pdf",
+  "sourceHash": "4ad8737ae5bda46eac3d762f92e857029d304ede4bcce60b0de4e76461f133f0",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Information Systems",
+    "credits": "10 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "10 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ISOM 3210",
+      "title": "Information Systems Analysis and Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3260",
+      "title": "Database Design and Administration",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3320",
+      "title": "Business Applications Development in Java",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:option",
+      "kind": "option",
+      "title": "Artificial Intelligence Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ISOM 4030",
+          "title": "Deep Learning for Business Applications",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4110",
+          "title": "Large Language Models and AI Agents",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:option",
+      "kind": "option",
+      "title": "Business Analytics Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ISOM 3360",
+          "title": "Data Mining for Business Analytics",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 3900",
+          "title": "Decision Analytics",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:option",
+      "kind": "option",
+      "title": "Information Systems Auditing Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ISOM 4100",
+          "title": "Information Systems Auditing",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4300",
+          "title": "Information Systems Control and Assurance",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 3021",
+      "title": "Java Programming",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 3311",
+      "title": "Database Management Systems",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "IEDA 3300",
+      "title": "Industrial Data Systems",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 2020",
+      "title": "Coding for Business",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 3230",
+      "title": "Business Programming in VBA",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "ISOM 2010",
+      "target": "ISOM 3210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 2010"
+    },
+    {
+      "source": "ISOM 3230",
+      "target": "ISOM 3260",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 3230 OR ISOM 3320 OR ISOM 3400"
+    },
+    {
+      "source": "ISOM 3320",
+      "target": "ISOM 3260",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 3230 OR ISOM 3320 OR ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "ISOM 3260",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 3230 OR ISOM 3320 OR ISOM 3400"
+    },
+    {
+      "source": "ISOM 3210",
+      "target": "ISOM 3260",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "ISOM 3210"
+    },
+    {
+      "source": "COMP 3311",
+      "target": "ISOM 3260",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 3311, IEDA 3300"
+    },
+    {
+      "source": "IEDA 3300",
+      "target": "ISOM 3260",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 3311, IEDA 3300"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "ISOM 3320",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 3021"
+    },
+    {
+      "source": "COMP 3021",
+      "target": "ISOM 3320",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 3021"
+    },
+    {
+      "source": "ISOM 2020",
+      "target": "ISOM 3400",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 2020"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "ISOM 3400",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "ISOM 3400",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    }
+  ]
+}

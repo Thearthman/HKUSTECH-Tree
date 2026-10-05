@@ -1,0 +1,2348 @@
+{
+  "schemaVersion": 2,
+  "id": "CPEG-2025-26",
+  "programCode": "CPEG",
+  "program": "BEng in Computer Engineering",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "61-66",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26cpeg.pdf",
+  "sourceHash": "7a414621dfcf960f569739ca60801b76eec1309e2dbef6e54e827403389d7614",
+  "generatedAt": "2026-10-05T08:46:38Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BEng in Computer Engineering",
+    "credits": "61-66 credits"
+  },
+  "sections": [
+    {
+      "id": "engineering-fundamentals",
+      "pdfSection": "Engineering Fundamental Course(s)",
+      "eyebrow": "Engineering fundamentals",
+      "title": "Foundational courses",
+      "rootGroup": "group:fundamentals",
+      "copy": "Calculus: [(MATH 1013 or MATH 1023) and (MATH 1014 or MATH 1024)] or MATH 1020. Choose one Physics I and one Physics II course.",
+      "credits": "19-21 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required courses",
+      "title": "CPEG core",
+      "rootGroup": "group:required",
+      "copy": "Complete the standard C++ sequence or COMP 2012H; choose one organization course and one discrete mathematics course. Complete CPEG 1971 with a project/thesis, or CPEG 4910. Students taking the Research Option must take CPEG 4902 or CPEG 4912.",
+      "sourceLink": "Open official program catalog",
+      "credits": "42-45 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:fundamentals",
+      "label": "Engineering fundamentals | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:calculus",
+      "label": "Calculus | OR",
+      "kind": "or",
+      "parent": "group:fundamentals"
+    },
+    {
+      "id": "group:calculus-sequence",
+      "label": "Two-course sequence | AND",
+      "kind": "and",
+      "parent": "group:calculus"
+    },
+    {
+      "id": "group:calculus-one",
+      "label": "Calculus I | OR",
+      "kind": "or",
+      "parent": "group:calculus-sequence"
+    },
+    {
+      "id": "group:calculus-two",
+      "label": "Calculus II | OR",
+      "kind": "or",
+      "parent": "group:calculus-sequence"
+    },
+    {
+      "id": "group:physics-one",
+      "label": "Physics I | OR",
+      "kind": "or",
+      "parent": "group:fundamentals"
+    },
+    {
+      "id": "group:physics-two",
+      "label": "Physics II | OR",
+      "kind": "or",
+      "parent": "group:fundamentals"
+    },
+    {
+      "id": "group:required",
+      "label": "Required courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:programming",
+      "label": "Programming | OR",
+      "kind": "or",
+      "parent": "group:required"
+    },
+    {
+      "id": "group:programming-sequence",
+      "label": "Standard sequence | AND",
+      "kind": "and",
+      "parent": "group:programming"
+    },
+    {
+      "id": "group:organization",
+      "label": "Computer organization | OR",
+      "kind": "or",
+      "parent": "group:required"
+    },
+    {
+      "id": "group:discrete",
+      "label": "Discrete mathematics | OR",
+      "kind": "or",
+      "parent": "group:required"
+    },
+    {
+      "id": "group:project",
+      "label": "Capstone route | OR",
+      "kind": "or",
+      "parent": "group:required"
+    },
+    {
+      "id": "group:project-standard",
+      "label": "Project route | AND",
+      "kind": "and",
+      "parent": "group:project"
+    },
+    {
+      "id": "group:project-choice",
+      "label": "Project or thesis | OR",
+      "kind": "or",
+      "parent": "group:project-standard"
+    }
+  ],
+  "courses": [
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:fundamentals",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:calculus-one",
+      "position": [
+        365,
+        105
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:calculus-one",
+      "position": [
+        365,
+        205
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:calculus-two",
+      "position": [
+        585,
+        105
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:calculus-two",
+      "position": [
+        585,
+        205
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:calculus",
+      "position": [
+        805,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "3",
+      "parent": "group:fundamentals",
+      "position": [
+        1025,
+        105
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "MATH 2111",
+      "title": "Matrix Algebra and Applications",
+      "credits": "3",
+      "parent": "group:fundamentals",
+      "position": [
+        1025,
+        205
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "PHYS 1112",
+      "title": "General Physics I with Calculus",
+      "credits": "3",
+      "parent": "group:physics-one",
+      "position": [
+        1250,
+        105
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "PHYS 1312",
+      "title": "Honors General Physics I",
+      "credits": "3",
+      "parent": "group:physics-one",
+      "position": [
+        1250,
+        205
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "PHYS 1114",
+      "title": "General Physics II",
+      "credits": "3",
+      "parent": "group:physics-two",
+      "position": [
+        1470,
+        105
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "PHYS 1314",
+      "title": "Honors General Physics II",
+      "credits": "3",
+      "parent": "group:physics-two",
+      "position": [
+        1470,
+        205
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamentals"
+    },
+    {
+      "code": "CPEG 1930",
+      "title": "Academic and Professional Development I",
+      "credits": "0",
+      "parent": "group:required",
+      "position": [
+        130,
+        590
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 1971",
+      "title": "Industrial Experience",
+      "credits": "0",
+      "parent": "group:project-standard",
+      "position": [
+        365,
+        1210
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 4901",
+      "title": "Computer Engineering Final Year Project in COMP",
+      "credits": "6",
+      "parent": "group:project-choice",
+      "position": [
+        585,
+        1160
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 4902",
+      "title": "Computer Engineering Final Year Thesis in COMP",
+      "credits": "6",
+      "parent": "group:project-choice",
+      "position": [
+        585,
+        1260
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 4911",
+      "title": "Computer Engineering Final Year Project in ELEC",
+      "credits": "6",
+      "parent": "group:project-choice",
+      "position": [
+        805,
+        1160
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 4912",
+      "title": "Computer Engineering Final Year Thesis in ELEC",
+      "credits": "6",
+      "parent": "group:project-choice",
+      "position": [
+        805,
+        1260
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 4910",
+      "title": "Co-op Program",
+      "credits": "6",
+      "parent": "group:project",
+      "position": [
+        1060,
+        1210
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 2930",
+      "title": "Academic and Professional Development II",
+      "credits": "0",
+      "parent": "group:required",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "CPEG 3930",
+      "title": "Academic and Professional Development III",
+      "credits": "0",
+      "parent": "group:required",
+      "position": [
+        130,
+        790
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "4",
+      "parent": "group:programming-sequence",
+      "position": [
+        365,
+        625
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2012",
+      "title": "Object-Oriented Programming and Data Structures",
+      "credits": "4",
+      "parent": "group:programming-sequence",
+      "position": [
+        585,
+        625
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "5",
+      "parent": "group:programming",
+      "position": [
+        805,
+        675
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2611",
+      "title": "Computer Organization",
+      "credits": "4",
+      "parent": "group:organization",
+      "position": [
+        1025,
+        625
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 2350",
+      "title": "Introduction to Computer Organization and Design",
+      "credits": "4",
+      "parent": "group:organization",
+      "position": [
+        1025,
+        725
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2711",
+      "title": "Discrete Mathematical Tools for Computer Science",
+      "credits": "4",
+      "parent": "group:discrete",
+      "position": [
+        1250,
+        625
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 2711H",
+      "title": "Honors Discrete Mathematical Tools for Computer Science",
+      "credits": "4",
+      "parent": "group:discrete",
+      "position": [
+        1250,
+        725
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "COMP 3511",
+      "title": "Operating Systems",
+      "credits": "3",
+      "parent": "group:required",
+      "position": [
+        1470,
+        675
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 1100",
+      "title": "Introduction to Electro-Robot Design",
+      "credits": "4",
+      "parent": "group:required",
+      "position": [
+        240,
+        945
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 2100",
+      "title": "Signals and Systems",
+      "credits": "4",
+      "parent": "group:required",
+      "position": [
+        460,
+        945
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 2400",
+      "title": "Electronic Circuits",
+      "credits": "4",
+      "parent": "group:required",
+      "position": [
+        680,
+        945
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 2600",
+      "title": "Probability and Random Processes in Engineering",
+      "credits": "4",
+      "parent": "group:required",
+      "position": [
+        900,
+        945
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    },
+    {
+      "code": "ELEC 3300",
+      "title": "Introduction to Embedded Systems",
+      "credits": "4",
+      "parent": "group:required",
+      "position": [
+        1120,
+        945
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses"
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:group",
+      "kind": "group",
+      "title": "Area Courses",
+      "parent": null,
+      "group": null,
+      "rule": "At least 2 courses should be taken from one area and at least 1 course outside that area (including course(s) in",
+      "credits": "12",
+      "courses": []
+    },
+    {
+      "id": "branch:02:area",
+      "kind": "area",
+      "title": "Artificial Intelligence / Theory Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 3211",
+          "title": "Learning, Reasoning, and Decision Making in AI",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 3711",
+          "title": "Design and Analysis of Algorithms",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 3711H",
+          "title": "Honors Design and Analysis of Algorithms",
+          "credits": "4"
+        },
+        {
+          "code": "COMP 3721",
+          "title": "Theory of Computation",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4211",
+          "title": "Machine Learning",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4221",
+          "title": "Introduction to Natural Language Processing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4222",
+          "title": "Machine Learning with Structured Data",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4331",
+          "title": "Data Mining",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4332",
+          "title": "Big Data Mining and Management",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4421",
+          "title": "Image Processing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4471",
+          "title": "Deep Learning in Computer Vision",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4541",
+          "title": "Blockchain, Cryptocurrencies and Smart Contracts",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4551",
+          "title": "Large-Scale Machine Learning System for Foundation Models",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5211",
+          "title": "Advanced Artificial Intelligence",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5212",
+          "title": "Machine Learning",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5214",
+          "title": "Advanced Deep Learning Architectures",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5215",
+          "title": "Perception and Information Processing for Robotics",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5221",
+          "title": "Natural Language Processing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5331",
+          "title": "Knowledge Discovery in Databases",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5421",
+          "title": "Computer Vision",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5711",
+          "title": "Introduction to Advanced Algorithmic Techniques",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5712",
+          "title": "Introduction to Combinatorial Optimization",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5713",
+          "title": "Computational Geometry",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3180",
+          "title": "Data-Driven Portfolio Optimization",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3210",
+          "title": "Signals and Systems II",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3350",
+          "title": "Principles of Machine Learning",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4240",
+          "title": "Deep Learning in Computer Vision",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4840",
+          "title": "Artificial Intelligence for Medical Image Analysis",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:area",
+      "kind": "area",
+      "title": "Communications Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ELEC 3100",
+          "title": "Signal Processing and Communications",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3600",
+          "title": "Electromagnetics: From Wireless to Photonic Applications",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 4110",
+          "title": "Digital Communications and Wireless Systems",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4610",
+          "title": "Engineering Optics",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 4620",
+          "title": "Photonics and Optical Communications",
+          "credits": "4"
+        }
+      ]
+    },
+    {
+      "id": "branch:04:area",
+      "kind": "area",
+      "title": "Embedded System / Robotics Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 4521",
+          "title": "Mobile Application Development",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4531",
+          "title": "IoT and Smart Sensing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4611",
+          "title": "Design and Analysis of Computer Architectures",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3200",
+          "title": "System Modeling, Analysis and Control",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3210",
+          "title": "Signals and Systems II",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3310",
+          "title": "Digital Fundamentals and System Design",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 4210",
+          "title": "Control System Design",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4220",
+          "title": "Robotics: Modeling, Control and Planning",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4260",
+          "title": "Intelligent Robots and Embodied AI",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4320",
+          "title": "FPGA-based Design: From Theory to Practice",
+          "credits": "3"
+        },
+        {
+          "code": "ENGG 3960",
+          "title": "Robotics Special Project",
+          "credits": "1-4"
+        },
+        {
+          "code": "ENGG 4950",
+          "title": "Engineering Special Project",
+          "credits": "1-4"
+        }
+      ]
+    },
+    {
+      "id": "branch:05:area",
+      "kind": "area",
+      "title": "Graphic / Multimedia Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 4411",
+          "title": "Computer Graphics",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4421",
+          "title": "Image Processing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4431",
+          "title": "Multimedia Computing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4441",
+          "title": "Music Video Creation",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4451",
+          "title": "Game Programming",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4461",
+          "title": "Human-Computer Interaction",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4462",
+          "title": "Data Visualization",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4471",
+          "title": "Deep Learning in Computer Vision",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5411",
+          "title": "Advanced Computer Graphics",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5421",
+          "title": "Computer Vision",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:06:area",
+      "kind": "area",
+      "title": "Semiconductor / VLSI Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ELEC 3400",
+          "title": "Introduction to Integrated Circuits and Systems",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3410",
+          "title": "CMOS VLSI Design",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3500",
+          "title": "Integrated Circuit Devices",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3610",
+          "title": "Quantum Mechanics for Electronic Engineers",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4420",
+          "title": "Analogue Integrated Circuits Design and Analysis",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 4430",
+          "title": "Integrated Power Electronics",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4450",
+          "title": "Practical Considerations of Analog Integrated Circuit Design",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4510",
+          "title": "Semiconductor Physics for Solid-State Electronics",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4520",
+          "title": "Integrated Circuit Fabrication Technology",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4530",
+          "title": "Fundamentals of Photovoltaic and Renewable Energy",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:07:area",
+      "kind": "area",
+      "title": "Signal Processing Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ELEC 3100",
+          "title": "Signal Processing and Communications",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 3130",
+          "title": "Digital Image Processing",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4810",
+          "title": "Introduction to Biosensors and Bioinstrumentation",
+          "credits": "4"
+        },
+        {
+          "code": "ELEC 4820",
+          "title": "Medical Imaging",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4830",
+          "title": "Statistical Signal Analysis and Applications in Neural Engineering",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:08:area",
+      "kind": "area",
+      "title": "Software / Database Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 3021",
+          "title": "Java Programming",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 3031",
+          "title": "Principles of Programming Languages",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 3111",
+          "title": "Software Engineering",
+          "credits": "4"
+        },
+        {
+          "code": "COMP 3111H",
+          "title": "Honors Software Engineering",
+          "credits": "4"
+        },
+        {
+          "code": "COMP 3311",
+          "title": "Database Management Systems",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4021",
+          "title": "Internet Computing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4121",
+          "title": "Modern Compiler Construction",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4321",
+          "title": "Search Engines for Web and Enterprise Data",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4331",
+          "title": "Data Mining",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4332",
+          "title": "Big Data Mining and Management",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4521",
+          "title": "Mobile Application Development",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4651",
+          "title": "Cloud Computing and Big Data Systems",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5111",
+          "title": "Fundamentals of Software Analysis",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5112",
+          "title": "Parallel Programming",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5311",
+          "title": "Database Architecture and Implementation",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5331",
+          "title": "Knowledge Discovery in Databases",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3810",
+          "title": "Data Science for Neural Engineering",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:09:area",
+      "kind": "area",
+      "title": "Systems / Networking Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 3631",
+          "title": "Cryptography",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4521",
+          "title": "Mobile Application Development",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4531",
+          "title": "IoT and Smart Sensing",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4541",
+          "title": "Blockchain, Cryptocurrencies and Smart Contracts",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4611",
+          "title": "Design and Analysis of Computer Architectures",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4621",
+          "title": "Computer and Communication Networks",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4632",
+          "title": "Practicing Cybersecurity: Attacks and Counter-measures",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4634",
+          "title": "Cybersecurity",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4635",
+          "title": "Practical Cloud Computing Security",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4641",
+          "title": "Social Information Network Analysis and Engineering",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 4651",
+          "title": "Cloud Computing and Big Data Systems",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5621",
+          "title": "Computer Networks",
+          "credits": "3"
+        },
+        {
+          "code": "COMP 5631",
+          "title": "Cryptography and Security",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 3120",
+          "title": "Computer Communication Networks",
+          "credits": "3"
+        },
+        {
+          "code": "ELEC 4350",
+          "title": "AI Processor Architecture",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:10:area",
+      "kind": "area",
+      "title": "Courses Without Associated Area",
+      "parent": "branch:01:group",
+      "group": "Area Courses",
+      "rule": "Students may opt to graduate with or without an option. Students who take an option MUST complete all requirements",
+      "credits": null,
+      "courses": [
+        {
+          "code": "COMP 4911",
+          "title": "IT Entrepreneurship",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:11:option",
+      "kind": "option",
+      "title": "Research Option",
+      "parent": "branch:01:group",
+      "group": "Option(s)",
+      "rule": "Students in the Research Option should also take either CPEG 4902 or CPEG 4912 as specified in the Elective Course(s) Minimum",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ELEC 5900",
+          "title": "Modern Engineering Research Methodologies",
+          "credits": "3"
+        },
+        {
+          "code": "UROP 1100",
+          "title": "Undergraduate Research Opportunities Series 1",
+          "credits": "1"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1028",
+      "title": "Extended Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 2023",
+      "title": "Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "MATH 2024",
+      "title": "Honors Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "MATH 2121",
+      "title": "Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "MATH 2131",
+      "title": "Honors in Linear and Abstract Algebra I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "MATH 2343",
+      "title": "Discrete Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2350",
+      "title": "Applied Linear Algebra and Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2351",
+      "title": "Introduction to Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2352",
+      "title": "Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2421",
+      "title": "Probability",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 2431",
+      "title": "Honors Probability",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "PHYS 1111",
+      "title": "General Physics I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "ISDN 4000F",
+      "title": "",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "ELEC 2600H",
+      "title": "",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014; OR MATH 1020; OR MATH 1024"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "MATH 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2023, MATH 2024"
+    },
+    {
+      "source": "MATH 2024",
+      "target": "MATH 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2023, MATH 2024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "A passing grade in AL Pure Mathematics / AL Applied Mathematics; OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2121",
+      "target": "MATH 2111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2121, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "MATH 2131",
+      "target": "MATH 2111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2121, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "MATH 2111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2121, MATH 2131, MATH 2350"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "PHYS 1114",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(PHYS 1111 OR PHYS 1112 OR PHYS 1312) AND (level 3 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1314",
+      "target": "PHYS 1114",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1314"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "PHYS 1314",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(Grade A- or above in PHYS 1111 OR PHYS 1112 OR Grade B- or above in PHYS 1312) AND (Level 5 or above in HKDSE Mathematics Extended Module M1/M2 OR MATH 1013 OR MATH 1020 OR MATH 1023)"
+    },
+    {
+      "source": "PHYS 1114",
+      "target": "PHYS 1314",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1114"
+    },
+    {
+      "source": "CPEG 4901",
+      "target": "CPEG 4910",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CPEG 4901, CPEG 4902, CPEG 4911, CPEG 4912"
+    },
+    {
+      "source": "CPEG 4902",
+      "target": "CPEG 4910",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CPEG 4901, CPEG 4902, CPEG 4911, CPEG 4912"
+    },
+    {
+      "source": "CPEG 4911",
+      "target": "CPEG 4910",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CPEG 4901, CPEG 4902, CPEG 4911, CPEG 4912"
+    },
+    {
+      "source": "CPEG 4912",
+      "target": "CPEG 4910",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CPEG 4901, CPEG 4902, CPEG 4911, CPEG 4912"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012H"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2011"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012H"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2611",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2011 OR COMP 2012H"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2611",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2011 OR COMP 2012H"
+    },
+    {
+      "source": "ELEC 2350",
+      "target": "COMP 2611",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 2350"
+    },
+    {
+      "source": "ELEC 1100",
+      "target": "ELEC 2350",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ELEC 1100"
+    },
+    {
+      "source": "COMP 2611",
+      "target": "ELEC 2350",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2611, ISDN 4000F"
+    },
+    {
+      "source": "ISDN 4000F",
+      "target": "ELEC 2350",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2611, ISDN 4000F"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "COMP 2711",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "(For students without prerequisites) MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1014 OR MATH 1020 OR MATH 1023 OR MATH 1024"
+    },
+    {
+      "source": "COMP 2711H",
+      "target": "COMP 2711",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2711H, MATH 2343"
+    },
+    {
+      "source": "MATH 2343",
+      "target": "COMP 2711",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2711H, MATH 2343"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "COMP 2711H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 5* or above in HKDSE Mathematics Extended Module M1/M2; OR grade A- or above in MATH 1014; OR grade B+ or above in MATH 1020 / MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "COMP 2711H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 5* or above in HKDSE Mathematics Extended Module M1/M2; OR grade A- or above in MATH 1014; OR grade B+ or above in MATH 1020 / MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "COMP 2711H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 5* or above in HKDSE Mathematics Extended Module M1/M2; OR grade A- or above in MATH 1014; OR grade B+ or above in MATH 1020 / MATH 1024"
+    },
+    {
+      "source": "COMP 2711",
+      "target": "COMP 2711H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2711, MATH 2343"
+    },
+    {
+      "source": "MATH 2343",
+      "target": "COMP 2711H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2711, MATH 2343"
+    },
+    {
+      "source": "COMP 2611",
+      "target": "COMP 3511",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR [ELEC 2350 AND (COMP 2011 OR COMP 2012H)]"
+    },
+    {
+      "source": "ELEC 2350",
+      "target": "COMP 3511",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR [ELEC 2350 AND (COMP 2011 OR COMP 2012H)]"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 3511",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR [ELEC 2350 AND (COMP 2011 OR COMP 2012H)]"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 3511",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR [ELEC 2350 AND (COMP 2011 OR COMP 2012H)]"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "MATH 2111",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "MATH 2351",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "MATH 2352",
+      "target": "ELEC 2100",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023 OR MATH 2111 OR MATH 2350 OR MATH 2351 OR MATH 2352"
+    },
+    {
+      "source": "ELEC 1100",
+      "target": "ELEC 2400",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "ELEC 2400",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "ELEC 2400",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "ELEC 2400",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "ELEC 2400",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ELEC 1100 AND (MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "PHYS 1114",
+      "target": "ELEC 2400",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "PHYS 1114 OR PHYS 1314"
+    },
+    {
+      "source": "PHYS 1314",
+      "target": "ELEC 2400",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "PHYS 1114 OR PHYS 1314"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "ELEC 2600",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "ELEC 2600",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "ELEC 2600",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "ELEC 2600",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1003 OR MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "ELEC 2600",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "ELEC 2600",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 2011 OR MATH 2023"
+    },
+    {
+      "source": "ELEC 2600H",
+      "target": "ELEC 2600",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 2600H (prior to 2022-23), MATH 2421, MATH 2431"
+    },
+    {
+      "source": "MATH 2421",
+      "target": "ELEC 2600",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 2600H (prior to 2022-23), MATH 2421, MATH 2431"
+    },
+    {
+      "source": "MATH 2431",
+      "target": "ELEC 2600",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 2600H (prior to 2022-23), MATH 2421, MATH 2431"
+    },
+    {
+      "source": "COMP 2611",
+      "target": "ELEC 3300",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR ELEC 2350 OR ISDN 4000F"
+    },
+    {
+      "source": "ELEC 2350",
+      "target": "ELEC 3300",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR ELEC 2350 OR ISDN 4000F"
+    },
+    {
+      "source": "ISDN 4000F",
+      "target": "ELEC 3300",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 2611 OR ELEC 2350 OR ISDN 4000F"
+    }
+  ]
+}

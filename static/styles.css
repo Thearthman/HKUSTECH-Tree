@@ -1598,6 +1598,51 @@ select {
   white-space: nowrap;
 }
 
+.major-outline-empty {
+  color: #4f5953;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.major-branch-list {
+  display: grid;
+  gap: 16px;
+}
+
+.major-branch {
+  padding: 12px 14px 14px;
+  background: var(--surface-raised, #fff);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.major-branch[data-depth="1"] { margin-left: 22px; }
+.major-branch[data-depth="2"] { margin-left: 44px; }
+.major-branch[data-depth="3"] { margin-left: 66px; }
+
+.major-branch > header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.major-branch h4 {
+  margin: 3px 0 0;
+  font-size: 14px;
+}
+
+.major-branch > header > strong {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.major-branch .major-rule-copy {
+  margin-bottom: 10px !important;
+}
+
 @media (max-width: 900px) {
   .major-app-shell {
     grid-template-rows: auto auto minmax(0, 1fr);

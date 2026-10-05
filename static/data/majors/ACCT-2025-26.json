@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "id": "ACCT-2025-26",
+  "programCode": "ACCT",
+  "program": "BBA in Professional Accounting",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "19",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26acct.pdf",
+  "sourceHash": "d01e9ef5141d9b25d732e0c55ffd8a8e6313ed86654acd704fd2f79869b0345f",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Professional Accounting",
+    "credits": "19 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "19 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ACCT 3010",
+      "title": "Financial Accounting I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3020",
+      "title": "Financial Accounting II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3210",
+      "title": "Advanced Management Accounting",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3610",
+      "title": "Business Law",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3880",
+      "title": "Professional Excellence Program",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 4010",
+      "title": "Advanced Financial Accounting",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 4510",
+      "title": "Auditing",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:option",
+      "kind": "option",
+      "title": "Accounting Analytics Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ACCT 4710",
+          "title": "Accounting Analytics for Professional Accountants",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 3400",
+          "title": "Business Applications Development in Python",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:option",
+      "kind": "option",
+      "title": "Emerging Technologies in Accounting Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ACCT 4801",
+          "title": "Cryptocurrency, blockchain and their business applications",
+          "credits": "3"
+        },
+        {
+          "code": "ACCT 4803",
+          "title": "Artificial Intelligence for Accounting Practice and Analysis",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "ACCT 2010",
+      "title": "Principles of Accounting I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "ACCT 2200",
+      "title": "Principles of Accounting II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "ACCT 3030",
+      "title": "Intermediate Financial Accounting for Non-Accounting Majors",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "ACCT 2010",
+      "target": "ACCT 3010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 2010"
+    },
+    {
+      "source": "ACCT 3030",
+      "target": "ACCT 3010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3030"
+    },
+    {
+      "source": "ACCT 3010",
+      "target": "ACCT 3020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 3010"
+    },
+    {
+      "source": "ACCT 3030",
+      "target": "ACCT 3020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3030"
+    },
+    {
+      "source": "ACCT 2200",
+      "target": "ACCT 3210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 2200"
+    },
+    {
+      "source": "ACCT 3020",
+      "target": "ACCT 4010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 3020"
+    },
+    {
+      "source": "ACCT 3020",
+      "target": "ACCT 4510",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 3020"
+    }
+  ]
+}

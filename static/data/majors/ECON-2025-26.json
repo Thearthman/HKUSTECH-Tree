@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 2,
+  "id": "ECON-2025-26",
+  "programCode": "ECON",
+  "program": "BBA in Economics",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "12",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26econ.pdf",
+  "sourceHash": "dfb3c14574bf6030d023f57a113aec4946803a317d12a69aeae2436839ec6edd",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Economics",
+    "credits": "12 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "12 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ECON 3014",
+      "title": "Managerial Microeconomics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3024",
+      "title": "Managerial Macroeconomics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 3334",
+      "title": "Introduction to Econometrics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "ECON 2103",
+      "title": "Principles of Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "ECON 2113",
+      "title": "Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "ECON 2123",
+      "title": "Macroeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "ECON 3113",
+      "title": "Microeconomic Theory I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "ECON 3133",
+      "title": "Microeconomic Theory II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "ECON 3143",
+      "title": "Macroeconomic Theory II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "MATH 3423",
+      "title": "Statistical Inference",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "ECON 2103",
+      "target": "ECON 3014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ECON 3014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ECON 2103 OR ECON 2113"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 3014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3113, ECON 3133"
+    },
+    {
+      "source": "ECON 3133",
+      "target": "ECON 3014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3113, ECON 3133"
+    },
+    {
+      "source": "ECON 2123",
+      "target": "ECON 3024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2123 AND ECON 3334"
+    },
+    {
+      "source": "ECON 3334",
+      "target": "ECON 3024",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ECON 2123 AND ECON 3334"
+    },
+    {
+      "source": "ECON 3143",
+      "target": "ECON 3024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 3143"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    },
+    {
+      "source": "MATH 3423",
+      "target": "ECON 3334",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "One of ISOM 2500, MATH 2411 or MATH 3423"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 2,
+  "id": "OM-2025-26",
+  "programCode": "OM",
+  "program": "BBA in Operations Management",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "8",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26om.pdf",
+  "sourceHash": "7509115f8228abc08a499394331a6c47e3ef9b781046f5bcd292bf786928b82c",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Operations Management",
+    "credits": "8 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "8 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ISOM 3710",
+      "title": "Business Modeling and Optimization",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3770",
+      "title": "Global Supply Chain Management",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:option",
+      "kind": "option",
+      "title": "Business Analytics Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "Students in the Business Analytics Option should also take 4 courses out of ISOM 3530, ISOM 3540, ISOM",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ISOM 3360",
+          "title": "Data Mining for Business Analytics",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 3900",
+          "title": "Decision Analytics",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:option",
+      "kind": "option",
+      "title": "Supply Chain Management Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ISOM 3730",
+          "title": "Quality and Process Management",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4740",
+          "title": "Enterprise Resource Management",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4750",
+          "title": "Business Project Management",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4780",
+          "title": "Integrated Planning and Execution",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 3760",
+          "title": "Logistics Management",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "CIVL 2170",
+      "title": "Infrastructure Systems Engineering and Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "IEDA 3010",
+      "title": "Prescriptive Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "IEDA 4410",
+      "title": "Data Driven Supply Chain Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "ISOM 2700",
+      "title": "Operations Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "ISOM 3780",
+      "title": "Sustainable Supply Chain Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "CIVL 2170",
+      "target": "ISOM 3710",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2170, IEDA 3010"
+    },
+    {
+      "source": "IEDA 3010",
+      "target": "ISOM 3710",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2170, IEDA 3010"
+    },
+    {
+      "source": "ISOM 2700",
+      "target": "ISOM 3770",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 2700 AND ISOM 3710"
+    },
+    {
+      "source": "ISOM 3710",
+      "target": "ISOM 3770",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ISOM 2700 AND ISOM 3710"
+    },
+    {
+      "source": "IEDA 4410",
+      "target": "ISOM 3770",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 4410, ISOM 3780"
+    },
+    {
+      "source": "ISOM 3780",
+      "target": "ISOM 3770",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 4410, ISOM 3780"
+    }
+  ]
+}

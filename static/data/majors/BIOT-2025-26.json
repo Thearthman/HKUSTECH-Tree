@@ -1,0 +1,921 @@
+{
+  "schemaVersion": 2,
+  "id": "BIOT-2025-26",
+  "programCode": "BIOT",
+  "program": "BSc in Biotechnology",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "37-45",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26biot.pdf",
+  "sourceHash": "09e08e815eac3cb7fad212c32f0480e18d4010c5fbcacb4dc10673b7a93c898d",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Biotechnology",
+    "credits": "37-45 credits"
+  },
+  "sections": [
+    {
+      "id": "major-pre-requisite-courses",
+      "pdfSection": "Major Pre-requisite course(s)",
+      "eyebrow": "Major Pre-requisite courses",
+      "title": "Major Pre-requisite courses",
+      "rootGroup": "group:major-pre-requisite-courses",
+      "credits": "3-6 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "34-39 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:major-pre-requisite-courses",
+      "label": "Major Pre-requisite courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "LIFS 1901",
+      "title": "General Biology I",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1902",
+      "title": "General Biology II",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1903",
+      "title": "Laboratory for General Biology I",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1904",
+      "title": "Laboratory for General Biology II",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2040",
+      "title": "Cell Biology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2070",
+      "title": "Introduction to Biotechnology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2080",
+      "title": "Plant Biology",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2210",
+      "title": "Biochemistry I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 2220",
+      "title": "Biochemistry II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 3150",
+      "title": "Biostatistics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4963",
+      "title": "Biotechnology Capstone Project",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4973",
+      "title": "Biotechnology Project Research I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 4983",
+      "title": "Biotechnology Project Research II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "SCIE 4500",
+      "title": "IRE Research Project II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1011",
+      "title": "General Chemistry A: Reactions, Thermodynamics, and Reaction Kinetics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1012",
+      "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1051",
+      "title": "Laboratory for General Chemistry A",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1052",
+      "title": "Laboratory for General Chemistry B",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 2111",
+      "title": "Fundamentals of Organic Chemistry",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 2311",
+      "title": "Analytical Chemistry",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 2155",
+      "title": "Fundamental Organic Chemistry Laboratory",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 2355",
+      "title": "Fundamental Analytical Chemistry Laboratory",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:track",
+      "kind": "track",
+      "title": "Applied Bioscience Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "LIFS 3040",
+          "title": "Animal Physiology",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3060",
+          "title": "Microbiology",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 4370",
+          "title": "Human Genetics and Personalized Medicine",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 2011",
+          "title": "A Practicum on Wetland Conservation",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3220",
+          "title": "Animal Physiology Laboratory",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3260",
+          "title": "Microbiology Laboratory",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3370",
+          "title": "Human Genetics in Practice",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 4882",
+          "title": "Investigative Pharmacology",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 4884",
+          "title": "Application of RNA Technology to Human Diseases",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:track",
+      "kind": "track",
+      "title": "Entrepreneurship Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "LIFS 2888",
+          "title": "Introduction to Bioindustries",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3110",
+          "title": "Biotechnological Application of Recombinant DNA Techniques",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3140",
+          "title": "General Genetics",
+          "credits": "4"
+        },
+        {
+          "code": "LIFS 4200",
+          "title": "Concepts and Issues in Contemporary Biotechnology",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 4630",
+          "title": "Advanced Topics in Biotechnology",
+          "credits": "3"
+        },
+        {
+          "code": "BIBU 4820",
+          "title": "Biotechnology Entrepreneurship and Business Operations",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:track",
+      "kind": "track",
+      "title": "International Research Enrichment Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "Students in the IRE Track should also take SCIE 4500 and LIFS 4983 as specified in the major",
+      "credits": null,
+      "courses": [
+        {
+          "code": "LIFS 3070",
+          "title": "Introduction to Biophysical Instrumentation",
+          "credits": "3"
+        },
+        {
+          "code": "SCIE 3500",
+          "title": "IRE Research Project I",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "CHEM 1004",
+      "title": "Chemistry in Everyday Life",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1008",
+      "title": "Introductory Chemistry",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1010",
+      "title": "CHEM 1010",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "CHEM 2110",
+      "title": "Organic Chemistry I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "CHEM 2310",
+      "title": "Fundamentals of Analytical Chemistry",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "CHEM 2350",
+      "title": "CHEM 2350",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "CHEM 2550",
+      "title": "Synthetic Chemistry Laboratory I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "CHEM 2555",
+      "title": "Molecular Characterization Chemistry Laboratory l",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "LIFS 3110",
+      "title": "Biotechnological Application of Recombinant DNA Techniques",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "SCIE 3500",
+      "title": "IRE Research Project I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1902",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR level 3 or above in HKDSE 1x Biology OR a passing grade in AL/AS Biology"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1903",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 1904",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 1904",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2070",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1902"
+    },
+    {
+      "source": "LIFS 2040",
+      "target": "LIFS 2080",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2040 OR LIFS 2210"
+    },
+    {
+      "source": "LIFS 2210",
+      "target": "LIFS 2080",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 2040 OR LIFS 2210"
+    },
+    {
+      "source": "LIFS 1901",
+      "target": "LIFS 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1901 OR LIFS 1902"
+    },
+    {
+      "source": "LIFS 1902",
+      "target": "LIFS 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 1902"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "LIFS 3150",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ISOM 2500, MATH 2411"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "LIFS 3150",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ISOM 2500, MATH 2411"
+    },
+    {
+      "source": "LIFS 3110",
+      "target": "LIFS 4973",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 3110"
+    },
+    {
+      "source": "LIFS 4973",
+      "target": "LIFS 4983",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 4973 OR SCIE 4500"
+    },
+    {
+      "source": "SCIE 4500",
+      "target": "LIFS 4983",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LIFS 4973 OR SCIE 4500"
+    },
+    {
+      "source": "SCIE 3500",
+      "target": "SCIE 4500",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "SCIE 3500"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 1012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23)"
+    },
+    {
+      "source": "CHEM 1011",
+      "target": "CHEM 1051",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1011"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CHEM 1052",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1012"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 1011",
+      "target": "CHEM 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CHEM 2111",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 2110",
+      "target": "CHEM 2111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 2110"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 2311",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 1011",
+      "target": "CHEM 2311",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CHEM 2311",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23) OR CHEM 1011 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 2310",
+      "target": "CHEM 2311",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 2310"
+    },
+    {
+      "source": "CHEM 1051",
+      "target": "CHEM 2155",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1051 OR CHEM 1052"
+    },
+    {
+      "source": "CHEM 1052",
+      "target": "CHEM 2155",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1051 OR CHEM 1052"
+    },
+    {
+      "source": "CHEM 2110",
+      "target": "CHEM 2155",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 2110 OR CHEM 2111"
+    },
+    {
+      "source": "CHEM 2111",
+      "target": "CHEM 2155",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 2110 OR CHEM 2111"
+    },
+    {
+      "source": "CHEM 2550",
+      "target": "CHEM 2155",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 2550"
+    },
+    {
+      "source": "CHEM 1051",
+      "target": "CHEM 2355",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1051 OR CHEM 1052"
+    },
+    {
+      "source": "CHEM 1052",
+      "target": "CHEM 2355",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CHEM 1051 OR CHEM 1052"
+    },
+    {
+      "source": "CHEM 2310",
+      "target": "CHEM 2355",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 2310 OR CHEM 2311"
+    },
+    {
+      "source": "CHEM 2311",
+      "target": "CHEM 2355",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 2310 OR CHEM 2311"
+    },
+    {
+      "source": "CHEM 2350",
+      "target": "CHEM 2355",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 2350 (prior to 2022-23), CHEM 2555"
+    },
+    {
+      "source": "CHEM 2555",
+      "target": "CHEM 2355",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 2350 (prior to 2022-23), CHEM 2555"
+    }
+  ]
+}

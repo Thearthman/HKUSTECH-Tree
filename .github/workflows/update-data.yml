@@ -1,0 +1,43 @@
+name: Update HKUST data
+
+# Keeps the committed course catalog and major-requirement database in sync with
+# the live HKUST catalog. Runs weekly and on demand; commits only when the
+# canonical content actually changed, then pushes (which triggers a redeploy).
+on:
+  schedule:
+    - cron: "17 3 * * 1" # Mondays, 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install PDF tooling
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      # Commit first but hold the push until the refreshed data passes the tests.
+      - name: Refresh course catalog and major requirements
+        run: node tools/update-data.mjs --commit --no-push
+
+      - name: Test
+        run: npm test
+
+      - name: Push
+        run: git push

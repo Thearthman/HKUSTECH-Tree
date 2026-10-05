@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "id": "GBUS-2025-26",
+  "programCode": "GBUS",
+  "program": "BBA in Global Business",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "11-15",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbus.pdf",
+  "sourceHash": "936b5914a6960a626d9e2153d668da9a8d332ea6b5f39a34f5d45ef1979619db",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Global Business",
+    "credits": "11-15 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "11-15 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "GBUS 1000",
+      "title": "Global Leadership Development",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "GBUS 2010",
+      "title": "Global Business Analysis",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "GBUS 2040",
+      "title": "GBUS 2040",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "SMBT 2100",
+      "title": "SMBT 2100",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "GBUS 3030",
+      "title": "GBUS 3030",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 4780",
+      "title": "Integrated Planning and Execution",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "GBUS 4910",
+      "title": "Capstone Project",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "ISOM 2040",
+      "title": "ISOM 2040",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "ISOM 2700",
+      "title": "Operations Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "ISOM 2700",
+      "target": "ISOM 4780",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 2700"
+    },
+    {
+      "source": "ISOM 2040",
+      "target": "ISOM 4780",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ISOM 2040 (prior to 2023-24)"
+    }
+  ]
+}

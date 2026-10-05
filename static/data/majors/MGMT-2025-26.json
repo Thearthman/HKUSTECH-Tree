@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 2,
+  "id": "MGMT-2025-26",
+  "programCode": "MGMT",
+  "program": "BBA in Management",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "11-12",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26mgmt.pdf",
+  "sourceHash": "e06c5f5454786d6bec8e43449c4895e285efa6799acdfeeedbc06c9afaf2850c",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Management",
+    "credits": "11-12 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "11-12 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "MGMT 3110",
+      "title": "Human Resources Management",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 3120",
+      "title": "Managerial Leadership",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 3130",
+      "title": "Judgement and Decision Making in Organizations",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 3140",
+      "title": "Negotiation",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 4210",
+      "title": "Corporate Strategy",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 4220",
+      "title": "Entrepreneurship and Innovation",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:option",
+      "kind": "option",
+      "title": "Consulting Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "Students in the Consulting Option should also take MGMT 3120, MGMT 3140, and MGMT 4210 as cannot be reused to count towards this Option.",
+      "credits": null,
+      "courses": [
+        {
+          "code": "MGMT 3110",
+          "title": "Human Resources Management",
+          "credits": "4"
+        },
+        {
+          "code": "MGMT 3160",
+          "title": "Environmental Business Strategies",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 4230",
+          "title": "International Management",
+          "credits": "4"
+        },
+        {
+          "code": "MGMT 4250",
+          "title": "Management Consulting",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:option",
+      "kind": "option",
+      "title": "Corporate Social Responsibility and Sustainability Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "Students in the Corporate Social Responsibility and Sustainability Option should also take MGMT 4210 as cannot be reused to count towards this Option.",
+      "credits": null,
+      "courses": [
+        {
+          "code": "MGMT 3160",
+          "title": "Environmental Business Strategies",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 3170",
+          "title": "Managing CSR (Corporate Social Responsibility)",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:option",
+      "kind": "option",
+      "title": "Human Resources Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "Students in the Human Resources Option should also take MGMT 3110 as specified in the major",
+      "credits": null,
+      "courses": [
+        {
+          "code": "MGMT 4270",
+          "title": "Training and Development",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 4280",
+          "title": "Transnational Legal Issues and Dispute Settlement",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 4290",
+          "title": "HR Analytics",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 4300",
+          "title": "Knowing and Managing Your Social Networks for Careers and Business",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "MGMT 2011",
+      "title": "New Venture Creation",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "MGMT 2110",
+      "title": "Organizational Behavior",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "MGMT 2110",
+      "target": "MGMT 3110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MGMT 2110"
+    },
+    {
+      "source": "MGMT 2110",
+      "target": "MGMT 3120",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MGMT 2110"
+    },
+    {
+      "source": "MGMT 2110",
+      "target": "MGMT 3130",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MGMT 2110"
+    },
+    {
+      "source": "MGMT 2110",
+      "target": "MGMT 4210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MGMT 2110"
+    },
+    {
+      "source": "MGMT 2011",
+      "target": "MGMT 4220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MGMT 2011"
+    }
+  ]
+}

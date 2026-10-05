@@ -1,0 +1,1365 @@
+{
+  "schemaVersion": 2,
+  "id": "DASC-2025-26",
+  "programCode": "DASC",
+  "program": "BSc in Data Analytics and Artificial Intelligence in Science",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "38-40",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26dasc.pdf",
+  "sourceHash": "8fb099848021d7d9071129c6c141dad014cf37223408d4c1daea6a41e57e2ef9",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Data Analytics and Artificial Intelligence in Science",
+    "credits": "38-40 credits"
+  },
+  "sections": [
+    {
+      "id": "major-pre-requisite-courses",
+      "pdfSection": "Major Pre-requisite course(s)",
+      "eyebrow": "Major Pre-requisite courses",
+      "title": "Major Pre-requisite courses",
+      "rootGroup": "group:major-pre-requisite-courses",
+      "credits": "4-6 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "34 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:major-pre-requisite-courses",
+      "label": "Major Pre-requisite courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:major-pre-requisite-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 2010",
+      "title": "Calculus for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 2020",
+      "title": "Applied Linear Algebra for Least Squares Optimization and Machine Learning",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 2110",
+      "title": "Object-oriented Programming for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 2210",
+      "title": "A Survey on Big Data in Science and Society",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 2220",
+      "title": "Statistics and Probability for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 3120",
+      "title": "Data Structures for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 3230",
+      "title": "Statistical Modeling and Machine Learning",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 3240",
+      "title": "Data Visualization in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 3250",
+      "title": "Numerical Methods for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 4010",
+      "title": "Practical Artificial Intelligence in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "DASC 4300",
+      "title": "Capstone Project for Data Analytics in Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:track",
+      "kind": "track",
+      "title": "Applied Biosciences Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "LIFS 1901",
+          "title": "General Biology I",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 1902",
+          "title": "General Biology II",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 2040",
+          "title": "Cell Biology",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 3140",
+          "title": "General Genetics",
+          "credits": "4"
+        },
+        {
+          "code": "LIFS 3580",
+          "title": "Bioinformatics",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 4320",
+          "title": "Data Science for Biology and Medicine",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:02:track",
+      "kind": "track",
+      "title": "Environmental Science Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "OCES 1001",
+          "title": "The Earth as a Blue Planet",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 1010",
+          "title": "Principles and Applications of Environmental Science",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 2004",
+          "title": "Sustainable Ocean",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 3001",
+          "title": "Coastal Environmental Monitoring",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 3160",
+          "title": "Ecology",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 3301",
+          "title": "Data Analysis in Ocean Science",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:track",
+      "kind": "track",
+      "title": "Information Science Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "DASC 4020",
+          "title": "Structured Query Language for Data Analytics",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1007",
+          "title": "Quantum Information for Everyone",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1111",
+          "title": "General Physics I",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1112",
+          "title": "General Physics I with Calculus",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1312",
+          "title": "Honors General Physics I",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1114",
+          "title": "General Physics II",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 1314",
+          "title": "Honors General Physics II",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 2022",
+          "title": "Modern Physics",
+          "credits": "3"
+        },
+        {
+          "code": "PHYS 4058",
+          "title": "Information Physics",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:04:track",
+      "kind": "track",
+      "title": "Molecular Science and Cheminformatics Track",
+      "parent": null,
+      "group": "Track Study",
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "CHEM 1011",
+          "title": "General Chemistry A: Reactions, Thermodynamics, and",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 1012",
+          "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 2111",
+          "title": "Fundamentals of Organic Chemistry",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 3030",
+          "title": "Introduction to AI for Chemistry",
+          "credits": "4"
+        },
+        {
+          "code": "CHEM 4420",
+          "title": "Statistical Machine Learning Methods for Chemical Data Analysis",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 4120",
+          "title": "Biomolecular Chemistry",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 4160",
+          "title": "Cheminformatics",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2012",
+      "title": "Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "COMP 4462",
+      "title": "Data Visualization",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "IEDA 2520",
+      "title": "Probability for Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "IEDA 2540",
+      "title": "Statistics for Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "LIFS 3150",
+      "title": "Biostatistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2023",
+      "title": "Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2111",
+      "title": "Matrix Algebra and Applications",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 2121",
+      "title": "Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 2131",
+      "title": "Honors in Linear and Abstract Algebra I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 2350",
+      "title": "Applied Linear Algebra and Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    },
+    {
+      "code": "MATH 3312",
+      "title": "Numerical Analysis",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1298
+      ]
+    },
+    {
+      "code": "MECH 4740",
+      "title": "Numerical Methods in Engineering",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1406
+      ]
+    },
+    {
+      "code": "PHYS 3142",
+      "title": "Computational Methods in Physics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1406
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "DASC 2010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "DASC 2010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "DASC 2010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "DASC 2010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 2023",
+      "target": "DASC 2010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "DASC 2020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1014 OR MATH 1020 OR MATH 1024) AND (COMP 1021 OR COMP 1023)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "DASC 2020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1014 OR MATH 1020 OR MATH 1024) AND (COMP 1021 OR COMP 1023)"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "DASC 2020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1014 OR MATH 1020 OR MATH 1024) AND (COMP 1021 OR COMP 1023)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "DASC 2020",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(MATH 1014 OR MATH 1020 OR MATH 1024) AND (COMP 1021 OR COMP 1023)"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "DASC 2020",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(MATH 1014 OR MATH 1020 OR MATH 1024) AND (COMP 1021 OR COMP 1023)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "DASC 2110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1021 OR COMP 1023"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "DASC 2110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1021 OR COMP 1023"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "DASC 2110",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012, COMP 2012H"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "DASC 2110",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012, COMP 2012H"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "DASC 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND (MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "DASC 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND (MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "DASC 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "DASC 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "DASC 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (MATH 1014 OR MATH 1020 OR MATH 1024)"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "DASC 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, IEDA 2520, IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "IEDA 2520",
+      "target": "DASC 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, IEDA 2520, IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "IEDA 2540",
+      "target": "DASC 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, IEDA 2520, IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "DASC 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, IEDA 2520, IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "LIFS 3150",
+      "target": "DASC 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, IEDA 2520, IEDA 2540, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "DASC 2110",
+      "target": "DASC 3120",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "DASC 2110"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "DASC 3120",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012, COMP 2012H"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "DASC 3120",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012, COMP 2012H"
+    },
+    {
+      "source": "DASC 2020",
+      "target": "DASC 3230",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "DASC 2220",
+      "target": "DASC 3230",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "DASC 2220",
+      "target": "DASC 3240",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "DASC 2220"
+    },
+    {
+      "source": "COMP 4462",
+      "target": "DASC 3240",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 4462"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "DASC 2020",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2111",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2121",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2131",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "DASC 3250",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND (DASC 2020 OR MATH 2111 OR MATH 2121 OR MATH 2131 OR MATH 2350)"
+    },
+    {
+      "source": "MATH 3312",
+      "target": "DASC 3250",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 3312, MECH 4740, PHYS 3142"
+    },
+    {
+      "source": "MECH 4740",
+      "target": "DASC 3250",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 3312, MECH 4740, PHYS 3142"
+    },
+    {
+      "source": "PHYS 3142",
+      "target": "DASC 3250",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 3312, MECH 4740, PHYS 3142"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "DASC 4010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "DASC 4010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(COMP 1021 OR COMP 1023) AND DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "DASC 2020",
+      "target": "DASC 4010",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(COMP 1021 OR COMP 1023) AND DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "DASC 2220",
+      "target": "DASC 4010",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(COMP 1021 OR COMP 1023) AND DASC 2020 AND DASC 2220"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    }
+  ]
+}

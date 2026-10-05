@@ -1,0 +1,1656 @@
+{
+  "schemaVersion": 2,
+  "id": "EEEN-2025-26",
+  "programCode": "EEEN",
+  "program": "BEng in Energy and Environmental Engineering",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "69-73",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26eeen.pdf",
+  "sourceHash": "b68536ad69931d0a6ece662d9392af78cf0d7995c021f100d34a25cd8a2826c7",
+  "generatedAt": "2026-10-05T08:47:49Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BEng in Energy and Environmental Engineering",
+    "credits": "69-73 credits"
+  },
+  "sections": [
+    {
+      "id": "engineering-fundamental-courses",
+      "pdfSection": "Engineering Fundamental Course(s)",
+      "eyebrow": "Engineering Fundamental Courses",
+      "title": "Engineering Fundamental Courses",
+      "rootGroup": "group:engineering-fundamental-courses",
+      "credits": "13-17 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "56 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:engineering-fundamental-courses",
+      "label": "Engineering Fundamental Courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "4",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "5",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "1",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1012",
+      "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1052",
+      "title": "Laboratory for General Chemistry B",
+      "credits": "1",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1112",
+      "title": "General Physics I with Calculus",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1312",
+      "title": "Honors General Physics I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 1700",
+      "title": "Introduction to Energy and Environmental Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 3110",
+      "title": "Materials for Energy Technologies",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 3910",
+      "title": "Sustainable Energy Laboratory",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 4920",
+      "title": "Energy and Environmental Engineering Capstone Design",
+      "credits": "6",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 4930",
+      "title": "Energy and Environmental Engineering Thesis Research",
+      "credits": "6",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENEG 4940",
+      "title": "Energy and Environmental Engineering Industrial Project",
+      "credits": "6",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 1000",
+      "title": "Foundations of Chemical and Biological Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 1010",
+      "title": "Academic and Professional Development I",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 2210",
+      "title": "Chemical and Biological Engineering Thermodynamics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 2220",
+      "title": "Transport Phenomena I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 2310",
+      "title": "Modeling for Chemical and Biological Engineering I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 2320",
+      "title": "Modeling for Chemical and Biological Engineering II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 3150",
+      "title": "Integrated Chemical Process and Product Design",
+      "credits": "5",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 3220",
+      "title": "Transport Phenomena II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 3230",
+      "title": "Chemical and Biological Reaction Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 4020",
+      "title": "Academic and Professional Development II",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 4140",
+      "title": "Energy Resources, Conversions and Technologies",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 4710",
+      "title": "Environmental Control",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CENG 4720",
+      "title": "Environmental Impact Assessment and Management Systems",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 4430",
+      "title": "Environmental Impact Assessment",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ELEC 2420",
+      "title": "Basic Electronics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "PPOL 3210",
+      "title": "Energy Policy",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "BIEN 2310",
+      "title": "Modeling for Chemical and Biological Engineering",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CENG 1110",
+      "title": "Introduction to Chemical Engineering",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "CENG 4980",
+      "title": "Investigation Project",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "CHEM 1004",
+      "title": "Chemistry in Everyday Life",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "CHEM 1008",
+      "title": "Introductory Chemistry",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "CHEM 1010",
+      "title": "CHEM 1010",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "CIVL 1140",
+      "title": "Environment and Society: Sustainable Development Goals and Carbon Neutrality",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "CIVL 2410",
+      "title": "Environmental Assessment and Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "COMP 1028",
+      "title": "Extended Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "COMP 2012",
+      "title": "Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "ELEC 2400",
+      "title": "Electronic Circuits",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "ISOM 3230",
+      "title": "Business Programming in VBA",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "ISOM 3320",
+      "title": "Business Applications Development in Java",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "MECH 2210",
+      "title": "Fluid Mechanics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "MECH 2310",
+      "title": "Thermodynamics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    },
+    {
+      "code": "MECH 3310",
+      "title": "Heat Transfer",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1298
+      ]
+    },
+    {
+      "code": "PHYS 1111",
+      "title": "General Physics I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1406
+      ]
+    },
+    {
+      "code": "UROP 2100",
+      "title": "Undergraduate Research Opportunities Series 2",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1406
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012H"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1029P",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26) OR ISOM 3230 OR ISOM 3320"
+    },
+    {
+      "source": "ISOM 3230",
+      "target": "COMP 1029P",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26) OR ISOM 3230 OR ISOM 3320"
+    },
+    {
+      "source": "ISOM 3320",
+      "target": "COMP 1029P",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26) OR ISOM 3230 OR ISOM 3320"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1029P",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1029P",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1029P",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023, ISOM 3400"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 1012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23)"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CHEM 1052",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1012"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "CENG 1000",
+      "target": "ENEG 1700",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 1000"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "ENEG 1700",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1012"
+    },
+    {
+      "source": "CENG 2210",
+      "target": "ENEG 3910",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 2210 OR MECH 2310) AND (CENG 2220 OR MECH 2210)"
+    },
+    {
+      "source": "MECH 2310",
+      "target": "ENEG 3910",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 2210 OR MECH 2310) AND (CENG 2220 OR MECH 2210)"
+    },
+    {
+      "source": "CENG 2220",
+      "target": "ENEG 3910",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 2210 OR MECH 2310) AND (CENG 2220 OR MECH 2210)"
+    },
+    {
+      "source": "MECH 2210",
+      "target": "ENEG 3910",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 2210 OR MECH 2310) AND (CENG 2220 OR MECH 2210)"
+    },
+    {
+      "source": "CENG 3150",
+      "target": "ENEG 4920",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 3150 OR ENEG 3910"
+    },
+    {
+      "source": "ENEG 3910",
+      "target": "ENEG 4920",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 3150 OR ENEG 3910"
+    },
+    {
+      "source": "CENG 3150",
+      "target": "ENEG 4930",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 3150 OR ENEG 3910) AND (CENG 4980 OR UROP 2100)"
+    },
+    {
+      "source": "ENEG 3910",
+      "target": "ENEG 4930",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 3150 OR ENEG 3910) AND (CENG 4980 OR UROP 2100)"
+    },
+    {
+      "source": "CENG 4980",
+      "target": "ENEG 4930",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 3150 OR ENEG 3910) AND (CENG 4980 OR UROP 2100)"
+    },
+    {
+      "source": "UROP 2100",
+      "target": "ENEG 4930",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 3150 OR ENEG 3910) AND (CENG 4980 OR UROP 2100)"
+    },
+    {
+      "source": "ENEG 4920",
+      "target": "ENEG 4930",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ENEG 4920, ENEG 4940"
+    },
+    {
+      "source": "ENEG 4940",
+      "target": "ENEG 4930",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ENEG 4920, ENEG 4940"
+    },
+    {
+      "source": "CENG 3150",
+      "target": "ENEG 4940",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 3150 OR ENEG 3910"
+    },
+    {
+      "source": "ENEG 3910",
+      "target": "ENEG 4940",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 3150 OR ENEG 3910"
+    },
+    {
+      "source": "ENEG 4920",
+      "target": "ENEG 4940",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ENEG 4920, ENEG 4930"
+    },
+    {
+      "source": "ENEG 4930",
+      "target": "ENEG 4940",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ENEG 4920, ENEG 4930"
+    },
+    {
+      "source": "BIEN 2310",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "CENG 2310",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "CENG 2210",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CENG 2210",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1008 OR CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CENG 2210",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CHEM 1008 OR CHEM 1012"
+    },
+    {
+      "source": "BIEN 2310",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "CENG 2310",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "CENG 2220",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310 OR MATH 1014 OR MATH 1020 OR MATH 1024) AND (PHYS 1111 OR PHYS 1112 OR PHYS 1312)"
+    },
+    {
+      "source": "MECH 2210",
+      "target": "CENG 2220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MECH 2210"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "CENG 2310",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023) AND COMP 1023"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "CENG 2310",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023) AND COMP 1023"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CENG 2310",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023) AND COMP 1023"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "CENG 2310",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023) AND COMP 1023"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "CENG 2310",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1020 OR MATH 1023) AND COMP 1023"
+    },
+    {
+      "source": "BIEN 2310",
+      "target": "CENG 2310",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "BIEN 2310"
+    },
+    {
+      "source": "CENG 2310",
+      "target": "CENG 2320",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 2310"
+    },
+    {
+      "source": "BIEN 2310",
+      "target": "CENG 3150",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000"
+    },
+    {
+      "source": "CENG 2310",
+      "target": "CENG 3150",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000"
+    },
+    {
+      "source": "CENG 1000",
+      "target": "CENG 3150",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000"
+    },
+    {
+      "source": "CENG 2220",
+      "target": "CENG 3220",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CENG 2220"
+    },
+    {
+      "source": "MECH 3310",
+      "target": "CENG 3220",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MECH 3310"
+    },
+    {
+      "source": "BIEN 2310",
+      "target": "CENG 3230",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000 AND CHEM 1012"
+    },
+    {
+      "source": "CENG 2310",
+      "target": "CENG 3230",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000 AND CHEM 1012"
+    },
+    {
+      "source": "CENG 1000",
+      "target": "CENG 3230",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000 AND CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CENG 3230",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(BIEN 2310 OR CENG 2310) AND CENG 1000 AND CHEM 1012"
+    },
+    {
+      "source": "CENG 1110",
+      "target": "CENG 4140",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CENG 2210 AND CHEM 1012"
+    },
+    {
+      "source": "ENEG 1700",
+      "target": "CENG 4140",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CENG 2210 AND CHEM 1012"
+    },
+    {
+      "source": "CENG 2210",
+      "target": "CENG 4140",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CENG 2210 AND CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CENG 4140",
+      "relation": "prerequisite",
+      "group": 3,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CENG 2210 AND CHEM 1012"
+    },
+    {
+      "source": "CENG 1110",
+      "target": "CENG 4710",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CHEM 1012"
+    },
+    {
+      "source": "ENEG 1700",
+      "target": "CENG 4710",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CHEM 1012"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CENG 4710",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CENG 1110 OR ENEG 1700) AND CHEM 1012"
+    },
+    {
+      "source": "ENEG 1700",
+      "target": "CENG 4720",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ENEG 1700"
+    },
+    {
+      "source": "CIVL 4430",
+      "target": "CENG 4720",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 4430"
+    },
+    {
+      "source": "CIVL 1140",
+      "target": "CIVL 4430",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 1140 or CIVL 2410"
+    },
+    {
+      "source": "CIVL 2410",
+      "target": "CIVL 4430",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 1140 or CIVL 2410"
+    },
+    {
+      "source": "CENG 4720",
+      "target": "CIVL 4430",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CENG 4720"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "ELEC 2420",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "ELEC 2420",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "ELEC 2420",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "ELEC 2420",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "PHYS 1111 OR PHYS 1112 OR PHYS 1312"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "ELEC 2420",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "PHYS 1111 OR PHYS 1112 OR PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "ELEC 2420",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "PHYS 1111 OR PHYS 1112 OR PHYS 1312"
+    },
+    {
+      "source": "ELEC 2400",
+      "target": "ELEC 2420",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 2400"
+    }
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 2,
+  "id": "FINA-2025-26",
+  "programCode": "FINA",
+  "program": "BBA in Finance",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "16-19",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26fina.pdf",
+  "sourceHash": "559c186f2719aa4687bf1875e5e69fb961086d05e0322ce905d793f73aae9984",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in Finance",
+    "credits": "16-19 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "16-19 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "FINA 3001",
+      "title": "Key Skills for Finance Professionals (A)",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3103",
+      "title": "Intermediate Investments",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3203",
+      "title": "Derivative Securities",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3303",
+      "title": "Intermediate Corporate Finance",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 3810",
+      "title": "Bloomberg Market Concepts Certification",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3010",
+      "title": "Financial Accounting I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3020",
+      "title": "Financial Accounting II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ACCT 3030",
+      "title": "Intermediate Financial Accounting for Non-Accounting Majors",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3230",
+      "title": "Business Programming in VBA",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3320",
+      "title": "Business Applications Development in Java",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "ACCT 2010",
+      "title": "Principles of Accounting I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1022Q",
+      "title": "COMP 1022Q",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "COMP 3021",
+      "title": "Java Programming",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "FINA 2203",
+      "title": "Fundamentals of Business Finance",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "FINA 2303",
+      "title": "Financial Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "ISOM 2020",
+      "title": "Coding for Business",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3001",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3001",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3103",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 or FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3203",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3203",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3303",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3303",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2203",
+      "target": "FINA 3810",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 3810",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "FINA 2203 OR FINA 2303"
+    },
+    {
+      "source": "ACCT 2010",
+      "target": "ACCT 3010",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 2010"
+    },
+    {
+      "source": "ACCT 3030",
+      "target": "ACCT 3010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3030"
+    },
+    {
+      "source": "ACCT 3010",
+      "target": "ACCT 3020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 3010"
+    },
+    {
+      "source": "ACCT 3030",
+      "target": "ACCT 3020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3030"
+    },
+    {
+      "source": "ACCT 2010",
+      "target": "ACCT 3030",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ACCT 2010"
+    },
+    {
+      "source": "ACCT 3010",
+      "target": "ACCT 3030",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3010, ACCT 3020"
+    },
+    {
+      "source": "ACCT 3020",
+      "target": "ACCT 3030",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3010, ACCT 3020"
+    },
+    {
+      "source": "ISOM 2010",
+      "target": "ISOM 3230",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(For non-BSc in Quantitative Finance students) ISOM 2010"
+    },
+    {
+      "source": "COMP 1022Q",
+      "target": "ISOM 3230",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022Q"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "ISOM 3320",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 3021"
+    },
+    {
+      "source": "COMP 3021",
+      "target": "ISOM 3320",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 3021"
+    },
+    {
+      "source": "ISOM 2020",
+      "target": "ISOM 3400",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISOM 2020"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "ISOM 3400",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "ISOM 3400",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1023"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    }
+  ]
+}

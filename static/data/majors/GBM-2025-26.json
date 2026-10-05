@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "id": "GBM-2025-26",
+  "programCode": "GBM",
+  "program": "BBA in General Business Management",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "0",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbm.pdf",
+  "sourceHash": "81ef79108e6dc1bc587b15352a70f538eb954d75debaaa84de8c67750d053a9c",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BBA in General Business Management",
+    "credits": "0 credits"
+  },
+  "sections": [],
+  "groups": [],
+  "courses": [],
+  "branches": [],
+  "contextCourses": [],
+  "relations": []
+}

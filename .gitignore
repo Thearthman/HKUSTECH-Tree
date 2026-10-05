@@ -1,3 +1,8 @@
 # Node
 node_modules/
 npm-debug.log*
+
+# Requirement PDFs are downloaded to a temp dir during refresh; keep the
+# committed CPEG source PDF but never check in strays.
+static/data/*.pdf
+!static/data/cpeg-2025-26.pdf

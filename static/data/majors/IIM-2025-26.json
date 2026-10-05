@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 2,
+  "id": "IIM-2025-26",
+  "programCode": "IIM",
+  "program": "BSc in Individualized Interdisciplinary Major",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "12-13",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26iim.pdf",
+  "sourceHash": "bfdc1215eb5cdfbc98abffacd15c8c8757846655ae2a17028e72eaef57f122e8",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Individualized Interdisciplinary Major",
+    "credits": "12-13 credits"
+  },
+  "sections": [
+    {
+      "id": "fundamental-courses",
+      "pdfSection": "Fundamental Course(s)",
+      "eyebrow": "Fundamental Courses",
+      "title": "Fundamental Courses",
+      "rootGroup": "group:fundamental-courses",
+      "credits": "6-7 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "6 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:fundamental-courses",
+      "label": "Fundamental Courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1005",
+      "title": "Calculus and Statistics",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1006",
+      "title": "Calculus, Vectors, and Matrices",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "IIMP 2000",
+      "title": "Academic and Professional Development",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "IIMP 4970",
+      "title": "IIMP 4970",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "IIMP 4991",
+      "title": "IIMP 4991",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1001",
+      "title": "Exploring Multimedia and Internet Computing",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1001",
+      "target": "ISOM 2010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1001"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1006",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1006",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    }
+  ]
+}

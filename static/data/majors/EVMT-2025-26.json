@@ -1,0 +1,1500 @@
+{
+  "schemaVersion": 2,
+  "id": "EVMT-2025-26",
+  "programCode": "EVMT",
+  "program": "BSc in Environmental Management and Technology",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "63-64",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26evmt.pdf",
+  "sourceHash": "842fecc28b76aa85a23997d077b056ebc8608135374ce12a93f29cd28fcdfde2",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Environmental Management and Technology",
+    "credits": "63-64 credits"
+  },
+  "sections": [
+    {
+      "id": "fundamental-courses",
+      "pdfSection": "Fundamental Course(s)",
+      "eyebrow": "Fundamental Courses",
+      "title": "Fundamental Courses",
+      "rootGroup": "group:fundamental-courses",
+      "credits": "6-7 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "57 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:fundamental-courses",
+      "label": "Fundamental Courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1005",
+      "title": "Calculus and Statistics",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1006",
+      "title": "Calculus, Vectors, and Matrices",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:fundamental-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:fundamental-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 1170",
+      "title": "Science, Environment and Society - From Big Bang to Big Data",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 2001",
+      "title": "Academic and Professional Development I",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 2010",
+      "title": "Environmental Science Fundamentals",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 2030",
+      "title": "Material and Energy Balance for Environmental Management",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 2090",
+      "title": "Environmental Laboratory",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3001",
+      "title": "Academic and Professional Development II",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3110",
+      "title": "Life Cycle Assessment for Sustainable Development",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3210",
+      "title": "Environmental Technology for Impact Assessment",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3220",
+      "title": "Energy Sources and Usage",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3310",
+      "title": "Green Business Strategy",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3410",
+      "title": "Economics for Environmental Policy and Management",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 3420",
+      "title": "Environmental Law and Regulations",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 4001",
+      "title": "Academic and Professional Development III",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 4320",
+      "title": "ESG Management and Reporting",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 4980",
+      "title": "Environmental Management and Technology Capstone Project I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ENVR 4990",
+      "title": "Environmental Management and Technology Capstone Project II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "SUST 1000",
+      "title": "Sustainability Fundamentals",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 2103",
+      "title": "Principles of Microeconomics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ECON 2113",
+      "title": "Microeconomics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "FINA 2203",
+      "title": "Fundamentals of Business Finance",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISOM 2500",
+      "title": "Business Statistics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MGMT 2110",
+      "title": "Organizational Behavior",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:courses",
+      "kind": "courses",
+      "title": "ENVR Courses",
+      "parent": null,
+      "group": null,
+      "rule": "All ENVR elective courses",
+      "credits": null,
+      "courses": []
+    },
+    {
+      "id": "branch:02:courses",
+      "kind": "courses",
+      "title": "Environmental Science Courses",
+      "parent": null,
+      "group": null,
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "CHEM 1008",
+          "title": "Introductory Chemistry",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 1011",
+          "title": "General Chemistry A: Reactions, Thermodynamics, and Reaction",
+          "credits": "3"
+        },
+        {
+          "code": "CHEM 1012",
+          "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 1010",
+          "title": "Introduction to Biological Sciences",
+          "credits": "3"
+        },
+        {
+          "code": "LIFS 2060",
+          "title": "Biodiversity",
+          "credits": "3"
+        },
+        {
+          "code": "OCES 3160",
+          "title": "Ecology",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:03:courses",
+      "kind": "courses",
+      "title": "Environmental Control Courses",
+      "parent": null,
+      "group": null,
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "CENG 4720",
+          "title": "Environmental Impact Assessment and Management Systems",
+          "credits": "3"
+        },
+        {
+          "code": "CIVL 4310",
+          "title": "Energy System Modeling for Buildings and Cities",
+          "credits": "3"
+        },
+        {
+          "code": "CIVL 4430",
+          "title": "Environmental Impact Assessment",
+          "credits": "3"
+        },
+        {
+          "code": "CIVL 4450",
+          "title": "Carbon Footprint Analysis and Reduction",
+          "credits": "3"
+        },
+        {
+          "code": "CIVL 4640",
+          "title": "Introduction to Smart City Economics",
+          "credits": "3"
+        },
+        {
+          "code": "MECH 4350",
+          "title": "Indoor Air Quality in Buildings",
+          "credits": "3"
+        }
+      ]
+    },
+    {
+      "id": "branch:04:courses",
+      "kind": "courses",
+      "title": "Environmental Business Courses",
+      "parent": null,
+      "group": null,
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "ECON 2123",
+          "title": "Macroeconomics",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 2700",
+          "title": "Operations Management",
+          "credits": "3"
+        },
+        {
+          "code": "ISOM 4750",
+          "title": "Business Project Management",
+          "credits": "3"
+        },
+        {
+          "code": "MGMT 3120",
+          "title": "Managerial Leadership",
+          "credits": "4"
+        },
+        {
+          "code": "MGMT 3140",
+          "title": "Negotiation",
+          "credits": "4"
+        },
+        {
+          "code": "MGMT 4220",
+          "title": "Entrepreneurship and Innovation",
+          "credits": "4"
+        }
+      ]
+    },
+    {
+      "id": "branch:05:courses",
+      "kind": "courses",
+      "title": "Social Science Courses",
+      "parent": null,
+      "group": null,
+      "rule": "",
+      "credits": null,
+      "courses": [
+        {
+          "code": "SOSC 1850",
+          "title": "Understanding Society",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 2250",
+          "title": "Cognitive Psychology",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 2980",
+          "title": "Personality Psychology",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 3250",
+          "title": "Gender and Development",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 3540",
+          "title": "Environmental Psychology",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 3880",
+          "title": "Social Inequality and Social Mobility",
+          "credits": "3"
+        },
+        {
+          "code": "SOSC 4290",
+          "title": "China's Sustainable Development",
+          "credits": "3"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "ACCT 3630",
+      "title": "ESG Measurement, Disclosure and Applications",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CIVL 1170",
+      "title": "CIVL 1170",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "CIVL 1190",
+      "title": "Climate Change, Big History and Sustainability",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "CIVL 2160",
+      "title": "Modeling Systems with Uncertainties",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "CIVL 2410",
+      "title": "Environmental Assessment and Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 1001",
+      "title": "Exploring Multimedia and Internet Computing",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "ECON 1220",
+      "title": "Thinking like an Economist I: Microeconomics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "ECON 3113",
+      "title": "Microeconomic Theory I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "ECON 3133",
+      "title": "Microeconomic Theory II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "ECON 4454",
+      "title": "Green Economy and Sustainability",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "FINA 2303",
+      "title": "Financial Management",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "IEDA 2520",
+      "title": "Probability for Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "IEDA 2540",
+      "title": "Statistics for Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "LIFS 3150",
+      "title": "Biostatistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 3423",
+      "title": "Statistical Inference",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    },
+    {
+      "code": "MGMT 3160",
+      "title": "Environmental Business Strategies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1298
+      ]
+    },
+    {
+      "code": "SOSC 1440",
+      "title": "Introduction to Economics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1406
+      ]
+    },
+    {
+      "code": "SUST 1010",
+      "title": "Introduction to Sustainability",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1406
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
+    },
+    {
+      "source": "COMP 1001",
+      "target": "ISOM 2010",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1001"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1006",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1003",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1005, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1006",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1005",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 5 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1006, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "CIVL 1190",
+      "target": "ENVR 1170",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 1190"
+    },
+    {
+      "source": "CIVL 1170",
+      "target": "ENVR 3110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 1170 (prior to 2022-23) OR ENVR 1170"
+    },
+    {
+      "source": "ENVR 1170",
+      "target": "ENVR 3110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 1170 (prior to 2022-23) OR ENVR 1170"
+    },
+    {
+      "source": "ENVR 2010",
+      "target": "ENVR 3210",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ENVR 2010 AND ENVR 2030"
+    },
+    {
+      "source": "ENVR 2030",
+      "target": "ENVR 3210",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "ENVR 2010 AND ENVR 2030"
+    },
+    {
+      "source": "CIVL 2410",
+      "target": "ENVR 3210",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2410"
+    },
+    {
+      "source": "MGMT 3160",
+      "target": "ENVR 3310",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MGMT 3160"
+    },
+    {
+      "source": "ECON 2103",
+      "target": "ENVR 3410",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113 OR ECON 3113"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ENVR 3410",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113 OR ECON 3113"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ENVR 3410",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ECON 2103 OR ECON 2113 OR ECON 3113"
+    },
+    {
+      "source": "ECON 4454",
+      "target": "ENVR 3410",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 4454"
+    },
+    {
+      "source": "ACCT 3630",
+      "target": "ENVR 4320",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ACCT 3630"
+    },
+    {
+      "source": "ENVR 4980",
+      "target": "ENVR 4990",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ENVR 4980"
+    },
+    {
+      "source": "SUST 1010",
+      "target": "SUST 1000",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "SUST 1010"
+    },
+    {
+      "source": "ECON 1220",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 2113",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 3133",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 2103",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2113, ECON 3113, ECON 3133, SOSC 1440, Level 3 or above in HKDSE Economics"
+    },
+    {
+      "source": "ECON 1220",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 2103",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 3113",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "ECON 3133",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "SOSC 1440",
+      "target": "ECON 2113",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ECON 1220, ECON 2103, ECON 3113, ECON 3133, SOSC 1440"
+    },
+    {
+      "source": "FINA 2303",
+      "target": "FINA 2203",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "FINA 2303"
+    },
+    {
+      "source": "CIVL 2160",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    },
+    {
+      "source": "IEDA 2520",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    },
+    {
+      "source": "IEDA 2540",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    },
+    {
+      "source": "LIFS 3150",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    },
+    {
+      "source": "MATH 3423",
+      "target": "ISOM 2500",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2160, IEDA 2520, IEDA 2540, LIFS 3150, MATH 2411, MATH 3423"
+    }
+  ]
+}

@@ -1,0 +1,1352 @@
+{
+  "schemaVersion": 2,
+  "id": "ISDN-2025-26",
+  "programCode": "ISDN",
+  "program": "BSc in Integrative Systems and Design",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "58-64",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26isdn.pdf",
+  "sourceHash": "6f0f78a1d04af387973a95b0711835e92a0cfddc62c5b0f5f84f8e9f477682bc",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BSc in Integrative Systems and Design",
+    "credits": "58-64 credits"
+  },
+  "sections": [
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "58-64 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "ISDN 1001",
+      "title": "Introduction to Integrative Systems and Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 1004",
+      "title": "Sketching",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 1007",
+      "title": "From Design Thinking to Design Action: Defining Problems for Better Solutions",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 1010",
+      "title": "Academic and Professional Development I",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 1011",
+      "title": "Industrial Training",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2001",
+      "title": "Second Year Design Project I",
+      "credits": "1",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2002",
+      "title": "Second Year Design Project II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2010",
+      "title": "Academic and Professional Development II",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2200",
+      "title": "Systems Thinking and Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2300",
+      "title": "Introduction to 3D Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2400",
+      "title": "Physical Prototyping",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2601",
+      "title": "Exploring the World through Smart Mechatronics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2602",
+      "title": "Internet of Things: Integrative System Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 2603",
+      "title": "Materials, Shape and Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 3001",
+      "title": "Third Year Design Project I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 3002",
+      "title": "Third Year Design Project II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 3010",
+      "title": "Academic and Professional Development III",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 3200",
+      "title": "Graphic Communication",
+      "credits": "2",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 4001",
+      "title": "Final Year Design Project I",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 4002",
+      "title": "Final Year Design Project II",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "ISDN 4010",
+      "title": "Academic and Professional Development IV",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "5",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "LANG 4036",
+      "title": "Technical Communication for Technology Projects",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1006",
+      "title": "Calculus, Vectors, and Matrices",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        790,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1101",
+      "title": "Introductory Physics",
+      "credits": "4",
+      "parent": "group:required-courses",
+      "position": [
+        1010,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1111",
+      "title": "General Physics I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        1010,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1112",
+      "title": "General Physics I with Calculus",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        1010,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1312",
+      "title": "Honors General Physics I",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        1010,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [],
+  "contextCourses": [
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "COMP 1028",
+      "title": "Extended Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 2012",
+      "title": "Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "ELEC 1100",
+      "title": "Introduction to Electro-Robot Design",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "ELEC 1200",
+      "title": "A System View of Communications: from Signals to Packets",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "ISDN 1002",
+      "title": "Redefining Problems for the Real Needs",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "ISDN 1006",
+      "title": "Human-centered Innovation",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "LANG 1003",
+      "title": "LANG 1003",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "LANG 1403",
+      "title": "Academic English for University Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "LANG 1404",
+      "title": "Advanced Academic English for University Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "LANG 1406",
+      "title": "Academic English for Business Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "LANG 1407",
+      "title": "Academic English for Engineering Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "LANG 1408",
+      "title": "Academic English for Humanities and Social Science Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "LANG 1409",
+      "title": "Academic English for Science Studies",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "LANG 2030",
+      "title": "Technical Communication I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "LANG 4032",
+      "title": "Technical Communication II for IEDA and ISDN",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1190
+      ]
+    },
+    {
+      "code": "MATH 1005",
+      "title": "Calculus and Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1298
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1298
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "ISDN 1002",
+      "target": "ISDN 2001",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 1002 OR ISDN 1006 OR ISDN 1007"
+    },
+    {
+      "source": "ISDN 1006",
+      "target": "ISDN 2001",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 1002 OR ISDN 1006 OR ISDN 1007"
+    },
+    {
+      "source": "ISDN 1007",
+      "target": "ISDN 2001",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 1002 OR ISDN 1006 OR ISDN 1007"
+    },
+    {
+      "source": "ISDN 1004",
+      "target": "ISDN 2001",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "ISDN 1004 AND ISDN 2300"
+    },
+    {
+      "source": "ISDN 2300",
+      "target": "ISDN 2001",
+      "relation": "corequisite",
+      "group": 2,
+      "raw": "ISDN 1004 AND ISDN 2300"
+    },
+    {
+      "source": "ISDN 2001",
+      "target": "ISDN 2002",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 2001"
+    },
+    {
+      "source": "ISDN 2400",
+      "target": "ISDN 2002",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "ISDN 2400"
+    },
+    {
+      "source": "ISDN 2300",
+      "target": "ISDN 2400",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 2300"
+    },
+    {
+      "source": "ELEC 1100",
+      "target": "ISDN 2601",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 1100"
+    },
+    {
+      "source": "ELEC 1200",
+      "target": "ISDN 2602",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "ELEC 1200"
+    },
+    {
+      "source": "ISDN 4001",
+      "target": "ISDN 4002",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "ISDN 4001"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012H"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "LANG 1406",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1407",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1408",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1409",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1003",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1403",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 1404",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "LANG 2030",
+      "target": "LANG 4036",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "LANG 1406 OR LANG 1407 OR LANG 1408 OR LANG 1409 OR [(For DDP only) LANG 1003 (prior to 2022-23) OR LANG 1403 OR LANG 1404] OR [(For non-DDP only) LANG 2030]"
+    },
+    {
+      "source": "ISDN 4001",
+      "target": "LANG 4036",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "ISDN 4001"
+    },
+    {
+      "source": "LANG 4032",
+      "target": "LANG 4036",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "LANG 4032"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1005",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1006",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1 or M2; MATH 1003, MATH 1005, MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "PHYS 1101",
+      "target": "PHYS 1111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1/M2, PHYS 1101, PHYS 1112, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1/M2, PHYS 1101, PHYS 1112, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1111",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE Mathematics Extended Module M1/M2, PHYS 1101, PHYS 1112, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    }
+  ]
+}

@@ -1,0 +1,1471 @@
+{
+  "schemaVersion": 2,
+  "id": "CIVL-2025-26",
+  "programCode": "CIVL",
+  "program": "BEng in Civil Engineering",
+  "intake": "2025-26",
+  "catalogYear": "2026-27",
+  "totalCredits": "73-77",
+  "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26civl.pdf",
+  "sourceHash": "146df2d98847cd853ef87cb03f2ed783d6ab8089063b5ead3d4db2e8760d21e5",
+  "generatedAt": "2026-10-05T08:47:15Z",
+  "outline": {
+    "eyebrow": "2025-26 intake",
+    "title": "BEng in Civil Engineering",
+    "credits": "73-77 credits"
+  },
+  "sections": [
+    {
+      "id": "engineering-fundamental-courses",
+      "pdfSection": "Engineering Fundamental Course(s)",
+      "eyebrow": "Engineering Fundamental Courses",
+      "title": "Engineering Fundamental Courses",
+      "rootGroup": "group:engineering-fundamental-courses",
+      "credits": "16-20 credits"
+    },
+    {
+      "id": "required-courses",
+      "pdfSection": "Required Course(s)",
+      "eyebrow": "Required Courses",
+      "title": "Required Courses",
+      "rootGroup": "group:required-courses",
+      "credits": "57 credits"
+    }
+  ],
+  "groups": [
+    {
+      "id": "group:engineering-fundamental-courses",
+      "label": "Engineering Fundamental Courses | AND",
+      "kind": "and",
+      "parent": null
+    },
+    {
+      "id": "group:required-courses",
+      "label": "Required Courses | AND",
+      "kind": "and",
+      "parent": null
+    }
+  ],
+  "courses": [
+    {
+      "code": "CIVL 1121",
+      "title": "Introduction to Computation for Civil Engineers",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 1023",
+      "title": "Introduction to Python Programming",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2011",
+      "title": "Programming with C++",
+      "credits": "4",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "COMP 2012H",
+      "title": "Honors Object-Oriented Programming and Data Structures",
+      "credits": "5",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2035",
+      "title": "Mathematical Methods for Civil Engineers",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1012",
+      "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1013",
+      "title": "Calculus I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1023",
+      "title": "Honors Calculus I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1014",
+      "title": "Calculus II",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1024",
+      "title": "Honors Calculus II",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "4",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1112",
+      "title": "General Physics I with Calculus",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1312",
+      "title": "Honors General Physics I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 1000",
+      "title": "Academic and Professional Development for Civil and Environmental Engineering I",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 1100",
+      "title": "Discovering Civil and Environmental Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2000",
+      "title": "Academic and Professional Development for Civil and Environmental Engineering II",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2021",
+      "title": "Industrial Training: BIM, Drawing, Surveying, and Sustainability",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2110",
+      "title": "Statics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2120",
+      "title": "Mechanics of Materials",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2160",
+      "title": "Modeling Systems with Uncertainties",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2170",
+      "title": "Infrastructure Systems Engineering and Management",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        130,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2410",
+      "title": "Environmental Assessment and Management",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2510",
+      "title": "Fluid Mechanics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 2810",
+      "title": "Construction Materials",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3000",
+      "title": "Academic and Professional Development for Civil and Environmental Engineering III",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3020",
+      "title": "Internship Training",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3210",
+      "title": "Introduction to Construction Management",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3310",
+      "title": "Structural Analysis",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3320",
+      "title": "Reinforced Concrete Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        350,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3510",
+      "title": "Hydrosystems Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        150
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3610",
+      "title": "Traffic and Transportation Engineering",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        258
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3730",
+      "title": "Fundamentals of Geotechnics",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        366
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 3740",
+      "title": "Geotechnical Analysis and Design",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        474
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 4000",
+      "title": "Academic and Professional Development for Civil and Environmental Engineering IV",
+      "credits": "0",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        582
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 4910",
+      "title": "Civil and Environmental Engineering Final Year Project",
+      "credits": "6",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        690
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 4920",
+      "title": "Civil and Environmental Engineering Final Year Thesis",
+      "credits": "6",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        798
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    },
+    {
+      "code": "CIVL 4950",
+      "title": "Civil Engineering Capstone Design Project",
+      "credits": "3",
+      "parent": "group:required-courses",
+      "position": [
+        570,
+        906
+      ],
+      "major": true,
+      "graph": true,
+      "section": "required-courses",
+      "auto": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch:01:option",
+      "kind": "option",
+      "title": "Research Option",
+      "parent": null,
+      "group": "Option(s)",
+      "rule": "Students with CGA of 3.15 or above may apply for enrollment in the Research Option. They should Elective Course(s) Minimum",
+      "credits": null,
+      "courses": [
+        {
+          "code": "CIVL 4900",
+          "title": "Directed Studies",
+          "credits": "1-4"
+        },
+        {
+          "code": "UROP 1100",
+          "title": "Undergraduate Research Opportunities Series 1",
+          "credits": "1"
+        }
+      ]
+    }
+  ],
+  "contextCourses": [
+    {
+      "code": "CHEM 1004",
+      "title": "Chemistry in Everyday Life",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1008",
+      "title": "Introductory Chemistry",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        110
+      ]
+    },
+    {
+      "code": "CHEM 1010",
+      "title": "CHEM 1010",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        218
+      ]
+    },
+    {
+      "code": "CIVL 2020",
+      "title": "Industrial and BIM Training",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        218
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        326
+      ]
+    },
+    {
+      "code": "COMP 1028",
+      "title": "Extended Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        326
+      ]
+    },
+    {
+      "code": "COMP 1029P",
+      "title": "Python Programming Bridging Course",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2012",
+      "title": "Object-Oriented Programming and Data Structures",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        434
+      ]
+    },
+    {
+      "code": "COMP 2211",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        542
+      ]
+    },
+    {
+      "code": "IEDA 1180",
+      "title": "Python for Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        542
+      ]
+    },
+    {
+      "code": "IEDA 3010",
+      "title": "Prescriptive Analytics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        650
+      ]
+    },
+    {
+      "code": "ISOM 3400",
+      "title": "Business Applications Development in Python",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        650
+      ]
+    },
+    {
+      "code": "LANG 4033",
+      "title": "Technical Communication II for Civil and Environmental Engineering",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        758
+      ]
+    },
+    {
+      "code": "MATH 1012",
+      "title": "MATH 1012",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2011",
+      "title": "Introduction to Multivariable Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        866
+      ]
+    },
+    {
+      "code": "MATH 2350",
+      "title": "Applied Linear Algebra and Differential Equations",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        974
+      ]
+    },
+    {
+      "code": "MATH 2411",
+      "title": "Applied Statistics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        974
+      ]
+    },
+    {
+      "code": "MECH 2040",
+      "title": "Solid Mechanics I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1082
+      ]
+    },
+    {
+      "code": "MECH 2210",
+      "title": "Fluid Mechanics",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2000,
+        1082
+      ]
+    },
+    {
+      "code": "PHYS 1111",
+      "title": "General Physics I",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1780,
+        1190
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "COMP 1021",
+      "target": "CIVL 1121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1023"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "CIVL 1121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1023"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "CIVL 1121",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1023"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1022P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1029P",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 2211",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "CIVL 1121",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "IEDA 1180",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "ISOM 3400",
+      "target": "COMP 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 1021, COMP 1022P (prior to 2025-26), COMP 1029P, COMP 2011, COMP 2012H, COMP 2211, CIVL 1121, IEDA 1180, ISOM 3400"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2011",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "COMP 1023 OR COMP 1028"
+    },
+    {
+      "source": "COMP 2012H",
+      "target": "COMP 2011",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2012H"
+    },
+    {
+      "source": "COMP 1023",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1021",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 1028",
+      "target": "COMP 2012H",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(Grade A or above in COMP 1023) OR (Grade A or above in COMP 1021 AND Pass grade in COMP 1028)"
+    },
+    {
+      "source": "COMP 2011",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "COMP 2012",
+      "target": "COMP 2012H",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "COMP 2011, COMP 2012"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "CIVL 2035",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CIVL 2035",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "CIVL 2035",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "CIVL 2035",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2350"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "CIVL 2035",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2011, MATH 2350"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 1012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23)"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1013",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1014, MATH 1020, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1023",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26), MATH 1013, MATH 1014, MATH 1024"
+    },
+    {
+      "source": "MATH 1012",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1003",
+      "target": "MATH 1014",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1012 (prior to 2025-26) OR MATH 1013 OR MATH 1023 OR (grade A- or above in MATH 1003)"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1014",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1020, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1024",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 1023"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1024",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1014"
+    },
+    {
+      "source": "MATH 1013",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1023",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "MATH 1020",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "PHYS 1112",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1312"
+    },
+    {
+      "source": "PHYS 1111",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "PHYS 1312",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "CIVL 2020",
+      "target": "CIVL 2021",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 2020"
+    },
+    {
+      "source": "PHYS 1112",
+      "target": "CIVL 2110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "PHYS 1112 OR PHYS 1312"
+    },
+    {
+      "source": "PHYS 1312",
+      "target": "CIVL 2110",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "PHYS 1112 OR PHYS 1312"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "CIVL 2110",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CIVL 2110",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "CIVL 2110",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "CIVL 2110",
+      "target": "CIVL 2120",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2110"
+    },
+    {
+      "source": "MECH 2040",
+      "target": "CIVL 2120",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MECH 2040"
+    },
+    {
+      "source": "MATH 1014",
+      "target": "CIVL 2160",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1020",
+      "target": "CIVL 2160",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 1024",
+      "target": "CIVL 2160",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "MATH 1014 OR MATH 1020 OR MATH 1024"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "CIVL 2160",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411"
+    },
+    {
+      "source": "MATH 2350",
+      "target": "CIVL 2170",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2350"
+    },
+    {
+      "source": "IEDA 3010",
+      "target": "CIVL 2170",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "IEDA 3010"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CIVL 2410",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CHEM 1010 (prior to 2022-23) OR CHEM 1012) AND CIVL 1100"
+    },
+    {
+      "source": "CHEM 1012",
+      "target": "CIVL 2410",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "(CHEM 1010 (prior to 2022-23) OR CHEM 1012) AND CIVL 1100"
+    },
+    {
+      "source": "CIVL 1100",
+      "target": "CIVL 2410",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "(CHEM 1010 (prior to 2022-23) OR CHEM 1012) AND CIVL 1100"
+    },
+    {
+      "source": "MATH 2011",
+      "target": "CIVL 2510",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "MATH 2011"
+    },
+    {
+      "source": "CIVL 2110",
+      "target": "CIVL 2510",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CIVL 2110"
+    },
+    {
+      "source": "MECH 2210",
+      "target": "CIVL 2510",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MECH 2210"
+    },
+    {
+      "source": "CIVL 2120",
+      "target": "CIVL 2810",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CIVL 2120"
+    },
+    {
+      "source": "CIVL 2020",
+      "target": "CIVL 3020",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2020"
+    },
+    {
+      "source": "CIVL 2110",
+      "target": "CIVL 3310",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2110 AND CIVL 2120"
+    },
+    {
+      "source": "CIVL 2120",
+      "target": "CIVL 3310",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "CIVL 2110 AND CIVL 2120"
+    },
+    {
+      "source": "CIVL 2810",
+      "target": "CIVL 3320",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2810 AND CIVL 3310"
+    },
+    {
+      "source": "CIVL 3310",
+      "target": "CIVL 3320",
+      "relation": "prerequisite",
+      "group": 2,
+      "raw": "CIVL 2810 AND CIVL 3310"
+    },
+    {
+      "source": "CIVL 2510",
+      "target": "CIVL 3510",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2510"
+    },
+    {
+      "source": "CIVL 2160",
+      "target": "CIVL 3510",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CIVL 2160"
+    },
+    {
+      "source": "CIVL 2170",
+      "target": "CIVL 3610",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "CIVL 2170"
+    },
+    {
+      "source": "CIVL 2120",
+      "target": "CIVL 3730",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 2120"
+    },
+    {
+      "source": "CIVL 3730",
+      "target": "CIVL 3740",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "CIVL 3730"
+    },
+    {
+      "source": "CIVL 4920",
+      "target": "CIVL 4910",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 4920"
+    },
+    {
+      "source": "CIVL 4910",
+      "target": "CIVL 4920",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CIVL 4910"
+    },
+    {
+      "source": "LANG 4033",
+      "target": "CIVL 4950",
+      "relation": "corequisite",
+      "group": 1,
+      "raw": "LANG 4033"
+    }
+  ]
+}
