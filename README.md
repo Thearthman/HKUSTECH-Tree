@@ -141,7 +141,8 @@ against the linked HKUST catalog entry.
   wording remains available in course details.
 - Course view keeps one selected course visually anchored between its backward
   prerequisite pathway and direct forward dependents. USTree is a separate
-  page for combining multiple long-term targets.
+  page for combining multiple long-term targets, and it loads the backward
+  prerequisite/corequisite pathway only.
 - Major requirement view uses solid enclosures for `AND` rules and dotted
   enclosures for `OR` rules. Non-major relationship context stays dim until a
   course is inspected.

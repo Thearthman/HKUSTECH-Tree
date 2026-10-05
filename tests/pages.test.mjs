@@ -44,6 +44,24 @@ test("app.js switches into USTree mode from the /ustree URL", () => {
   );
 });
 
+test("USTree loads only the backward prerequisite pathway", () => {
+  const app = read("app.js");
+  // Design choice: the USTree is a study plan, so its graph requests never ask
+  // for forward dependents. The Course page keeps showing direct dependents.
+  assert.ok(
+    app.includes('var GRAPH_DIRECTION = IS_USTREE_PAGE ? "backward" : "both"'),
+    "USTree must request backward-only graphs while the Course page keeps forward dependents"
+  );
+  assert.ok(
+    app.includes("direction: GRAPH_DIRECTION"),
+    "the graph request should use the page's direction constant"
+  );
+  assert.ok(
+    !app.includes('IS_USTREE_PAGE ? "both"'),
+    "USTree must never request a forward or both-direction graph"
+  );
+});
+
 test("the shared shell loads the browser-only client", () => {
   const html = read("index.html");
   for (const asset of ["/catalog-client.js", "/ustree.js", "/app.js"]) {

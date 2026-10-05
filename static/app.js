@@ -17,6 +17,11 @@
   var PAGE_PATH = window.location.pathname.replace(/\/+$/, "").replace(/\.html$/i, "");
   var IS_USTREE_PAGE = PAGE_PATH === "/ustree";
 
+  // Design choice: the USTree is a study plan, so it only ever loads the
+  // backward prerequisite/corequisite pathway. The Course page additionally
+  // shows the courses that directly use the selected course as a prerequisite.
+  var GRAPH_DIRECTION = IS_USTREE_PAGE ? "backward" : "both";
+
   // Graph colors are read from CSS custom properties so the canvas follows the
   // active light/dark theme. geometry()/graphStyles() are rebuilt on theme
   // changes, which also regenerates the embedded checkbox/star data URIs.
@@ -706,7 +711,7 @@
         code: target,
         depth: depth,
         relations: relations,
-        direction: IS_USTREE_PAGE ? "backward" : "both",
+        direction: GRAPH_DIRECTION,
         signal: controller.signal
       });
       graph.nodes = Array.isArray(graph.nodes) ? graph.nodes : [];
