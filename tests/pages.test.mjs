@@ -453,9 +453,23 @@ test("graph node background and border stay minimal and do not grow status color
     );
   }
   assert.ok(
-    app.includes("function assignDepartments") &&
+    app.includes("function deptStackAdd") &&
+      app.includes("function deptStackRemove") &&
       app.includes('"dept-" + (index % DEPT_COLOR_COUNT)'),
-    "app.js should assign append-only department palette slots"
+    "app.js should keep the department palette stack's add/remove pair"
+  );
+  assert.ok(
+    app.includes("DEPT_STACK_KEY") && app.includes("function loadDeptStack") && app.includes("function saveDeptStack"),
+    "the department stack should persist across navigation and reloads"
+  );
+  assert.ok(
+    app.includes("syncDepartments(state.graph && state.graph.nodes") &&
+      app.includes("function syncDepartments"),
+    "department slots should be reconciled from the FULL graph, not the projected subset"
+  );
+  assert.ok(
+    !app.includes("state.deptAssignments") && !app.includes("state.deptIndex"),
+    "the append-only deptAssignments/deptIndex model must not come back"
   );
   assert.ok(
     app.includes('selector: "node.dept-" + index'),

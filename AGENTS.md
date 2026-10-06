@@ -83,10 +83,10 @@ tests/                       node:test suites; inline HTML/JSON fixtures, no net
 | Committed data looks stale | `npm run update:data`, not manual JSON edits |
 | Changing course/major parsing | Run `npm test`; parsing is covered by inline fixtures |
 | Adding a shared page | Generate via `tools/build-pages.mjs`; don't edit `static/ustree.html` |
-| Adding browser state | Route through `data-transfer.js` keys so export/import/reset stay complete |
+| Adding browser state | Route through `data-transfer.js` keys so export/import/reset stay complete — **except** the department stack, which is reset-only on purpose (see Graph node colors) |
 | Changing graph layout for generated programs | Bump `LAYOUT_VERSION` in `tools/build-major.mjs` to force a re-flow |
 | Touching `static/vendor/` | Don't — vendored libs are pinned; ask first |
-| Styling a graph node's border or background | Border = course **department** only (fixed `dept-N` palette); background = plain fill or the clicked node's prereq pattern. Never add status/focus/selection colors — see Graph node colors below. |
+| Styling a graph node's border or background | Border = course **department** only (fixed `dept-N` palette via the persistent stack — never recalculate/re-sort it); background = plain fill or the clicked node's prereq pattern. Never add status/focus/selection colors — see Graph node colors below. |
 
 ## Key Decisions / Codebase State
 - **Two committed datasets, one direction of truth.** `catalog.json` is the course source; every major-requirement relation is re-derived from it so the two can never drift.
@@ -102,8 +102,14 @@ The Course page (`/`) and the USTree page (`/ustree`) render through `static/app
   1. the plain fill (`--cy-node-bg`), and
   2. the **prereq pattern** — when a node is **clicked/pinned**, its prerequisite courses take the five alternating `hover-group-1…5` fills (`--cy-hoverN-bg`).
   Highlighting is **click/pin only**; there is no hover-driven coloring. Completion, target, focus, dependent, unresolved and prereq-verdict states must **not** repaint the fill (completion shows via the tick image, targets via the star, verdicts via label text + detail/outline chips).
-- **Border encodes exactly one thing: the course department.** It is drawn from a fixed 10-colour palette (`--cy-dept-0…9`, light + dark, same order) chosen by an append-only, first-come-first-served assignment: `assignDepartments()` in `app.js` gives each subject the next palette slot (smaller index = claimed earlier), and a render that meets several new departments at once sorts them **descending** by Python-style string comparison so the "bigger" code claims the earlier slot. Slot index modulo 10 picks the colour, so colours repeat once >10 departments exist. A department's colour never changes for the session.
-  - Course nodes carry a `dept-N` class; **never** style their border from status/focus/target/selection/verdict (the old `subject-comp/math/elec` borders, `node:selected`, `is-prereq-*`, `is-focus`, `is-target` borders were removed for this reason).
+- **Border encodes exactly one thing: the course department.** Departments map to the fixed 10-colour palette (`--cy-dept-0…9`, light + dark, same order) through a persistent **stack** (`state.deptStack`, stored at `hkust-course-tree:dept-stack`) that has exactly two mutators and no others:
+  - `add()` (`deptStackAdd`) places a department code at the **smallest empty index** — reusing the lowest hole left by a removal — or appends when there are no holes.
+  - `remove()` (`deptStackRemove`) tombstones the department's index to a `null` hole and leaves every other index exactly where it was, so **no other department's colour moves**.
+  - The stack is **never recalculated or re-sorted**. The only ordering rule is that departments first seen together are queued **biggest-first** (Python-style string compare, descending) before their adds, so a simultaneous first appearance is deterministic rather than draw-order-dependent.
+  - A department's slot index is taken modulo 10 to pick the colour, so colours only repeat once more than ten departments are in the stack, and the same department always keeps the same colour across renders, page loads, and the Course↔USTree↔major-requirement navigation.
+  - `syncDepartments()` in `app.js` reconciles the stack against the loaded graph: it reads the **full** `state.graph.nodes` (never the projected/visible subset) so courses hidden by the fulfilled-prereq filter still count. A department is added when a course of it is rendered, and **removed only on the USTree page** when no course of it exists in the full USTree graph. The Course page passes `{ remove: false }` — a lookup must not evict a plan colour.
+  - The stack is **cleared only by the system reset** (which sweeps every `hkust-course-tree:*` key, `dept-stack` included). It is deliberately **not** exported/imported: import must not be another way to alter it. Do not add a "recalculate"/"reassign"/"compact the holes" step — the holes are the whole point.
+- Course nodes carry a `dept-N` class; **never** style their border from status/focus/target/selection/verdict (the old `subject-comp/math/elec` borders, `node:selected`, `is-prereq-*`, `is-focus`, `is-target` borders were removed for this reason).
 - **Special conditional nodes are exempt:** `all`, `any`, `condition` and `coursePattern` (e.g. "achieve an A in A-Level Mathematics") keep their existing background **and** border. Only *normal course* nodes follow the two background states and the department-only border.
 - The `major-requirements.js` map is a separate renderer and is **out of scope** for these rules.
 

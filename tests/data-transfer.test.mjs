@@ -182,6 +182,7 @@ test("clearAll erases every owned key and leaves unrelated storage alone", async
     "hkust-course-tree:major": JSON.stringify({ id: "CPEG-2025-26" }),
     "hkust-course-tree:hide-fulfilled-prereq": "0",
     "hkust-course-tree:theme": "dark",
+    "hkust-course-tree:dept-stack": JSON.stringify(["COMP", null, "MATH"]),
     "unrelated-key": "keep me"
   });
 
@@ -189,11 +190,17 @@ test("clearAll erases every owned key and leaves unrelated storage alone", async
   assert.equal(storage.getItem("hkust-course-tree:ustree:2026-27"), null);
   assert.equal(storage.getItem("hkust-course-tree:major"), null);
   assert.equal(storage.getItem("hkust-course-tree:theme"), null);
+  assert.equal(
+    storage.getItem("hkust-course-tree:dept-stack"),
+    null,
+    "reset is the only thing allowed to clear the department stack"
+  );
   assert.equal(storage.getItem("unrelated-key"), "keep me", "keys we do not own are untouched");
   assert.deepEqual(
     Array.from(result.keys).sort(),
     [
       "hkust-course-tree:completed:2026-27",
+      "hkust-course-tree:dept-stack",
       "hkust-course-tree:focus:2026-27",
       "hkust-course-tree:hide-fulfilled-prereq",
       "hkust-course-tree:major",

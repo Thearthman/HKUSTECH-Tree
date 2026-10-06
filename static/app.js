@@ -5,13 +5,14 @@
   var DEFAULT_RELATIONS = ["prerequisite", "corequisite", "exclusion"];
   var STORAGE_PREFIX = "hkust-course-tree";
   var HIDE_FULFILLED_KEY = STORAGE_PREFIX + ":hide-fulfilled-prereq";
+  var DEPT_STACK_KEY = STORAGE_PREFIX + ":dept-stack";
   var SEARCH_DELAY = 180;
   var HOVER_GROUP_COUNT = 5;
   // Department borders use a fixed 10-colour categorical palette. A department
-  // claims a slot in first-seen order (append-only; see assignDepartments) and
-  // the slot index picks the colour; slots are never reassigned, so a colour is
-  // only shared once more than ten departments are on screen. This palette is
-  // the ONLY thing a course node's border encodes -- see AGENTS.md.
+  // owns a slot in the persistent department stack (see syncDepartments) and
+  // the slot index picks the colour; slots never move or get recalculated, so a
+  // colour is only shared once more than ten departments are in the stack. This
+  // palette is the ONLY thing a course node's border encodes -- see AGENTS.md.
   var DEPT_COLOR_COUNT = 10;
   var DEPT_FALLBACK_COLORS = [
     "#2b6cb0", "#c05621", "#2f855a", "#c53030", "#6b46c1",
@@ -193,10 +194,10 @@
     // tap does not also run (cytoscape fires taphold and then tap on release).
     suppressNodeTap: false,
     requirementStatus: new Map(),
-    // Append-only course-department -> palette-slot assignment. Shared across
-    // renders so re-selecting a course never changes an established colour.
-    deptAssignments: [],
-    deptIndex: new Map(),
+    // Persistent course-department -> palette-slot stack. A removed slot is a
+    // `null` hole so every other department keeps its index (and colour). See
+    // syncDepartments/AGENTS.md; never rebuild or re-sort it.
+    deptStack: [],
     hideFulfilledPrereq: true,
     mobileLayout: window.matchMedia("(max-width: 620px)").matches
   };
@@ -883,29 +884,87 @@
     return colors;
   }
 
-  // Append-only department -> palette-slot assignment ("first come, first
-  // served"): a department keeps its colour forever. Departments seen together
-  // for the first time are ordered by Python-style string comparison, biggest
-  // first, so the tie is deterministic instead of depending on draw order.
-  function assignDepartments(subjects) {
+  // The department -> palette-slot map is a persistent stack with tombstones:
+  // `state.deptStack` holds department codes and a removed slot is left as
+  // `null` so every OTHER department keeps its index (and therefore its
+  // colour). The stack only ever changes through add/remove below; it is never
+  // rebuilt or re-sorted, and reset (which wipes every `hkust-course-tree:*`
+  // key) is the only thing that clears it. See AGENTS.md.
+  function loadDeptStack() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(DEPT_STACK_KEY) || "[]");
+      if (!Array.isArray(parsed)) return [];
+      return parsed.map(function (entry) {
+        return entry == null ? null : String(entry);
+      });
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function saveDeptStack() {
+    try {
+      localStorage.setItem(DEPT_STACK_KEY, JSON.stringify(state.deptStack));
+    } catch (_error) {
+      // The stack simply does not persist when storage is unavailable.
+    }
+  }
+
+  // add(): reuse the smallest hole left by a removal, else append.
+  function deptStackAdd(code) {
+    if (!code || state.deptStack.indexOf(code) !== -1) return;
+    var hole = state.deptStack.indexOf(null);
+    if (hole === -1) state.deptStack.push(code);
+    else state.deptStack[hole] = code;
+  }
+
+  // remove(): tombstone the code at its index and leave every other index put.
+  function deptStackRemove(code) {
+    var index = state.deptStack.indexOf(code);
+    if (index !== -1) state.deptStack[index] = null;
+  }
+
+  function departmentSlot(code) {
+    return state.deptStack.indexOf(code);
+  }
+
+  // Reconcile the persistent stack with the departments that exist in the FULL
+  // loaded graph. `fullNodes` must be the unprojected `state.graph.nodes`, so a
+  // department whose courses are hidden by the fulfilled-prereq filter is still
+  // counted. Departments are added the first time they are seen and their slot
+  // never moves; conversely a department is removed only when no course of it
+  // exists in the graph (the USTree view). The Course page passes
+  // `{ remove: false }` -- looking up a course must not evict a plan colour.
+  function syncDepartments(fullNodes, options) {
+    var remove = !options || options.remove !== false;
+    var present = [];
+    (fullNodes || []).forEach(function (node) {
+      if (node.type !== "course") return;
+      var code = departmentKey(node);
+      if (code && present.indexOf(code) === -1) present.push(code);
+    });
+    var before = JSON.stringify(state.deptStack);
+    if (remove) {
+      state.deptStack.forEach(function (code) {
+        if (code && present.indexOf(code) === -1) deptStackRemove(code);
+      });
+    }
+    // Departments first met together are queued biggest-first (Python-style
+    // string compare) so their slot order is deterministic, not draw-order.
     var fresh = [];
-    subjects.forEach(function (subject) {
-      if (subject && !state.deptIndex.has(subject) && fresh.indexOf(subject) === -1) {
-        fresh.push(subject);
-      }
+    present.forEach(function (code) {
+      if (state.deptStack.indexOf(code) === -1 && fresh.indexOf(code) === -1) fresh.push(code);
     });
     fresh.sort(function (left, right) {
       return left < right ? 1 : left > right ? -1 : 0;
     });
-    fresh.forEach(function (subject) {
-      state.deptIndex.set(subject, state.deptAssignments.length);
-      state.deptAssignments.push(subject);
-    });
+    fresh.forEach(deptStackAdd);
+    if (JSON.stringify(state.deptStack) !== before) saveDeptStack();
   }
 
   function departmentClass(subject) {
-    var index = state.deptIndex.get(subject);
-    return index == null ? "" : "dept-" + (index % DEPT_COLOR_COUNT);
+    var index = departmentSlot(subject);
+    return index === -1 ? "" : "dept-" + (index % DEPT_COLOR_COUNT);
   }
 
   function relationForNode(node) {
@@ -1252,12 +1311,10 @@
     var rootIds = graphRootIds();
     var targetIds = ustreeTargetIds();
     var dependentIds = directDependentIds(projected);
-    // Claim palette slots for every department in this render before styling.
-    assignDepartments(projected.nodes.filter(function (node) {
-      return node.type === "course";
-    }).map(function (node) {
-      return departmentKey(node);
-    }));
+    // Reconcile palette slots from the FULL graph (hidden courses included)
+    // before styling. Only the USTree view removes a department that is gone;
+    // the Course page just adds colours for the departments it is showing.
+    syncDepartments(state.graph && state.graph.nodes, { remove: IS_USTREE_PAGE });
     var nodes = projected.nodes.map(function (node) {
       var classes = [node.type || "condition"];
       var isDependent = dependentIds.has(node.id);
@@ -1341,9 +1398,9 @@
     ];
 
     // The ONLY border a course node may carry is its department colour, drawn
-    // from the fixed palette at the department's append-only assignment slot
-    // (see assignDepartments). Focus, target, completion, verdict and selection
-    // must never repaint it -- see the graph colour rules in AGENTS.md.
+    // from the fixed palette at the department's persistent stack slot (see
+    // syncDepartments). Focus, target, completion, verdict and selection must
+    // never repaint it -- see the graph colour rules in AGENTS.md.
     departmentPalette().forEach(function (color, index) {
       styles.push({
         selector: "node.dept-" + index,
@@ -2084,6 +2141,7 @@
 
   async function init() {
     state.hideFulfilledPrereq = loadHideFulfilled();
+    state.deptStack = loadDeptStack();
     configurePage();
     bindEvents();
     bindDataTransfer();

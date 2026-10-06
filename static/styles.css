@@ -116,7 +116,7 @@
   --cy-star-fill: #c18720;
   --cy-star-stroke: #805a12;
   /* Fixed 10-colour course-department border palette. Slot N is chosen by the
-     department's append-only assignment index (see app.js assignDepartments),
+     department's index in the persistent stack (see app.js syncDepartments),
      so these colours are a categorical key -- do not reuse them for status. */
   --cy-dept-0: #2b6cb0;
   --cy-dept-1: #c05621;
