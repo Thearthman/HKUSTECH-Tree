@@ -308,7 +308,15 @@ select:focus-visible,
 .topbar {
   z-index: 70;
   display: grid;
-  grid-template-columns: minmax(220px, auto) auto minmax(280px, 600px) auto;
+  /*
+   * Keep the brand and the segmented page nav sized to their content and let
+   * the search field absorb the remaining space (mirroring the Major
+   * requirement header, where the trailing column is the `1fr`). Without the
+   * flexible track the loose free space is shared between the `auto` columns,
+   * which pushes the nav away from the title and stretches it across the row
+   * on wide displays.
+   */
+  grid-template-columns: minmax(220px, auto) auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 20px;
   min-width: 0;
@@ -370,6 +378,7 @@ select:focus-visible,
   display: flex;
   grid-column: 2;
   grid-row: 1;
+  justify-self: start;
   align-items: center;
   gap: 2px;
   padding: 2px;

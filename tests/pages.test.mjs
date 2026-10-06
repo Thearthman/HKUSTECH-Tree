@@ -165,6 +165,22 @@ test("styles.css defines a dark theme", () => {
 
 test("the segmented page nav matches the Major requirement bar on every page", () => {
   const css = read("styles.css");
+  // The Major requirement header keeps the brand and the segmented bar sized to
+  // their content by letting the trailing column absorb the free space
+  // (`minmax(230px, 1fr)`). Mirror that on the shared Course/USTree topbar:
+  // without a flexible track the loose space is shared between the `auto`
+  // columns, which slides the bar away from the title and stretches it across
+  // the row on wide displays.
+  assert.ok(
+    /\.topbar\s*\{[^}]*grid-template-columns:\s*minmax\(220px,\s*auto\)\s+auto\s+minmax\(0,\s*1fr\)\s+auto/s.test(
+      css
+    ),
+    "the shared topbar must keep the brand and nav content sized and let the search absorb the slack"
+  );
+  assert.ok(
+    /\.page-nav\s*\{[^}]*justify-self:\s*start/s.test(css),
+    "the page nav must stay anchored to the left instead of stretching across its column"
+  );
   // The "Course / USTree / Major req." bar must never wrap its labels: without
   // nowrap, "Major req." breaks onto a second line and the shared Course/USTree
   // bar grows taller and narrower than the Major requirement bar.
