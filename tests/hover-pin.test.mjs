@@ -115,3 +115,28 @@ test("both graph pages wire a click, empty-space and Escape release", () => {
     );
   }
 });
+
+test("mobile maps a tap to the hover preview and a long press to the click", () => {
+  const pages = [
+    { name: "app.js", source: read("app.js"), mobile: "state.mobileLayout", open: "inspectGraphNode" },
+    { name: "major-requirements.js", source: read("major-requirements.js"), mobile: "state.mobile", open: "openCourse" }
+  ];
+  for (const page of pages) {
+    assert.ok(
+      page.source.includes(`if (!${page.mobile} || longPress) ${page.open}(`),
+      `${page.name} should only open details on a long press while mobile`
+    );
+    assert.ok(
+      page.source.includes('state.cy.on("taphold", "node'),
+      `${page.name} should listen for a long press`
+    );
+    assert.ok(
+      page.source.includes(`if (!${page.mobile}) return;`),
+      `${page.name} should ignore a long press on desktop`
+    );
+    assert.ok(
+      page.source.includes("suppressNodeTap"),
+      `${page.name} should suppress the tap that trails a long press`
+    );
+  }
+});

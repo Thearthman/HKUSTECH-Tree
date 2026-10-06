@@ -176,7 +176,10 @@
     detailCache: new Map(),
     detailRequest: 0,
     completions: new Set(),
-    hover: createHoverState()
+    hover: createHoverState(),
+    // Set when a mobile long press has already handled a node so the trailing
+    // tap does not also run (cytoscape fires taphold and then tap on release).
+    suppressNodeTap: false
   };
 
   function escapeHtml(value) {
@@ -448,6 +451,22 @@
     if (state.hover.release().apply) clearHover();
   }
 
+  // The completion checkbox stays a normal tap control on every device.
+  // Otherwise, desktop maps hover -> preview and click -> details; touch has no
+  // hover, so on mobile a tap takes the hover role (preview only) and a long
+  // press takes the click role (details).
+  function activateCourseNode(node, renderedPosition, longPress) {
+    if (completionHit(node, renderedPosition)) {
+      if (longPress) return;
+      var code = node.data("code");
+      setCourseCompletion(code, !state.completions.has(code));
+      node.unselect();
+      return;
+    }
+    pinHover(node);
+    if (!state.mobile || longPress) openCourse(node.data("code"));
+  }
+
   function majorFitElements() {
     return state.cy ? state.cy.elements(":visible") : null;
   }
@@ -501,6 +520,7 @@
       boxSelectionEnabled: false,
       autoungrabify: true
     });
+    state.suppressNodeTap = false;
     if (window.GraphInteractionSupport) {
       window.GraphInteractionSupport.bindNodeCursor(elements.graphStage, state.cy, completionHit);
     }
@@ -521,16 +541,21 @@
       clearHover();
     });
     state.cy.on("tap", "node.course", function (event) {
-      var node = event.target;
-      if (completionHit(node, event.renderedPosition)) {
-        event.stopPropagation();
-        var code = node.data("code");
-        setCourseCompletion(code, !state.completions.has(code));
-        node.unselect();
+      if (state.suppressNodeTap) {
+        state.suppressNodeTap = false;
         return;
       }
-      pinHover(node);
-      openCourse(node.data("code"));
+      if (completionHit(event.target, event.renderedPosition)) event.stopPropagation();
+      activateCourseNode(event.target, event.renderedPosition, false);
+    });
+    // On mobile, holding a node is the "click": it opens the course drawer.
+    // This runs before the trailing tap on release, which is then suppressed.
+    state.cy.on("taphold", "node.course", function (event) {
+      if (!state.mobile) return;
+      if (completionHit(event.target, event.renderedPosition)) return;
+      state.suppressNodeTap = true;
+      event.stopPropagation();
+      activateCourseNode(event.target, event.renderedPosition, true);
     });
     // Clicking empty canvas releases a pinned highlight ("click elsewhere").
     state.cy.on("tap", function (event) {

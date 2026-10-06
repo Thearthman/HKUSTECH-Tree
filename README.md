@@ -113,15 +113,21 @@ stored, so a reload returns to the normal layout.
 ## Persistent highlight
 
 Hovering a course highlights its relationships, but that highlight normally
-disappears as soon as the pointer moves. Clicking (or tapping) a course instead
-**pins** the highlight, so it stays on screen while the pointer wanders off and
-after the details drawer closes. A pinned node carries a soft halo to show it is
-held rather than a passing hover.
+disappears as soon as the pointer moves. Clicking a course instead **pins** the
+highlight, so it stays on screen while the pointer wanders off and after the
+details drawer closes. A pinned node carries a soft halo to show it is held
+rather than a passing hover.
 
 The pin is released by clicking empty canvas, by clicking a different course
 (which moves the pin), or by pressing `Esc`. It is not stored, so reloading
-returns to transient hover. This is what makes the relationship highlight usable
-on touch devices, which never fire a hover at all.
+returns to transient hover.
+
+Touch devices never fire a hover, so the mobile layout maps the two desktop
+gestures onto touch: a **tap** takes the hover role and only previews the
+relationships, while a **long press** takes the click role and opens the course
+details. This keeps a single tap from covering the graph with the drawer when
+the user only wanted to inspect the connections. The completion checkbox stays a
+normal tap target on every device.
 
 ## Refreshing the data (autonomous)
 
@@ -215,8 +221,9 @@ against the linked HKUST catalog entry.
 - Hover is progressive disclosure: the inspected course and its direct
   relationships remain prominent while unrelated paths fade.
 - Clicking a course pins that highlight in place (`Esc` or empty canvas
-  releases it), so touch devices can show it at all and desktop readers can keep
-  it on screen while the details drawer is open.
+  releases it), so desktop readers can keep it on screen while the details
+  drawer is open. In the mobile layout a tap previews instead and a long press
+  is what opens the details, since touch has no hover to preview with.
 - When a course is hovered, each top-level `AND` requirement becomes a colored
   grouping; all `OR` alternatives inside that grouping share its background and
   edge color.

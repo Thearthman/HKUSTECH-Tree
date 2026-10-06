@@ -1035,6 +1035,11 @@ html[data-theme="dark"] .theme-icon-dark {
   background-image: radial-gradient(var(--graph-dot) 0.7px, transparent 0.7px);
   background-size: 20px 20px;
   touch-action: none;
+  /* Long press is a real gesture on mobile (it opens the details drawer), so
+     suppress the native iOS callout / text selection it would otherwise raise. */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .graph-stage.is-panning {
