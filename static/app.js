@@ -918,10 +918,36 @@
     else state.deptStack[hole] = code;
   }
 
-  // remove(): tombstone the code at its index and leave every other index put.
+  // A slot at/after DEPT_COLOR_COUNT is "overflown": `slot % 10` reuses a
+  // colour that an earlier slot already owns. When a removal frees a slot below
+  // the palette, pull the lowest-indexed overflown department down into it so it
+  // reclaims a unique colour. Only overflown departments ever move; every other
+  // index (and therefore colour) is left exactly where it was. The early return
+  // means this never runs when the smallest free slot is itself overflown.
+  function compactOverflowedDepartments() {
+    for (;;) {
+      var hole = state.deptStack.indexOf(null);
+      if (hole === -1 || hole >= DEPT_COLOR_COUNT) return;
+      var overflown = -1;
+      for (var cursor = DEPT_COLOR_COUNT; cursor < state.deptStack.length; cursor += 1) {
+        if (state.deptStack[cursor] != null) {
+          overflown = cursor;
+          break;
+        }
+      }
+      if (overflown === -1) return;
+      state.deptStack[hole] = state.deptStack[overflown];
+      state.deptStack[overflown] = null;
+    }
+  }
+
+  // remove(): tombstone the code at its index, leave every other index put, and
+  // hand the freed slot to the lowest overflown department when possible.
   function deptStackRemove(code) {
     var index = state.deptStack.indexOf(code);
-    if (index !== -1) state.deptStack[index] = null;
+    if (index === -1) return;
+    state.deptStack[index] = null;
+    compactOverflowedDepartments();
   }
 
   function departmentSlot(code) {
@@ -945,9 +971,11 @@
     });
     var before = JSON.stringify(state.deptStack);
     if (remove) {
-      state.deptStack.forEach(function (code) {
-        if (code && present.indexOf(code) === -1) deptStackRemove(code);
-      });
+      // Snapshot first: deptStackRemove may move an overflown department into a
+      // freed slot, so iterating the live array here would be unsafe.
+      state.deptStack.filter(function (code) {
+        return code && present.indexOf(code) === -1;
+      }).forEach(deptStackRemove);
     }
     // Departments first met together are queued biggest-first (Python-style
     // string compare) so their slot order is deterministic, not draw-order.

@@ -463,6 +463,11 @@ test("graph node background and border stay minimal and do not grow status color
     "the department stack should persist across navigation and reloads"
   );
   assert.ok(
+    app.includes("function compactOverflowedDepartments") &&
+      app.includes("hole >= DEPT_COLOR_COUNT"),
+    "a removal should pull an overflown department into a freed slot below the palette"
+  );
+  assert.ok(
     app.includes("syncDepartments(state.graph && state.graph.nodes") &&
       app.includes("function syncDepartments"),
     "department slots should be reconciled from the FULL graph, not the projected subset"
