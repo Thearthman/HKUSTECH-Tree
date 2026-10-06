@@ -86,7 +86,7 @@ tests/                       node:test suites; inline HTML/JSON fixtures, no net
 | Adding browser state | Route through `data-transfer.js` keys so export/import/reset stay complete — **except** the department stack, which is reset-only on purpose (see Graph node colors) |
 | Changing graph layout for generated programs | Bump `LAYOUT_VERSION` in `tools/build-major.mjs` to force a re-flow |
 | Touching `static/vendor/` | Don't — vendored libs are pinned; ask first |
-| Styling a graph node's border or background | Border = course **department** only (fixed `dept-N` palette via the persistent stack — never recalculate/re-sort it); background = plain fill or the clicked node's prereq pattern. Never add status/focus/selection colors — see Graph node colors below. |
+| Styling a graph node's border or background | Border = course **department** only (fixed `dept-N` palette via the persistent stack — never recalculate/re-sort it); background = plain fill or the hovered/clicked node's prereq pattern. Never add status/focus/selection colors — see Graph node colors below. |
 
 ## Key Decisions / Codebase State
 - **Two committed datasets, one direction of truth.** `catalog.json` is the course source; every major-requirement relation is re-derived from it so the two can never drift.
@@ -100,8 +100,8 @@ The Course page (`/`) and the USTree page (`/ustree`) render through `static/app
 
 - **Background has exactly two states for a normal course node:**
   1. the plain fill (`--cy-node-bg`), and
-  2. the **prereq pattern** — when a node is **clicked/pinned**, its prerequisite courses take the five alternating `hover-group-1…5` fills (`--cy-hoverN-bg`).
-  Highlighting is **click/pin only**; there is no hover-driven coloring. Completion, target, focus, dependent, unresolved and prereq-verdict states must **not** repaint the fill (completion shows via the tick image, targets via the star, verdicts via label text + detail/outline chips).
+  2. the **prereq pattern** — when a node is **hovered** (transient) or **clicked/pinned** (persistent), its prerequisite courses take the five alternating `hover-group-1…5` fills (`--cy-hoverN-bg`).
+  The fill encodes the relationship highlight only. Completion, target, focus, dependent, unresolved and prereq-verdict states must **not** repaint it (completion shows via the tick image, targets via the star, verdicts via label text + detail/outline chips).
 - **Border encodes exactly one thing: the course department.** Departments map to the fixed 10-colour palette (`--cy-dept-0…9`, light + dark, same order) through a persistent **stack** (`state.deptStack`, stored at `hkust-course-tree:dept-stack`) that has exactly two mutators and no others:
   - `add()` (`deptStackAdd`) places a department code at the **smallest empty index** — reusing the lowest hole left by a removal — or appends when there are no holes.
   - `remove()` (`deptStackRemove`) tombstones the department's index to a `null` hole and leaves every other index exactly where it was, so **no other department's colour moves**. It then runs `compactOverflowedDepartments()`, which is the **one** allowed relocation: a department sitting in an *overflown* slot (index ≥ 10, i.e. its `% 10` colour is shared) is pulled down into a freed slot below the palette so it regains a unique colour. This moves only overflown departments; a department that already had a unique colour (slots 0–9) is never moved, so its colour never changes.

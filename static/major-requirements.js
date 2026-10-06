@@ -8,6 +8,10 @@
   var SUPPORT = window.GraphInteractionSupport || {};
   var CHECKBOX_SIZE = SUPPORT.CHECKBOX_SIZE || 16;
   var CHECKBOX_INSET = SUPPORT.CHECKBOX_INSET || 7;
+  // Touch vs pointer gestures follow the input device, not the viewport (see
+  // GraphInteractionSupport.prefersTouchGestures); MOBILE_QUERY above still
+  // drives the size-based layout.
+  var TOUCH_GESTURE_QUERY = SUPPORT.TOUCH_GESTURE_QUERY || "(hover: none)";
 
   function createHoverState() {
     if (SUPPORT.createHoverState) return SUPPORT.createHoverState();
@@ -61,6 +65,14 @@
       },
       reset: function () { suppressed = null; }
     };
+  }
+
+  // Whether this *device* needs tap/long-press instead of hover/click. Driven by
+  // the pointer's hover capability, not the viewport width, so a narrow desktop
+  // window keeps hover/click and a wide touch device still gets touch gestures.
+  function prefersTouchGestures() {
+    if (SUPPORT.prefersTouchGestures) return SUPPORT.prefersTouchGestures();
+    return !!(window.matchMedia && window.matchMedia(TOUCH_GESTURE_QUERY).matches);
   }
 
   // Canvas colors come from CSS custom properties so the map follows the theme.
@@ -192,6 +204,9 @@
   var state = {
     cy: null,
     mobile: window.matchMedia(MOBILE_QUERY).matches,
+    // Gestures follow the input device (see prefersTouchGestures), while
+    // `mobile` keeps driving size-based layout.
+    touchInput: prefersTouchGestures(),
     detailCache: new Map(),
     detailRequest: 0,
     completions: new Set(),
@@ -471,9 +486,9 @@
   }
 
   // The completion checkbox stays a normal tap control on every device.
-  // Otherwise, desktop maps hover -> preview and click -> details; touch has no
-  // hover, so on mobile a tap takes the hover role (preview only) and a long
-  // press takes the click role (details).
+  // Otherwise, a hovering pointer maps hover -> preview and click -> details;
+  // touch has no hover, so on a touch device a tap takes the hover role
+  // (preview only) and a long press takes the click role (details).
   function activateCourseNode(node, renderedPosition, longPress) {
     if (completionHit(node, renderedPosition)) {
       if (longPress) return;
@@ -483,7 +498,7 @@
       return;
     }
     pinHover(node);
-    if (!state.mobile || longPress) openCourse(node.data("code"));
+    if (!state.touchInput || longPress) openCourse(node.data("code"));
   }
 
   function majorFitElements() {
@@ -564,10 +579,10 @@
       if (completionHit(event.target, event.renderedPosition)) event.stopPropagation();
       activateCourseNode(event.target, event.renderedPosition, false);
     });
-    // On mobile, holding a node is the "click": it opens the course drawer.
-    // This runs before the trailing tap on release, which is then suppressed.
+    // On a touch device, holding a node is the "click": it opens the course
+    // drawer. This runs before the trailing tap on release, which is suppressed.
     state.cy.on("taphold", "node.course", function (event) {
-      if (!state.mobile) return;
+      if (!state.touchInput) return;
       if (completionHit(event.target, event.renderedPosition)) return;
       state.tapSuppressor.suppress(event.target.id());
       event.stopPropagation();
@@ -826,8 +841,14 @@
       }
       if (!state.mobile) elements.drawerScrim.hidden = true;
     });
+    // Gesture mode follows the pointer, independent of the layout breakpoint.
+    var touchQuery = window.matchMedia(TOUCH_GESTURE_QUERY);
+    touchQuery.addEventListener("change", function (event) {
+      state.touchInput = event.matches;
+    });
     window.addEventListener("resize", function () {
       state.mobile = mobileQuery.matches;
+      state.touchInput = touchQuery.matches;
       if (state.cy) {
         state.cy.resize();
         updateMajorFitMinimum();

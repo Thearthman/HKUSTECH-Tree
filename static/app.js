@@ -23,6 +23,10 @@
   var SUPPORT = window.GraphInteractionSupport || {};
   var CHECKBOX_SIZE = SUPPORT.CHECKBOX_SIZE || 16;
   var CHECKBOX_INSET = SUPPORT.CHECKBOX_INSET || 7;
+  // Input-capability query shared with graph-interactions.js (see
+  // prefersTouchGestures): decides touch vs pointer gestures, independent of
+  // viewport width.
+  var TOUCH_GESTURE_QUERY = SUPPORT.TOUCH_GESTURE_QUERY || "(hover: none)";
   // Accept "/ustree", "/ustree/", and "/ustree.html" so the page keeps working
   // whether the host uses clean URLs or serves the .html asset directly.
   var PAGE_PATH = window.location.pathname.replace(/\/+$/, "").replace(/\.html$/i, "");
@@ -190,6 +194,14 @@
     };
   }
 
+  // Whether this *device* needs tap/long-press instead of hover/click. Driven by
+  // the pointer's hover capability, not the viewport width, so a narrow desktop
+  // window keeps hover/click and a wide touch device still gets touch gestures.
+  function prefersTouchGestures() {
+    if (SUPPORT.prefersTouchGestures) return SUPPORT.prefersTouchGestures();
+    return !!(window.matchMedia && window.matchMedia(TOUCH_GESTURE_QUERY).matches);
+  }
+
   var state = {
     catalogs: [],
     year: DEFAULT_YEAR,
@@ -220,7 +232,10 @@
     // syncDepartments/AGENTS.md; never rebuild or re-sort it.
     deptStack: [],
     hideFulfilledPrereq: true,
-    mobileLayout: window.matchMedia("(max-width: 620px)").matches
+    mobileLayout: window.matchMedia("(max-width: 620px)").matches,
+    // Gestures follow the input device (see prefersTouchGestures), while
+    // mobileLayout keeps driving size-based layout.
+    touchInput: prefersTouchGestures()
   };
 
   function escapeHtml(value) {
@@ -1208,9 +1223,9 @@
   }
 
   // The completion checkbox stays a normal tap control on every device.
-  // Otherwise, desktop maps hover -> preview and click -> details; touch has no
-  // hover, so on mobile a tap takes the hover role (preview only) and a long
-  // press takes the click role (details).
+  // Otherwise, a hovering pointer maps hover -> preview and click -> details;
+  // touch has no hover, so on a touch device a tap takes the hover role
+  // (preview only) and a long press takes the click role (details).
   function activateNode(node, renderedPosition, longPress) {
     if (completionHit(node, renderedPosition)) {
       if (longPress) return;
@@ -1221,7 +1236,7 @@
     }
     state.selectedId = node.id();
     pinHover(node);
-    if (!state.mobileLayout || longPress) inspectGraphNode(node.data());
+    if (!state.touchInput || longPress) inspectGraphNode(node.data());
   }
 
   function completionHit(node, renderedPosition) {
@@ -1695,15 +1710,25 @@
       window.GraphInteractionSupport.bindNodeCursor(elements.graphStage, state.cy, completionHit);
     }
 
+    // Hovering previews the relationship highlight (the pointer's equivalent of
+    // a tap on touch); a click then pins it (see pinHover).
+    state.cy.on("mouseover", "node", function (event) {
+      if (!state.hover.enter(event.target.id()).apply) return;
+      applyHoverEmphasis(event.target);
+    });
+    state.cy.on("mouseout", "node", function () {
+      if (!state.hover.leave().apply) return;
+      clearHoverEmphasis();
+    });
     state.cy.on("tap", "node", function (event) {
       if (state.tapSuppressor.consumesTap(event.target.id())) return;
       if (completionHit(event.target, event.renderedPosition)) event.stopPropagation();
       activateNode(event.target, event.renderedPosition, false);
     });
-    // On mobile, holding a node is the "click": it opens the details drawer.
-    // This runs before the trailing tap on release, which is then suppressed.
+    // On a touch device, holding a node is the "click": it opens the details
+    // drawer. This runs before the trailing tap on release, which is suppressed.
     state.cy.on("taphold", "node", function (event) {
-      if (!state.mobileLayout) return;
+      if (!state.touchInput) return;
       if (completionHit(event.target, event.renderedPosition)) return;
       state.tapSuppressor.suppress(event.target.id());
       event.stopPropagation();
@@ -2164,8 +2189,24 @@
       if (state.graph) renderGraph();
       if (!event.matches) elements.drawerScrim.hidden = true;
     });
+    // Gesture mode follows the pointer, so it can flip when a device switches
+    // its primary input (e.g. a tablet docked to a mouse).
+    var touchQuery = window.matchMedia(TOUCH_GESTURE_QUERY);
+    touchQuery.addEventListener("change", function (event) {
+      state.touchInput = event.matches;
+    });
+    // Cytoscape only reports node hover while the pointer is over the canvas,
+    // so leaving the graph for the header/legend would otherwise strand the
+    // transient preview. Drop it on the way out (a pin is kept -- see
+    // releasePinnedHover, "click elsewhere" is what clears a pin).
+    elements.graphStage.addEventListener("mouseleave", function () {
+      if (!state.cy) return;
+      if (!state.hover.leave().apply) return;
+      clearHoverEmphasis();
+    });
     window.addEventListener("resize", function () {
       state.mobileLayout = mobileQuery.matches;
+      state.touchInput = touchQuery.matches;
       if (state.cy) {
         state.cy.resize();
         updateGraphFitMinimum();

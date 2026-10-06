@@ -216,11 +216,35 @@
     };
   }
 
+  // Desktop vs touch is decided by the *input device*, not the window size. A
+  // phone or touch-only tablet has no hovering pointer, so it needs tap/
+  // long-press gestures; a narrow desktop window still has a mouse and keeps
+  // hover/click. `(hover: none)` is the standard "the primary input cannot
+  // hover" signal; the `(any-hover: none)` fallback catches engines that report
+  // no primary hover but expose touch through `navigator.maxTouchPoints`.
+  var TOUCH_GESTURE_QUERY = "(hover: none)";
+  function prefersTouchGestures() {
+    var view = typeof window !== "undefined" ? window : null;
+    if (!view || typeof view.matchMedia !== "function") return false;
+    try {
+      if (view.matchMedia(TOUCH_GESTURE_QUERY).matches) return true;
+      var nav = typeof navigator !== "undefined" ? navigator : null;
+      if (nav && nav.maxTouchPoints > 0 && view.matchMedia("(any-hover: none)").matches) {
+        return true;
+      }
+    } catch (error) {
+      // matchMedia can throw in exotic embeddings; assume a hovering pointer.
+    }
+    return false;
+  }
+
   global.GraphInteractionSupport = {
     bindRightDragPan: bindRightDragPan,
     bindNodeCursor: bindNodeCursor,
     createHoverState: createHoverState,
     createTapSuppressor: createTapSuppressor,
+    prefersTouchGestures: prefersTouchGestures,
+    TOUCH_GESTURE_QUERY: TOUCH_GESTURE_QUERY,
     CHECKBOX_SIZE: CHECKBOX_SIZE,
     CHECKBOX_INSET: CHECKBOX_INSET,
     checkboxHitRect: checkboxHitRect,

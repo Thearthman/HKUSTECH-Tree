@@ -495,9 +495,10 @@ test("graph node background and border stay minimal and do not grow status color
     "prerequisite verdicts must not repaint a course node's background or border"
   );
 
-  // Highlighting is click/pin only: no hover-driven repaint remains.
+  // Hovering previews the relationship highlight (transient) and a click pins
+  // it; both pages wire the same pair.
   assert.ok(
-    !app.includes('state.cy.on("mouseover", "node"') && !app.includes('state.cy.on("mouseout", "node"'),
-    "the graph must not recolor on hover; only a click pins the highlight"
+    app.includes('state.cy.on("mouseover", "node"') && app.includes('state.cy.on("mouseout", "node"'),
+    "the graph should preview the highlight on hover and pin it on click"
   );
 });

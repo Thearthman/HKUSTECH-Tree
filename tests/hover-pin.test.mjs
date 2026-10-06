@@ -116,23 +116,35 @@ test("both graph pages wire a click, empty-space and Escape release", () => {
   }
 });
 
-test("mobile maps a tap to the hover preview and a long press to the click", () => {
+test("the Course/USTree graph clears a transient hover when the pointer leaves the canvas", () => {
+  const source = read("app.js");
+  assert.ok(
+    /elements\.graphStage\.addEventListener\("mouseleave"/.test(source),
+    "app.js should drop the hover preview when the pointer leaves the graph"
+  );
+  assert.ok(
+    source.includes("state.hover.leave().apply"),
+    "leaving the graph should defer to the hover state machine so a pin is kept"
+  );
+});
+
+test("touch devices map a tap to the hover preview and a long press to the click", () => {
   const pages = [
-    { name: "app.js", source: read("app.js"), mobile: "state.mobileLayout", open: "inspectGraphNode" },
-    { name: "major-requirements.js", source: read("major-requirements.js"), mobile: "state.mobile", open: "openCourse" }
+    { name: "app.js", source: read("app.js"), touch: "state.touchInput", open: "inspectGraphNode" },
+    { name: "major-requirements.js", source: read("major-requirements.js"), touch: "state.touchInput", open: "openCourse" }
   ];
   for (const page of pages) {
     assert.ok(
-      page.source.includes(`if (!${page.mobile} || longPress) ${page.open}(`),
-      `${page.name} should only open details on a long press while mobile`
+      page.source.includes(`if (!${page.touch} || longPress) ${page.open}(`),
+      `${page.name} should only open details on a long press on a touch device`
     );
     assert.ok(
       page.source.includes('state.cy.on("taphold", "node'),
       `${page.name} should listen for a long press`
     );
     assert.ok(
-      page.source.includes(`if (!${page.mobile}) return;`),
-      `${page.name} should ignore a long press on desktop`
+      page.source.includes(`if (!${page.touch}) return;`),
+      `${page.name} should ignore a long press while a pointer can hover`
     );
     assert.ok(
       page.source.includes("state.tapSuppressor.suppress(event.target.id())") &&
@@ -178,4 +190,37 @@ test("a long press that turns into a pan does not swallow the next tap", () => {
   suppressor.suppress("course:MATH 1024");
   suppressor.reset();
   assert.equal(suppressor.consumesTap("course:MATH 1024"), false, "a re-render clears the suppression");
+});
+
+test("touch vs pointer gestures follow the input capability, not the screen", () => {
+  function supportWith(queryMap, touchPoints) {
+    const source = readFileSync(new URL("../static/graph-interactions.js", import.meta.url), "utf8");
+    const sandbox = {};
+    sandbox.window = sandbox;
+    sandbox.navigator = { maxTouchPoints: touchPoints || 0 };
+    sandbox.matchMedia = (query) => ({ matches: !!queryMap[query], media: query });
+    vm.createContext(sandbox);
+    vm.runInContext(source, sandbox);
+    return sandbox.GraphInteractionSupport;
+  }
+
+  // A phone / touch-only tablet reports no hover, so it gets touch gestures.
+  assert.equal(
+    supportWith({ "(hover: none)": true }).prefersTouchGestures(),
+    true,
+    "a hoverless pointer should use tap / long press"
+  );
+  // A desktop keeps hover even when the window is narrow, so it gets pointer
+  // gestures (this is the regression that broke desktop hover).
+  assert.equal(
+    supportWith({ "(hover: none)": false }).prefersTouchGestures(),
+    false,
+    "a hovering pointer should keep hover / click"
+  );
+  // Fallback for engines that miss "(hover: none)" but expose touch capacity.
+  assert.equal(
+    supportWith({ "(hover: none)": false, "(any-hover: none)": true }, 5).prefersTouchGestures(),
+    true,
+    "a touch device with no hover anywhere should still use touch gestures"
+  );
 });

@@ -1252,8 +1252,10 @@ html[data-theme="dark"] .theme-icon-dark {
   right: 14px;
   bottom: 12px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
+  row-gap: 4px;
   padding: 7px 9px;
   color: var(--muted);
   background: var(--overlay-chip);
@@ -1270,12 +1272,19 @@ html[data-theme="dark"] .theme-icon-dark {
   white-space: nowrap;
 }
 
-/* The tap / long-press mapping is a touch affordance, so the hint only shows in
-   the mobile layout -- the same breakpoint app.js uses to switch the gestures. */
+/* The tap / long-press mapping is a touch affordance, so the hint only shows on
+   a device whose pointer cannot hover -- the same signal app.js uses to switch
+   the gestures (see GraphInteractionSupport.prefersTouchGestures). */
 .graph-legend .gesture-hint {
   display: none;
   color: var(--text);
   font-weight: 500;
+}
+
+@media (hover: none) {
+  .graph-legend .gesture-hint {
+    display: inline-flex;
+  }
 }
 
 /* Base dot geometry; the Major-requirement legend's `.major-dot` and
@@ -1933,10 +1942,6 @@ body[data-page="course"] .ustree-legend-only { display: none; }
     flex-wrap: wrap;
     row-gap: 4px;
     justify-content: center;
-  }
-
-  .graph-legend .gesture-hint {
-    display: inline-flex;
   }
 
   .details-drawer {
