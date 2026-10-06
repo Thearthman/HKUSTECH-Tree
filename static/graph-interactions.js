@@ -178,10 +178,49 @@
     };
   }
 
+  // A long press makes Cytoscape emit `taphold` and then a trailing `tap` when
+  // the finger lifts. That trailing tap must be ignored, but a plain one-shot
+  // flag is unsafe: once the finger drifts past Cytoscape's tap tolerance the
+  // gesture becomes a pan and *no* trailing tap arrives, leaving the flag armed
+  // to swallow the user's next, unrelated tap. Remember the long-pressed node
+  // instead and forget it as soon as a fresh gesture begins, so a long press can
+  // never eat a later tap.
+  function createTapSuppressor() {
+    var suppressedId = null;
+
+    function same(a, b) {
+      return (a == null ? null : String(a)) === (b == null ? null : String(b));
+    }
+
+    return {
+      // Called from `taphold`, before the long press is handled.
+      suppress: function (nodeId) {
+        suppressedId = nodeId == null ? null : String(nodeId);
+      },
+      // Called from `tapstart`. A new press means any earlier long press either
+      // already consumed its tap or never produced one, so nothing is pending.
+      beginGesture: function () {
+        suppressedId = null;
+      },
+      // Called from `tap`. True exactly once for the node whose trailing tap
+      // follows a long press.
+      consumesTap: function (nodeId) {
+        if (suppressedId == null || !same(suppressedId, nodeId)) return false;
+        suppressedId = null;
+        return true;
+      },
+      // Tear down with the graph so a stale id never survives a re-render.
+      reset: function () {
+        suppressedId = null;
+      }
+    };
+  }
+
   global.GraphInteractionSupport = {
     bindRightDragPan: bindRightDragPan,
     bindNodeCursor: bindNodeCursor,
     createHoverState: createHoverState,
+    createTapSuppressor: createTapSuppressor,
     CHECKBOX_SIZE: CHECKBOX_SIZE,
     CHECKBOX_INSET: CHECKBOX_INSET,
     checkboxHitRect: checkboxHitRect,

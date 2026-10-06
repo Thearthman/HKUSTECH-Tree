@@ -1270,6 +1270,14 @@ html[data-theme="dark"] .theme-icon-dark {
   white-space: nowrap;
 }
 
+/* The tap / long-press mapping is a touch affordance, so the hint only shows in
+   the mobile layout -- the same breakpoint app.js uses to switch the gestures. */
+.graph-legend .gesture-hint {
+  display: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
 /* Base dot geometry; the Major-requirement legend's `.major-dot` and
    `.context-dot` keys supply the fill. */
 .legend-dot {
@@ -1922,7 +1930,13 @@ body[data-page="course"] .ustree-legend-only { display: none; }
     right: 8px;
     bottom: 8px;
     left: 8px;
+    flex-wrap: wrap;
+    row-gap: 4px;
     justify-content: center;
+  }
+
+  .graph-legend .gesture-hint {
+    display: inline-flex;
   }
 
   .details-drawer {
@@ -2291,11 +2305,13 @@ body.is-zen .workspace {
     overflow: hidden;
   }
 
-  .major-legend > span:nth-child(4),
+  /* 1 is the touch gesture hint; 2-4 are AND / OR / Major course. The rest
+     (context key, separator and the three relationship keys) collapse. */
   .major-legend > span:nth-child(5),
   .major-legend > span:nth-child(6),
   .major-legend > span:nth-child(7),
-  .major-legend > span:nth-child(8) {
+  .major-legend > span:nth-child(8),
+  .major-legend > span:nth-child(9) {
     display: none;
   }
 

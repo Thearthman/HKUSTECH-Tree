@@ -135,8 +135,47 @@ test("mobile maps a tap to the hover preview and a long press to the click", () 
       `${page.name} should ignore a long press on desktop`
     );
     assert.ok(
-      page.source.includes("suppressNodeTap"),
+      page.source.includes("state.tapSuppressor.suppress(event.target.id())") &&
+        page.source.includes("state.tapSuppressor.consumesTap(event.target.id())"),
       `${page.name} should suppress the tap that trails a long press`
     );
+    assert.ok(
+      /state\.cy\.on\("tapstart", function \(\) \{\s*\n\s*state\.tapSuppressor\.beginGesture\(\)/.test(page.source),
+      `${page.name} should re-arm the suppression when a fresh gesture starts`
+    );
   }
+});
+
+test("a tap suppressor only ever swallows the long press's own trailing tap", () => {
+  const support = loadSupport();
+  const suppressor = support.createTapSuppressor();
+
+  // A long press on a node suppresses the trailing tap that follows it...
+  suppressor.suppress("course:COMP 2011");
+  assert.equal(suppressor.consumesTap("course:COMP 2011"), true, "the trailing tap is swallowed");
+  // ...exactly once, so a second tap on the node runs normally.
+  assert.equal(suppressor.consumesTap("course:COMP 2011"), false, "suppression is single use");
+  // ...and never swallows a tap on a different node.
+  suppressor.suppress("course:COMP 2011");
+  assert.equal(suppressor.consumesTap("course:COMP 2711"), false, "another node's tap is untouched");
+});
+
+test("a long press that turns into a pan does not swallow the next tap", () => {
+  const support = loadSupport();
+  const suppressor = support.createTapSuppressor();
+
+  // The finger drifts past the tap tolerance, so Cytoscape emits `taphold`
+  // (which arms the suppressor) but no trailing `tap` and no pan-end reset.
+  suppressor.suppress("course:MATH 1024");
+
+  // The user's next gesture begins; the stale arms must be dropped, not saved
+  // up to eat the tap that follows.
+  suppressor.beginGesture();
+  assert.equal(suppressor.consumesTap("course:MATH 1024"), false, "the next tap on the same node runs");
+  assert.equal(suppressor.consumesTap("course:MATH 2111"), false, "the next tap on any node runs");
+
+  // `reset` (graph teardown) drops a pending suppression just as safely.
+  suppressor.suppress("course:MATH 1024");
+  suppressor.reset();
+  assert.equal(suppressor.consumesTap("course:MATH 1024"), false, "a re-render clears the suppression");
 });

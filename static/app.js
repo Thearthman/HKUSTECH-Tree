@@ -169,6 +169,27 @@
     };
   }
 
+  function createTapSuppressor() {
+    var support = window.GraphInteractionSupport;
+    if (support && support.createTapSuppressor) return support.createTapSuppressor();
+    // Minimal fallback so the page keeps working if the helper module is
+    // missing; it mirrors static/graph-interactions.js createTapSuppressor().
+    var suppressed = null;
+    function same(a, b) {
+      return (a == null ? null : String(a)) === (b == null ? null : String(b));
+    }
+    return {
+      suppress: function (id) { suppressed = id == null ? null : String(id); },
+      beginGesture: function () { suppressed = null; },
+      consumesTap: function (id) {
+        if (suppressed == null || !same(suppressed, id)) return false;
+        suppressed = null;
+        return true;
+      },
+      reset: function () { suppressed = null; }
+    };
+  }
+
   var state = {
     catalogs: [],
     year: DEFAULT_YEAR,
@@ -190,9 +211,9 @@
     initializedTarget: false,
     graphErrors: [],
     hover: createHoverState(),
-    // Set when a mobile long press has already handled a node so the trailing
-    // tap does not also run (cytoscape fires taphold and then tap on release).
-    suppressNodeTap: false,
+    // Mobile long presses emit a trailing tap that must be dropped (see
+    // GraphInteractionSupport.createTapSuppressor).
+    tapSuppressor: createTapSuppressor(),
     requirementStatus: new Map(),
     // Persistent course-department -> palette-slot stack. A removed slot is a
     // `null` hole so every other department keeps its index (and colour). See
@@ -857,7 +878,7 @@
 
   function destroyGraph() {
     state.hover.reset();
-    state.suppressNodeTap = false;
+    state.tapSuppressor.reset();
     if (state.cy) {
       state.cy.destroy();
       state.cy = null;
@@ -1675,10 +1696,7 @@
     }
 
     state.cy.on("tap", "node", function (event) {
-      if (state.suppressNodeTap) {
-        state.suppressNodeTap = false;
-        return;
-      }
+      if (state.tapSuppressor.consumesTap(event.target.id())) return;
       if (completionHit(event.target, event.renderedPosition)) event.stopPropagation();
       activateNode(event.target, event.renderedPosition, false);
     });
@@ -1687,9 +1705,14 @@
     state.cy.on("taphold", "node", function (event) {
       if (!state.mobileLayout) return;
       if (completionHit(event.target, event.renderedPosition)) return;
-      state.suppressNodeTap = true;
+      state.tapSuppressor.suppress(event.target.id());
       event.stopPropagation();
       activateNode(event.target, event.renderedPosition, true);
+    });
+    // A new press starts a fresh gesture: any long-press tap that never arrived
+    // (because the finger drifted into a pan) must not swallow this one.
+    state.cy.on("tapstart", function () {
+      state.tapSuppressor.beginGesture();
     });
     // Clicking empty canvas releases a pinned highlight ("click elsewhere").
     state.cy.on("tap", function (event) {
