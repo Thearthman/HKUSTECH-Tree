@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "37-45",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26biot.pdf",
-  "sourceHash": "09e08e815eac3cb7fad212c32f0480e18d4010c5fbcacb4dc10673b7a93c898d",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "33ec26c457c3b1b0c0edbd5aede1bb17636976513732aeaf7a4c57e4793a25eb",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Biotechnology",
@@ -21,6 +21,19 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1901"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1902"
+          }
+        ]
+      },
       "credits": "3-6 credits"
     },
     {
@@ -29,6 +42,123 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1903"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1904"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2040"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2070"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2080"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2210"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2220"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 3150"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "LIFS 4963"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4973"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4983"
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SCIE 4500"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4983"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: LIFS 4963 OR (LIFS 4973 AND LIFS 4983) OR (SCIE 4500 AND LIFS 4983) (Students following IRE Track can only use (SCIE 4500 AND LIFS 4983) to fulfill the requirement.)"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1011"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1012"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1051"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1052"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 2111"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 2311"
+              }
+            ],
+            "note": "Note: CHEM 2111 OR CHEM 2311"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 2155"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 2355"
+              }
+            ],
+            "note": "Note: CHEM 2155 OR CHEM 2355"
+          }
+        ]
+      },
       "credits": "34-39 credits"
     }
   ],
@@ -44,6 +174,36 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -137,8 +297,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        320
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,7 +311,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         420
       ],
       "major": true,
@@ -165,7 +325,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         420
       ],
       "major": true,
@@ -179,7 +339,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        660,
         420
       ],
       "major": true,
@@ -191,10 +351,10 @@
       "code": "LIFS 4963",
       "title": "Biotechnology Capstone Project",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        420
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -205,10 +365,10 @@
       "code": "LIFS 4973",
       "title": "Biotechnology Project Research I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        880,
-        420
+        1220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -219,10 +379,10 @@
       "code": "LIFS 4983",
       "title": "Biotechnology Project Research II",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        0,
-        520
+        1500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -233,10 +393,10 @@
       "code": "SCIE 4500",
       "title": "IRE Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        220,
-        520
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -249,7 +409,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        0,
         520
       ],
       "major": true,
@@ -263,7 +423,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
+        220,
         520
       ],
       "major": true,
@@ -277,7 +437,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        880,
+        440,
         520
       ],
       "major": true,
@@ -291,8 +451,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        0,
-        620
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -303,10 +463,10 @@
       "code": "CHEM 2111",
       "title": "Fundamentals of Organic Chemistry",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        620
+        2000,
+        320
       ],
       "major": true,
       "graph": true,
@@ -317,10 +477,10 @@
       "code": "CHEM 2311",
       "title": "Analytical Chemistry",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        440,
-        620
+        2220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -331,10 +491,10 @@
       "code": "CHEM 2155",
       "title": "Fundamental Organic Chemistry Laboratory",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        660,
-        620
+        2500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -345,10 +505,10 @@
       "code": "CHEM 2355",
       "title": "Fundamental Analytical Chemistry Laboratory",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        880,
-        620
+        2720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -485,7 +645,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         0
       ]
     },
@@ -497,7 +657,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         100
       ]
     },
@@ -509,7 +669,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         200
       ]
     },
@@ -521,7 +681,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         300
       ]
     },
@@ -533,7 +693,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         400
       ]
     },
@@ -545,7 +705,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         500
       ]
     },
@@ -557,7 +717,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         600
       ]
     },
@@ -569,7 +729,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         700
       ]
     },
@@ -581,7 +741,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         0
       ]
     },
@@ -593,7 +753,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         100
       ]
     },
@@ -605,7 +765,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         200
       ]
     },
@@ -617,7 +777,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         300
       ]
     }
@@ -919,5 +1079,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

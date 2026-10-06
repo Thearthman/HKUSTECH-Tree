@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "19",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26acct.pdf",
-  "sourceHash": "d01e9ef5141d9b25d732e0c55ffd8a8e6313ed86654acd704fd2f79869b0345f",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "274dabcc72ddb3f60652938011f7b737747685b1b1fa390f1a1af7ec02aa1ba1",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Professional Accounting",
@@ -21,6 +21,39 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ACCT 3010"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 3020"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 3210"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 3610"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 3880"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 4010"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 4510"
+          }
+        ]
+      },
       "credits": "19 credits"
     }
   ],
@@ -266,5 +299,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

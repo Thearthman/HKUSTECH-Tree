@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "38-42",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26chem.pdf",
-  "sourceHash": "313fbafa4fd04941c0db5fd23abf97212f4b5083b08be1b6d7612086c65b15de",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "e708e3cf317c334133c0cf1c4f819da57c1e2f11416b796eb721b35961fa960e",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Chemistry",
@@ -21,6 +21,19 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "CHEM 1011"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1012"
+          }
+        ]
+      },
       "credits": "6 credits"
     },
     {
@@ -29,6 +42,108 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "CHEM 1051"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1052"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 2110"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 2210"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 2310"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 2550"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 2555"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 3120"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 3220"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 3320"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 3550"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 4689"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 4691"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SCIE 3500"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "SCIE 4500"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: CHEM 4689 OR CHEM 4691 OR (SCIE 3500 AND SCIE 4500) (Students following IRE Track can only use (SCIE 3500 AND SCIE 4500) to fulfill the requirement)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1005"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1006"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1013"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1023"
+              }
+            ],
+            "note": "Note: MATH 1005 OR MATH 1006 OR MATH 1013 OR MATH 1020 OR MATH 1023"
+          }
+        ]
+      },
       "credits": "32-36 credits"
     }
   ],
@@ -44,6 +159,24 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -137,8 +270,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        320
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,7 +284,7 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         420
       ],
       "major": true,
@@ -165,7 +298,7 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         420
       ],
       "major": true,
@@ -179,7 +312,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        660,
         420
       ],
       "major": true,
@@ -193,8 +326,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        420
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +340,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        420
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -221,7 +354,7 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        0,
+        440,
         520
       ],
       "major": true,
@@ -233,10 +366,10 @@
       "code": "CHEM 4689",
       "title": "Capstone Project",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
-        520
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -247,10 +380,10 @@
       "code": "CHEM 4691",
       "title": "Capstone Research I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        520
+        1160,
+        320
       ],
       "major": true,
       "graph": true,
@@ -261,10 +394,10 @@
       "code": "SCIE 3500",
       "title": "IRE Research Project I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        660,
-        520
+        1440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -275,10 +408,10 @@
       "code": "SCIE 4500",
       "title": "IRE Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        880,
-        520
+        1660,
+        320
       ],
       "major": true,
       "graph": true,
@@ -289,10 +422,10 @@
       "code": "MATH 1005",
       "title": "Calculus and Statistics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        0,
-        620
+        1940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -303,10 +436,10 @@
       "code": "MATH 1006",
       "title": "Calculus, Vectors, and Matrices",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        620
+        2160,
+        320
       ],
       "major": true,
       "graph": true,
@@ -317,10 +450,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        620
+        2380,
+        320
       ],
       "major": true,
       "graph": true,
@@ -331,10 +464,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        660,
-        620
+        1940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -345,10 +478,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        880,
-        620
+        2160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -939,7 +1072,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         0
       ]
     },
@@ -951,7 +1084,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         100
       ]
     },
@@ -963,7 +1096,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         200
       ]
     },
@@ -975,7 +1108,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         300
       ]
     },
@@ -987,7 +1120,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         400
       ]
     },
@@ -999,7 +1132,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         500
       ]
     },
@@ -1011,7 +1144,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         600
       ]
     },
@@ -1023,7 +1156,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2860,
         700
       ]
     },
@@ -1035,7 +1168,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         0
       ]
     },
@@ -1047,7 +1180,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         100
       ]
     },
@@ -1059,7 +1192,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         200
       ]
     },
@@ -1071,7 +1204,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         300
       ]
     },
@@ -1083,7 +1216,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         400
       ]
     },
@@ -1095,7 +1228,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         500
       ]
     },
@@ -1107,7 +1240,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         600
       ]
     },
@@ -1119,7 +1252,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3080,
         700
       ]
     },
@@ -1131,7 +1264,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3300,
         0
       ]
     },
@@ -1143,7 +1276,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3300,
         100
       ]
     },
@@ -1155,7 +1288,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3300,
         200
       ]
     }
@@ -1653,5 +1786,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

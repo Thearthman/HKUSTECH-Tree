@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "49-53",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26da.pdf",
-  "sourceHash": "03d9bdfa013c3caec4f4d5187016711368d514087fc8910072bc4cd816fd588e",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "e1d34e6d7366f6fe26c206e0435bb8b5815b821d5070169fe4d0cc618cf70ba0",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BEng in Decision Analytics",
@@ -21,6 +21,96 @@
       "eyebrow": "Engineering Fundamental Courses",
       "title": "Engineering Fundamental Courses",
       "rootGroup": "group:engineering-fundamental-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2011"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2012H"
+              }
+            ],
+            "note": "Note: COMP 1023 OR COMP 2011 OR COMP 2012H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 1012"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1112"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1312"
+              }
+            ],
+            "note": "Note: CHEM 1012 OR PHYS 1112 OR PHYS 1312"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2011"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2111"
+          }
+        ]
+      },
       "credits": "16-20 credits"
     },
     {
@@ -29,6 +119,83 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "IEDA 1010"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 1020"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 1901"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 2010"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 2520"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 2540"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 3010"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 3230"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 3250"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 3300"
+          },
+          {
+            "kind": "course",
+            "code": "IEDA 3560"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "IEDA 4901"
+              },
+              {
+                "kind": "course",
+                "code": "IEDA 4920"
+              }
+            ],
+            "note": "Note: IEDA 4901 OR IEDA 4920"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ECON 2103"
+              },
+              {
+                "kind": "course",
+                "code": "ECON 2113"
+              }
+            ],
+            "note": "Note: ECON 2103 OR ECON 2113"
+          }
+        ]
+      },
       "credits": "33 credits"
     }
   ],
@@ -40,10 +207,58 @@
       "parent": null
     },
     {
+      "id": "group:engineering-fundamental-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:and-4",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:engineering-fundamental-courses:or-3"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-4"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-6",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-4"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,9 +266,9 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        0,
+        500,
         0
       ],
       "major": true,
@@ -65,9 +280,9 @@
       "code": "COMP 2011",
       "title": "Programming with C++",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        220,
+        720,
         0
       ],
       "major": true,
@@ -79,10 +294,10 @@
       "code": "COMP 2012H",
       "title": "Honors Object-Oriented Programming and Data Structures",
       "credits": "5",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        440,
-        0
+        500,
+        100
       ],
       "major": true,
       "graph": true,
@@ -93,9 +308,9 @@
       "code": "CHEM 1012",
       "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-2",
       "position": [
-        660,
+        1000,
         0
       ],
       "major": true,
@@ -107,10 +322,10 @@
       "code": "PHYS 1112",
       "title": "General Physics I with Calculus",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-2",
       "position": [
-        0,
-        100
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,9 +336,9 @@
       "code": "PHYS 1312",
       "title": "Honors General Physics I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-2",
       "position": [
-        220,
+        1000,
         100
       ],
       "major": true,
@@ -135,10 +350,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        440,
-        100
+        1780,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +364,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        660,
-        100
+        2000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -163,10 +378,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        0,
-        200
+        2280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -177,10 +392,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        220,
-        200
+        2500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -191,10 +406,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-3",
       "position": [
-        440,
-        200
+        1500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -207,8 +422,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        660,
-        200
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -221,8 +436,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        0,
-        300
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -236,7 +451,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -250,7 +465,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -264,7 +479,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -278,7 +493,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -292,7 +507,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -306,7 +521,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -320,7 +535,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -334,7 +549,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -348,7 +563,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -362,7 +577,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -376,7 +591,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -387,10 +602,10 @@
       "code": "IEDA 4901",
       "title": "Final Year Thesis",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        820
+        940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -401,10 +616,10 @@
       "code": "IEDA 4920",
       "title": "Decision Analytics Final Year Project",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        920
+        1160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -415,10 +630,10 @@
       "code": "ECON 2103",
       "title": "Principles of Microeconomics",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        220,
-        920
+        1440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -429,10 +644,10 @@
       "code": "ECON 2113",
       "title": "Microeconomics",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        440,
-        920
+        1660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -450,7 +665,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         0
       ]
     },
@@ -462,7 +677,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         100
       ]
     },
@@ -474,7 +689,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         200
       ]
     },
@@ -486,7 +701,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         300
       ]
     },
@@ -498,7 +713,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         400
       ]
     },
@@ -510,7 +725,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         500
       ]
     },
@@ -522,7 +737,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         600
       ]
     },
@@ -534,7 +749,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2980,
         700
       ]
     },
@@ -546,7 +761,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         0
       ]
     },
@@ -558,7 +773,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         100
       ]
     },
@@ -570,7 +785,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         200
       ]
     },
@@ -582,7 +797,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         300
       ]
     },
@@ -594,7 +809,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         400
       ]
     },
@@ -606,7 +821,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         500
       ]
     },
@@ -618,7 +833,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         600
       ]
     },
@@ -630,7 +845,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         700
       ]
     },
@@ -642,7 +857,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         0
       ]
     },
@@ -654,7 +869,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         100
       ]
     },
@@ -666,7 +881,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         200
       ]
     },
@@ -678,7 +893,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         300
       ]
     },
@@ -690,7 +905,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         400
       ]
     },
@@ -702,7 +917,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         500
       ]
     },
@@ -714,7 +929,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         600
       ]
     },
@@ -726,7 +941,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         700
       ]
     },
@@ -738,7 +953,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         0
       ]
     },
@@ -750,7 +965,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         100
       ]
     },
@@ -762,7 +977,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         200
       ]
     },
@@ -774,7 +989,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         300
       ]
     },
@@ -786,7 +1001,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         400
       ]
     },
@@ -798,7 +1013,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         500
       ]
     },
@@ -810,7 +1025,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         600
       ]
     },
@@ -822,7 +1037,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         700
       ]
     },
@@ -834,7 +1049,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         0
       ]
     },
@@ -846,7 +1061,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         100
       ]
     },
@@ -858,7 +1073,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         200
       ]
     },
@@ -870,7 +1085,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         300
       ]
     },
@@ -882,7 +1097,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         400
       ]
     },
@@ -894,7 +1109,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         500
       ]
     },
@@ -906,7 +1121,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         600
       ]
     },
@@ -918,7 +1133,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        3860,
         700
       ]
     },
@@ -930,7 +1145,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2240,
+        4080,
         0
       ]
     }
@@ -1610,5 +1825,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

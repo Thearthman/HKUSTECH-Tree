@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "76-81",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26ae.pdf",
-  "sourceHash": "a136ace1d7acd6a50adb2135b9dd9721becb19b91c4ecb9ec5930f81cb927ccd",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "81be9c76cd4220ee3d9bcdd2477607af641aa31c72633ac89dfec5c0453f33d0",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BEng in Aerospace Engineering",
@@ -21,6 +21,113 @@
       "eyebrow": "Engineering Fundamental Courses",
       "title": "Engineering Fundamental Courses",
       "rootGroup": "group:engineering-fundamental-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2011"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2012H"
+              }
+            ],
+            "note": "Note: COMP 1023 OR COMP 2011 OR COMP 2012H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2011"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2351"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 1112"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1312"
+              }
+            ],
+            "note": "Note: PHYS 1112 OR PHYS 1312"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 1008"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 1012"
+              },
+              {
+                "kind": "course",
+                "code": "LIFS 1901"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1101"
+              }
+            ]
+          }
+        ]
+      },
       "credits": "19-24 credits"
     },
     {
@@ -29,6 +136,95 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "MECH 1001"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 1910"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 1990"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2002"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2007"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2020"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2040"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2210"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2300"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 2310"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3400"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3610"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3620"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3640"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3650"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3660"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3670"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3680"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 3690"
+          },
+          {
+            "kind": "course",
+            "code": "MECH 4980"
+          },
+          {
+            "kind": "course",
+            "code": "ELEC 2420"
+          }
+        ]
+      },
       "credits": "57 credits"
     }
   ],
@@ -38,6 +234,48 @@
       "label": "Engineering Fundamental Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:engineering-fundamental-courses:or-2"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-3"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-3"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-6",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-7",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
     },
     {
       "id": "group:required-courses",
@@ -51,9 +289,9 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        0,
+        500,
         0
       ],
       "major": true,
@@ -65,9 +303,9 @@
       "code": "COMP 2011",
       "title": "Programming with C++",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        220,
+        720,
         0
       ],
       "major": true,
@@ -79,10 +317,10 @@
       "code": "COMP 2012H",
       "title": "Honors Object-Oriented Programming and Data Structures",
       "credits": "5",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        440,
-        0
+        500,
+        100
       ],
       "major": true,
       "graph": true,
@@ -93,9 +331,9 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        660,
+        1280,
         0
       ],
       "major": true,
@@ -107,10 +345,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        0,
-        100
+        1500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,10 +359,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        220,
-        100
+        1780,
+        0
       ],
       "major": true,
       "graph": true,
@@ -135,10 +373,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        440,
-        100
+        2000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +387,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-2",
       "position": [
-        660,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -166,7 +404,7 @@
       "parent": "group:engineering-fundamental-courses",
       "position": [
         0,
-        200
+        0
       ],
       "major": true,
       "graph": true,
@@ -180,7 +418,7 @@
       "parent": "group:engineering-fundamental-courses",
       "position": [
         220,
-        200
+        0
       ],
       "major": true,
       "graph": true,
@@ -191,10 +429,10 @@
       "code": "PHYS 1112",
       "title": "General Physics I with Calculus",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        440,
-        200
+        2280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -205,10 +443,66 @@
       "code": "PHYS 1312",
       "title": "Honors General Physics I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        660,
-        200
+        2500,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1008",
+      "title": "Introductory Chemistry",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses:or-7",
+      "position": [
+        2780,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "CHEM 1012",
+      "title": "General Chemistry B: Atomic Structure, Molecules, and Bonding Theories",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses:or-7",
+      "position": [
+        3000,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "LIFS 1901",
+      "title": "General Biology I",
+      "credits": "3",
+      "parent": "group:engineering-fundamental-courses:or-7",
+      "position": [
+        2780,
+        100
+      ],
+      "major": true,
+      "graph": true,
+      "section": "engineering-fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "PHYS 1101",
+      "title": "Introductory Physics",
+      "credits": "4",
+      "parent": "group:engineering-fundamental-courses:or-7",
+      "position": [
+        3000,
+        100
       ],
       "major": true,
       "graph": true,
@@ -222,7 +516,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -236,7 +530,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -250,7 +544,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -264,7 +558,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -278,7 +572,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -292,7 +586,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -306,7 +600,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -320,7 +614,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -334,7 +628,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -348,7 +642,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -362,7 +656,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        720
+        620
       ],
       "major": true,
       "graph": true,
@@ -376,7 +670,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        720
+        620
       ],
       "major": true,
       "graph": true,
@@ -390,7 +684,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        720
+        620
       ],
       "major": true,
       "graph": true,
@@ -404,7 +698,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        720
+        620
       ],
       "major": true,
       "graph": true,
@@ -418,7 +712,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        720
+        620
       ],
       "major": true,
       "graph": true,
@@ -432,7 +726,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -446,7 +740,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -460,7 +754,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -474,7 +768,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -488,7 +782,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        820
+        720
       ],
       "major": true,
       "graph": true,
@@ -502,7 +796,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        920
+        820
       ],
       "major": true,
       "graph": true,
@@ -537,7 +831,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         0
       ]
     },
@@ -549,7 +843,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         100
       ]
     },
@@ -561,7 +855,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         200
       ]
     },
@@ -573,7 +867,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         300
       ]
     },
@@ -585,7 +879,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         400
       ]
     },
@@ -597,7 +891,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         500
       ]
     },
@@ -609,7 +903,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         600
       ]
     },
@@ -621,7 +915,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3480,
         700
       ]
     },
@@ -633,7 +927,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         0
       ]
     },
@@ -645,7 +939,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         100
       ]
     },
@@ -657,7 +951,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         200
       ]
     },
@@ -669,7 +963,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         300
       ]
     },
@@ -681,7 +975,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         400
       ]
     },
@@ -693,7 +987,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         500
       ]
     },
@@ -705,7 +999,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         600
       ]
     },
@@ -717,7 +1011,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3700,
         700
       ]
     },
@@ -729,7 +1023,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         0
       ]
     },
@@ -741,7 +1035,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         100
       ]
     },
@@ -753,7 +1047,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         200
       ]
     },
@@ -765,7 +1059,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         300
       ]
     },
@@ -777,7 +1071,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         400
       ]
     },
@@ -789,7 +1083,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         500
       ]
     },
@@ -801,7 +1095,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         600
       ]
     },
@@ -813,7 +1107,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3920,
         700
       ]
     },
@@ -825,7 +1119,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4140,
         0
       ]
     },
@@ -837,7 +1131,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4140,
         100
       ]
     },
@@ -849,8 +1143,44 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4140,
         200
+      ]
+    },
+    {
+      "code": "CHEM 1004",
+      "title": "Chemistry in Everyday Life",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        4140,
+        300
+      ]
+    },
+    {
+      "code": "CHEM 1010",
+      "title": "CHEM 1010",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        4140,
+        400
+      ]
+    },
+    {
+      "code": "CORE 1120",
+      "title": "CORE 1120",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        4140,
+        500
       ]
     }
   ],
@@ -1225,6 +1555,34 @@
       "relation": "exclusion",
       "group": 1,
       "raw": "PHYS 1111, PHYS 1112"
+    },
+    {
+      "source": "CORE 1120",
+      "target": "CHEM 1008",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x Chemistry OR HKDSE 1x Chemistry, any CHEM courses at or above 1004-level, CORE 1120"
+    },
+    {
+      "source": "CHEM 1004",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1008",
+      "target": "CHEM 1012",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "Level 3 or above in HKDSE 1/2x OR level 3 or above in HKDSE 1x Chemistry OR CHEM 1004 OR CHEM 1008"
+    },
+    {
+      "source": "CHEM 1010",
+      "target": "CHEM 1012",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "CHEM 1010 (prior to 2022-23)"
     },
     {
       "source": "MECH 1001",
@@ -1704,5 +2062,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

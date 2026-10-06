@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "11-15",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbus.pdf",
-  "sourceHash": "936b5914a6960a626d9e2153d668da9a8d332ea6b5f39a34f5d45ef1979619db",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "06a51322a2f4fcc56b0f52fe22431accabb57a4ae312c09fc981ba0f2e5b64aa",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Global Business",
@@ -21,6 +21,51 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "GBUS 1000"
+          },
+          {
+            "kind": "course",
+            "code": "GBUS 2010"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "GBUS 2040"
+              },
+              {
+                "kind": "course",
+                "code": "SMBT 2100"
+              }
+            ],
+            "note": "Note: GBUS 2040 OR SMBT 2100-2110"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "GBUS 3030"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 4780"
+              }
+            ],
+            "note": "Note: GBUS 3030 OR ISOM 4780"
+          },
+          {
+            "kind": "course",
+            "code": "GBUS 4910"
+          }
+        ]
+      },
       "credits": "11-15 credits"
     }
   ],
@@ -30,6 +75,18 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -65,9 +122,9 @@
       "code": "GBUS 2040",
       "title": "GBUS 2040",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
+        500,
         0
       ],
       "major": true,
@@ -79,10 +136,10 @@
       "code": "SMBT 2100",
       "title": "SMBT 2100",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -93,10 +150,10 @@
       "code": "GBUS 3030",
       "title": "GBUS 3030",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        220,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +164,10 @@
       "code": "ISOM 4780",
       "title": "Integrated Planning and Execution",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        440,
-        100
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -124,7 +181,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        200
+        100
       ],
       "major": true,
       "graph": true,
@@ -142,7 +199,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         0
       ]
     },
@@ -154,7 +211,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         100
       ]
     }
@@ -176,5 +233,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

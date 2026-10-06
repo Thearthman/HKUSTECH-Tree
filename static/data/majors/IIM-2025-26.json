@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "12-13",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26iim.pdf",
-  "sourceHash": "bfdc1215eb5cdfbc98abffacd15c8c8757846655ae2a17028e72eaef57f122e8",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "6f808350a71225c59a7426bb2cb1de2af4abacf358832e57e772cee434435175",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Individualized Interdisciplinary Major",
@@ -21,6 +21,63 @@
       "eyebrow": "Fundamental Courses",
       "title": "Fundamental Courses",
       "rootGroup": "group:fundamental-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 1021"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1022P"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 2010"
+              }
+            ],
+            "note": "Note: COMP 1021 OR COMP 1022P OR COMP 1023 OR ISOM 2010"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1003"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1005"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1006"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1013"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1023"
+              }
+            ],
+            "note": "Note: MATH 1003 OR MATH 1005 OR MATH 1006 OR MATH 1013 OR MATH 1020 OR MATH 1023"
+          }
+        ]
+      },
       "credits": "6-7 credits"
     },
     {
@@ -29,6 +86,29 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "IIMP 2000"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "IIMP 4970"
+              },
+              {
+                "kind": "course",
+                "code": "IIMP 4991"
+              }
+            ],
+            "note": "Note: IIMP 4970 OR IIMP 4991"
+          }
+        ]
+      },
       "credits": "6 credits"
     }
   ],
@@ -40,10 +120,28 @@
       "parent": null
     },
     {
+      "id": "group:fundamental-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:fundamental-courses"
+    },
+    {
+      "id": "group:fundamental-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:fundamental-courses"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,7 +149,7 @@
       "code": "COMP 1021",
       "title": "Introduction to Computer Science",
       "credits": "3",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-1",
       "position": [
         0,
         0
@@ -65,7 +163,7 @@
       "code": "COMP 1022P",
       "title": "COMP 1022P",
       "credits": "",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-1",
       "position": [
         220,
         0
@@ -79,35 +177,7 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:fundamental-courses",
-      "position": [
-        440,
-        0
-      ],
-      "major": true,
-      "graph": true,
-      "section": "fundamental-courses",
-      "auto": true
-    },
-    {
-      "code": "ISOM 2010",
-      "title": "Introduction to Information Systems",
-      "credits": "3",
-      "parent": "group:fundamental-courses",
-      "position": [
-        660,
-        0
-      ],
-      "major": true,
-      "graph": true,
-      "section": "fundamental-courses",
-      "auto": true
-    },
-    {
-      "code": "MATH 1003",
-      "title": "Calculus and Linear Algebra",
-      "credits": "3",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-1",
       "position": [
         0,
         100
@@ -118,10 +188,10 @@
       "auto": true
     },
     {
-      "code": "MATH 1005",
-      "title": "Calculus and Statistics",
-      "credits": "4",
-      "parent": "group:fundamental-courses",
+      "code": "ISOM 2010",
+      "title": "Introduction to Information Systems",
+      "credits": "3",
+      "parent": "group:fundamental-courses:or-1",
       "position": [
         220,
         100
@@ -132,13 +202,41 @@
       "auto": true
     },
     {
+      "code": "MATH 1003",
+      "title": "Calculus and Linear Algebra",
+      "credits": "3",
+      "parent": "group:fundamental-courses:or-2",
+      "position": [
+        500,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
+      "code": "MATH 1005",
+      "title": "Calculus and Statistics",
+      "credits": "4",
+      "parent": "group:fundamental-courses:or-2",
+      "position": [
+        720,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "fundamental-courses",
+      "auto": true
+    },
+    {
       "code": "MATH 1006",
       "title": "Calculus, Vectors, and Matrices",
       "credits": "4",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-2",
       "position": [
-        440,
-        100
+        940,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,9 +247,9 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-2",
       "position": [
-        660,
+        500,
         100
       ],
       "major": true,
@@ -163,10 +261,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-2",
       "position": [
-        0,
-        200
+        720,
+        100
       ],
       "major": true,
       "graph": true,
@@ -177,10 +275,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:fundamental-courses",
+      "parent": "group:fundamental-courses:or-2",
       "position": [
-        220,
-        200
+        940,
+        100
       ],
       "major": true,
       "graph": true,
@@ -194,7 +292,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        520
+        420
       ],
       "major": true,
       "graph": true,
@@ -205,10 +303,10 @@
       "code": "IIMP 4970",
       "title": "IIMP 4970",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
-        520
+        280,
+        420
       ],
       "major": true,
       "graph": true,
@@ -219,10 +317,10 @@
       "code": "IIMP 4991",
       "title": "IIMP 4991",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        620
+        500,
+        420
       ],
       "major": true,
       "graph": true,
@@ -240,7 +338,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         0
       ]
     },
@@ -252,7 +350,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         100
       ]
     },
@@ -264,7 +362,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         200
       ]
     },
@@ -276,7 +374,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         300
       ]
     },
@@ -288,7 +386,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         400
       ]
     },
@@ -300,7 +398,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         500
       ]
     },
@@ -312,7 +410,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         600
       ]
     },
@@ -324,7 +422,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1420,
         700
       ]
     },
@@ -336,7 +434,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1640,
         0
       ]
     },
@@ -348,7 +446,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1640,
         100
       ]
     },
@@ -360,7 +458,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1640,
         200
       ]
     }
@@ -732,5 +830,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

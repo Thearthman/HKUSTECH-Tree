@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "20-22",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26math.pdf",
-  "sourceHash": "6199801dbf09a9311ed0caebb775bb6d3675bd6e48a8bc393906c4c70867639c",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "ffd6489c03e24755a762b66b57114e5d6f3739ac4af93d109872490c2bf8e9d6",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Mathematics",
@@ -21,6 +21,52 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020] (Students following IRE track can only use MATH 1023 and MATH 1024 to fulfill the requirement)"
+          }
+        ]
+      },
       "credits": "4-6 credits"
     },
     {
@@ -29,6 +75,67 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2023"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2024"
+              }
+            ],
+            "note": "Note: MATH 2023 OR MATH 2024"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2033"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2043"
+              }
+            ],
+            "note": "Note: MATH 2033 OR MATH 2043 [Students following IRE Track or Pure Mathematics (Advanced) Track can only use MATH 2043 to fulfill the requirement.]"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2121"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2131"
+              }
+            ],
+            "note": "Note: MATH 2121 OR MATH 2131 [Students following IRE Track or Pure Mathematics (Advanced) Track can only use MATH 2131 to fulfill the requirement.]"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 3033"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 3043"
+              }
+            ],
+            "note": "Note: MATH 3033 OR MATH 3043 [Students following IRE Track or Pure Mathematics (Advanced) Track can only use MATH 3043 to fulfill the requirement.]"
+          }
+        ]
+      },
       "credits": "16 credits"
     }
   ],
@@ -40,10 +147,58 @@
       "parent": null
     },
     {
+      "id": "group:major-pre-requisite-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:major-pre-requisite-courses:or-1"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses:and-2"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses:and-2"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,9 +206,9 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-3",
       "position": [
-        0,
+        280,
         0
       ],
       "major": true,
@@ -65,9 +220,9 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-3",
       "position": [
-        220,
+        500,
         0
       ],
       "major": true,
@@ -79,9 +234,9 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-4",
       "position": [
-        440,
+        780,
         0
       ],
       "major": true,
@@ -93,10 +248,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-4",
       "position": [
-        0,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +262,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-1",
       "position": [
-        220,
-        100
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,10 +276,10 @@
       "code": "MATH 2023",
       "title": "Multivariable Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
         0,
-        420
+        320
       ],
       "major": true,
       "graph": true,
@@ -135,10 +290,10 @@
       "code": "MATH 2024",
       "title": "Honors Multivariable Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
         220,
-        420
+        320
       ],
       "major": true,
       "graph": true,
@@ -149,10 +304,10 @@
       "code": "MATH 2033",
       "title": "Mathematical Analysis",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        440,
-        420
+        500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -163,10 +318,10 @@
       "code": "MATH 2043",
       "title": "Honors Mathematical Analysis",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        0,
-        520
+        720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -177,10 +332,10 @@
       "code": "MATH 2121",
       "title": "Linear Algebra",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        520
+        1000,
+        320
       ],
       "major": true,
       "graph": true,
@@ -191,10 +346,10 @@
       "code": "MATH 2131",
       "title": "Honors in Linear and Abstract Algebra I",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        520
+        1220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -205,10 +360,10 @@
       "code": "MATH 3033",
       "title": "Real Analysis",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        0,
-        620
+        1500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -219,10 +374,10 @@
       "code": "MATH 3043",
       "title": "Honors Real Analysis",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        620
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -1164,7 +1319,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        2200,
         0
       ]
     },
@@ -1176,7 +1331,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        2200,
         100
       ]
     },
@@ -1188,7 +1343,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        2200,
         200
       ]
     },
@@ -1200,7 +1355,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        2200,
         300
       ]
     },
@@ -1212,7 +1367,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        2200,
         400
       ]
     }
@@ -1633,5 +1788,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

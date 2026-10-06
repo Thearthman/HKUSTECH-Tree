@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "27-30",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26qsa.pdf",
-  "sourceHash": "a2675b7fe112af943dcb39a7e7b0c7758b746e90a1655cb2bbe50f2c4c084408",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "cda884fae9980a43974ec4c3d8a3190a3dfe1246dde05d29e28178acc131ba98",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Quantitative Social Analysis",
@@ -21,6 +21,102 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "SOSC 1050"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 1110"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 2400"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 3200"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 4110"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 4330"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1005"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1006"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1005 OR MATH 1006 OR MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2411"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 1021"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              }
+            ],
+            "note": "Note: COMP 1021 OR COMP 1023"
+          }
+        ]
+      },
       "credits": "27-30 credits"
     }
   ],
@@ -30,6 +126,36 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses:and-2"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses:and-2"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -81,8 +207,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        660,
-        0
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -95,7 +221,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         100
       ],
       "major": true,
@@ -109,7 +235,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         100
       ],
       "major": true,
@@ -121,10 +247,10 @@
       "code": "MATH 1005",
       "title": "Calculus and Statistics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -135,10 +261,10 @@
       "code": "MATH 1006",
       "title": "Calculus, Vectors, and Matrices",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        660,
-        100
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +275,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        0,
-        200
+        1000,
+        100
       ],
       "major": true,
       "graph": true,
@@ -163,10 +289,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        200
+        1220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -177,10 +303,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        440,
-        200
+        1500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -191,10 +317,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        660,
-        200
+        1720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -205,10 +331,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        300
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -221,8 +347,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        220,
-        300
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -233,10 +359,10 @@
       "code": "COMP 1021",
       "title": "Introduction to Computer Science",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        440,
-        300
+        2000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -247,10 +373,10 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        660,
-        300
+        2220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -365,7 +491,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         0
       ]
     },
@@ -377,7 +503,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         100
       ]
     },
@@ -389,7 +515,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         200
       ]
     },
@@ -401,7 +527,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         300
       ]
     },
@@ -413,7 +539,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         400
       ]
     },
@@ -425,7 +551,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         500
       ]
     },
@@ -437,7 +563,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         600
       ]
     },
@@ -449,7 +575,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2700,
         700
       ]
     },
@@ -461,7 +587,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         0
       ]
     },
@@ -473,7 +599,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         100
       ]
     },
@@ -485,7 +611,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         200
       ]
     },
@@ -497,7 +623,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         300
       ]
     },
@@ -509,7 +635,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         400
       ]
     },
@@ -521,7 +647,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2920,
         500
       ]
     }
@@ -949,5 +1075,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

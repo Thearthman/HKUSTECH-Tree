@@ -333,22 +333,215 @@ function parseCoreSections(lines, from, to) {
       section.rows.push(row);
       continue;
     }
-    if (row) row.text = cleanText(`${row.text} ${line.trim()}`);
+    if (row) {
+      let continuation = line.trim();
+      // A cross-listed subject can wrap onto the following line: the subject
+      // column then ends with "/" and the next line opens with the remaining
+      // subject (e.g. "ELEC/IEDA/" + "MATH   2540 OR ..."). The wrapped token
+      // sits at the subject indent, not the text column, so it must be folded
+      // back into the subject instead of being glued onto the note text.
+      if (/\/$/.test(row.subject) && indentOf(line) <= row.indent + 1) {
+        const wrapped = /^([A-Z]{4}(?:\s*\/\s*[A-Z]{4})*)\s+(.*)$/.exec(continuation);
+        if (wrapped && wrapped[2]) {
+          row.subject += wrapped[1];
+          continuation = wrapped[2];
+        }
+      }
+      row.text = cleanText(`${row.text} ${continuation}`);
+    }
   }
   return sections.map(finalizeCoreSection);
+}
+
+// A "Note:" row frequently encodes an AND/OR choice instead of a list of
+// mandatory courses, for example:
+//   Note: MATH 1003 OR MATH 1005 OR MATH 1006 OR MATH 1020
+//   Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]
+//   Note: (COMP 2011 AND COMP 2012) OR COMP 2012H
+// The grammar below reads the leading boolean expression of such a row and
+// leaves any trailing prose (e.g. "(2 courses out of 4)") alone.
+const NOTE_CODE_RE = /^([A-Za-z]{4})\s*[-_]?\s*(\d{4}[A-Za-z]?)(?![A-Za-z0-9])/;
+const NOTE_MARKS_RE = /^[\s,;+*]+/;
+
+/**
+ * Turn a core-table "Note:" row into a flat token stream. Tokenization stops at
+ * the first token that cannot be part of a course expression, so a trailing
+ * parenthesised sentence never becomes a (mis)parsed requirement.
+ */
+function scanNoteTokens(text) {
+  const source = String(text || "");
+  const prefix = /^\s*Note\s*:?\s*/i.exec(source);
+  if (!prefix) return null;
+  const body = source.slice(prefix[0].length);
+  const tokens = [];
+  let index = 0;
+  while (index < body.length) {
+    const rest = body.slice(index);
+    const skip = NOTE_MARKS_RE.exec(rest);
+    if (skip) {
+      index += skip[0].length;
+      continue;
+    }
+    const char = body[index];
+    if (char === "[" || char === "(") {
+      // A bracket only opens an expression when a course code follows; a
+      // sentence such as "(Students ...)" is trailing prose.
+      const ahead = body.slice(index + 1).replace(NOTE_MARKS_RE, "");
+      if (!NOTE_CODE_RE.test(ahead) && ahead[0] !== "[" && ahead[0] !== "(") break;
+      tokens.push({ type: "open" });
+      index += 1;
+      continue;
+    }
+    if (char === "]" || char === ")") {
+      tokens.push({ type: "close" });
+      index += 1;
+      continue;
+    }
+    const code = NOTE_CODE_RE.exec(rest);
+    if (code) {
+      tokens.push({ type: "code", code: normalizeCourseCode(`${code[1]} ${code[2]}`) });
+      index += code[0].length;
+      continue;
+    }
+    const keyword = /^(OR|AND)(?![A-Za-z0-9])/i.exec(rest);
+    if (keyword) {
+      tokens.push({ type: keyword[1].toLowerCase() });
+      index += keyword[0].length;
+      continue;
+    }
+    break;
+  }
+  return tokens;
+}
+
+/**
+ * Parse a "Note:" row's boolean expression into a { kind, items } tree. Leaves
+ * are `{ kind: "course", code }`; branches are `{ kind: "and"|"or", items }`.
+ * Returns null when the row is prose (a single course with an exemption note).
+ */
+function parseNoteExpression(text) {
+  const tokens = scanNoteTokens(text);
+  if (!tokens || !tokens.length) return null;
+  let position = 0;
+  const peek = () => tokens[position];
+  const merge = (kind, left, right) => ({
+    kind,
+    items: [
+      ...(left.kind === kind ? left.items : [left]),
+      ...(right.kind === kind ? right.items : [right]),
+    ],
+  });
+  const parseAtom = () => {
+    const token = peek();
+    if (!token) return null;
+    if (token.type === "code") {
+      position += 1;
+      return { kind: "course", code: token.code };
+    }
+    if (token.type === "open") {
+      position += 1;
+      const inner = parseOr();
+      if (!inner || !peek() || peek().type !== "close") return null;
+      position += 1;
+      return inner;
+    }
+    return null;
+  };
+  const parseAnd = () => {
+    let node = parseAtom();
+    while (node && peek() && peek().type === "and") {
+      position += 1;
+      const right = parseAtom();
+      if (!right) return null;
+      node = merge("and", node, right);
+    }
+    return node;
+  };
+  const parseOr = () => {
+    let node = parseAnd();
+    while (node && peek() && peek().type === "or") {
+      position += 1;
+      const right = parseAnd();
+      if (!right) return null;
+      node = merge("or", node, right);
+    }
+    return node;
+  };
+  const expression = parseOr();
+  if (!expression || position !== tokens.length) return null;
+  return expression;
 }
 
 function finalizeCoreSection(section) {
   const codes = [];
   const courses = [];
+  const items = [];
   const add = (code, title, credits) => {
-    if (!code || codes.includes(code)) return;
+    if (!code || codes.includes(code)) return false;
     codes.push(code);
     courses.push({ code, title: title || "", credits: credits || "" });
+    return true;
   };
+
+  // Child rows carry the human-readable title and credits of the alternatives
+  // named on their parent "Note:" row.
+  const childByCode = new Map();
   for (const row of section.rows) {
-    if (!row.child && row.number) add(codeOf(row.subject, row.number), row.text, row.credits);
-    if (row.note) findCourseCodes(row.text).forEach((code) => add(code, "", ""));
+    if (!row.child || !row.number) continue;
+    const code = codeOf(row.subject, row.number);
+    if (code && !childByCode.has(code)) childByCode.set(code, row);
+  }
+
+  const courseItem = (code) => {
+    const child = childByCode.get(code);
+    add(code, child ? child.text : "", child ? child.credits : "");
+    return { kind: "course", code };
+  };
+  const buildNode = (node) =>
+    node.kind === "course"
+      ? courseItem(node.code)
+      : { kind: node.kind, items: node.items.map(buildNode) };
+  const pushExpression = (expression, note) => {
+    // The section itself is an AND, so a top-level AND note flattens into it.
+    const nodes = expression.kind === "and" ? expression.items : [expression];
+    for (const node of nodes) {
+      if (node.kind === "course") {
+        if (!codes.includes(node.code)) items.push(courseItem(node.code));
+      } else {
+        items.push({ ...buildNode(node), ...(note ? { note } : {}) });
+      }
+    }
+  };
+
+  for (let index = 0; index < section.rows.length; index += 1) {
+    const row = section.rows[index];
+    if (row.child) continue;
+    if (row.number) {
+      const code = codeOf(row.subject, row.number);
+      if (!codes.includes(code)) items.push(courseItem(code));
+      continue;
+    }
+    if (row.note) {
+      const expression = parseNoteExpression(row.text);
+      if (expression) {
+        pushExpression(expression, row.text);
+        continue;
+      }
+    } else {
+      const members = [];
+      for (let child = index + 1; child < section.rows.length && section.rows[child].child; child += 1) {
+        if (section.rows[child].number) members.push(codeOf(section.rows[child].subject, section.rows[child].number));
+      }
+      if (members.length) {
+        const node = { kind: "or", items: members.map((code) => ({ kind: "course", code })), note: row.text };
+        items.push(buildNode(node));
+        continue;
+      }
+    }
+    // A prose note (or an unrecognised row) still contributes its literal codes.
+    findCourseCodes(row.text).forEach((code) => {
+      if (!codes.includes(code)) items.push(courseItem(code));
+    });
   }
   let min = 0;
   let max = 0;
@@ -365,6 +558,7 @@ function finalizeCoreSection(section) {
     title: section.title,
     codes,
     courses,
+    tree: { kind: "and", items },
     credits: counted ? formatRange(min, max) : null,
   };
 }
@@ -569,6 +763,7 @@ export function parsedFromDb(db) {
         credits: course.credits,
       })),
       credits: String(section.credits || "").replace(/\s*credits?$/i, ""),
+      ...(section.tree ? { tree: section.tree } : {}),
     };
   });
   const branches = (db.branches || []).map((branch) => ({
@@ -666,6 +861,21 @@ function humanizeTitle(title) {
     .trim();
 }
 
+/** Read a "choose N" count out of a choice row's prose, if it states one. */
+function choiceCount(note) {
+  const match = /\b(\d+)\s*courses?\b/i.exec(String(note || ""));
+  return match ? Number(match[1]) : 0;
+}
+
+/** Short compound-node label for a generated AND/OR requirement group. */
+function groupLabel(node) {
+  if (node.kind === "or") {
+    const count = choiceCount(node.note);
+    return `${count > 1 ? `Choose ${count}` : "Choose one"} | OR`;
+  }
+  return "Complete all | AND";
+}
+
 function catalogCourse(catalog, code) {
   const record = catalog.courses[code];
   if (!record) return null;
@@ -689,7 +899,7 @@ function autoPosition(section, placedCourses) {
 // ---------------------------------------------------------------------------
 
 /** Bump when {@link layoutMajorProgram} changes so documents are re-flowed. */
-export const LAYOUT_VERSION = 3;
+export const LAYOUT_VERSION = 4;
 
 /**
  * Layout standard for generated programs, learned from the hand-curated CPEG
@@ -849,6 +1059,9 @@ export function synchronizeMajor(db, { catalog, parsed, meta = {}, now = new Dat
       eyebrow: match ? match.eyebrow : humanizeTitle(parsedSection.title),
       title: match ? match.title : humanizeTitle(parsedSection.title),
       rootGroup,
+      // Generated programs record their AND/OR shape so the committed
+      // document can be re-flowed offline without re-deriving it from text.
+      ...(!presetLayout && parsedSection.tree ? { tree: parsedSection.tree } : {}),
       ...(match && match.copy ? { copy: match.copy } : {}),
       ...(match && match.sourceLink ? { sourceLink: match.sourceLink } : {}),
       credits,
@@ -931,6 +1144,43 @@ export function synchronizeMajor(db, { catalog, parsed, meta = {}, now = new Dat
   }
   for (const course of previousCourses) {
     if (!membership.has(course.code)) changes.push(`course ${course.code} removed (no longer required)`);
+  }
+
+  // Generated programs carry an explicit AND/OR tree. Materialise it into
+  // compound requirement groups and point every course at its owner so the UI
+  // can draw "choose one" panels instead of a flat mandatory list.
+  if (!presetLayout) {
+    const courseByCode = new Map(courses.map((course) => [course.code, course]));
+    const generated = [];
+    for (const section of sections) {
+      generated.push({
+        id: section.rootGroup,
+        label: `${humanizeTitle(section.pdfSection)} | AND`,
+        kind: "and",
+        parent: null,
+      });
+      if (!section.tree) continue;
+      let counter = 0;
+      const build = (items, parentId) => {
+        for (const item of items) {
+          if (item.kind === "course") {
+            const course = courseByCode.get(item.code);
+            if (course && course.parent !== parentId) {
+              changes.push(`course ${item.code} grouped under ${parentId}`);
+              course.parent = parentId;
+            }
+            continue;
+          }
+          counter += 1;
+          const id = `group:${section.id}:${item.kind}-${counter}`;
+          generated.push({ id, label: groupLabel(item), kind: item.kind, parent: parentId });
+          build(item.items, id);
+        }
+      };
+      build(section.tree.items, section.rootGroup);
+    }
+    groups.length = 0;
+    groups.push(...generated);
   }
 
   const courseCodes = courses.map((course) => course.code);

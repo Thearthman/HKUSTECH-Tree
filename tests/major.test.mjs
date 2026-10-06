@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 
 import {
+  LAYOUT_VERSION,
   buildMajorRelations,
   canonical,
   discoverProgramSource,
@@ -106,7 +107,11 @@ test("every program's requirement panels are stacked without overlapping", () =>
 
   for (const program of manifest.programs) {
     const data = readProgram(program.file);
-    assert.equal(data.layoutVersion, 3, `${program.id} should carry the current layout version`);
+    assert.equal(
+      data.layoutVersion,
+      LAYOUT_VERSION,
+      `${program.id} should carry the current layout version`
+    );
     assert.ok(
       data.layout === "auto" || data.layout === "preset",
       `${program.id} should declare its layout mode`
@@ -177,6 +182,31 @@ test("every major course and relation endpoint resolves", () => {
       catalog.courses[relation.source] || contextCodes.has(relation.source),
       `relation source ${relation.source} is neither a catalog course nor a context node`
     );
+  }
+});
+
+test("every program's requirement groups, sections and parents resolve", () => {
+  for (const program of manifest.programs) {
+    const data = readProgram(program.file);
+    const groupIds = new Set(data.groups.map((group) => group.id));
+    const sectionIds = new Set(data.sections.map((section) => section.id));
+    for (const section of data.sections) {
+      assert.ok(groupIds.has(section.rootGroup), `${program.id} section ${section.id} has no root group`);
+    }
+    for (const group of data.groups) {
+      assert.ok(
+        group.parent === null || groupIds.has(group.parent),
+        `${program.id} group ${group.id} has unknown parent ${group.parent}`
+      );
+      assert.ok(["and", "or"].includes(group.kind), `${program.id} group ${group.id} has kind ${group.kind}`);
+    }
+    for (const course of data.courses) {
+      assert.ok(sectionIds.has(course.section), `${program.id} ${course.code} has unknown section`);
+      assert.ok(
+        course.parent === null || groupIds.has(course.parent),
+        `${program.id} ${course.code} has unknown parent group ${course.parent}`
+      );
+    }
   }
 });
 
@@ -253,6 +283,30 @@ test("parseMajorPdf reads the core sections and branch tables, not electives", (
   assert.deepEqual(sections[0].codes, ["MATH 1013", "MATH 1023"]);
   assert.deepEqual(sections[1].codes, ["COMP 1001", "COMP 1002"]);
   assert.equal(sections[1].credits, "6");
+  // A Note: row's boolean shape must survive into the explicit tree instead of
+  // collapsing into the surrounding section AND.
+  assert.deepEqual(sections[0].tree, {
+    kind: "and",
+    items: [
+      {
+        kind: "or",
+        note: "Note: [MATH 1013 OR MATH 1023]",
+        items: [
+          { kind: "course", code: "MATH 1013" },
+          { kind: "course", code: "MATH 1023" },
+        ],
+      },
+    ],
+  });
+  // A top-level AND note flattens into the section, so both courses stay
+  // mandatory rather than gaining a redundant nested panel.
+  assert.deepEqual(sections[1].tree, {
+    kind: "and",
+    items: [
+      { kind: "course", code: "COMP 1001" },
+      { kind: "course", code: "COMP 1002" },
+    ],
+  });
   assert.deepEqual(
     branches.map((branch) => [branch.kind, branch.title]),
     [
@@ -265,6 +319,49 @@ test("parseMajorPdf reads the core sections and branch tables, not electives", (
     ["COMP 4001", "COMP 4002"]
   );
   assert.deepEqual(branches[1].courses.map((course) => course.code), ["COMP 4003"]);
+});
+
+test("a Note: OR row becomes a choose-one panel, not a flat AND (BIBU regression)", () => {
+  const entry = manifest.programs.find((program) => program.programCode === "BIBU");
+  const bibu = readProgram(entry.file);
+  const section = bibu.sections[0];
+  const mathAlternatives = ["MATH 1003", "MATH 1005", "MATH 1006", "MATH 1013", "MATH 1020", "MATH 1023"];
+  const group = bibu.groups.find((candidate) => {
+    if (candidate.kind !== "or") return false;
+    const members = bibu.courses.filter((course) => course.parent === candidate.id).map((course) => course.code);
+    return members.includes("MATH 1003");
+  });
+  assert.ok(group, "the MATH alternatives should be grouped as one OR panel");
+  const members = bibu.courses
+    .filter((course) => course.parent === group.id)
+    .map((course) => course.code)
+    .sort();
+  assert.deepEqual(members, mathAlternatives);
+  // And they must not sit directly under the section as mandatory courses.
+  const direct = bibu.courses
+    .filter((course) => course.parent === section.rootGroup)
+    .map((course) => course.code);
+  for (const code of mathAlternatives) {
+    assert.ok(!direct.includes(code), `${code} must not be a flat mandatory course`);
+  }
+});
+
+test("synchronizing every unchanged program round-trips its requirement tree", () => {
+  for (const program of manifest.programs) {
+    const previous = readProgram(program.file);
+    const { data } = synchronizeMajor(previous, {
+      catalog,
+      parsed: parsedFromDb(previous),
+      meta: {
+        programTitle: previous.program,
+        intake: previous.intake,
+        pdfUrl: previous.sourceUrl,
+        sourceHash: previous.sourceHash,
+      },
+      now: new Date("2026-01-01T00:00:00Z"),
+    });
+    assert.equal(canonical(data), canonical(previous), `${program.id} should round-trip unchanged`);
+  }
 });
 
 test("parseLegacyMajor rebuilds the seed from the hardcoded table", () => {

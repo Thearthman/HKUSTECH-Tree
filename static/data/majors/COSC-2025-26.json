@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "36-44",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26cosc.pdf",
-  "sourceHash": "25eb68846fa5dafae8b15550d32e79286f7b0e260ca667247ea71355ba414d2b",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "96d9d2c5a845190a9f7d9006785d6886dda4cb28e15ffb94c51a8d48eb0df0f8",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Computer Science",
@@ -21,6 +21,74 @@
       "eyebrow": "Engineering Fundamental Courses",
       "title": "Engineering Fundamental Courses",
       "rootGroup": "group:engineering-fundamental-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "COMP 1023"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2111"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2121"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2131"
+              }
+            ],
+            "note": "Note: MATH 2111 OR MATH 2121 OR MATH 2131"
+          }
+        ]
+      },
       "credits": "10-13 credits"
     },
     {
@@ -29,6 +97,126 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "COMP 2011"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "COMP 2012"
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2012H"
+              }
+            ],
+            "note": "Note: (COMP 2011 AND COMP 2012) OR COMP 2012H"
+          },
+          {
+            "kind": "course",
+            "code": "COMP 2611"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 2711"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2711H"
+              }
+            ],
+            "note": "Note: COMP 2711 OR COMP 2711H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 3111"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 3111H"
+              }
+            ],
+            "note": "Note: COMP 3111 OR COMP 3111H"
+          },
+          {
+            "kind": "course",
+            "code": "COMP 3511"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 3711"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 3711H"
+              }
+            ],
+            "note": "Note: COMP 3711 OR COMP 3711H"
+          },
+          {
+            "kind": "course",
+            "code": "COMP 4900"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ELEC 2600"
+              },
+              {
+                "kind": "course",
+                "code": "ELEC 2600H"
+              },
+              {
+                "kind": "course",
+                "code": "IEDA 2520"
+              },
+              {
+                "kind": "course",
+                "code": "IEDA 2540"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 2500"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2411"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2421"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2431"
+              }
+            ],
+            "note": "Note: ELEC 2600 OR ELEC 2600H OR IEDA 2520 OR IEDA 2540 OR ISOM 2500 OR MATH 2411 OR MATH 2421 OR MATH 2431"
+          }
+        ]
+      },
       "credits": "26-31 credits"
     }
   ],
@@ -40,10 +228,76 @@
       "parent": null
     },
     {
+      "id": "group:engineering-fundamental-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:engineering-fundamental-courses:or-1"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-2"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-2"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-6",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -65,9 +319,9 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-3",
       "position": [
-        220,
+        560,
         0
       ],
       "major": true,
@@ -79,9 +333,9 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-3",
       "position": [
-        440,
+        780,
         0
       ],
       "major": true,
@@ -93,10 +347,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        0,
-        100
+        1060,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +361,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        220,
-        100
+        1280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,10 +375,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        440,
-        100
+        280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -135,10 +389,10 @@
       "code": "MATH 2111",
       "title": "Matrix Algebra and Applications",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        0,
-        200
+        1560,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +403,10 @@
       "code": "MATH 2121",
       "title": "Linear Algebra",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        220,
-        200
+        1780,
+        0
       ],
       "major": true,
       "graph": true,
@@ -163,10 +417,10 @@
       "code": "MATH 2131",
       "title": "Honors in Linear and Abstract Algebra I",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        440,
-        200
+        1560,
+        100
       ],
       "major": true,
       "graph": true,
@@ -177,10 +431,10 @@
       "code": "COMP 2011",
       "title": "Programming with C++",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        0,
-        520
+        780,
+        420
       ],
       "major": true,
       "graph": true,
@@ -191,10 +445,10 @@
       "code": "COMP 2012",
       "title": "Object-Oriented Programming and Data Structures",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        220,
-        520
+        1000,
+        420
       ],
       "major": true,
       "graph": true,
@@ -205,10 +459,10 @@
       "code": "COMP 2012H",
       "title": "Honors Object-Oriented Programming and Data Structures",
       "credits": "5",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        520
+        500,
+        420
       ],
       "major": true,
       "graph": true,
@@ -221,8 +475,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        660,
-        520
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -233,10 +487,10 @@
       "code": "COMP 2711",
       "title": "Discrete Mathematical Tools for Computer Science",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        880,
-        520
+        1280,
+        420
       ],
       "major": true,
       "graph": true,
@@ -247,10 +501,10 @@
       "code": "COMP 2711H",
       "title": "Honors Discrete Mathematical Tools for Computer Science",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        0,
-        620
+        1500,
+        420
       ],
       "major": true,
       "graph": true,
@@ -261,10 +515,10 @@
       "code": "COMP 3111",
       "title": "Software Engineering",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        620
+        1780,
+        420
       ],
       "major": true,
       "graph": true,
@@ -275,10 +529,10 @@
       "code": "COMP 3111H",
       "title": "Honors Software Engineering",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        440,
-        620
+        2000,
+        420
       ],
       "major": true,
       "graph": true,
@@ -291,8 +545,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        620
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -303,10 +557,10 @@
       "code": "COMP 3711",
       "title": "Design and Analysis of Algorithms",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        880,
-        620
+        2280,
+        420
       ],
       "major": true,
       "graph": true,
@@ -317,10 +571,10 @@
       "code": "COMP 3711H",
       "title": "Honors Design and Analysis of Algorithms",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        0,
-        720
+        2500,
+        420
       ],
       "major": true,
       "graph": true,
@@ -333,8 +587,8 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        220,
-        720
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -345,10 +599,10 @@
       "code": "ELEC 2600",
       "title": "Probability and Random Processes in Engineering",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        440,
-        720
+        2780,
+        420
       ],
       "major": true,
       "graph": true,
@@ -359,10 +613,10 @@
       "code": "ELEC 2600H",
       "title": "ELEC 2600H",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        660,
-        720
+        3000,
+        420
       ],
       "major": true,
       "graph": true,
@@ -373,10 +627,10 @@
       "code": "IEDA 2520",
       "title": "Probability for Engineers",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        880,
-        720
+        3220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -384,13 +638,13 @@
       "auto": true
     },
     {
-      "code": "MATH 2540",
-      "title": "MATH 2540",
-      "credits": "",
-      "parent": "group:required-courses",
+      "code": "IEDA 2540",
+      "title": "Statistics for Engineers",
+      "credits": "3",
+      "parent": "group:required-courses:or-6",
       "position": [
-        0,
-        820
+        2780,
+        520
       ],
       "major": true,
       "graph": true,
@@ -401,10 +655,10 @@
       "code": "ISOM 2500",
       "title": "Business Statistics",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        220,
-        820
+        3000,
+        520
       ],
       "major": true,
       "graph": true,
@@ -415,10 +669,10 @@
       "code": "MATH 2411",
       "title": "Applied Statistics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        440,
-        820
+        3220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -429,10 +683,10 @@
       "code": "MATH 2421",
       "title": "Probability",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        660,
-        820
+        2780,
+        620
       ],
       "major": true,
       "graph": true,
@@ -443,10 +697,10 @@
       "code": "MATH 2431",
       "title": "Honors Probability",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        880,
-        820
+        3000,
+        620
       ],
       "major": true,
       "graph": true,
@@ -464,7 +718,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         0
       ]
     },
@@ -476,7 +730,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         100
       ]
     },
@@ -488,7 +742,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         200
       ]
     },
@@ -500,7 +754,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         300
       ]
     },
@@ -512,7 +766,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         400
       ]
     },
@@ -524,7 +778,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         500
       ]
     },
@@ -536,7 +790,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         600
       ]
     },
@@ -548,7 +802,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3700,
         700
       ]
     },
@@ -560,20 +814,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3920,
         0
-      ]
-    },
-    {
-      "code": "IEDA 2540",
-      "title": "Statistics for Engineers",
-      "credits": "",
-      "parent": null,
-      "major": false,
-      "graph": true,
-      "position": [
-        1580,
-        100
       ]
     },
     {
@@ -584,8 +826,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        200
+        3920,
+        100
       ]
     },
     {
@@ -596,8 +838,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        300
+        3920,
+        200
       ]
     },
     {
@@ -608,8 +850,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        400
+        3920,
+        300
       ]
     },
     {
@@ -620,8 +862,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        500
+        3920,
+        400
       ]
     },
     {
@@ -632,8 +874,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        600
+        3920,
+        500
       ]
     },
     {
@@ -644,8 +886,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
-        700
+        3920,
+        600
       ]
     },
     {
@@ -656,8 +898,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        0
+        3920,
+        700
       ]
     },
     {
@@ -668,8 +910,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        100
+        4140,
+        0
       ]
     },
     {
@@ -680,8 +922,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        200
+        4140,
+        100
       ]
     },
     {
@@ -692,8 +934,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        300
+        4140,
+        200
       ]
     },
     {
@@ -704,8 +946,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        400
+        4140,
+        300
       ]
     },
     {
@@ -716,8 +958,8 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
-        500
+        4140,
+        400
       ]
     }
   ],
@@ -1535,6 +1777,34 @@
       "raw": "ELEC 2600, ELEC 2600H (prior to 2022-23), MATH 2421, MATH 2431"
     },
     {
+      "source": "IEDA 2520",
+      "target": "IEDA 2540",
+      "relation": "prerequisite",
+      "group": 1,
+      "raw": "IEDA 2520"
+    },
+    {
+      "source": "MATH 2411",
+      "target": "IEDA 2540",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "ISOM 2500",
+      "target": "IEDA 2540",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, ISOM 2500, LIFS 3150"
+    },
+    {
+      "source": "LIFS 3150",
+      "target": "IEDA 2540",
+      "relation": "exclusion",
+      "group": 1,
+      "raw": "MATH 2411, ISOM 2500, LIFS 3150"
+    },
+    {
       "source": "CIVL 2160",
       "target": "ISOM 2500",
       "relation": "exclusion",
@@ -1767,5 +2037,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "11-12",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26mgmt.pdf",
-  "sourceHash": "e06c5f5454786d6bec8e43449c4895e285efa6799acdfeeedbc06c9afaf2850c",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "ca541b67b7d07624cb8b963896e0d5e353bb1a0a9afd1418d23b033275df90a1",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Management",
@@ -21,6 +21,53 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MGMT 3110"
+              },
+              {
+                "kind": "course",
+                "code": "MGMT 3120"
+              }
+            ],
+            "note": "Note: MGMT 3110 OR MGMT 3120 (Students in the Human Resources Option must take MGMT 3110 to fulfill this requirement. Students in the Consulting Option must take MGMT 3120 to fulfill this requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MGMT 3130"
+              },
+              {
+                "kind": "course",
+                "code": "MGMT 3140"
+              }
+            ],
+            "note": "Note: MGMT 3130 OR MGMT 3140 (Students in the Consulting Option must take MGMT 3140 to fulfill this requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MGMT 4210"
+              },
+              {
+                "kind": "course",
+                "code": "MGMT 4220"
+              }
+            ],
+            "note": "Note: MGMT 4210 OR MGMT 4220 (Students in the Consulting Option or in the Corporate Social Responsibility and Sustainability Option must take MGMT 4210 to fulfill this requirement.)"
+          }
+        ]
+      },
       "credits": "11-12 credits"
     }
   ],
@@ -30,6 +77,24 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -37,7 +102,7 @@
       "code": "MGMT 3110",
       "title": "Human Resources Management",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
         0,
         0
@@ -51,7 +116,7 @@
       "code": "MGMT 3120",
       "title": "Managerial Leadership",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
         220,
         0
@@ -65,9 +130,9 @@
       "code": "MGMT 3130",
       "title": "Judgement and Decision Making in Organizations",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        440,
+        500,
         0
       ],
       "major": true,
@@ -79,10 +144,10 @@
       "code": "MGMT 3140",
       "title": "Negotiation",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        0,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -93,10 +158,10 @@
       "code": "MGMT 4210",
       "title": "Corporate Strategy",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +172,10 @@
       "code": "MGMT 4220",
       "title": "Entrepreneurship and Innovation",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        100
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -212,7 +277,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         0
       ]
     },
@@ -224,7 +289,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         100
       ]
     }
@@ -267,5 +332,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

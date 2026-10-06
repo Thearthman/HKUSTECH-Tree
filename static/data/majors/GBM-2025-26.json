@@ -8,7 +8,7 @@
   "totalCredits": "0",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gbm.pdf",
   "sourceHash": "81ef79108e6dc1bc587b15352a70f538eb954d75debaaa84de8c67750d053a9c",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in General Business Management",
@@ -21,5 +21,5 @@
   "contextCourses": [],
   "relations": [],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

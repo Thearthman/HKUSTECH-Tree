@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "54-63",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26phys.pdf",
-  "sourceHash": "1def34e7d0f2828f891d1ed5323a7980fab1456a1c8ab6b56a8b458355e16891",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "48c6f2b6669d599e827307311d3175f451bdf76722f242d39bb29b23d30c7b8f",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Physics",
@@ -21,6 +21,43 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 1111"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1112"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1312"
+              }
+            ],
+            "note": "Note: PHYS 1111 OR PHYS 1112 OR PHYS 1312 (Students taking IRE Track can only use PHYS 1312 to fulfill the requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 1114"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1314"
+              }
+            ],
+            "note": "Note: PHYS 1114 OR PHYS 1314 (Students taking IRE Track can only use PHYS 1314 to fulfill the requirement.)"
+          }
+        ]
+      },
       "credits": "6 credits"
     },
     {
@@ -29,6 +66,233 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "PHYS 1113"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 1115"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 2022"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 2023"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 2080"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 2124"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2352"
+              }
+            ],
+            "note": "Note: PHYS 2124 OR MATH 2352 (Students taking the Physics and Mathematics Option may take either MATH 2352 or PHYS 2124. Other students can only take PHYS 2124 to fulfill the requirement.)"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 3032"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 3033"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 3053"
+              }
+            ],
+            "note": "Note: PHYS 3033 OR PHYS 3053 (Students taking IRE Track or Honors Physics Option can only use PHYS 3053 fo fulfill the requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 3036"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 3037"
+              }
+            ],
+            "note": "Note: PHYS 3036 OR PHYS 3037 (Students taking IRE Track or Honors Physics Option can only use PHYS 3037 to fulfill the requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 3142"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 3312"
+              }
+            ],
+            "note": "Note: PHYS 3142 OR MATH 3312 (Students taking the Physics and Mathematics Option may take either MATH 3312 or PHYS 3142. Other students can only take PHYS 3142 to fulfill the requirement.)"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 3152"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 3153"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 4050"
+          },
+          {
+            "kind": "course",
+            "code": "PHYS 4080"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 4191"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 4291"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SCIE 3500"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "SCIE 4500"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: PHYS 4191 OR PHYS 4291 OR (SCIE 3500 AND SCIE 4500) (Students taking IRE Track can only use (SCIE 3500 AND SCIE 4500) to fulfill the requirement; those taking Honors Physics Option can only use PHYS 4291 to fulfill the requirement.)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 4811"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 4812"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 4813"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 4814"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 4815"
+              }
+            ],
+            "note": "Note: PHYS 4811 OR PHYS 4812 OR PHYS 4813 OR PHYS 4814 OR PHYS 4815 (2 courses out of 5)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2011"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2023"
+              }
+            ],
+            "note": "Note: MATH 2011 OR MATH 2023 (Students in Honors Physics Option, Physics and Mathematics Option and IRE Track can only use MATH 2023 to fulfill the requirement)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2111"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2121"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2131"
+              }
+            ],
+            "note": "Note: MATH 2111 OR MATH 2121 OR MATH 2131 (Students in Honors Physics Option, Physics and Mathematics Option and IRE Track can only use MATH 2121 OR MATH 2131 to fulfill the requirement)"
+          }
+        ]
+      },
       "credits": "48-57 credits"
     }
   ],
@@ -40,10 +304,100 @@
       "parent": null
     },
     {
+      "id": "group:major-pre-requisite-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-6",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-5"
+    },
+    {
+      "id": "group:required-courses:or-7",
+      "label": "Choose 2 | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-8",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-9",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-8"
+    },
+    {
+      "id": "group:required-courses:or-10",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses:and-9"
+    },
+    {
+      "id": "group:required-courses:or-11",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses:and-9"
+    },
+    {
+      "id": "group:required-courses:or-12",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-13",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,7 +405,7 @@
       "code": "PHYS 1111",
       "title": "General Physics I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-1",
       "position": [
         0,
         0
@@ -65,7 +419,7 @@
       "code": "PHYS 1112",
       "title": "General Physics I with Calculus",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-1",
       "position": [
         220,
         0
@@ -79,21 +433,7 @@
       "code": "PHYS 1312",
       "title": "Honors General Physics I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
-      "position": [
-        440,
-        0
-      ],
-      "major": true,
-      "graph": true,
-      "section": "major-pre-requisite-courses",
-      "auto": true
-    },
-    {
-      "code": "PHYS 1114",
-      "title": "General Physics II",
-      "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-1",
       "position": [
         0,
         100
@@ -104,13 +444,27 @@
       "auto": true
     },
     {
+      "code": "PHYS 1114",
+      "title": "General Physics II",
+      "credits": "3",
+      "parent": "group:major-pre-requisite-courses:or-2",
+      "position": [
+        500,
+        0
+      ],
+      "major": true,
+      "graph": true,
+      "section": "major-pre-requisite-courses",
+      "auto": true
+    },
+    {
       "code": "PHYS 1314",
       "title": "Honors General Physics II",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-2",
       "position": [
-        220,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -179,8 +533,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        880,
-        420
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -191,9 +545,9 @@
       "code": "PHYS 2124",
       "title": "Mathematical Methods in Physics I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        1100,
+        940,
         420
       ],
       "major": true,
@@ -205,9 +559,9 @@
       "code": "MATH 2352",
       "title": "Differential Equations",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        1320,
+        1160,
         420
       ],
       "major": true,
@@ -221,7 +575,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         520
       ],
       "major": true,
@@ -233,10 +587,10 @@
       "code": "PHYS 3033",
       "title": "Electricity and Magnetism I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        220,
-        520
+        1440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -247,10 +601,10 @@
       "code": "PHYS 3053",
       "title": "Honors Electricity and Magnetism I",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        440,
-        520
+        1660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -261,10 +615,10 @@
       "code": "PHYS 3036",
       "title": "Quantum Mechanics I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        660,
-        520
+        1940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -275,10 +629,10 @@
       "code": "PHYS 3037",
       "title": "Honors Quantum Mechanics I",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        880,
-        520
+        2160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -289,10 +643,10 @@
       "code": "PHYS 3142",
       "title": "Computational Methods in Physics",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        1100,
-        520
+        2440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -303,10 +657,10 @@
       "code": "MATH 3312",
       "title": "Numerical Analysis",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        1320,
-        520
+        2660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -319,8 +673,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        620
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -333,8 +687,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        620
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -347,7 +701,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        0,
         620
       ],
       "major": true,
@@ -361,7 +715,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        660,
+        220,
         620
       ],
       "major": true,
@@ -373,10 +727,10 @@
       "code": "PHYS 4191",
       "title": "Capstone Project",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        880,
-        620
+        2940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -387,10 +741,10 @@
       "code": "PHYS 4291",
       "title": "Capstone Research",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        1100,
-        620
+        3160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -401,10 +755,10 @@
       "code": "SCIE 3500",
       "title": "IRE Research Project I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-6",
       "position": [
-        1320,
-        620
+        3440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -415,10 +769,10 @@
       "code": "SCIE 4500",
       "title": "IRE Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-6",
       "position": [
-        0,
-        720
+        3660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -429,10 +783,10 @@
       "code": "PHYS 4811",
       "title": "Contemporary Applications of Physics: Machine Learning in Physics",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        220,
-        720
+        3940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -443,10 +797,10 @@
       "code": "PHYS 4812",
       "title": "Contemporary Applications of Physics: Quantum Information Technology",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        440,
-        720
+        4160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -457,10 +811,10 @@
       "code": "PHYS 4813",
       "title": "PHYS 4813",
       "credits": "",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        660,
-        720
+        4380,
+        420
       ],
       "major": true,
       "graph": true,
@@ -471,10 +825,10 @@
       "code": "PHYS 4814",
       "title": "Contemporary Applications of Physics: Medical Physics",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        880,
-        720
+        3940,
+        520
       ],
       "major": true,
       "graph": true,
@@ -485,10 +839,10 @@
       "code": "PHYS 4815",
       "title": "Contemporary Applications of Physics: Physics of Radiation Therapy",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        1100,
-        720
+        4160,
+        520
       ],
       "major": true,
       "graph": true,
@@ -499,10 +853,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-10",
       "position": [
-        1320,
-        720
+        4940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -513,10 +867,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-10",
       "position": [
-        0,
-        820
+        5160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -527,10 +881,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-11",
       "position": [
-        220,
-        820
+        5440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -541,10 +895,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-11",
       "position": [
-        440,
-        820
+        5660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -555,10 +909,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-8",
       "position": [
-        660,
-        820
+        4660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -569,10 +923,10 @@
       "code": "MATH 2011",
       "title": "Introduction to Multivariable Calculus",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-12",
       "position": [
-        880,
-        820
+        5940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -583,10 +937,10 @@
       "code": "MATH 2023",
       "title": "Multivariable Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-12",
       "position": [
-        1100,
-        820
+        6160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -597,10 +951,10 @@
       "code": "MATH 2111",
       "title": "Matrix Algebra and Applications",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-13",
       "position": [
-        1320,
-        820
+        6440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -611,10 +965,10 @@
       "code": "MATH 2121",
       "title": "Linear Algebra",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-13",
       "position": [
-        0,
-        920
+        6660,
+        420
       ],
       "major": true,
       "graph": true,
@@ -625,10 +979,10 @@
       "code": "MATH 2131",
       "title": "Honors in Linear and Abstract Algebra I",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-13",
       "position": [
-        220,
-        920
+        6440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -836,7 +1190,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         0
       ]
     },
@@ -848,7 +1202,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         100
       ]
     },
@@ -860,7 +1214,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         200
       ]
     },
@@ -872,7 +1226,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         300
       ]
     },
@@ -884,7 +1238,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         400
       ]
     },
@@ -896,7 +1250,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         500
       ]
     },
@@ -908,7 +1262,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         600
       ]
     },
@@ -920,7 +1274,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        7140,
         700
       ]
     },
@@ -932,7 +1286,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         0
       ]
     },
@@ -944,7 +1298,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         100
       ]
     },
@@ -956,7 +1310,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         200
       ]
     },
@@ -968,7 +1322,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         300
       ]
     },
@@ -980,7 +1334,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         400
       ]
     },
@@ -992,7 +1346,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         500
       ]
     },
@@ -1004,7 +1358,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         600
       ]
     },
@@ -1016,7 +1370,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        7360,
         700
       ]
     },
@@ -1028,7 +1382,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2240,
+        7580,
         0
       ]
     },
@@ -1040,7 +1394,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2240,
+        7580,
         100
       ]
     },
@@ -1052,7 +1406,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2240,
+        7580,
         200
       ]
     }
@@ -2187,5 +2541,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

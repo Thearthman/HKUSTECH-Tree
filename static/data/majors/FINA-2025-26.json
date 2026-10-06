@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "16-19",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26fina.pdf",
-  "sourceHash": "559c186f2719aa4687bf1875e5e69fb961086d05e0322ce905d793f73aae9984",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "6025625084c5bf48f6a83d5e9d65e10ec1e78edb5edff3208802b5bc0ee42f97",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Finance",
@@ -21,6 +21,76 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "FINA 3001"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3103"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3203"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3303"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3810"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "ACCT 3010"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "ACCT 3020"
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "ACCT 3030"
+              }
+            ],
+            "note": "Note: (ACCT 3010 AND ACCT 3020) OR ACCT 3030"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ISOM 3230"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 3320"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 3400"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              }
+            ],
+            "note": "Note: ISOM 3230 OR ISOM 3320 OR ISOM 3400 OR COMP 1023"
+          }
+        ]
+      },
       "credits": "16-19 credits"
     }
   ],
@@ -30,6 +100,24 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -81,8 +169,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        0
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -95,7 +183,7 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         100
       ],
       "major": true,
@@ -107,10 +195,10 @@
       "code": "ACCT 3010",
       "title": "Financial Accounting I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        220,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,10 +209,10 @@
       "code": "ACCT 3020",
       "title": "Financial Accounting II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        440,
-        100
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -135,10 +223,10 @@
       "code": "ACCT 3030",
       "title": "Intermediate Financial Accounting for Non-Accounting Majors",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +237,10 @@
       "code": "ISOM 3230",
       "title": "Business Programming in VBA",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        0,
-        200
+        1500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -163,10 +251,10 @@
       "code": "ISOM 3320",
       "title": "Business Applications Development in Java",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        200
+        1720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -177,10 +265,10 @@
       "code": "ISOM 3400",
       "title": "Business Applications Development in Python",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        200
+        1500,
+        100
       ],
       "major": true,
       "graph": true,
@@ -191,10 +279,10 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        660,
-        200
+        1720,
+        100
       ],
       "major": true,
       "graph": true,
@@ -212,7 +300,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         0
       ]
     },
@@ -224,7 +312,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         100
       ]
     },
@@ -236,7 +324,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         200
       ]
     },
@@ -248,7 +336,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         300
       ]
     },
@@ -260,7 +348,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         400
       ]
     },
@@ -272,7 +360,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         500
       ]
     },
@@ -284,7 +372,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         600
       ]
     },
@@ -296,7 +384,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        2200,
         700
       ]
     },
@@ -308,7 +396,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         0
       ]
     },
@@ -320,7 +408,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         100
       ]
     },
@@ -332,7 +420,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         200
       ]
     },
@@ -344,7 +432,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         300
       ]
     },
@@ -356,7 +444,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         400
       ]
     },
@@ -368,7 +456,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         500
       ]
     },
@@ -380,7 +468,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2420,
         600
       ]
     }
@@ -619,5 +707,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

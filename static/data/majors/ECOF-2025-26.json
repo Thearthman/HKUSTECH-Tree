@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "23",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26ecof.pdf",
-  "sourceHash": "1be8a08cf6654fa6fd52a5e0e385f0c70aa7836721ed06d858b927d92db339c7",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "5870e9e905cc0f4d810a826a36cf2fc1b68e802ed2d408a871ef85b3aeceb1d6",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Economics and Finance",
@@ -21,6 +21,45 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ECON 2174"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2023"
+              }
+            ],
+            "note": "Note: ECON 2174 OR MATH 2023"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3113"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3133"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3143"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3334"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3103"
+          }
+        ]
+      },
       "credits": "23 credits"
     }
   ],
@@ -30,6 +69,12 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -37,9 +82,9 @@
       "code": "ECON 2174",
       "title": "Mathematics for Economists",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
+        720,
         0
       ],
       "major": true,
@@ -51,9 +96,9 @@
       "code": "MATH 2023",
       "title": "Multivariable Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
+        940,
         0
       ],
       "major": true,
@@ -67,7 +112,7 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        440,
+        0,
         0
       ],
       "major": true,
@@ -81,8 +126,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -95,8 +140,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        220,
-        100
+        440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -109,7 +154,7 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        440,
+        0,
         100
       ],
       "major": true,
@@ -123,8 +168,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        200
+        220,
+        100
       ],
       "major": true,
       "graph": true,
@@ -142,7 +187,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         0
       ]
     },
@@ -154,7 +199,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         100
       ]
     },
@@ -166,7 +211,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         200
       ]
     },
@@ -178,7 +223,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         300
       ]
     },
@@ -190,7 +235,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         400
       ]
     },
@@ -202,7 +247,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         500
       ]
     },
@@ -214,7 +259,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         600
       ]
     },
@@ -226,7 +271,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1420,
         700
       ]
     },
@@ -238,7 +283,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         0
       ]
     },
@@ -250,7 +295,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         100
       ]
     },
@@ -262,7 +307,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         200
       ]
     },
@@ -274,7 +319,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         300
       ]
     },
@@ -286,7 +331,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         400
       ]
     },
@@ -298,7 +343,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         500
       ]
     },
@@ -310,7 +355,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         600
       ]
     },
@@ -322,7 +367,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1640,
         700
       ]
     },
@@ -334,7 +379,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1860,
         0
       ]
     },
@@ -346,7 +391,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1860,
         100
       ]
     },
@@ -358,7 +403,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1860,
         200
       ]
     },
@@ -370,7 +415,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1860,
         300
       ]
     },
@@ -382,7 +427,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        1860,
         400
       ]
     }
@@ -593,5 +638,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

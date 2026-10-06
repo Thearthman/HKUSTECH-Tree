@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "67-68",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26sgfn.pdf",
-  "sourceHash": "2c605100330270c6eb1106ce97d0fdee9c4ebcbfd66592d209a79b21963a958f",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "a2d60ae5991612cafd8f42d8ad9a2e30b63771d19da7ff4ebbb5b625984f2b23",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Sustainable and Green Finance",
@@ -21,6 +21,129 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "SGFN 4733"
+          },
+          {
+            "kind": "course",
+            "code": "SUST 1000"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 2010"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 2303"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3103"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3203"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3810"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 4303"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 4513"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 4703"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 2020"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 2500"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 2600"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 2700"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 3780"
+          },
+          {
+            "kind": "course",
+            "code": "MGMT 2130"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 1170"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 2080"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 3005"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 3110"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 3310"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 4320"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 4340"
+          },
+          {
+            "kind": "course",
+            "code": "ENVR 4350"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1003"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1013"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1023"
+              }
+            ],
+            "note": "Note: MATH 1003 OR MATH 1013 OR MATH 1020 OR MATH 1023"
+          }
+        ]
+      },
       "credits": "67-68 credits"
     }
   ],
@@ -30,6 +153,12 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -109,8 +238,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        0
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -123,7 +252,7 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         100
       ],
       "major": true,
@@ -137,7 +266,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         100
       ],
       "major": true,
@@ -151,7 +280,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        660,
         100
       ],
       "major": true,
@@ -165,7 +294,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
+        880,
         100
       ],
       "major": true,
@@ -179,8 +308,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        880,
-        100
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -193,8 +322,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        100
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -207,7 +336,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        0,
+        440,
         200
       ],
       "major": true,
@@ -221,7 +350,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        660,
         200
       ],
       "major": true,
@@ -235,7 +364,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        880,
         200
       ],
       "major": true,
@@ -249,8 +378,8 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        660,
-        200
+        0,
+        300
       ],
       "major": true,
       "graph": true,
@@ -263,8 +392,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        200
+        220,
+        300
       ],
       "major": true,
       "graph": true,
@@ -277,8 +406,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        200
+        440,
+        300
       ],
       "major": true,
       "graph": true,
@@ -291,7 +420,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        660,
         300
       ],
       "major": true,
@@ -305,7 +434,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        880,
         300
       ],
       "major": true,
@@ -319,8 +448,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        300
+        0,
+        400
       ],
       "major": true,
       "graph": true,
@@ -333,8 +462,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        300
+        220,
+        400
       ],
       "major": true,
       "graph": true,
@@ -347,8 +476,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        300
+        440,
+        400
       ],
       "major": true,
       "graph": true,
@@ -361,8 +490,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        300
+        660,
+        400
       ],
       "major": true,
       "graph": true,
@@ -373,10 +502,10 @@
       "code": "MATH 1003",
       "title": "Calculus and Linear Algebra",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        400
+        1160,
+        0
       ],
       "major": true,
       "graph": true,
@@ -387,10 +516,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
-        400
+        1380,
+        0
       ],
       "major": true,
       "graph": true,
@@ -401,10 +530,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        400
+        1160,
+        100
       ],
       "major": true,
       "graph": true,
@@ -415,10 +544,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        400
+        1380,
+        100
       ],
       "major": true,
       "graph": true,
@@ -436,7 +565,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         0
       ]
     },
@@ -448,7 +577,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         100
       ]
     },
@@ -460,7 +589,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         200
       ]
     },
@@ -472,7 +601,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         300
       ]
     },
@@ -484,7 +613,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         400
       ]
     },
@@ -496,7 +625,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         500
       ]
     },
@@ -508,7 +637,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         600
       ]
     },
@@ -520,7 +649,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        1860,
         700
       ]
     },
@@ -532,7 +661,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         0
       ]
     },
@@ -544,7 +673,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         100
       ]
     },
@@ -556,7 +685,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         200
       ]
     },
@@ -568,7 +697,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         300
       ]
     },
@@ -580,7 +709,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         400
       ]
     },
@@ -592,7 +721,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         500
       ]
     },
@@ -604,7 +733,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         600
       ]
     },
@@ -616,7 +745,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        2080,
         700
       ]
     },
@@ -628,7 +757,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         0
       ]
     },
@@ -640,7 +769,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         100
       ]
     },
@@ -652,7 +781,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         200
       ]
     },
@@ -664,7 +793,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         300
       ]
     },
@@ -676,7 +805,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         400
       ]
     },
@@ -688,7 +817,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        2300,
         500
       ]
     }
@@ -1186,5 +1315,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

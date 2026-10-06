@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "53-62",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26dsct.pdf",
-  "sourceHash": "2ee0692d93e5ac3b8f5d9bafb26a7915ebb7d7824f4653ef9a223fe8c52a797e",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "46683af32e106c488a1dec9dc1e4c53d46e963b7db5a8071a7b5ff4a539279d0",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Data Science and Technology",
@@ -21,6 +21,56 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "course",
+            "code": "COMP 1023"
+          }
+        ]
+      },
       "credits": "7-9 credits"
     },
     {
@@ -29,6 +79,154 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "DSCT 4900"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2023"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2121"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2131"
+              }
+            ],
+            "note": "Note: MATH 2121 OR MATH 2131"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 2411"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2421"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2431"
+              }
+            ],
+            "note": "Note: MATH 2421 OR MATH 2431"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 3322"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 3332"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 3424"
+          },
+          {
+            "kind": "course",
+            "code": "MATH 3428"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 4432"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 4211"
+              }
+            ],
+            "note": "Note: MATH 4432 OR COMP 4211"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 4995"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 4910"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 4981"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 4981H"
+              }
+            ],
+            "note": "Note: MATH 4995 OR COMP 4910 OR COMP 4981 OR COMP 4981H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "COMP 2011"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "COMP 2012"
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2012H"
+              }
+            ],
+            "note": "Note: (COMP 2011 AND COMP 2012) OR COMP 2012H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 2711"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2711H"
+              }
+            ],
+            "note": "Note: COMP 2711 OR COMP 2711H"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 3711"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 3711H"
+              }
+            ],
+            "note": "Note: COMP 3711 OR COMP 3711H"
+          }
+        ]
+      },
       "credits": "46-53 credits"
     }
   ],
@@ -40,10 +238,82 @@
       "parent": null
     },
     {
+      "id": "group:major-pre-requisite-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:major-pre-requisite-courses:or-1"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses:and-2"
+    },
+    {
+      "id": "group:major-pre-requisite-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:major-pre-requisite-courses:and-2"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-3",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-6",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-5"
+    },
+    {
+      "id": "group:required-courses:or-7",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-8",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,9 +321,9 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-3",
       "position": [
-        0,
+        560,
         0
       ],
       "major": true,
@@ -65,9 +335,9 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-3",
       "position": [
-        220,
+        780,
         0
       ],
       "major": true,
@@ -79,9 +349,9 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-4",
       "position": [
-        440,
+        1060,
         0
       ],
       "major": true,
@@ -93,10 +363,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-4",
       "position": [
-        0,
-        100
+        1280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +377,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:major-pre-requisite-courses",
+      "parent": "group:major-pre-requisite-courses:or-1",
       "position": [
-        220,
-        100
+        280,
+        0
       ],
       "major": true,
       "graph": true,
@@ -123,8 +393,8 @@
       "credits": "3",
       "parent": "group:major-pre-requisite-courses",
       "position": [
-        440,
-        100
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -138,7 +408,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        420
+        320
       ],
       "major": true,
       "graph": true,
@@ -152,7 +422,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        420
+        320
       ],
       "major": true,
       "graph": true,
@@ -163,10 +433,10 @@
       "code": "MATH 2121",
       "title": "Linear Algebra",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        420
+        720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -177,10 +447,10 @@
       "code": "MATH 2131",
       "title": "Honors in Linear and Abstract Algebra I",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        420
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -193,8 +463,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        880,
-        420
+        440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -205,10 +475,10 @@
       "code": "MATH 2421",
       "title": "Probability",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        0,
-        520
+        1220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -219,10 +489,10 @@
       "code": "MATH 2431",
       "title": "Honors Probability",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        220,
-        520
+        1440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -235,8 +505,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        520
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -249,8 +519,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        520
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -263,8 +533,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        520
+        440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -278,7 +548,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        620
+        520
       ],
       "major": true,
       "graph": true,
@@ -289,10 +559,10 @@
       "code": "MATH 4432",
       "title": "Statistical Machine Learning",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        220,
-        620
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -303,10 +573,10 @@
       "code": "COMP 4211",
       "title": "Machine Learning",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-3",
       "position": [
-        440,
-        620
+        1940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -317,10 +587,10 @@
       "code": "MATH 4995",
       "title": "Capstone Project for Data Science",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        660,
-        620
+        2220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -331,10 +601,10 @@
       "code": "COMP 4910",
       "title": "Co-op Program",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        880,
-        620
+        2440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -345,10 +615,10 @@
       "code": "COMP 4981",
       "title": "Final Year Project",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        0,
-        720
+        2220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -359,10 +629,10 @@
       "code": "COMP 4981H",
       "title": "Final Year Thesis",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        720
+        2440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -373,10 +643,10 @@
       "code": "COMP 2011",
       "title": "Programming with C++",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-6",
       "position": [
-        440,
-        720
+        3000,
+        320
       ],
       "major": true,
       "graph": true,
@@ -387,10 +657,10 @@
       "code": "COMP 2012",
       "title": "Object-Oriented Programming and Data Structures",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-6",
       "position": [
-        660,
-        720
+        3220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -401,10 +671,10 @@
       "code": "COMP 2012H",
       "title": "Honors Object-Oriented Programming and Data Structures",
       "credits": "5",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        880,
-        720
+        2720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -415,10 +685,10 @@
       "code": "COMP 2711",
       "title": "Discrete Mathematical Tools for Computer Science",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        0,
-        820
+        3500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -429,10 +699,10 @@
       "code": "COMP 2711H",
       "title": "Honors Discrete Mathematical Tools for Computer Science",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-7",
       "position": [
-        220,
-        820
+        3720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -443,10 +713,10 @@
       "code": "COMP 3711",
       "title": "Design and Analysis of Algorithms",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-8",
       "position": [
-        440,
-        820
+        4000,
+        320
       ],
       "major": true,
       "graph": true,
@@ -457,10 +727,10 @@
       "code": "COMP 3711H",
       "title": "Honors Design and Analysis of Algorithms",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-8",
       "position": [
-        660,
-        820
+        4220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -686,7 +956,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         0
       ]
     },
@@ -698,7 +968,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         100
       ]
     },
@@ -710,7 +980,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         200
       ]
     },
@@ -722,7 +992,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         300
       ]
     },
@@ -734,7 +1004,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         400
       ]
     },
@@ -746,7 +1016,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         500
       ]
     },
@@ -758,7 +1028,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         600
       ]
     },
@@ -770,7 +1040,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        4700,
         700
       ]
     },
@@ -782,7 +1052,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         0
       ]
     },
@@ -794,7 +1064,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         100
       ]
     },
@@ -806,7 +1076,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         200
       ]
     },
@@ -818,7 +1088,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         300
       ]
     },
@@ -830,7 +1100,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         400
       ]
     },
@@ -842,7 +1112,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         500
       ]
     },
@@ -854,7 +1124,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         600
       ]
     },
@@ -866,7 +1136,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4920,
         700
       ]
     },
@@ -878,7 +1148,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         0
       ]
     },
@@ -890,7 +1160,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         100
       ]
     },
@@ -902,7 +1172,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         200
       ]
     },
@@ -914,7 +1184,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         300
       ]
     },
@@ -926,7 +1196,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         400
       ]
     },
@@ -938,7 +1208,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         500
       ]
     },
@@ -950,7 +1220,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         600
       ]
     },
@@ -962,7 +1232,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        5140,
         700
       ]
     },
@@ -974,7 +1244,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        5360,
         0
       ]
     }
@@ -2039,5 +2309,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

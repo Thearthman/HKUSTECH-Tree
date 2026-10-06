@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "8",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26om.pdf",
-  "sourceHash": "7509115f8228abc08a499394331a6c47e3ef9b781046f5bcd292bf786928b82c",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "22fbf98c8da291c8914e115951697f60c0701fbc626abdee4bb4d6ef89a7dab2",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Operations Management",
@@ -21,6 +21,19 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ISOM 3710"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 3770"
+          }
+        ]
+      },
       "credits": "8 credits"
     }
   ],
@@ -228,5 +241,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

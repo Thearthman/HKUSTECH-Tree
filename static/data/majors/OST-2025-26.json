@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "58-69",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26ost.pdf",
-  "sourceHash": "1402f71ff51e3efd2c14fd2901799378e93c03384a5cf2981298830d2bb2f9a2",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "dc88db48dcec16c8c874728aadd78480bd4551ebc9ba481b6f2df86ad1973b0d",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Ocean Science and Technology",
@@ -21,6 +21,19 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "OCES 1001"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 1010"
+          }
+        ]
+      },
       "credits": "6 credits"
     },
     {
@@ -29,6 +42,169 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "OCES 2002"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 2003"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 2004"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 2005"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 2130"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 3001"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 3003"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 3160"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 3301"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 4001"
+          },
+          {
+            "kind": "course",
+            "code": "OCES 4203"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "OCES 4964"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "OCES 4974"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "OCES 4984"
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SCIE 3500"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "SCIE 4500"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: OCES 4964 OR (OCES 4974 AND OCES 4984) OR (SCIE 3500 AND SCIE 4500) (Students following IRE Track can only use (SCIE 3500 AND SCIE 4500) to fulfill the requirement.)"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1011"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1901"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1902"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1005"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1006"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1013"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1023"
+              }
+            ],
+            "note": "Note: MATH 1005 OR MATH 1006 OR MATH 1013 OR MATH 1020 OR MATH 1023"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 1101"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1111"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1112"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1312"
+              }
+            ],
+            "note": "Note: PHYS 1101 OR PHYS 1111 OR PHYS 1112 OR PHYS 1312"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "COMP 1021"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              }
+            ],
+            "note": "Note: COMP 1021 OR COMP 1023"
+          },
+          {
+            "kind": "course",
+            "code": "LANG 4010"
+          }
+        ]
+      },
       "credits": "52-63 credits"
     }
   ],
@@ -44,6 +220,42 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-6",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -137,8 +349,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        320
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,8 +363,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        320
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -165,7 +377,7 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        0,
+        440,
         420
       ],
       "major": true,
@@ -179,7 +391,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        660,
         420
       ],
       "major": true,
@@ -193,8 +405,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        420
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +419,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        420
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -221,8 +433,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        420
+        440,
+        520
       ],
       "major": true,
       "graph": true,
@@ -233,10 +445,10 @@
       "code": "OCES 4964",
       "title": "Ocean Science and Technology Capstone Project Research",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        1100,
-        420
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -247,10 +459,10 @@
       "code": "OCES 4974",
       "title": "Ocean Science and Technology Research Project I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        0,
-        520
+        1220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -261,10 +473,10 @@
       "code": "OCES 4984",
       "title": "Ocean Science and Technology Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        220,
-        520
+        1440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -275,10 +487,10 @@
       "code": "SCIE 3500",
       "title": "IRE Research Project I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        440,
-        520
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -289,10 +501,10 @@
       "code": "SCIE 4500",
       "title": "IRE Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        660,
-        520
+        1940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -305,7 +517,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
+        660,
         520
       ],
       "major": true,
@@ -319,8 +531,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        520
+        0,
+        620
       ],
       "major": true,
       "graph": true,
@@ -333,7 +545,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         620
       ],
       "major": true,
@@ -345,10 +557,10 @@
       "code": "MATH 1005",
       "title": "Calculus and Statistics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        620
+        2220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -359,10 +571,10 @@
       "code": "MATH 1006",
       "title": "Calculus, Vectors, and Matrices",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        440,
-        620
+        2440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -373,10 +585,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        660,
-        620
+        2660,
+        320
       ],
       "major": true,
       "graph": true,
@@ -387,10 +599,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        880,
-        620
+        2220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -401,10 +613,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        1100,
-        620
+        2440,
+        420
       ],
       "major": true,
       "graph": true,
@@ -415,10 +627,10 @@
       "code": "PHYS 1101",
       "title": "Introductory Physics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        0,
-        720
+        2940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -429,10 +641,10 @@
       "code": "PHYS 1111",
       "title": "General Physics I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        220,
-        720
+        3160,
+        320
       ],
       "major": true,
       "graph": true,
@@ -443,10 +655,10 @@
       "code": "PHYS 1112",
       "title": "General Physics I with Calculus",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        440,
-        720
+        2940,
+        420
       ],
       "major": true,
       "graph": true,
@@ -457,10 +669,10 @@
       "code": "PHYS 1312",
       "title": "Honors General Physics I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        660,
-        720
+        3160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -471,10 +683,10 @@
       "code": "COMP 1021",
       "title": "Introduction to Computer Science",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        880,
-        720
+        3440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -485,10 +697,10 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-6",
       "position": [
-        1100,
-        720
+        3660,
+        320
       ],
       "major": true,
       "graph": true,
@@ -501,22 +713,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        820
-      ],
-      "major": true,
-      "graph": true,
-      "section": "required-courses",
-      "auto": true
-    },
-    {
-      "code": "LANG 3027",
-      "title": "Science Communication in English for Research Students",
-      "credits": "3",
-      "parent": "group:required-courses",
-      "position": [
-        220,
-        820
+        440,
+        620
       ],
       "major": true,
       "graph": true,
@@ -628,7 +826,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         0
       ]
     },
@@ -640,7 +838,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         100
       ]
     },
@@ -652,7 +850,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         200
       ]
     },
@@ -664,7 +862,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         300
       ]
     },
@@ -676,7 +874,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         400
       ]
     },
@@ -688,7 +886,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         500
       ]
     },
@@ -700,7 +898,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         600
       ]
     },
@@ -712,7 +910,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        4140,
         700
       ]
     },
@@ -724,7 +922,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         0
       ]
     },
@@ -736,7 +934,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         100
       ]
     },
@@ -748,7 +946,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         200
       ]
     },
@@ -760,7 +958,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         300
       ]
     },
@@ -772,7 +970,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         400
       ]
     },
@@ -784,7 +982,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         500
       ]
     },
@@ -796,7 +994,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         600
       ]
     },
@@ -808,7 +1006,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        4360,
         700
       ]
     },
@@ -820,7 +1018,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         0
       ]
     },
@@ -832,7 +1030,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         100
       ]
     },
@@ -844,7 +1042,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         200
       ]
     },
@@ -856,7 +1054,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         300
       ]
     },
@@ -868,7 +1066,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         400
       ]
     },
@@ -880,7 +1078,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         500
       ]
     },
@@ -892,7 +1090,7 @@
       "major": false,
       "graph": true,
       "position": [
-        2020,
+        4580,
         600
       ]
     }
@@ -1492,15 +1690,8 @@
       "relation": "exclusion",
       "group": 1,
       "raw": "LANG 3025"
-    },
-    {
-      "source": "LANG 2010",
-      "target": "LANG 3027",
-      "relation": "prerequisite",
-      "group": 1,
-      "raw": "LANG 2010"
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

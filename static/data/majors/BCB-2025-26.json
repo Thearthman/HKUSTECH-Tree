@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "47-55",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26bcb.pdf",
-  "sourceHash": "a93ab6b075eeafd5e29f8817d62776b3f66eea5666227ccb8058161fb8505416",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "cceb1262320a7f45a53b6c54deb76f4beadc9a5988203ea900cb6ed0045b1696",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Biochemistry and Cell Biology",
@@ -21,6 +21,19 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1901"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1902"
+          }
+        ]
+      },
       "credits": "3-6 credits"
     },
     {
@@ -29,6 +42,139 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1903"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1904"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2010"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2040"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2210"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2220"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2240"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2720"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2820"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 3010"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 3020"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 3140"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "LIFS 4961"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4971"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4981"
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SCIE 4500"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4981"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: LIFS 4961 OR (LIFS 4971 AND LIFS 4981) OR (SCIE 4500 AND LIFS 4981) (Students following IRE Track can only use (SCIE 4500 AND LIFS 4981) to fulfill the requirement.)"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1011"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1012"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1051"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1052"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 2111"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 2311"
+              }
+            ],
+            "note": "Note: CHEM 2111 OR CHEM 2311"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CHEM 2155"
+              },
+              {
+                "kind": "course",
+                "code": "CHEM 2355"
+              }
+            ],
+            "note": "Note: CHEM 2155 OR CHEM 2355"
+          }
+        ]
+      },
       "credits": "44-49 credits"
     }
   ],
@@ -44,6 +190,36 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -137,8 +313,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        320
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,7 +327,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         420
       ],
       "major": true,
@@ -165,7 +341,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         420
       ],
       "major": true,
@@ -179,7 +355,7 @@
       "credits": "2",
       "parent": "group:required-courses",
       "position": [
-        440,
+        660,
         420
       ],
       "major": true,
@@ -193,8 +369,8 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        660,
-        420
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -207,8 +383,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        420
+        220,
+        520
       ],
       "major": true,
       "graph": true,
@@ -221,7 +397,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        440,
         520
       ],
       "major": true,
@@ -235,7 +411,7 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        220,
+        660,
         520
       ],
       "major": true,
@@ -247,10 +423,10 @@
       "code": "LIFS 4961",
       "title": "Biochemistry and Cell Biology Capstone Project",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        520
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -261,10 +437,10 @@
       "code": "LIFS 4971",
       "title": "Biochemistry and Cell Biology Project Research I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        660,
-        520
+        1220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -275,10 +451,10 @@
       "code": "LIFS 4981",
       "title": "Biochemistry and Cell Biology Project Research II",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        880,
-        520
+        1500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -289,10 +465,10 @@
       "code": "SCIE 4500",
       "title": "IRE Research Project II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        0,
-        620
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -305,7 +481,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        0,
         620
       ],
       "major": true,
@@ -319,7 +495,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
+        220,
         620
       ],
       "major": true,
@@ -333,7 +509,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        660,
+        440,
         620
       ],
       "major": true,
@@ -347,7 +523,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        880,
+        660,
         620
       ],
       "major": true,
@@ -359,10 +535,10 @@
       "code": "CHEM 2111",
       "title": "Fundamentals of Organic Chemistry",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        0,
-        720
+        2000,
+        320
       ],
       "major": true,
       "graph": true,
@@ -373,10 +549,10 @@
       "code": "CHEM 2311",
       "title": "Analytical Chemistry",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        220,
-        720
+        2220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -387,10 +563,10 @@
       "code": "CHEM 2155",
       "title": "Fundamental Organic Chemistry Laboratory",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        440,
-        720
+        2500,
+        320
       ],
       "major": true,
       "graph": true,
@@ -401,10 +577,10 @@
       "code": "CHEM 2355",
       "title": "Fundamental Analytical Chemistry Laboratory",
       "credits": "1",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-5",
       "position": [
-        660,
-        720
+        2720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -449,7 +625,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         0
       ]
     },
@@ -461,7 +637,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         100
       ]
     },
@@ -473,7 +649,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         200
       ]
     },
@@ -485,7 +661,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         300
       ]
     },
@@ -497,7 +673,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         400
       ]
     },
@@ -509,7 +685,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         500
       ]
     },
@@ -521,7 +697,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         600
       ]
     },
@@ -533,7 +709,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         700
       ]
     },
@@ -545,7 +721,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         0
       ]
     }
@@ -882,5 +1058,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

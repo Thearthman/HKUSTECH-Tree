@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "73-77",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26civl.pdf",
-  "sourceHash": "146df2d98847cd853ef87cb03f2ed783d6ab8089063b5ead3d4db2e8760d21e5",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "9f959522a5d80fb95cb8fcd1ec281b2dee45b8abfdfd4a79913ff13f7d041341",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BEng in Civil Engineering",
@@ -21,6 +21,100 @@
       "eyebrow": "Engineering Fundamental Courses",
       "title": "Engineering Fundamental Courses",
       "rootGroup": "group:engineering-fundamental-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CIVL 1121"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1022P"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 1023"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2011"
+              },
+              {
+                "kind": "course",
+                "code": "COMP 2012H"
+              }
+            ],
+            "note": "Note: CIVL 1121 OR COMP 1022P OR COMP 1023 OR COMP 2011 OR COMP 2012H"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2035"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1012"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1013"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1023"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "or",
+                    "items": [
+                      {
+                        "kind": "course",
+                        "code": "MATH 1014"
+                      },
+                      {
+                        "kind": "course",
+                        "code": "MATH 1024"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1020"
+              }
+            ],
+            "note": "Note: [(MATH 1013 OR MATH 1023) AND (MATH 1014 OR MATH 1024)] OR [MATH 1020]"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "PHYS 1112"
+              },
+              {
+                "kind": "course",
+                "code": "PHYS 1312"
+              }
+            ],
+            "note": "Note: PHYS 1112 OR PHYS 1312"
+          }
+        ]
+      },
       "credits": "16-20 credits"
     },
     {
@@ -29,6 +123,113 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "CIVL 1000"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 1100"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2000"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2021"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2110"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2120"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2160"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2170"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2410"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2510"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 2810"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3000"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3020"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3210"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3310"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3320"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3510"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3610"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3730"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 3740"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 4000"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CIVL 4910"
+              },
+              {
+                "kind": "course",
+                "code": "CIVL 4920"
+              }
+            ],
+            "note": "Note: CIVL 4910 OR CIVL 4920 (Students taking the Research Option must take CIVL 4920)"
+          },
+          {
+            "kind": "course",
+            "code": "CIVL 4950"
+          }
+        ]
+      },
       "credits": "57 credits"
     }
   ],
@@ -40,10 +241,52 @@
       "parent": null
     },
     {
+      "id": "group:engineering-fundamental-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:engineering-fundamental-courses:or-2"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-3"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-5",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses:and-3"
+    },
+    {
+      "id": "group:engineering-fundamental-courses:or-6",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:engineering-fundamental-courses"
+    },
+    {
       "id": "group:required-courses",
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -51,9 +294,9 @@
       "code": "CIVL 1121",
       "title": "Introduction to Computation for Civil Engineers",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        0,
+        500,
         0
       ],
       "major": true,
@@ -65,9 +308,9 @@
       "code": "COMP 1022P",
       "title": "COMP 1022P",
       "credits": "",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        220,
+        720,
         0
       ],
       "major": true,
@@ -79,9 +322,9 @@
       "code": "COMP 1023",
       "title": "Introduction to Python Programming",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        440,
+        940,
         0
       ],
       "major": true,
@@ -93,10 +336,10 @@
       "code": "COMP 2011",
       "title": "Programming with C++",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        660,
-        0
+        500,
+        100
       ],
       "major": true,
       "graph": true,
@@ -107,9 +350,9 @@
       "code": "COMP 2012H",
       "title": "Honors Object-Oriented Programming and Data Structures",
       "credits": "5",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-1",
       "position": [
-        0,
+        720,
         100
       ],
       "major": true,
@@ -123,8 +366,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        220,
-        100
+        0,
+        0
       ],
       "major": true,
       "graph": true,
@@ -137,8 +380,8 @@
       "credits": "3",
       "parent": "group:engineering-fundamental-courses",
       "position": [
-        440,
-        100
+        220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -149,10 +392,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        660,
-        100
+        1500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -163,10 +406,10 @@
       "code": "MATH 1023",
       "title": "Honors Calculus I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-4",
       "position": [
-        0,
-        200
+        1720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -177,10 +420,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        220,
-        200
+        2000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -191,10 +434,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-5",
       "position": [
-        440,
-        200
+        2220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -205,10 +448,10 @@
       "code": "MATH 1020",
       "title": "Accelerated Calculus",
       "credits": "4",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-2",
       "position": [
-        660,
-        200
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -219,10 +462,10 @@
       "code": "PHYS 1112",
       "title": "General Physics I with Calculus",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        0,
-        300
+        2500,
+        0
       ],
       "major": true,
       "graph": true,
@@ -233,10 +476,10 @@
       "code": "PHYS 1312",
       "title": "Honors General Physics I",
       "credits": "3",
-      "parent": "group:engineering-fundamental-courses",
+      "parent": "group:engineering-fundamental-courses:or-6",
       "position": [
-        220,
-        300
+        2720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -250,7 +493,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -264,7 +507,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -278,7 +521,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -292,7 +535,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -306,7 +549,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        620
+        420
       ],
       "major": true,
       "graph": true,
@@ -320,7 +563,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -334,7 +577,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -348,7 +591,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -362,7 +605,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -376,7 +619,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        720
+        520
       ],
       "major": true,
       "graph": true,
@@ -390,7 +633,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -404,7 +647,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -418,7 +661,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -432,7 +675,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -446,7 +689,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        820
+        620
       ],
       "major": true,
       "graph": true,
@@ -460,7 +703,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        920
+        720
       ],
       "major": true,
       "graph": true,
@@ -474,7 +717,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        920
+        720
       ],
       "major": true,
       "graph": true,
@@ -488,7 +731,7 @@
       "parent": "group:required-courses",
       "position": [
         440,
-        920
+        720
       ],
       "major": true,
       "graph": true,
@@ -502,7 +745,7 @@
       "parent": "group:required-courses",
       "position": [
         660,
-        920
+        720
       ],
       "major": true,
       "graph": true,
@@ -516,7 +759,7 @@
       "parent": "group:required-courses",
       "position": [
         880,
-        920
+        720
       ],
       "major": true,
       "graph": true,
@@ -530,7 +773,7 @@
       "parent": "group:required-courses",
       "position": [
         0,
-        1020
+        820
       ],
       "major": true,
       "graph": true,
@@ -541,10 +784,10 @@
       "code": "CIVL 4910",
       "title": "Civil and Environmental Engineering Final Year Project",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
-        1020
+        1160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -555,10 +798,10 @@
       "code": "CIVL 4920",
       "title": "Civil and Environmental Engineering Final Year Thesis",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        1020
+        1380,
+        420
       ],
       "major": true,
       "graph": true,
@@ -571,8 +814,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        1020
+        220,
+        820
       ],
       "major": true,
       "graph": true,
@@ -612,7 +855,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         0
       ]
     },
@@ -624,7 +867,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         100
       ]
     },
@@ -636,7 +879,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         200
       ]
     },
@@ -648,7 +891,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         300
       ]
     },
@@ -660,7 +903,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         400
       ]
     },
@@ -672,7 +915,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         500
       ]
     },
@@ -684,7 +927,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         600
       ]
     },
@@ -696,7 +939,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        3200,
         700
       ]
     },
@@ -708,7 +951,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         0
       ]
     },
@@ -720,7 +963,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         100
       ]
     },
@@ -732,7 +975,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         200
       ]
     },
@@ -744,7 +987,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         300
       ]
     },
@@ -756,7 +999,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         400
       ]
     },
@@ -768,7 +1011,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         500
       ]
     },
@@ -780,7 +1023,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         600
       ]
     },
@@ -792,7 +1035,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        3420,
         700
       ]
     },
@@ -804,7 +1047,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         0
       ]
     },
@@ -816,7 +1059,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         100
       ]
     },
@@ -828,7 +1071,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         200
       ]
     },
@@ -840,7 +1083,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         300
       ]
     },
@@ -852,7 +1095,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3640,
         400
       ]
     }
@@ -1469,5 +1712,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "12",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26econ.pdf",
-  "sourceHash": "dfb3c14574bf6030d023f57a113aec4946803a317d12a69aeae2436839ec6edd",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "8604c61c79adfc8cc2442fe19caca62ae9219ffb87e067edafc2f26ba13cd4ab",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Economics",
@@ -21,6 +21,23 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ECON 3014"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3024"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3334"
+          }
+        ]
+      },
       "credits": "12 credits"
     }
   ],
@@ -260,5 +277,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

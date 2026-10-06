@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "10",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26is.pdf",
-  "sourceHash": "4ad8737ae5bda46eac3d762f92e857029d304ede4bcce60b0de4e76461f133f0",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "4c121e87609d2b6fb9e229a66d4cf06db5c2d4fb538525eb7389748f7bbf3937",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Information Systems",
@@ -21,6 +21,33 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ISOM 3210"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 3260"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ISOM 3320"
+              },
+              {
+                "kind": "course",
+                "code": "ISOM 3400"
+              }
+            ],
+            "note": "Note: ISOM 3320 OR ISOM 3400 (Students who have taken COMP 1022P must take ISOM 3400; students who have taken COMP 1021 must take ISOM 3320 to fulfill the IS program requirements.)"
+          }
+        ]
+      },
       "credits": "10 credits"
     }
   ],
@@ -30,6 +57,12 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -65,9 +98,9 @@
       "code": "ISOM 3320",
       "title": "Business Applications Development in Java",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
+        500,
         0
       ],
       "major": true,
@@ -79,38 +112,10 @@
       "code": "ISOM 3400",
       "title": "Business Applications Development in Python",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        100
-      ],
-      "major": true,
-      "graph": true,
-      "section": "required-courses",
-      "auto": true
-    },
-    {
-      "code": "COMP 1022P",
-      "title": "COMP 1022P",
-      "credits": "",
-      "parent": "group:required-courses",
-      "position": [
-        220,
-        100
-      ],
-      "major": true,
-      "graph": true,
-      "section": "required-courses",
-      "auto": true
-    },
-    {
-      "code": "COMP 1021",
-      "title": "Introduction to Computer Science",
-      "credits": "3",
-      "parent": "group:required-courses",
-      "position": [
-        440,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -192,32 +197,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1200,
         0
-      ]
-    },
-    {
-      "code": "COMP 2011",
-      "title": "Programming with C++",
-      "credits": "",
-      "parent": null,
-      "major": false,
-      "graph": true,
-      "position": [
-        920,
-        100
-      ]
-    },
-    {
-      "code": "COMP 2012H",
-      "title": "Honors Object-Oriented Programming and Data Structures",
-      "credits": "",
-      "parent": null,
-      "major": false,
-      "graph": true,
-      "position": [
-        920,
-        200
       ]
     },
     {
@@ -228,8 +209,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        300
+        1200,
+        100
       ]
     },
     {
@@ -240,8 +221,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        400
+        1200,
+        200
       ]
     },
     {
@@ -252,8 +233,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        500
+        1200,
+        300
       ]
     },
     {
@@ -264,8 +245,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        600
+        1200,
+        400
       ]
     },
     {
@@ -276,8 +257,8 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
-        700
+        1200,
+        500
       ]
     },
     {
@@ -288,7 +269,31 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1200,
+        600
+      ]
+    },
+    {
+      "code": "COMP 1021",
+      "title": "Introduction to Computer Science",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1200,
+        700
+      ]
+    },
+    {
+      "code": "COMP 1022P",
+      "title": "COMP 1022P",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        1420,
         0
       ]
     }
@@ -377,43 +382,8 @@
       "relation": "exclusion",
       "group": 1,
       "raw": "COMP 1021, COMP 1023"
-    },
-    {
-      "source": "COMP 1022P",
-      "target": "COMP 1021",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
-    },
-    {
-      "source": "COMP 1023",
-      "target": "COMP 1021",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
-    },
-    {
-      "source": "COMP 2011",
-      "target": "COMP 1021",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
-    },
-    {
-      "source": "COMP 2012H",
-      "target": "COMP 1021",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
-    },
-    {
-      "source": "ISOM 3400",
-      "target": "COMP 1021",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "COMP 1022P (prior to 2025-26), COMP 1023, COMP 2011, COMP 2012H, ISOM 3400"
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "18-21",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26gcs.pdf",
-  "sourceHash": "03186f955eb307e423975c932c7c9918e43b0f3f1a2779453232903b363e8254",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "40d9c3db61c6b19ba752f1fdde34fe1cbd4aee45d3173133de7d4f571a17fbb3",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Global China Studies",
@@ -21,6 +21,58 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "HUMA 1440"
+          },
+          {
+            "kind": "course",
+            "code": "HUMA 2590"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 1350"
+          },
+          {
+            "kind": "course",
+            "code": "SOSC 2290"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "SHSS 4991"
+              },
+              {
+                "kind": "course",
+                "code": "SHSS 4992"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "SHSS 4991"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "SHSS 4993"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: SHSS 4991 OR SHSS 4992 OR (SHSS 4991 AND SHSS 4993) [For students taking one of the Research Options, they should take SHSS 4992 OR (SHSS 4991 AND SHSS 4993)]"
+          },
+          {
+            "kind": "course",
+            "code": "LANG 2170"
+          }
+        ]
+      },
       "credits": "18-21 credits"
     }
   ],
@@ -30,6 +82,18 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-2",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-1"
     }
   ],
   "courses": [
@@ -93,10 +157,10 @@
       "code": "SHSS 4991",
       "title": "Capstone Project",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        220,
-        100
+        1000,
+        0
       ],
       "major": true,
       "graph": true,
@@ -107,10 +171,10 @@
       "code": "SHSS 4992",
       "title": "Honors Thesis",
       "credits": "6",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        440,
-        100
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -121,10 +185,10 @@
       "code": "SHSS 4993",
       "title": "Honors Research",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-2",
       "position": [
-        0,
-        200
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -138,7 +202,7 @@
       "parent": "group:required-courses",
       "position": [
         220,
-        200
+        100
       ],
       "major": true,
       "graph": true,
@@ -891,7 +955,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         0
       ]
     },
@@ -903,7 +967,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         100
       ]
     },
@@ -915,7 +979,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         200
       ]
     },
@@ -927,7 +991,7 @@
       "major": false,
       "graph": true,
       "position": [
-        920,
+        1700,
         300
       ]
     }
@@ -998,5 +1062,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

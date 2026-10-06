@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "54-63",
   "sourceUrl": "http://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26bmh.pdf",
-  "sourceHash": "e390478f6d777f4747748ae4695833d6f4101bff4ba69d2cc9e2c8d3dee48eef",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "7b32adaa31e495c79c9079fb53e84d9551b31fac3ada71dc2ab623182b546f70",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Biomedical and Health Sciences",
@@ -21,6 +21,19 @@
       "eyebrow": "Major Pre-requisite courses",
       "title": "Major Pre-requisite courses",
       "rootGroup": "group:major-pre-requisite-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1901"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1902"
+          }
+        ]
+      },
       "credits": "3-6 credits"
     },
     {
@@ -29,6 +42,138 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "LIFS 1903"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1904"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 1980"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2010"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2040"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2210"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2220"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 2901"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 3040"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "LIFS 3901"
+              },
+              {
+                "kind": "course",
+                "code": "LIFS 3902"
+              },
+              {
+                "kind": "course",
+                "code": "LIFS 3903"
+              },
+              {
+                "kind": "course",
+                "code": "LIFS 3904"
+              }
+            ],
+            "note": "Note: LIFS 3901 OR LIFS 3902 OR LIFS 3903 OR LIFS 3904 (2 courses out of 4)"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 4370"
+          },
+          {
+            "kind": "course",
+            "code": "LIFS 4380"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "LIFS 4966"
+              },
+              {
+                "kind": "and",
+                "items": [
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4976"
+                  },
+                  {
+                    "kind": "course",
+                    "code": "LIFS 4986"
+                  }
+                ]
+              }
+            ],
+            "note": "Note: LIFS 4966 OR (LIFS 4976 AND LIFS 4986)"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1011"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1012"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1051"
+          },
+          {
+            "kind": "course",
+            "code": "CHEM 1052"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1005"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1006"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1013"
+              }
+            ],
+            "note": "Note: MATH 1005 OR MATH 1006 OR MATH 1013"
+          },
+          {
+            "kind": "course",
+            "code": "COMP 1021"
+          }
+        ]
+      },
       "credits": "51-57 credits"
     }
   ],
@@ -44,6 +189,30 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose 2 | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:and-3",
+      "label": "Complete all | AND",
+      "kind": "and",
+      "parent": "group:required-courses:or-2"
+    },
+    {
+      "id": "group:required-courses:or-4",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -137,8 +306,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        880,
-        320
+        0,
+        420
       ],
       "major": true,
       "graph": true,
@@ -151,8 +320,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        1100,
-        320
+        220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -165,7 +334,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
+        440,
         420
       ],
       "major": true,
@@ -179,7 +348,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        660,
         420
       ],
       "major": true,
@@ -193,8 +362,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        440,
-        420
+        0,
+        520
       ],
       "major": true,
       "graph": true,
@@ -205,10 +374,10 @@
       "code": "LIFS 3901",
       "title": "Case Study on Biomedical and Health Sciences IIA - Generation of Disease Models by Genome Editing",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        660,
-        420
+        940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -219,10 +388,10 @@
       "code": "LIFS 3902",
       "title": "Case Study on Biomedical and Health Sciences IIB - Phenotypic Analysis of Mutant Animal Models",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        880,
-        420
+        1160,
+        320
       ],
       "major": true,
       "graph": true,
@@ -233,9 +402,9 @@
       "code": "LIFS 3903",
       "title": "Case Study on Biomedical and Health Sciences IIC - Genome-wide Association Studies in Practice",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        1100,
+        940,
         420
       ],
       "major": true,
@@ -247,10 +416,10 @@
       "code": "LIFS 3904",
       "title": "Case Study on Biomedical and Health Sciences IID - Analysis of Next-generation Sequencing Data",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        520
+        1160,
+        420
       ],
       "major": true,
       "graph": true,
@@ -289,10 +458,10 @@
       "code": "LIFS 4966",
       "title": "Biomedical and Health Sciences Capstone Project",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        660,
-        520
+        1440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -303,10 +472,10 @@
       "code": "LIFS 4976",
       "title": "Biomedical and Health Sciences Project Research I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        880,
-        520
+        1720,
+        320
       ],
       "major": true,
       "graph": true,
@@ -317,10 +486,10 @@
       "code": "LIFS 4986",
       "title": "Biomedical and Health Sciences Project Research II",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:and-3",
       "position": [
-        1100,
-        520
+        1940,
+        320
       ],
       "major": true,
       "graph": true,
@@ -333,8 +502,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        0,
-        620
+        660,
+        520
       ],
       "major": true,
       "graph": true,
@@ -347,7 +516,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        0,
         620
       ],
       "major": true,
@@ -361,7 +530,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        440,
+        220,
         620
       ],
       "major": true,
@@ -375,7 +544,7 @@
       "credits": "1",
       "parent": "group:required-courses",
       "position": [
-        660,
+        440,
         620
       ],
       "major": true,
@@ -387,10 +556,10 @@
       "code": "MATH 1005",
       "title": "Calculus and Statistics",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        880,
-        620
+        2220,
+        320
       ],
       "major": true,
       "graph": true,
@@ -401,10 +570,10 @@
       "code": "MATH 1006",
       "title": "Calculus, Vectors, and Matrices",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        1100,
-        620
+        2440,
+        320
       ],
       "major": true,
       "graph": true,
@@ -415,10 +584,10 @@
       "code": "MATH 1013",
       "title": "Calculus I",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-4",
       "position": [
-        0,
-        720
+        2220,
+        420
       ],
       "major": true,
       "graph": true,
@@ -431,8 +600,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
-        720
+        660,
+        620
       ],
       "major": true,
       "graph": true,
@@ -450,7 +619,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         0
       ]
     },
@@ -462,7 +631,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         100
       ]
     },
@@ -474,7 +643,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         200
       ]
     },
@@ -486,7 +655,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         300
       ]
     },
@@ -498,7 +667,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         400
       ]
     },
@@ -510,7 +679,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         500
       ]
     },
@@ -522,7 +691,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         600
       ]
     },
@@ -534,7 +703,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1580,
+        2920,
         700
       ]
     },
@@ -546,7 +715,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         0
       ]
     },
@@ -558,7 +727,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         100
       ]
     },
@@ -570,7 +739,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         200
       ]
     },
@@ -582,7 +751,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         300
       ]
     },
@@ -594,7 +763,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         400
       ]
     },
@@ -606,7 +775,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         500
       ]
     },
@@ -618,7 +787,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1800,
+        3140,
         600
       ]
     }
@@ -990,5 +1159,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "23-27",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26qfin.pdf",
-  "sourceHash": "29ea33fd2fb48a5f39bf547d3bec863aa1e76d821f627fc1b429ecf0c8ed9c7c",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "a956240da7779217d6e7bfe661eeebb6f851c8b099ce50a15b1833918108b918",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BSc in Quantitative Finance",
@@ -21,6 +21,71 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "FINA 3103"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3111"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3203"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3303"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 3810"
+          },
+          {
+            "kind": "course",
+            "code": "FINA 4803"
+          },
+          {
+            "kind": "course",
+            "code": "ECON 3334"
+          },
+          {
+            "kind": "course",
+            "code": "ISOM 3230"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1014"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 1024"
+              }
+            ],
+            "note": "Note: MATH 1014 OR MATH 1024 (Students taken MATH 1020 to fulfill the School Requirements may be exempted from this requirement)"
+          },
+          {
+            "kind": "or",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 2011"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2023"
+              }
+            ],
+            "note": "Note: MATH 2011 OR MATH 2023"
+          }
+        ]
+      },
       "credits": "23-27 credits"
     }
   ],
@@ -30,6 +95,18 @@
       "label": "Required Courses | AND",
       "kind": "and",
       "parent": null
+    },
+    {
+      "id": "group:required-courses:or-1",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
+    },
+    {
+      "id": "group:required-courses:or-2",
+      "label": "Choose one | OR",
+      "kind": "or",
+      "parent": "group:required-courses"
     }
   ],
   "courses": [
@@ -81,8 +158,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        0
+        0,
+        100
       ],
       "major": true,
       "graph": true,
@@ -95,7 +172,7 @@
       "credits": "0",
       "parent": "group:required-courses",
       "position": [
-        0,
+        220,
         100
       ],
       "major": true,
@@ -109,7 +186,7 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        220,
+        440,
         100
       ],
       "major": true,
@@ -123,8 +200,8 @@
       "credits": "4",
       "parent": "group:required-courses",
       "position": [
-        440,
-        100
+        0,
+        200
       ],
       "major": true,
       "graph": true,
@@ -137,8 +214,8 @@
       "credits": "3",
       "parent": "group:required-courses",
       "position": [
-        660,
-        100
+        220,
+        200
       ],
       "major": true,
       "graph": true,
@@ -149,10 +226,10 @@
       "code": "MATH 1014",
       "title": "Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        0,
-        200
+        720,
+        0
       ],
       "major": true,
       "graph": true,
@@ -163,24 +240,10 @@
       "code": "MATH 1024",
       "title": "Honors Calculus II",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-1",
       "position": [
-        220,
-        200
-      ],
-      "major": true,
-      "graph": true,
-      "section": "required-courses",
-      "auto": true
-    },
-    {
-      "code": "MATH 1020",
-      "title": "Accelerated Calculus",
-      "credits": "4",
-      "parent": "group:required-courses",
-      "position": [
-        440,
-        200
+        940,
+        0
       ],
       "major": true,
       "graph": true,
@@ -191,10 +254,10 @@
       "code": "MATH 2011",
       "title": "Introduction to Multivariable Calculus",
       "credits": "3",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        660,
-        200
+        1220,
+        0
       ],
       "major": true,
       "graph": true,
@@ -205,10 +268,10 @@
       "code": "MATH 2023",
       "title": "Multivariable Calculus",
       "credits": "4",
-      "parent": "group:required-courses",
+      "parent": "group:required-courses:or-2",
       "position": [
-        0,
-        300
+        1440,
+        0
       ],
       "major": true,
       "graph": true,
@@ -226,7 +289,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         0
       ]
     },
@@ -238,7 +301,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         100
       ]
     },
@@ -250,7 +313,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         200
       ]
     },
@@ -262,7 +325,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         300
       ]
     },
@@ -274,7 +337,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         400
       ]
     },
@@ -286,7 +349,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         500
       ]
     },
@@ -298,7 +361,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         600
       ]
     },
@@ -310,7 +373,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1140,
+        1920,
         700
       ]
     },
@@ -322,7 +385,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         0
       ]
     },
@@ -334,7 +397,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         100
       ]
     },
@@ -346,7 +409,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         200
       ]
     },
@@ -358,7 +421,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         300
       ]
     },
@@ -370,7 +433,7 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         400
       ]
     },
@@ -382,8 +445,20 @@
       "major": false,
       "graph": true,
       "position": [
-        1360,
+        2140,
         500
+      ]
+    },
+    {
+      "code": "MATH 1020",
+      "title": "Accelerated Calculus",
+      "credits": "",
+      "parent": null,
+      "major": false,
+      "graph": true,
+      "position": [
+        2140,
+        600
       ]
     }
   ],
@@ -550,34 +625,6 @@
       "raw": "MATH 1014"
     },
     {
-      "source": "MATH 1013",
-      "target": "MATH 1020",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
-    },
-    {
-      "source": "MATH 1014",
-      "target": "MATH 1020",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
-    },
-    {
-      "source": "MATH 1023",
-      "target": "MATH 1020",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
-    },
-    {
-      "source": "MATH 1024",
-      "target": "MATH 1020",
-      "relation": "exclusion",
-      "group": 1,
-      "raw": "MATH 1013, MATH 1014, MATH 1023, MATH 1024"
-    },
-    {
       "source": "MATH 1014",
       "target": "MATH 2011",
       "relation": "prerequisite",
@@ -649,5 +696,5 @@
     }
   ],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }

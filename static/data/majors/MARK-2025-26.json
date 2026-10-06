@@ -7,8 +7,8 @@
   "catalogYear": "2026-27",
   "totalCredits": "12",
   "sourceUrl": "https://ugadmin.hkust.edu.hk/prog_crs/ug/202627/pdf/25-26mark.pdf",
-  "sourceHash": "ab650beaa8e62c0e0a5874bea013bf07006af7964960c8574f55d667dde37edf",
-  "generatedAt": "2026-10-05T09:51:52Z",
+  "sourceHash": "f3a015059334dd19739a2c033d573fefe05a506ad090fd3c747d535cc4bb1c05",
+  "generatedAt": "2026-10-06T03:55:39Z",
   "outline": {
     "eyebrow": "2025-26 intake",
     "title": "BBA in Marketing",
@@ -21,6 +21,23 @@
       "eyebrow": "Required Courses",
       "title": "Required Courses",
       "rootGroup": "group:required-courses",
+      "tree": {
+        "kind": "and",
+        "items": [
+          {
+            "kind": "course",
+            "code": "MARK 3220"
+          },
+          {
+            "kind": "course",
+            "code": "MARK 3420"
+          },
+          {
+            "kind": "course",
+            "code": "MARK 4210"
+          }
+        ]
+      },
       "credits": "12 credits"
     }
   ],
@@ -80,5 +97,5 @@
   "contextCourses": [],
   "relations": [],
   "layout": "auto",
-  "layoutVersion": 3
+  "layoutVersion": 4
 }
