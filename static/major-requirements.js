@@ -9,6 +9,41 @@
   var CHECKBOX_SIZE = SUPPORT.CHECKBOX_SIZE || 16;
   var CHECKBOX_INSET = SUPPORT.CHECKBOX_INSET || 7;
 
+  function createHoverState() {
+    if (SUPPORT.createHoverState) return SUPPORT.createHoverState();
+    // Minimal fallback mirroring static/graph-interactions.js createHoverState().
+    var pinned = null;
+    var hovered = null;
+    function decision(apply, id) { return { apply: apply, id: id }; }
+    return {
+      pinnedId: function () { return pinned; },
+      activeId: function () { return pinned || hovered; },
+      isPinned: function () { return pinned != null; },
+      enter: function (id) {
+        if (pinned != null) return decision(false, pinned);
+        hovered = id == null ? null : String(id);
+        return decision(true, hovered);
+      },
+      leave: function () {
+        if (pinned != null) return decision(false, pinned);
+        hovered = null;
+        return decision(true, null);
+      },
+      pin: function (id) {
+        pinned = id == null ? null : String(id);
+        hovered = pinned;
+        return decision(true, pinned);
+      },
+      release: function () {
+        if (pinned == null && hovered == null) return decision(false, null);
+        pinned = null;
+        hovered = null;
+        return decision(true, null);
+      },
+      reset: function () { pinned = null; hovered = null; }
+    };
+  }
+
   // Canvas colors come from CSS custom properties so the map follows the theme.
   function graphTheme() {
     return window.HKUSTTheme ? window.HKUSTTheme.colors() : {};
@@ -140,7 +175,8 @@
     mobile: window.matchMedia(MOBILE_QUERY).matches,
     detailCache: new Map(),
     detailRequest: 0,
-    completions: new Set()
+    completions: new Set(),
+    hover: createHoverState()
   };
 
   function escapeHtml(value) {
@@ -313,7 +349,9 @@
       { selector: "node.hover-group-2", style: { "background-color": C["hover2-bg"] || "#fff1c9" } },
       { selector: "edge.hover-group-2", style: { "line-color": C["hover2-line"] || "#8a6918", "target-arrow-color": C["hover2-line"] || "#8a6918", "width": 4 } },
       { selector: "node.hover-group-3", style: { "background-color": C["hover3-bg"] || "#c5e4cf" } },
-      { selector: "edge.hover-group-3", style: { "line-color": C["hover3-line"] || "#387354", "target-arrow-color": C["hover3-line"] || "#387354", "width": 4 } }
+      { selector: "edge.hover-group-3", style: { "line-color": C["hover3-line"] || "#387354", "target-arrow-color": C["hover3-line"] || "#387354", "width": 4 } },
+      // Soft halo marks a highlight the user pinned by clicking.
+      { selector: "node.hover-pinned", style: { "overlay-color": C["accent"] || "#176b4b", "overlay-opacity": 0.14, "overlay-padding": 7 } }
     ];
   }
 
@@ -341,6 +379,7 @@
     elements.graphCanvas.dataset.visibleMajorCourses = String(state.cy.nodes(".major-course").length);
     elements.graphCanvas.dataset.visibleContextCourses = String(state.cy.nodes(".context-course").not(".filtered").length);
     elements.graphCanvas.dataset.compoundGroups = String(state.cy.nodes(".requirement-group").length);
+    state.hover.reset();
     clearHover();
     updateMajorFitMinimum();
   }
@@ -359,9 +398,10 @@
 
   function clearHover() {
     if (!state.cy) return;
-    state.cy.elements().removeClass("hover-faded hover-related hover-group-1 hover-group-2 hover-group-3");
+    state.cy.elements().removeClass("hover-faded hover-related hover-pinned hover-group-1 hover-group-2 hover-group-3");
     delete elements.graphCanvas.dataset.hoveredCourse;
     delete elements.graphCanvas.dataset.hoverGroupCount;
+    delete elements.graphCanvas.dataset.hoverPinned;
   }
 
   function applyHover(node) {
@@ -390,6 +430,22 @@
     prominent = ancestors(prominent);
     state.cy.elements().not(prominent).addClass("hover-faded");
     prominent.addClass("hover-related");
+  }
+
+  // A click pins the hover highlight so it stays put once the pointer leaves
+  // (and so a touch device, which has no hover, can reveal it at all).
+  function pinHover(node) {
+    if (!state.cy || !node || !node.length) return;
+    state.hover.pin(node.id());
+    applyHover(node);
+    state.cy.elements().removeClass("hover-pinned");
+    node.addClass("hover-pinned");
+    elements.graphCanvas.dataset.hoverPinned = node.id();
+  }
+
+  function releasePinnedHover() {
+    if (!state.cy) return;
+    if (state.hover.release().apply) clearHover();
   }
 
   function majorFitElements() {
@@ -456,8 +512,14 @@
       state.cy.zoom(readableZoom);
       state.cy.center(majorRequirements);
     }
-    state.cy.on("mouseover", "node.course", function (event) { applyHover(event.target); });
-    state.cy.on("mouseout", "node.course", clearHover);
+    state.cy.on("mouseover", "node.course", function (event) {
+      if (!state.hover.enter(event.target.id()).apply) return;
+      applyHover(event.target);
+    });
+    state.cy.on("mouseout", "node.course", function () {
+      if (!state.hover.leave().apply) return;
+      clearHover();
+    });
     state.cy.on("tap", "node.course", function (event) {
       var node = event.target;
       if (completionHit(node, event.renderedPosition)) {
@@ -467,7 +529,13 @@
         node.unselect();
         return;
       }
+      pinHover(node);
       openCourse(node.data("code"));
+    });
+    // Clicking empty canvas releases a pinned highlight ("click elsewhere").
+    state.cy.on("tap", function (event) {
+      if (event.target !== state.cy) return;
+      releasePinnedHover();
     });
   }
 
@@ -698,7 +766,11 @@
       var toggle = document.getElementById("majorCompletedToggle");
       if (toggle) toggle.checked = state.completions.has(normalizeCode(elements.drawerCode.textContent));
     });
-    document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeDrawer(); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      closeDrawer();
+      releasePinnedHover();
+    });
     var mobileQuery = window.matchMedia(MOBILE_QUERY);
     mobileQuery.addEventListener("change", function (event) {
       state.mobile = event.matches;

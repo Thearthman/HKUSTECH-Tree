@@ -124,9 +124,64 @@
     });
   }
 
+  // Hover emphasis has two modes: transient, where it follows the pointer, and
+  // pinned, where it sticks to the last node the user clicked until they click
+  // empty space or press Escape. Pinning is what lets touch devices -- which
+  // never fire a hover -- reveal the same relationship highlight, and it keeps
+  // a desktop highlight on screen while the details drawer is being read.
+  //
+  // The state machine returns a decision for every transition so the caller
+  // knows whether it needs to repaint: { apply: boolean, id: string|null }.
+  function createHoverState() {
+    var pinnedId = null;
+    var hoveredId = null;
+
+    function decision(apply, id) {
+      return { apply: apply, id: id };
+    }
+
+    return {
+      pinnedId: function () { return pinnedId; },
+      activeId: function () { return pinnedId || hoveredId; },
+      isPinned: function () { return pinnedId != null; },
+      // Move the pointer onto a node. A pin owns the highlight, so a hover in
+      // pinned mode is deliberately ignored (the pin persists).
+      enter: function (id) {
+        if (pinnedId != null) return decision(false, pinnedId);
+        hoveredId = id == null ? null : String(id);
+        return decision(true, hoveredId);
+      },
+      // Move the pointer off a node. A pin again keeps the highlight in place.
+      leave: function () {
+        if (pinnedId != null) return decision(false, pinnedId);
+        hoveredId = null;
+        return decision(true, null);
+      },
+      // Click a node: it takes over the highlight and holds it.
+      pin: function (id) {
+        pinnedId = id == null ? null : String(id);
+        hoveredId = pinnedId;
+        return decision(true, pinnedId);
+      },
+      // Click empty space or press Escape: drop the pin and the highlight.
+      release: function () {
+        if (pinnedId == null && hoveredId == null) return decision(false, null);
+        pinnedId = null;
+        hoveredId = null;
+        return decision(true, null);
+      },
+      // Tear down with the graph so a stale id never survives a re-render.
+      reset: function () {
+        pinnedId = null;
+        hoveredId = null;
+      }
+    };
+  }
+
   global.GraphInteractionSupport = {
     bindRightDragPan: bindRightDragPan,
     bindNodeCursor: bindNodeCursor,
+    createHoverState: createHoverState,
     CHECKBOX_SIZE: CHECKBOX_SIZE,
     CHECKBOX_INSET: CHECKBOX_INSET,
     checkboxHitRect: checkboxHitRect,

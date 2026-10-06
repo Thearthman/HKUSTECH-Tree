@@ -129,6 +129,43 @@
     drawerScrim: document.getElementById("drawerScrim")
   };
 
+  function createHoverState() {
+    var support = window.GraphInteractionSupport;
+    if (support && support.createHoverState) return support.createHoverState();
+    // Minimal fallback so the page keeps working if the helper module is
+    // missing; it mirrors static/graph-interactions.js createHoverState().
+    var pinned = null;
+    var hovered = null;
+    function decision(apply, id) { return { apply: apply, id: id }; }
+    return {
+      pinnedId: function () { return pinned; },
+      activeId: function () { return pinned || hovered; },
+      isPinned: function () { return pinned != null; },
+      enter: function (id) {
+        if (pinned != null) return decision(false, pinned);
+        hovered = id == null ? null : String(id);
+        return decision(true, hovered);
+      },
+      leave: function () {
+        if (pinned != null) return decision(false, pinned);
+        hovered = null;
+        return decision(true, null);
+      },
+      pin: function (id) {
+        pinned = id == null ? null : String(id);
+        hovered = pinned;
+        return decision(true, pinned);
+      },
+      release: function () {
+        if (pinned == null && hovered == null) return decision(false, null);
+        pinned = null;
+        hovered = null;
+        return decision(true, null);
+      },
+      reset: function () { pinned = null; hovered = null; }
+    };
+  }
+
   var state = {
     catalogs: [],
     year: DEFAULT_YEAR,
@@ -149,7 +186,7 @@
     noticeAction: null,
     initializedTarget: false,
     graphErrors: [],
-    hoveredNodeId: null,
+    hover: createHoverState(),
     requirementStatus: new Map(),
     hideFulfilledPrereq: true,
     mobileLayout: window.matchMedia("(max-width: 620px)").matches
@@ -809,7 +846,7 @@
   }
 
   function destroyGraph() {
-    state.hoveredNodeId = null;
+    state.hover.reset();
     if (state.cy) {
       state.cy.destroy();
       state.cy = null;
@@ -987,6 +1024,29 @@
     }
     state.cy.elements().removeClass("faded");
     state.cy.elements().not(prominent).addClass("faded");
+  }
+
+  function clearHoverEmphasis() {
+    if (!state.cy) return;
+    clearHoverGrouping();
+    state.cy.elements().removeClass("faded hover-pinned");
+    delete elements.graphCanvas.dataset.hoverPinned;
+  }
+
+  // A click pins the highlight that a hover would show, so it survives the
+  // pointer leaving (and so touch devices, which have no hover, can reveal it).
+  function pinHover(node) {
+    if (!state.cy || !node || !node.length) return;
+    state.hover.pin(node.id());
+    state.cy.elements().removeClass("hover-pinned");
+    node.addClass("hover-pinned");
+    elements.graphCanvas.dataset.hoverPinned = node.id();
+    applyHoverEmphasis(node);
+  }
+
+  function releasePinnedHover() {
+    if (!state.cy) return;
+    if (state.hover.release().apply) clearHoverEmphasis();
   }
 
   function completionHit(node, renderedPosition) {
@@ -1306,6 +1366,9 @@
       { selector: "edge.hover-group-4", style: { "line-color": C["hover4-line"] || "#945469", "target-arrow-color": C["hover4-line"] || "#945469", "width": 4, "opacity": 1 } },
       { selector: "node.hover-group-5", style: { "background-color": C["hover5-bg"] || "#eee9f6" } },
       { selector: "edge.hover-group-5", style: { "line-color": C["hover5-line"] || "#705b91", "target-arrow-color": C["hover5-line"] || "#705b91", "width": 4, "opacity": 1 } },
+      // A pinned (clicked) highlight gets a soft halo so it reads as "held"
+      // rather than as a passing hover.
+      { selector: "node.hover-pinned", style: { "overlay-color": C["accent"] || "#176b4b", "overlay-opacity": 0.14, "overlay-padding": 7 } },
       { selector: ".faded", style: { "opacity": 0.16 } }
     ];
   }
@@ -1462,17 +1525,21 @@
         return;
       }
       state.selectedId = node.id();
+      pinHover(node);
       inspectGraphNode(node.data());
     });
+    // Clicking empty canvas releases a pinned highlight ("click elsewhere").
+    state.cy.on("tap", function (event) {
+      if (event.target !== state.cy) return;
+      releasePinnedHover();
+    });
     state.cy.on("mouseover", "node", function (event) {
-      var node = event.target;
-      state.hoveredNodeId = node.id();
-      applyHoverEmphasis(node);
+      if (!state.hover.enter(event.target.id()).apply) return;
+      applyHoverEmphasis(event.target);
     });
     state.cy.on("mouseout", "node", function () {
-      state.hoveredNodeId = null;
-      clearHoverGrouping();
-      state.cy.elements().removeClass("faded");
+      if (!state.hover.leave().apply) return;
+      clearHoverEmphasis();
     });
     window.requestAnimationFrame(refocusGraph);
   }
@@ -1817,7 +1884,10 @@
         event.preventDefault();
         elements.courseSearch.focus();
       }
-      if (event.key === "Escape") closeDrawer();
+      if (event.key === "Escape") {
+        closeDrawer();
+        releasePinnedHover();
+      }
     });
 
     elements.yearSelect.addEventListener("change", async function () {
@@ -1848,9 +1918,11 @@
       });
     }
     elements.highlightDepthSelect.addEventListener("change", function () {
-      if (!state.cy || !state.hoveredNodeId) return;
-      var hoveredNode = state.cy.getElementById(state.hoveredNodeId);
-      if (hoveredNode.length) applyHoverEmphasis(hoveredNode);
+      if (!state.cy) return;
+      var activeId = state.hover.activeId();
+      if (!activeId) return;
+      var activeNode = state.cy.getElementById(activeId);
+      if (activeNode.length) applyHoverEmphasis(activeNode);
     });
     elements.graphTab.addEventListener("click", function () { setActiveView("graph"); });
     elements.outlineTab.addEventListener("click", function () { setActiveView("outline"); });

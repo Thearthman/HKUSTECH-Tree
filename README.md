@@ -110,6 +110,19 @@ While zen mode is on, a floating **Exit zen** button stays in the top-right
 corner and `Esc` also leaves the mode. It is a transient view toggle: it is not
 stored, so a reload returns to the normal layout.
 
+## Persistent highlight
+
+Hovering a course highlights its relationships, but that highlight normally
+disappears as soon as the pointer moves. Clicking (or tapping) a course instead
+**pins** the highlight, so it stays on screen while the pointer wanders off and
+after the details drawer closes. A pinned node carries a soft halo to show it is
+held rather than a passing hover.
+
+The pin is released by clicking empty canvas, by clicking a different course
+(which moves the pin), or by pressing `Esc`. It is not stored, so reloading
+returns to transient hover. This is what makes the relationship highlight usable
+on touch devices, which never fire a hover at all.
+
 ## Refreshing the data (autonomous)
 
 `tools/update-data.mjs` is the single entry point that keeps both databases in
@@ -201,6 +214,9 @@ against the linked HKUST catalog entry.
   pans from either empty canvas or a course node.
 - Hover is progressive disclosure: the inspected course and its direct
   relationships remain prominent while unrelated paths fade.
+- Clicking a course pins that highlight in place (`Esc` or empty canvas
+  releases it), so touch devices can show it at all and desktop readers can keep
+  it on screen while the details drawer is open.
 - When a course is hovered, each top-level `AND` requirement becomes a colored
   grouping; all `OR` alternatives inside that grouping share its background and
   edge color.
