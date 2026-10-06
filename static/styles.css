@@ -2078,6 +2078,16 @@ body.is-zen .workspace {
   background: var(--control-hover);
 }
 
+/* Keep the drawer's close button clear of the floating exit control. The
+ * extra right padding shifts only the button (the header is a space-between
+ * flex row), and only where the drawer is a right-side panel — at <=620px the
+ * drawer becomes a bottom sheet that never reaches the exit button. */
+@media (min-width: 621px) {
+  body.is-zen .drawer-header {
+    padding-right: 116px;
+  }
+}
+
 .group-key {
   display: inline-block;
   width: 16px;
