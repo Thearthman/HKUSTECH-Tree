@@ -7,6 +7,16 @@
   var HIDE_FULFILLED_KEY = STORAGE_PREFIX + ":hide-fulfilled-prereq";
   var SEARCH_DELAY = 180;
   var HOVER_GROUP_COUNT = 5;
+  // Department borders use a fixed 10-colour categorical palette. A department
+  // claims a slot in first-seen order (append-only; see assignDepartments) and
+  // the slot index picks the colour; slots are never reassigned, so a colour is
+  // only shared once more than ten departments are on screen. This palette is
+  // the ONLY thing a course node's border encodes -- see AGENTS.md.
+  var DEPT_COLOR_COUNT = 10;
+  var DEPT_FALLBACK_COLORS = [
+    "#2b6cb0", "#c05621", "#2f855a", "#c53030", "#6b46c1",
+    "#8c5a3c", "#b83280", "#2c7a7b", "#8a7000", "#4a5568"
+  ];
   // Completion-checkbox geometry is shared with the hit test so the clickable
   // area can never drift from the painted control (see graph-interactions.js).
   var SUPPORT = window.GraphInteractionSupport || {};
@@ -27,14 +37,6 @@
   // changes, which also regenerates the embedded checkbox/star data URIs.
   function graphTheme() {
     return window.HKUSTTheme ? window.HKUSTTheme.colors() : {};
-  }
-
-  function themeVar(name, fallback) {
-    if (window.HKUSTTheme) {
-      var value = window.HKUSTTheme.cssVar(name);
-      if (value) return value;
-    }
-    return fallback;
   }
 
   // Tick authored for a checkbox rect whose top-left is (1,1). Every checkbox
@@ -188,6 +190,10 @@
     graphErrors: [],
     hover: createHoverState(),
     requirementStatus: new Map(),
+    // Append-only course-department -> palette-slot assignment. Shared across
+    // renders so re-selecting a course never changes an established colour.
+    deptAssignments: [],
+    deptIndex: new Map(),
     hideFulfilledPrereq: true,
     mobileLayout: window.matchMedia("(max-width: 620px)").matches
   };
@@ -858,6 +864,46 @@
     return String(node.subject || (node.code ? node.code.split(/\s+/)[0] : "other")).toLowerCase();
   }
 
+  // Course department (subject) upper-cased so "comp" and "COMP" share one
+  // palette slot.
+  function departmentKey(node) {
+    return String(node.subject || (node.code ? node.code.split(/\s+/)[0] : "OTHER")).toUpperCase();
+  }
+
+  function departmentPalette() {
+    var palette = graphTheme();
+    var colors = [];
+    for (var index = 0; index < DEPT_COLOR_COUNT; index += 1) {
+      colors.push(palette["dept-" + index] || DEPT_FALLBACK_COLORS[index]);
+    }
+    return colors;
+  }
+
+  // Append-only department -> palette-slot assignment ("first come, first
+  // served"): a department keeps its colour forever. Departments seen together
+  // for the first time are ordered by Python-style string comparison, biggest
+  // first, so the tie is deterministic instead of depending on draw order.
+  function assignDepartments(subjects) {
+    var fresh = [];
+    subjects.forEach(function (subject) {
+      if (subject && !state.deptIndex.has(subject) && fresh.indexOf(subject) === -1) {
+        fresh.push(subject);
+      }
+    });
+    fresh.sort(function (left, right) {
+      return left < right ? 1 : left > right ? -1 : 0;
+    });
+    fresh.forEach(function (subject) {
+      state.deptIndex.set(subject, state.deptAssignments.length);
+      state.deptAssignments.push(subject);
+    });
+  }
+
+  function departmentClass(subject) {
+    var index = state.deptIndex.get(subject);
+    return index == null ? "" : "dept-" + (index % DEPT_COLOR_COUNT);
+  }
+
   function relationForNode(node) {
     if (node.relation) return node.relation;
     if (!state.graph) return "";
@@ -1185,11 +1231,19 @@
     var rootIds = graphRootIds();
     var targetIds = ustreeTargetIds();
     var dependentIds = directDependentIds(projected);
+    // Claim palette slots for every department in this render before styling.
+    assignDepartments(projected.nodes.filter(function (node) {
+      return node.type === "course";
+    }).map(function (node) {
+      return departmentKey(node);
+    }));
     var nodes = projected.nodes.map(function (node) {
-      var subject = nodeSubject(node);
       var classes = [node.type || "condition"];
       var isDependent = dependentIds.has(node.id);
-      if (node.type === "course") classes.push("subject-" + subject);
+      if (node.type === "course") {
+        var deptClass = departmentClass(departmentKey(node));
+        if (deptClass) classes.push(deptClass);
+      }
       if (node.placeholder || node.status === "unresolved") classes.push("is-unresolved");
       if (targetIds.has(node.id)) classes.push("is-target");
       else if (rootIds.has(node.id)) classes.push("is-focus");
@@ -1225,7 +1279,7 @@
 
   function graphStyles() {
     var C = graphTheme();
-    return [
+    var styles = [
       {
         selector: "node",
         style: {
@@ -1262,14 +1316,23 @@
           "background-offset-y": CHECKBOX_INSET,
           "background-image-opacity": 1
         }
-      },
-      { selector: "node.subject-comp", style: { "border-color": themeVar("--comp", "#147b58"), "border-width": 3, "border-style": "solid" } },
-      { selector: "node.subject-math", style: { "border-color": themeVar("--math", "#2667a8"), "border-width": 3 } },
-      { selector: "node.subject-elec", style: { "border-color": themeVar("--elec", "#b36a16"), "border-width": 3 } },
-      { selector: "node.is-focus", style: { "border-width": 5, "background-color": C["focus-bg"] || "#f5faf7" } },
-      { selector: "node.is-dependent", style: { "background-color": themeVar("--warning-soft", "#fff6df") } },
-      { selector: "node.is-target", style: { "border-width": 5, "background-color": C["focus-bg"] || "#f5faf7" } },
-      { selector: "node.is-completed", style: { "background-color": C["completed-bg"] || "#e8f3ed", "background-image": checkboxImage(true) } },
+      }
+    ];
+
+    // The ONLY border a course node may carry is its department colour, drawn
+    // from the fixed palette at the department's append-only assignment slot
+    // (see assignDepartments). Focus, target, completion, verdict and selection
+    // must never repaint it -- see the graph colour rules in AGENTS.md.
+    departmentPalette().forEach(function (color, index) {
+      styles.push({
+        selector: "node.dept-" + index,
+        style: { "border-color": color, "border-width": 3, "border-style": "solid" }
+      });
+    });
+
+    return styles.concat([
+      // Completion shows through the tick image only; the fill stays plain.
+      { selector: "node.is-completed", style: { "background-image": checkboxImage(true) } },
       {
         selector: "node.is-target",
         style: {
@@ -1287,7 +1350,6 @@
         }
       },
       { selector: "node.is-target.is-completed", style: { "background-image": targetImage(true) } },
-      { selector: "node.is-unresolved", style: { "border-style": "dashed", "background-color": C["unresolved-bg"] || "#f2f3f1", "color": C["unresolved-text"] || "#657069" } },
       {
         selector: "node.all, node.any",
         style: {
@@ -1301,14 +1363,7 @@
         }
       },
       { selector: "node.any", style: { "background-color": C["any-bg"] || "#edf3f8", "border-color": C["any-stroke"] || "#6686a0" } },
-      { selector: "node.is-satisfied", style: { "background-color": C["completed-bg"] || "#e8f3ed", "border-color": themeVar("--accent", "#176b4b"), "border-width": 2.5 } },
-      // USTree targets carry a prerequisite verdict against the finished
-      // courses: green when met, red when a required course is missing, and a
-      // dashed outline when a prose condition keeps the answer open.
-      { selector: "node.is-prereq-met", style: { "border-color": themeVar("--accent", "#176b4b"), "border-width": 5, "background-color": C["completed-bg"] || "#e8f3ed" } },
-      { selector: "node.is-prereq-completed", style: { "border-color": themeVar("--accent", "#176b4b"), "border-width": 5, "background-color": C["completed-bg"] || "#e8f3ed" } },
-      { selector: "node.is-prereq-unmet", style: { "border-color": themeVar("--danger", "#b14c45"), "border-width": 5 } },
-      { selector: "node.is-prereq-unknown", style: { "border-color": themeVar("--warning-strong", "#b8891f"), "border-width": 5, "border-style": "dashed" } },
+      // Special conditional nodes keep their own background and border.
       {
         selector: "node.condition, node.coursePattern",
         style: {
@@ -1321,7 +1376,6 @@
           "color": C["condition-text"] || "#655839"
         }
       },
-      { selector: "node:selected", style: { "border-color": C["selected"] || "#17281f", "border-width": 4 } },
       {
         selector: "edge",
         style: {
@@ -1366,11 +1420,10 @@
       { selector: "edge.hover-group-4", style: { "line-color": C["hover4-line"] || "#945469", "target-arrow-color": C["hover4-line"] || "#945469", "width": 4, "opacity": 1 } },
       { selector: "node.hover-group-5", style: { "background-color": C["hover5-bg"] || "#eee9f6" } },
       { selector: "edge.hover-group-5", style: { "line-color": C["hover5-line"] || "#705b91", "target-arrow-color": C["hover5-line"] || "#705b91", "width": 4, "opacity": 1 } },
-      // A pinned (clicked) highlight gets a soft halo so it reads as "held"
-      // rather than as a passing hover.
+      // The clicked node gets a soft halo; highlighting is click/pin only.
       { selector: "node.hover-pinned", style: { "overlay-color": C["accent"] || "#176b4b", "overlay-opacity": 0.14, "overlay-padding": 7 } },
       { selector: ".faded", style: { "opacity": 0.16 } }
-    ];
+    ]);
   }
 
   // Re-skin the canvas in place when the theme changes; rebuilding the style
@@ -1532,14 +1585,6 @@
     state.cy.on("tap", function (event) {
       if (event.target !== state.cy) return;
       releasePinnedHover();
-    });
-    state.cy.on("mouseover", "node", function (event) {
-      if (!state.hover.enter(event.target.id()).apply) return;
-      applyHoverEmphasis(event.target);
-    });
-    state.cy.on("mouseout", "node", function () {
-      if (!state.hover.leave().apply) return;
-      clearHoverEmphasis();
     });
     window.requestAnimationFrame(refocusGraph);
   }

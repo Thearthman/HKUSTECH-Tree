@@ -115,6 +115,19 @@
   --cy-checkbox-check: #ffffff;
   --cy-star-fill: #c18720;
   --cy-star-stroke: #805a12;
+  /* Fixed 10-colour course-department border palette. Slot N is chosen by the
+     department's append-only assignment index (see app.js assignDepartments),
+     so these colours are a categorical key -- do not reuse them for status. */
+  --cy-dept-0: #2b6cb0;
+  --cy-dept-1: #c05621;
+  --cy-dept-2: #2f855a;
+  --cy-dept-3: #c53030;
+  --cy-dept-4: #6b46c1;
+  --cy-dept-5: #8c5a3c;
+  --cy-dept-6: #b83280;
+  --cy-dept-7: #2c7a7b;
+  --cy-dept-8: #8a7000;
+  --cy-dept-9: #4a5568;
   --cy-hover1-bg: #c6def2;
   --cy-hover1-line: #3e718f;
   --cy-hover2-bg: #fff1c9;
@@ -229,6 +242,16 @@ html[data-theme="dark"] {
   --cy-checkbox-check: #0b1a11;
   --cy-star-fill: #e0b76a;
   --cy-star-stroke: #7a5c1e;
+  --cy-dept-0: #6fb0e0;
+  --cy-dept-1: #f0a868;
+  --cy-dept-2: #7cc79a;
+  --cy-dept-3: #e88b86;
+  --cy-dept-4: #b6a0e8;
+  --cy-dept-5: #d2a88c;
+  --cy-dept-6: #e58bc0;
+  --cy-dept-7: #6fc9c9;
+  --cy-dept-8: #d9c65a;
+  --cy-dept-9: #a8b3c0;
   --cy-hover1-bg: #1d3348;
   --cy-hover1-line: #5e93c4;
   --cy-hover2-bg: #3a2f10;
@@ -1242,6 +1265,8 @@ html[data-theme="dark"] .theme-icon-dark {
   white-space: nowrap;
 }
 
+/* Base dot geometry; the Major-requirement legend's `.major-dot` and
+   `.context-dot` keys supply the fill. */
 .legend-dot {
   width: 7px;
   height: 7px;
@@ -1249,9 +1274,31 @@ html[data-theme="dark"] .theme-icon-dark {
   border-radius: 50%;
 }
 
-.legend-dot.comp { background: var(--comp); }
-.legend-dot.math { background: var(--math); }
-.legend-dot.elec { background: var(--elec); }
+/* Course-node border colour is the course department, picked from a fixed
+   10-colour palette in first-seen order (see app.js). The strip previews the
+   palette; it is not a per-department mapping. */
+.legend-dept-swatches {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.legend-dept-swatches i {
+  width: 4px;
+  height: 12px;
+  border-radius: 1px;
+  background: var(--other);
+}
+
+.legend-dept-swatches i:nth-child(1) { background: var(--cy-dept-0); }
+.legend-dept-swatches i:nth-child(2) { background: var(--cy-dept-1); }
+.legend-dept-swatches i:nth-child(3) { background: var(--cy-dept-2); }
+.legend-dept-swatches i:nth-child(4) { background: var(--cy-dept-3); }
+.legend-dept-swatches i:nth-child(5) { background: var(--cy-dept-4); }
+.legend-dept-swatches i:nth-child(6) { background: var(--cy-dept-5); }
+.legend-dept-swatches i:nth-child(7) { background: var(--cy-dept-6); }
+.legend-dept-swatches i:nth-child(8) { background: var(--cy-dept-7); }
+.legend-dept-swatches i:nth-child(9) { background: var(--cy-dept-8); }
+.legend-dept-swatches i:nth-child(10) { background: var(--cy-dept-9); }
 .legend-separator { width: 1px; height: 14px; background: var(--line); }
 .edge-key { width: 14px; }
 

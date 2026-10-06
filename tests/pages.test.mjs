@@ -434,3 +434,51 @@ test("a toggle hides prerequisites and corequisites fulfilled by finished or sta
     "the pruning helper should be exported on USTreeSupport"
   );
 });
+
+test("graph node background and border stay minimal and do not grow status colors", () => {
+  const app = read("app.js");
+  const css = read("styles.css");
+  const theme = read("theme.js");
+
+  // Border is the course department, chosen from a fixed 10-colour palette that
+  // exists in both themes in the same order.
+  for (let index = 0; index < 10; index += 1) {
+    assert.ok(
+      css.includes(`--cy-dept-${index}:`),
+      `styles.css should define the --cy-dept-${index} palette slot`
+    );
+    assert.ok(
+      theme.includes(`"dept-${index}"`),
+      `theme.js should surface --cy-dept-${index} to the graph`
+    );
+  }
+  assert.ok(
+    app.includes("function assignDepartments") &&
+      app.includes('"dept-" + (index % DEPT_COLOR_COUNT)'),
+    "app.js should assign append-only department palette slots"
+  );
+  assert.ok(
+    app.includes('selector: "node.dept-" + index'),
+    "course borders should be driven by the department class only"
+  );
+
+  // The retired channels must not creep back onto course nodes.
+  assert.ok(!app.includes('"node:selected"'), "selection must not repaint a node's border");
+  assert.ok(!app.includes('"node.subject-'), "subject classes must not repaint a node's border");
+  for (const selector of ["is-focus", "is-dependent", "is-unresolved", "is-satisfied"]) {
+    assert.ok(
+      !app.includes(`"node.${selector}"`),
+      `${selector} must not repaint a course node's background or border`
+    );
+  }
+  assert.ok(
+    !/"node\.is-prereq-(met|unmet|unknown|completed)"/.test(app),
+    "prerequisite verdicts must not repaint a course node's background or border"
+  );
+
+  // Highlighting is click/pin only: no hover-driven repaint remains.
+  assert.ok(
+    !app.includes('state.cy.on("mouseover", "node"') && !app.includes('state.cy.on("mouseout", "node"'),
+    "the graph must not recolor on hover; only a click pins the highlight"
+  );
+});

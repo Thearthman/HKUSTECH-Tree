@@ -100,7 +100,7 @@
 
       <div class="control-group depth-control highlight-depth-control">
         <label for="highlightDepthSelect">Highlight depth</label>
-        <select id="highlightDepthSelect" title="How many backward prerequisite course hops to color on hover">
+        <select id="highlightDepthSelect" title="How many backward prerequisite course hops to color when a node is clicked">
           <option value="1" selected>1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -164,11 +164,9 @@
             <button id="emptyAction" class="button button-primary" type="button" hidden>Retry</button>
           </div>
         </div>
-        <div class="graph-legend" aria-label="Subject legend">
-          <span><i class="legend-dot comp"></i>COMP</span>
-          <span><i class="legend-dot math"></i>MATH</span>
-          <span><i class="legend-dot elec"></i>ELEC</span>
-          <span><i class="legend-dot other"></i>Other</span>
+        <div class="graph-legend" aria-label="Graph legend">
+          <span class="legend-dept-swatches" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span>Border colour = course department</span>
           <span class="legend-separator" aria-hidden="true"></span>
           <span><i class="edge-key solid"></i>Prerequisite</span>
           <span><i class="edge-key dashed"></i>Corequisite</span>

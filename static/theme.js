@@ -22,6 +22,8 @@
     "any-bg", "any-stroke", "condition-bg", "condition-border", "condition-text",
     "edge-label-bg", "checkbox-bg", "checkbox-border", "checkbox-check",
     "star-fill", "star-stroke",
+    "dept-0", "dept-1", "dept-2", "dept-3", "dept-4",
+    "dept-5", "dept-6", "dept-7", "dept-8", "dept-9",
     "hover1-bg", "hover1-line", "hover2-bg", "hover2-line", "hover3-bg",
     "hover3-line", "hover4-bg", "hover4-line", "hover5-bg", "hover5-line"
   ];
