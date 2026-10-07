@@ -1,14 +1,82 @@
 # HKUST Course Tree
 
-A local course-selection helper that turns the HKUST undergraduate catalog into
-an explorable prerequisite tech tree. It preserves nested `AND`/`OR` rules,
-corequisites, exclusions, catalog conditions, and the original HKUST wording.
+> **Design philosophy**: A local course-selection helper that turns the HKUST undergraduate catalog into
+an <u>***explorable prerequisite tech tree***</u>. 
+
+Check out the website: [HKUSTECH-Tree](https://hkustech-tree.vercel.app/)
+
+## Demos
+#### **Adding courses**:
+![](./resources/USTree-Adding%20Courses.gif)
+
+#### **Visualised prerequisite network**
+![](./resources/USTree-Prereq%20tree%20previewing.gif)
+
+#### **Sorting out your prerequisite network**
+![](./resources/USTree-Prereq%20Sorting.gif)
+
+#### **Forward searching for those who want to explore`:)`** 
+![](./resources/Course%20page-Search.gif)
 
 A prebuilt copy of the catalog ships with the site, so the whole application can
 run as a **browser-only static app**: no server, no database, and no
 user data stored off-device (the only outbound request is Vercel Web Analytics,
 see [Data and privacy](#data-and-privacy)). The original Flask/SQLite
 implementation is preserved on the `local` branch for reference.
+
+## Additional Features
+
+### Major requirement view
+
+Every major's graduation requirements are available on the site, so the mandatory core sections and the available branch/area options sit right alongside the prerequisite context you are already planning with. There is no separate requirement PDF to cross-reference: each requirement course is a normal node, so it can be searched, hovered, pinned, and reused on the same page.
+
+
+### Export and import
+
+Every page's top bar carries **Export** and **Import** buttons (the download /
+upload arrows beside the theme toggle). **Export** downloads a single JSON file
+named `hkust-course-tree-YYYYMMDD.json` that snapshots everything the site keeps
+locally: the **USTree** targets, the **finished courses**, each page's **last
+focused course**, the **selected major requirement**, and the small display
+preferences (`hideFulfilledPrereq`, theme). Data is grouped by catalog year, so
+an export taken across several years restores them all.
+
+**Import** reads one of those files back. It validates the file first (rejecting
+non-JSON, exports from other apps, and empty snapshots) and then **merges** the
+contents into the current browser rather than replacing it: USTree targets and
+finished courses are unioned per year, and the selected major and preferences
+are applied. The page then re-reads its state and re-renders, and a short toast
+reports how many targets and courses were added.
+
+**Reset** (the ✕ button) erases everything the site stored in this browser —
+every `hkust-course-tree` value in `localStorage` plus the cached catalog in
+IndexedDB — and then reloads the page. Because it is destructive it uses a
+double affirmation: the first click only arms the button (**Confirm reset**,
+with a **Cancel** escape hatch and an automatic timeout) and the second click
+actually wipes the browser.
+
+
+## Persistent highlight
+
+Hovering a course highlights its relationships, but that highlight normally
+disappears as soon as the pointer moves. Clicking a course instead **pins** the
+highlight, so it stays on screen while the pointer wanders off and after the
+details drawer closes. A pinned node carries a soft halo to show it is held
+rather than a passing hover.
+
+The pin is released by clicking empty canvas, by clicking a different course
+(which moves the pin), or by pressing `Esc`. It is not stored, so reloading
+returns to transient hover.
+
+Touch devices never fire a hover, so the mobile layout maps the two desktop
+gestures onto touch: a **tap** takes the hover role and only previews the
+relationships, while a **long press** takes the click role and opens the course
+details. This keeps a single tap from covering the graph with the drawer when
+the user only wanted to inspect the connections. The completion checkbox stays a
+normal tap target on every device.
+
+
+# Developer
 
 ## Static build (browser-only, Vercel)
 
@@ -75,59 +143,6 @@ The page reads the committed `static/data/catalog.json`; its **Check for
 updates** button re-fetches that file from the host and falls back to the
 browser's IndexedDB copy when offline.
 
-## Export and import
-
-Every page's top bar carries **Export** and **Import** buttons (the download /
-upload arrows beside the theme toggle). **Export** downloads a single JSON file
-named `hkust-course-tree-YYYYMMDD.json` that snapshots everything the site keeps
-locally: the **USTree** targets, the **finished courses**, each page's **last
-focused course**, the **selected major requirement**, and the small display
-preferences (`hideFulfilledPrereq`, theme). Data is grouped by catalog year, so
-an export taken across several years restores them all.
-
-**Import** reads one of those files back. It validates the file first (rejecting
-non-JSON, exports from other apps, and empty snapshots) and then **merges** the
-contents into the current browser rather than replacing it: USTree targets and
-finished courses are unioned per year, and the selected major and preferences
-are applied. The page then re-reads its state and re-renders, and a short toast
-reports how many targets and courses were added.
-
-**Reset** (the ✕ button) erases everything the site stored in this browser —
-every `hkust-course-tree` value in `localStorage` plus the cached catalog in
-IndexedDB — and then reloads the page. Because it is destructive it uses a
-double affirmation: the first click only arms the button (**Confirm reset**,
-with a **Cancel** escape hatch and an automatic timeout) and the second click
-actually wipes the browser.
-
-## Zen mode
-
-The **Zen** button (the ⛶ glyph beside the theme toggle) hides all of the page
-chrome — the top bar, the graph/relationship controls, the legend, and notices —
-so the graph or outline fills the whole viewport on either the shared or the
-Major requirement shell. The graph pages re-fit their canvas as it grows.
-
-While zen mode is on, a floating **Exit zen** button stays in the top-right
-corner and `Esc` also leaves the mode. It is a transient view toggle: it is not
-stored, so a reload returns to the normal layout.
-
-## Persistent highlight
-
-Hovering a course highlights its relationships, but that highlight normally
-disappears as soon as the pointer moves. Clicking a course instead **pins** the
-highlight, so it stays on screen while the pointer wanders off and after the
-details drawer closes. A pinned node carries a soft halo to show it is held
-rather than a passing hover.
-
-The pin is released by clicking empty canvas, by clicking a different course
-(which moves the pin), or by pressing `Esc`. It is not stored, so reloading
-returns to transient hover.
-
-Touch devices never fire a hover, so the mobile layout maps the two desktop
-gestures onto touch: a **tap** takes the hover role and only previews the
-relationships, while a **long press** takes the click role and opens the course
-details. This keeps a single tap from covering the graph with the drawer when
-the user only wanted to inspect the connections. The completion checkbox stays a
-normal tap target on every device.
 
 ## Refreshing the data (autonomous)
 
@@ -195,7 +210,7 @@ npm test
 The application is an unofficial planning aid. Always verify enrollment rules
 against the linked HKUST catalog entry.
 
-## Interface principles
+# Interface principles
 
 - The graph prioritizes courses and pathways. Boolean parser junctions are
   flattened into direct course edges on the canvas, while exact `AND`/`OR`
